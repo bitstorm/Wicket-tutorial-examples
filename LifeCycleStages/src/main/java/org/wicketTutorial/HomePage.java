@@ -1,0 +1,40 @@
+package org.wicketTutorial;
+
+import org.apache.wicket.Component;
+import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.link.Link;
+import org.apache.wicket.markup.html.link.StatelessLink;
+import org.apache.wicket.util.visit.IVisitor;
+import org.apache.wicket.util.visit.IVisit;
+
+public class HomePage extends WebPage
+{
+	private static final long serialVersionUID = 1L;
+	private Label firstLabel;
+	private Label secondLabel;
+	
+	public HomePage(){
+		firstLabel = new Label("label", "First label");
+		secondLabel = new Label("label", "Second label");
+		
+		add(firstLabel);
+		
+		add(new Link("reload"){
+			@Override
+			public void onClick() {				
+						
+			}
+		});	
+		
+	}
+	
+	@Override
+	protected void onBeforeRender() {
+		super.onBeforeRender();
+		if(contains(firstLabel, true))
+			replace(secondLabel);
+		else
+			replace(firstLabel);
+	}
+}

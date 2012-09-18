@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form wicket:id="formPersonsList">
+		List of persons <select wicket:id="persons"></select> <br/>
+	</form>
+	<br/>
+	<form wicket:id="form">		
+		<div style="display: table;">
+			<div style="display: table-row;">
+				<div style="display: table-cell;">Name: </div>
+				<div style="display: table-cell;">
+					<input type="text" wicket:id="name"/> 
+				</div>	
+			</div>
+			<div style="display: table-row;">
+				<div style="display: table-cell;">Surname: </div>
+				<div style="display: table-cell;">
+					<input type="text" wicket:id="surname"/>
+				</div>	
+			</div>
+			<div style="display: table-row;">
+				<div style="display: table-cell;">Address: </div>
+				<div style="display: table-cell;">
+					<input type="text" wicket:id="address"/>
+				</div>	
+			</div>
+			<div style="display: table-row;">
+				<div style="display: table-cell;">Email: </div>
+				<div style="display: table-cell;">
+					<input type="text" wicket:id="email"/>
+				</div>
+			</div>
+		</div>	
+		<input type="submit" value="Save"/>
+	</form>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+	<head>
+		<meta charset="utf-8" />
+	</head>
+	<body>
+		<form wicket:id="form">		
+			<div style="display: table;">
+				<div style="display: table-row;">
+					<div style="display: table-cell;">Name: </div>
+					<div style="display: table-cell;">
+						<input type="text" wicket:id="name"/> 
+					</div>	
+				</div>
+				<div style="display: table-row;">
+					<div style="display: table-cell;">Surname: </div>
+					<div style="display: table-cell;">
+						<input type="text" wicket:id="surname"/>
+					</div>	
+				</div>
+				<div style="display: table-row;">
+					<div style="display: table-cell;">Address: </div>
+					<div style="display: table-cell;">
+						<input type="text" wicket:id="address"/>
+					</div>	
+				</div>
+				<div style="display: table-row;">
+					<div style="display: table-cell;">Email: </div>
+					<div style="display: table-cell;">
+						<input type="text" wicket:id="email"/>
+					</div>
+				</div>
+				<div style="display: table-row;">
+					<div style="display: table-cell;">Subscribe list:</div>
+					<div style="display: table-cell;">
+						<input type="checkbox" wicket:id="subscribeList"/>
+					</div>
+				</div>
+			</div>	
+		<input type="submit" value="Save"/>
+	</form>
+	</body>
+</html>
