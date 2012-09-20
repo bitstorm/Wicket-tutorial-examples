@@ -12,6 +12,7 @@ import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
 import org.apache.wicket.markup.head.OnLoadHeaderItem;
+import org.apache.wicket.markup.head.StringHeaderItem;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.request.resource.PackageResourceReference;
@@ -28,14 +29,10 @@ public class JQueryDateField extends DateTextField {
 	private String datePattern;
 	private String countryIsoCode;
 	private String jQueryCalendar;
-	
-	private static final String initCalendarScript = "function initCalendar(localizedArray){" +
-														 "localizedArray['changeMonth']= true;" +
-														 "localizedArray['changeYear']= true;" +
-														 "localizedArray['showOn'] = 'button';" +
-														 "localizedArray['buttonImageOnly'] = true;" +
-													     "}";
-	
+	private CharSequence urlForIcon;
+	private static final PackageResourceReference JQDatePickerRef = 
+						   new PackageResourceReference(JQueryDateField.class, "JQDatePicker.js");
+	 
 	public String getDatePattern() {
 		return datePattern;
 	}
@@ -58,22 +55,11 @@ public class JQueryDateField extends DateTextField {
 	protected void onInitialize() {
 		super.onInitialize();
 		
-		int elementHash = hashCode();
-		
-		setMarkupId("" + elementHash);
-		
 		setOutputMarkupId(true);
-		
-		PackageTextTemplate textTemplate = new PackageTextTemplate(getClass(), "JQDatePicker.js");		
-		Map<String,Object> variables = new HashMap<String, Object>();
-		
-		variables.put("inputId", elementHash);
-		variables.put("countryIsoCode", countryIsoCode);
 		
 		PackageResourceReference resourceReference = new PackageResourceReference(getClass(), "calendar.jpg");
 		
-		variables.put("calendarIcon",  urlFor(resourceReference, new PageParameters()));
-		jQueryCalendar = textTemplate.asString(variables);
+		urlForIcon = urlFor(resourceReference, new PageParameters());
 		dateConverter = new PatternDateConverter(datePattern, false);
 		
 		add(AttributeModifier.replace("size", "12"));
@@ -83,14 +69,15 @@ public class JQueryDateField extends DateTextField {
 	public void renderHead(IHeaderResponse response) {
 		super.renderHead(response);
 		
-		//
+		//if component is disabled we don't have to load the JQueryUI datepicker
 		if(!isEnabledInHierarchy())
 			return;
 		
-		if(!response.wasRendered(initCalendarScript))
-			response.render(JavaScriptHeaderItem.forScript(initCalendarScript, "initCalendarScript"));
+		if(!response.wasRendered(JQDatePickerRef))
+			response.render(JavaScriptHeaderItem.forReference(JQDatePickerRef, null, "JQDatePickerRef", true));
 		
-		response.render(OnLoadHeaderItem.forScript(jQueryCalendar));
+		String initScript = "initJQDatapicker('" + getMarkupId() +"', '" + countryIsoCode + "', '" + urlForIcon +"');";
+		response.render(OnLoadHeaderItem.forScript(initScript));
 	}
 	
 	@Override
