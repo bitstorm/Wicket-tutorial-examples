@@ -62,11 +62,7 @@
 		<module>CustomDatepicker</module>
 	</modules>	
 	<!--url>http://wicket.apache.org/${project.artifactId}</url-->
-	<inceptionYear>2012</inceptionYear>
-	<organization>
-		<name>Apache Software Foundation</name>
-		<url>http://apache.org</url>
-	</organization>
+	<inceptionYear>2012</inceptionYear>	
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
@@ -147,9 +143,33 @@
 				<configuration>
 					<downloadSources>true</downloadSources>
 				</configuration>
+			</plugin>			
+			<plugin>
+			    <inherited>false</inherited>
+			    <groupId>com.mycila.maven-license-plugin</groupId>
+			    <artifactId>maven-license-plugin</artifactId>   
+			    <configuration>
+				<header>./header.txt</header>
+				<failIfMissing>true</failIfMissing>
+				<aggregate>true</aggregate>
+				<excludes>
+				    <exclude>LICENSE.txt</exclude>
+				    <exclude>**/src/test/resources/**</exclude>
+				    <exclude>**/src/test/data/**</exclude>
+				</excludes>
+			    </configuration>
+			    <executions>
+				<execution>
+				    <id>check-headers</id>
+				    <phase>verify</phase>
+				    <goals>
+					<goal>check</goal>
+				    </goals>
+				</execution>
+			    </executions>
 			</plugin>
 		</plugins>
-	</build>
+	</build>	
 	<repositories>
 		<repository>
 			<id>Apache Nexus</id>
