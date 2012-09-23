@@ -24,14 +24,17 @@ import org.apache.wicket.AttributeModifier;
 
 import org.apache.wicket.datetime.PatternDateConverter;
 import org.apache.wicket.extensions.markup.html.form.DateTextField;
+import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
 import org.apache.wicket.markup.head.OnLoadHeaderItem;
 import org.apache.wicket.markup.head.StringHeaderItem;
 import org.apache.wicket.model.IModel;
+import org.apache.wicket.model.ResourceModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.request.resource.PackageResourceReference;
+import org.apache.wicket.settings.IJavaScriptLibrarySettings;
 import org.apache.wicket.util.convert.IConverter;
 import org.apache.wicket.util.template.PackageTextTemplate;
 
@@ -53,18 +56,12 @@ public class JQueryDateField extends DateTextField {
 		return datePattern;
 	}
 	
-	public JQueryDateField(String id, IModel<Date> dateModel, String datePattern, String countryIsoCode){
-		super(id, dateModel);
-		
-		this.datePattern = datePattern;
-		this.countryIsoCode = countryIsoCode;
+	public JQueryDateField(String id, IModel<Date> dateModel){
+		super(id, dateModel);	
 	}
 	
-	public JQueryDateField(String id, String datePattern, String countryIsoCode){
+	public JQueryDateField(String id){
 		super(id);
-		
-		this.datePattern = datePattern;
-		this.countryIsoCode = countryIsoCode;
 	}
 	
 	@Override
@@ -72,6 +69,9 @@ public class JQueryDateField extends DateTextField {
 		super.onInitialize();
 		
 		setOutputMarkupId(true);
+		
+		datePattern =  new ResourceModel("jqueryDateField.shortDatePattern", "mm/dd/yy").getObject();		
+		countryIsoCode = new ResourceModel("jqueryDateField.countryIsoCode", "en-GB").getObject();
 		
 		PackageResourceReference resourceReference = new PackageResourceReference(getClass(), "calendar.jpg");
 		
@@ -88,11 +88,22 @@ public class JQueryDateField extends DateTextField {
 		//if component is disabled we don't have to load the JQueryUI datepicker
 		if(!isEnabledInHierarchy())
 			return;
-		
-		if(!response.wasRendered(JQDatePickerRef))
-			response.render(JavaScriptHeaderItem.forReference(JQDatePickerRef, null, "JQDatePickerRef", true));
-		
-		String initScript = "initJQDatapicker('" + getMarkupId() +"', '" + countryIsoCode + "', '" + urlForIcon +"');";
+		//add bundled JQuery
+		IJavaScriptLibrarySettings javaScriptSettings = getApplication().getJavaScriptLibrarySettings();
+		response.render(JavaScriptHeaderItem.
+						forReference(javaScriptSettings.getJQueryReference()));
+		//add package resources
+		response.render(JavaScriptHeaderItem.
+						forReference(new PackageResourceReference(getClass(), "jquery-ui.min.js")));
+		response.render(JavaScriptHeaderItem.
+						forReference(new PackageResourceReference(getClass(), "jquery-ui-i18n.min.js")));
+		response.render(CssHeaderItem.
+						forReference(new PackageResourceReference(getClass(), "jquery-ui.css")));
+		response.render(JavaScriptHeaderItem.
+				forReference(JQDatePickerRef, null, "JQDatePickerRef", true));
+		//add the init script for datepicker
+		String initScript = "initJQDatapicker('" + getMarkupId() + "', '" + countryIsoCode + "', '" + datePattern + "', "
+				+ "'" + urlForIcon +"');";
 		response.render(OnLoadHeaderItem.forScript(initScript));
 	}
 	

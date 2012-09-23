@@ -21,9 +21,10 @@ function initCalendar(localizedArray){
 	 localizedArray['buttonImageOnly'] = true;
 };
 	
-function initJQDatapicker(inputId, countryIsoCode, calendarIcon) {
+function initJQDatapicker(inputId, countryIsoCode, dateFormat,  calendarIcon) {
 	var localizedArray = $.datepicker.regional[countryIsoCode];
 	localizedArray['buttonImage'] = calendarIcon;
 	initCalendar(localizedArray);
 	$("#" + inputId).datepicker(localizedArray);
+	$("#" + inputId).datepicker( "option", "dateFormat", dateFormat );
 };
