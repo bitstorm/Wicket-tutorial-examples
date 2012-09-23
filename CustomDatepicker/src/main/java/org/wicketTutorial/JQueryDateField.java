@@ -82,6 +82,11 @@ public class JQueryDateField extends DateTextField {
 	}	
 	
 	@Override
+	public <Date> IConverter<Date> getConverter(Class<Date> type) {
+		return (IConverter<Date>) dateConverter;
+	}	
+	
+	@Override
 	public void renderHead(IHeaderResponse response) {
 		super.renderHead(response);
 		
@@ -105,10 +110,5 @@ public class JQueryDateField extends DateTextField {
 		String initScript = "initJQDatapicker('" + getMarkupId() + "', '" + countryIsoCode + "', '" + datePattern + "', "
 				+ "'" + urlForIcon +"');";
 		response.render(OnLoadHeaderItem.forScript(initScript));
-	}
-	
-	@Override
-	public <Date> IConverter<Date> getConverter(Class<Date> type) {
-		return (IConverter<Date>) dateConverter;
-	}	
+	}		
 }
