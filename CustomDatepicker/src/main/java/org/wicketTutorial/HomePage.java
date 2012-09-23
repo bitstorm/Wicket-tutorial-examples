@@ -16,19 +16,24 @@
  */
 package org.wicketTutorial;
 
+import java.util.Date;
 import java.util.Locale;
 
 import org.apache.wicket.Session;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.model.Model;
 
 public class HomePage extends WebPage {
 	private static final long serialVersionUID = 1L;
 
     public HomePage(final PageParameters parameters) {
 	super(parameters);
+	Form form = new Form("form");
+	form.add(new JQueryDateField("datepicker", new Model<Date>()));
 	
-	add(new JQueryDateField("datepicker"));
+	add(form);
     }
 }

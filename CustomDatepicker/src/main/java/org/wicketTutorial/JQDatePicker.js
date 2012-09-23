@@ -24,7 +24,8 @@ function initCalendar(localizedArray){
 function initJQDatapicker(inputId, countryIsoCode, dateFormat,  calendarIcon) {
 	var localizedArray = $.datepicker.regional[countryIsoCode];
 	localizedArray['buttonImage'] = calendarIcon;
+	localizedArray['dateFormat'] = dateFormat;
+	
 	initCalendar(localizedArray);
-	$("#" + inputId).datepicker(localizedArray);
-	$("#" + inputId).datepicker( "option", "dateFormat", dateFormat );
+	$("#" + inputId).datepicker(localizedArray);	
 };

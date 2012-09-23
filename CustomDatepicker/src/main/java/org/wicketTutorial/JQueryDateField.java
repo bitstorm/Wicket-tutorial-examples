@@ -70,13 +70,13 @@ public class JQueryDateField extends DateTextField {
 		
 		setOutputMarkupId(true);
 		
-		datePattern =  new ResourceModel("jqueryDateField.shortDatePattern", "mm/dd/yy").getObject();		
+		datePattern =  new ResourceModel("jqueryDateField.shortDatePattern", "MM/dd/yyyy").getObject();		
 		countryIsoCode = new ResourceModel("jqueryDateField.countryIsoCode", "en-GB").getObject();
 		
 		PackageResourceReference resourceReference = new PackageResourceReference(getClass(), "calendar.jpg");
 		
 		urlForIcon = urlFor(resourceReference, new PageParameters());
-		dateConverter = new PatternDateConverter(datePattern, false);
+		dateConverter = new PatternDateConverter(datePattern, true);
 		
 		add(AttributeModifier.replace("size", "12"));
 	}	
@@ -105,8 +105,10 @@ public class JQueryDateField extends DateTextField {
 		response.render(CssHeaderItem.
 						forReference(new PackageResourceReference(getClass(), "jquery-ui.css")));
 		response.render(JavaScriptHeaderItem.
-				forReference(JQDatePickerRef, null, "JQDatePickerRef", true));
+						forReference(JQDatePickerRef));
+		
 		//add the init script for datepicker
+		String jqueryDateFormat = datePattern.replace("yyyy", "yy").toLowerCase();
 		String initScript = "initJQDatapicker('" + getMarkupId() + "', '" + countryIsoCode + "', '" + datePattern + "', "
 				+ "'" + urlForIcon +"');";
 		response.render(OnLoadHeaderItem.forScript(initScript));
