@@ -109,7 +109,7 @@ public class JQueryDateField extends DateTextField {
 		
 		//add the init script for datepicker
 		String jqueryDateFormat = datePattern.replace("yyyy", "yy").toLowerCase();
-		String initScript = "initJQDatapicker('" + getMarkupId() + "', '" + countryIsoCode + "', '" + datePattern + "', "
+		String initScript = ";initJQDatapicker('" + getMarkupId() + "', '" + countryIsoCode + "', '" + jqueryDateFormat + "', "
 				+ "'" + urlForIcon +"');";
 		response.render(OnLoadHeaderItem.forScript(initScript));
 	}		

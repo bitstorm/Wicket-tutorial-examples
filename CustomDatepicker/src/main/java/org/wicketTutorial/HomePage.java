@@ -33,7 +33,7 @@ public class HomePage extends WebPage {
 	super(parameters);
 	Form form = new Form("form");
 	form.add(new JQueryDateField("datepicker", new Model<Date>()));
-	
+	form.add(new JQueryDateField("datepicker2", new Model<Date>()));
 	add(form);
     }
 }
