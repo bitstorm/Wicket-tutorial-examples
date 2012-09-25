@@ -5,13 +5,30 @@
 		<title></title>
 	</head>
 	<body>
+		<h2>
+			Click on the links below to send an event to the container in the middle 
+			using one of the supported broadcast methods. <br/>
+			A panel at the bottom of the page will display the order in which 
+			the event has been received by sinks (page, components and application).
+		</h2>
+		
 		<a wicket:id="breadthLink">Breadth mode</a><br/>
 		<a wicket:id="depthLink">Depth mode</a><br/>
 		<a wicket:id="bubbleLink">Bubble mode</a><br/>
 		<a wicket:id="exactLink">Exact mode</a><br/>
-	
-		<div wicket:id="containerInTheMiddle">
-			<div wicket:id="innerContainer"></div>
+		<br/>
+		<br/>
+		
+		<div style="border: 1px solid;padding: 8px; width:40%" wicket:id="containerInTheMiddle">
+			<p style="padding-bottom: 2px">I'm the container in the middle</p>
+			<div style="border: 1px solid;padding: 8px" wicket:id="innerContainer">
+				I'm the inner component.
+			</div>
+		</div>
+		<br/>
+		<br/>
+		
+		<div wicket:id="feedbackPanel">
 		</div>
 	</body>
 </html>

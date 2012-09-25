@@ -1,5 +1,7 @@
 package org.wicketTutorial;
 
+import org.apache.wicket.Session;
+import org.apache.wicket.event.IEvent;
 import org.apache.wicket.protocol.http.WebApplication;
 
 /**
@@ -27,5 +29,10 @@ public class WicketApplication extends WebApplication
 		super.init();
 
 		// add your configuration here
+	}
+	
+	@Override
+	public void onEvent(IEvent<?> event) {
+		Session.get().info("I'm the application and I received an event.");
 	}
 }
