@@ -59,7 +59,7 @@
 		<module>PageVersioning</module>
 		<module>UsernameCustomValidator</module>
 		<module>CustomDatepicker</module>
-    <module>InterComponetsEventsExample</module>
+                <module>InterComponetsEventsExample</module>
   </modules>	
 	<!--url>http://wicket.apache.org/${project.artifactId}</url-->
 	<inceptionYear>2012</inceptionYear>	

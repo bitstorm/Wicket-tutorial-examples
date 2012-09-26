@@ -28,7 +28,7 @@
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
 		<!-- TODO project name  -->
-	<name>quickstart</name>
+	<name>InterComponetsEventsExample</name>
 	<!--
 		<organization>
 			<name>company name</name>
