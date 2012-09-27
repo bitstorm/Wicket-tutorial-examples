@@ -60,6 +60,7 @@
 		<module>UsernameCustomValidator</module>
 		<module>CustomDatepicker</module>
                 <module>InterComponetsEventsExample</module>
+    		<module>CdiInjectionExample</module>
   </modules>	
 	<!--url>http://wicket.apache.org/${project.artifactId}</url-->
 	<inceptionYear>2012</inceptionYear>	
