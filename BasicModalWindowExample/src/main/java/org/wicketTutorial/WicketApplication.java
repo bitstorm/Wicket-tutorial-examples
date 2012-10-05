@@ -14,11 +14,34 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.wicketTutorial.ejbBean;
+package org.wicketTutorial;
 
-import javax.enterprise.context.ApplicationScoped;
+import org.apache.wicket.protocol.http.WebApplication;
 
-@ApplicationScoped
-public class EnterpriseMessage {
-	public String message = "Welcome to the EJB world!";
+/**
+ * Application object for your web application. If you want to run this application without deploying, run the Start class.
+ * 
+ * @see org.wicketTutorial.Start#main(String[])
+ */
+public class WicketApplication extends WebApplication
+{    	
+	/**
+	 * @see org.apache.wicket.Application#getHomePage()
+	 */
+	@Override
+	public Class<HomePage> getHomePage()
+	{
+		return HomePage.class;
+	}
+
+	/**
+	 * @see org.apache.wicket.Application#init()
+	 */
+	@Override
+	public void init()
+	{
+		super.init();
+
+		// add your configuration here
+	}
 }
