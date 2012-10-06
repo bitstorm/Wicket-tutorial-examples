@@ -61,7 +61,8 @@
 		<module>CustomDatepicker</module>
                 <module>InterComponetsEventsExample</module>
     		<module>CdiInjectionExample</module>
-		<module>BasicModalWindowExample</module>    		
+		<module>BasicModalWindowExample</module>
+    		<module>AjaxEventBehaviorExample</module>
   </modules>	
 	<!--url>http://wicket.apache.org/${project.artifactId}</url-->
 	<inceptionYear>2012</inceptionYear>	
