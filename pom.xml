@@ -63,6 +63,7 @@
     		<module>CdiInjectionExample</module>
 		<module>BasicModalWindowExample</module>
     		<module>AjaxEventBehaviorExample</module>
+    <module>CustomAjaxBehaviorExample</module>
   </modules>	
 	<!--url>http://wicket.apache.org/${project.artifactId}</url-->
 	<inceptionYear>2012</inceptionYear>	
