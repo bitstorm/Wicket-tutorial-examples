@@ -16,11 +16,14 @@
  */
 package org.wicketTutorial.behavior;
 
+import org.apache.wicket.Application;
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.attributes.AjaxCallListener;
+import org.apache.wicket.markup.head.HeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.request.resource.PackageResourceReference;
+import org.apache.wicket.request.resource.ResourceReference;
 
 public class DisableComponentListener extends AjaxCallListener {
 	private static PackageResourceReference customScriptReference = 
@@ -56,6 +59,10 @@ public class DisableComponentListener extends AjaxCallListener {
 	
 	@Override
 	public void renderHead(Component component, IHeaderResponse response) {	
+		ResourceReference jqueryReference =
+				Application.get().getJavaScriptLibrarySettings().getJQueryReference();
+		
+		response.render(JavaScriptHeaderItem.forReference(jqueryReference));
 		response.render(JavaScriptHeaderItem.forReference(jqueryUiPositionRef));
 		response.render(JavaScriptHeaderItem.forReference(customScriptReference));
 	}
