@@ -17,15 +17,17 @@
 package org.wicketTutorial.behavior;
 
 import org.apache.wicket.Component;
-import org.apache.wicket.ajax.attributes.IAjaxCallListener;
+import org.apache.wicket.ajax.attributes.AjaxCallListener;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
-import org.apache.wicket.markup.html.IComponentAwareHeaderContributor;
 import org.apache.wicket.request.resource.PackageResourceReference;
 
-public class DisableComponentListener implements IAjaxCallListener, IComponentAwareHeaderContributor {
-	private static PackageResourceReference scriptReference = 
-			new PackageResourceReference(DisableComponentListener.class, "hiderJQueryPosition.js");
+public class DisableComponentListener extends AjaxCallListener {
+	private static PackageResourceReference customScriptReference = 
+			new PackageResourceReference(DisableComponentListener.class, "moveHiderAndIndicator.js");
+	
+	private static PackageResourceReference jqueryUiPositionRef = 
+			new PackageResourceReference(DisableComponentListener.class, "jquery-ui-position.min.js");
 	
 	private static PackageResourceReference indicatorReference = 
 			new PackageResourceReference(DisableComponentListener.class, "ajax-loader.gif");
@@ -53,36 +55,8 @@ public class DisableComponentListener implements IAjaxCallListener, IComponentAw
 	}
 	
 	@Override
-	public void renderHead(Component component, IHeaderResponse response) {		
-		response.render(JavaScriptHeaderItem.forReference(scriptReference));
+	public void renderHead(Component component, IHeaderResponse response) {	
+		response.render(JavaScriptHeaderItem.forReference(jqueryUiPositionRef));
+		response.render(JavaScriptHeaderItem.forReference(customScriptReference));
 	}
-	
-	//Other stub methods from interface IAjaxCallListener
-	@Override
-	public CharSequence getSuccessHandler(Component component) {
-		return "";
-	}
-
-	@Override
-	public CharSequence getFailureHandler(Component component) {
-		return "";
-	}
-	
-	@Override
-	public CharSequence getBeforeSendHandler(Component component) {
-		return "";
-	}
-
-	@Override
-	public CharSequence getAfterHandler(Component component) {
-		return "";
-	}
-
-	@Override
-	public CharSequence getPrecondition(Component component) {		
-		return "";
-	}
-
-	
-
 }

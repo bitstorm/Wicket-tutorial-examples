@@ -37,15 +37,15 @@ DisableComponentListener = {
 		$(hiderId).height($(elementId).outerHeight());	    	 
 	       
 		$(hiderId).position({of: $(elementId),	
-								at: 'center center',
-						     	my: 'center center'	                     	
+								at: 'top left',
+						     	my: 'top left'	                     	
 							  });
 	    
 		
 		$("#" + indicatorId).position({
 			of: $(hiderId),
 	     	at: 'center center',
-	     	my: 'center center',collision: 'fit fit'		
+	     	my: 'center center'		
 		  });
 	},
 
