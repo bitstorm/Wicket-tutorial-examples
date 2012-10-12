@@ -44,14 +44,5 @@ public class WicketApplication extends WebApplication
 	{
 		super.init();
 		getComponentInstantiationListeners().add(new JavaEEComponentInjector(this));		
-	}
-	
-	class  SimpleNamingStrategy implements IJndiNamingStrategy{
-
-		@Override
-		public String calculateName(String ejbName, Class<?> ejbType) {			
-			return ejbName;
-		}
-		
-	}
+	}	
 }
