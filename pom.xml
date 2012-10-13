@@ -63,8 +63,8 @@
     		<module>CdiInjectionExample</module>
 		<module>BasicModalWindowExample</module>
     		<module>AjaxEventBehaviorExample</module>
-    <module>CustomAjaxBehaviorExample</module>
-    <module>SpringInjectionExample</module>
+    		<module>CustomAjaxBehaviorExample</module>
+    		<module>SpringInjectionExample</module>
   </modules>	
 	<!--url>http://wicket.apache.org/${project.artifactId}</url-->
 	<inceptionYear>2012</inceptionYear>	
@@ -161,6 +161,7 @@
 				    <exclude>LICENSE.txt</exclude>
 				    <exclude>**/src/test/resources/**</exclude>
 				    <exclude>**/src/test/data/**</exclude>
+				    <exclude>**/jquery*</exclude>	
 				</excludes>
 			    </configuration>
 			    <executions>
