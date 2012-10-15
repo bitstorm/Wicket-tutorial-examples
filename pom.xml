@@ -65,6 +65,7 @@
     		<module>AjaxEventBehaviorExample</module>
     		<module>CustomAjaxBehaviorExample</module>
     		<module>SpringInjectionExample</module>
+                <module>PageDataViewExample</module>
   </modules>	
 	<!--url>http://wicket.apache.org/${project.artifactId}</url-->
 	<inceptionYear>2012</inceptionYear>	
@@ -161,7 +162,8 @@
 				    <exclude>LICENSE.txt</exclude>
 				    <exclude>**/src/test/resources/**</exclude>
 				    <exclude>**/src/test/data/**</exclude>
-				    <exclude>**/jquery*</exclude>	
+				    <exclude>**/jquery*</exclude>
+				    <exclude>**/*.csv</exclude>		
 				</excludes>
 			    </configuration>
 			    <executions>
