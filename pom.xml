@@ -44,7 +44,7 @@
 		<module>StatelessLoginForm</module>
 		<module>CustomConverter</module>
 		<module>LifeCycleStages</module>
-		<module>MountPages</module>
+		<module>MountedPagesExample</module>
 		<module>StatelessPage</module>
 		<module>CustomFormComponentPanel</module>
 		<module>ListBeansForm</module>

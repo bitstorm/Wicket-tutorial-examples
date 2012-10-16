@@ -33,8 +33,6 @@ public class HomePage extends WebPage {
 			@Override
 			public void onClick() {
 				PageParameters pageParameters = new PageParameters();
-				//pageParameters.add("foo", "foo");
-				//pageParameters.add("bar", "bar");
 				
 				setResponsePage(MountedPage.class, pageParameters);
 			}
