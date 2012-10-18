@@ -16,23 +16,30 @@
  */
 package org.wicketTutorial;
 
-import org.apache.wicket.markup.html.WebPage;
-import org.apache.wicket.markup.html.link.Link;
-import org.apache.wicket.model.IModel;
-import org.apache.wicket.request.mapper.parameter.PageParameters;
+import org.apache.wicket.util.tester.WicketTester;
+import org.junit.Before;
+import org.junit.Test;
 
-public class MountedPage extends WebPage {
+/**
+ * Simple test using the WicketTester
+ */
+public class TestHomePage
+{
+	private WicketTester tester;
 
-	@Override
-	protected void onInitialize() {
-		super.onInitialize();
-		
-		add(new Link("goHome"){
+	@Before
+	public void setUp()
+	{
+		tester = new WicketTester(new WicketApplication());
+	}
 
-			@Override
-			public void onClick() {
-				setResponsePage(getApplication().getHomePage());
-			}			
-		});
+	@Test
+	public void homepageRendersSuccessfully()
+	{
+		//start and render the test page
+		tester.startPage(HomePage.class);
+
+		//assert rendered page class
+		tester.assertRenderedPage(HomePage.class);
 	}
 }

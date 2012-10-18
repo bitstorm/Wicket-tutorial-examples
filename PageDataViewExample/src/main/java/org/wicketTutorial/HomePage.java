@@ -42,7 +42,7 @@ public class HomePage extends WebPage {
     	ListDataProvider<String[]> listDataProvider = 
     							   new ListDataProvider<String[]>(countries);
     	
-    	DataView<String[]> dataView = new DataView<String[]>("row", listDataProvider) {
+    	DataView<String[]> dataView = new DataView<String[]>("rows", listDataProvider) {
 			
 			@Override
 			protected void populateItem(Item<String[]> item) {

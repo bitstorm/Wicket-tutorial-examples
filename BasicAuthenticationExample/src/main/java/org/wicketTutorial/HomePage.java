@@ -16,23 +16,24 @@
  */
 package org.wicketTutorial;
 
-import org.apache.wicket.markup.html.WebPage;
-import org.apache.wicket.markup.html.link.Link;
-import org.apache.wicket.model.IModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
+import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.link.Link;
+import org.apache.wicket.markup.html.WebPage;
 
-public class MountedPage extends WebPage {
+public class HomePage extends WebPage {
+	private static final long serialVersionUID = 1L;
 
-	@Override
-	protected void onInitialize() {
-		super.onInitialize();
-		
-		add(new Link("goHome"){
+    public HomePage(final PageParameters parameters) {
+    	super(parameters);
+
+    	add(new Link("goToAuthenticatedPage") {
 
 			@Override
 			public void onClick() {
-				setResponsePage(getApplication().getHomePage());
-			}			
+				setResponsePage(AuthenticatedPage.class);
+			}
 		});
-	}
+
+    }
 }

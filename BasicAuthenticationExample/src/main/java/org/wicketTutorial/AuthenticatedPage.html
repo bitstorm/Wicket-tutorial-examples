@@ -16,33 +16,15 @@
      limitations under the License.
 
 -->
-<!DOCTYPE html>
-<html xmlns:wicket="http://wicket.apache.org">
-	<head>
-		<meta charset="utf-8" />
-		<title></title>
-		<style type="text/css">
-			table,th,td
-			{
-				border:1px solid black;
-				padding: 3px;
-			}
-			table
-			{
-				border-collapse:collapse;
-			}		
-		</style>
-	</head>
-	<body>
-		<h2>Countries of the world</h2>
-		<div wicket:id="pagingNavigator"></div><br/>
-		<table>
-			<tr>
-				<th>ISO 3166-1</th><th>Name</th><th>Long name</th><th>Capital</th><th>Population</th>
-			</tr>
-			<tr wicket:id="rows">
-				<td wicket:id="dataRow"></td>
-			</tr>
-		</table>
-	</body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>Wellcome! This page is reserved to authenticated users.</h2>
+	<a wicket:id="goToHomePage">Home page</a><br/>
+	<a wicket:id="logOut">Log out</a>
+</body>
 </html>

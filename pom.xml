@@ -67,6 +67,7 @@
     		<module>SpringInjectionExample</module>
                 <module>PageDataViewExample</module>
     		<module>PageParametersEncoderExample</module>
+    <module>BasicAuthenticationExample</module>
   </modules>	
 	<!--url>http://wicket.apache.org/${project.artifactId}</url-->
 	<inceptionYear>2012</inceptionYear>	

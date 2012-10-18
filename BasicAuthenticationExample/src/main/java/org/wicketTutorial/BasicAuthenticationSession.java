@@ -16,23 +16,24 @@
  */
 package org.wicketTutorial;
 
-import org.apache.wicket.markup.html.WebPage;
-import org.apache.wicket.markup.html.link.Link;
-import org.apache.wicket.model.IModel;
-import org.apache.wicket.request.mapper.parameter.PageParameters;
+import org.apache.wicket.authroles.authentication.AuthenticatedWebSession;
+import org.apache.wicket.authroles.authorization.strategies.role.Roles;
+import org.apache.wicket.request.Request;
 
-public class MountedPage extends WebPage {
+public class BasicAuthenticationSession extends AuthenticatedWebSession {
+
+	public BasicAuthenticationSession(Request request) {
+		super(request);		
+	}
 
 	@Override
-	protected void onInitialize() {
-		super.onInitialize();
-		
-		add(new Link("goHome"){
-
-			@Override
-			public void onClick() {
-				setResponsePage(getApplication().getHomePage());
-			}			
-		});
+	public boolean authenticate(String username, String password) {
+		return username.equals(password) && username.equals("wicketer");
 	}
+
+	@Override
+	public Roles getRoles() {
+		return null;
+	}
+
 }
