@@ -37,15 +37,6 @@ public class WicketApplication extends AuthenticatedWebApplication
 		return HomePage.class;
 	}
 
-	/**
-	 * @see org.apache.wicket.Application#init()
-	 */
-	@Override
-	public void init()
-	{
-		super.init();
-	}
-
 	@Override
 	protected Class<? extends AbstractAuthenticatedWebSession> getWebSessionClass() {		
 		return BasicAuthenticationSession.class;
