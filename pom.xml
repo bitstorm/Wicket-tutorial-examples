@@ -69,6 +69,7 @@
     		<module>PageParametersEncoderExample</module>
     <module>BasicAuthenticationExample</module>
     <module>MetaDataRolesStrategyExample</module>
+    <module>AnnotationsRolesStrategyExample</module>
   </modules>	
 	<!--url>http://wicket.apache.org/${project.artifactId}</url-->
 	<inceptionYear>2012</inceptionYear>	

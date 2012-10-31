@@ -14,45 +14,23 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.wicketTutorial;
+package org.wicketTutorial.admin;
 
 import org.apache.wicket.authroles.authentication.AuthenticatedWebSession;
-import org.apache.wicket.authroles.authorization.strategies.role.Roles;
-import org.apache.wicket.request.Request;
-
-public class BasicAuthenticationSession extends AuthenticatedWebSession {
-
-	private String username;
-
-	public BasicAuthenticationSession(Request request) {
-		super(request);		
-	}
-
+import org.apache.wicket.authroles.authorization.strategies.role.annotations.AuthorizeInstantiation;
+import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.link.Link;
+@AuthorizeInstantiation("ADMIN")
+public class AdminOnlyPage extends WebPage {
 	@Override
-	public boolean authenticate(String username, String password) {
-		boolean authResult = username.equals(password);
-		
-		if(authResult)
-			this.username = username;
-		
-		return authResult;
-	}
+	protected void onInitialize() {
+		super.onInitialize();
+		add(new Link("goToHomePage") {
 
-	public Roles getRoles() {
-		Roles resultRoles = new Roles();
-		
-		if(isSignedIn())
-			resultRoles.add("SIGNED_IN");
-		
-		if(username!= null && username.equals("superuser"))
-			resultRoles.add(Roles.ADMIN);
-		
-		return resultRoles;
-	}
-	
-	@Override
-	public void signOut() {
-		super.signOut();
-		username = null;
+			@Override
+			public void onClick() {
+				setResponsePage(getApplication().getHomePage());
+			}
+		});
 	}
 }
