@@ -31,7 +31,7 @@ import com.sun.syndication.feed.synd.SyndFeedImpl;
 import com.sun.syndication.io.FeedException;
 import com.sun.syndication.io.SyndFeedOutput;
 
-public class RSSReaderResource extends AbstractResource {
+public class RSSProducerResource extends AbstractResource {
 
 	@Override
 	protected ResourceResponse newResourceResponse(Attributes attributes) {

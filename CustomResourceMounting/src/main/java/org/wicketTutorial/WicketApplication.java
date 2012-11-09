@@ -44,7 +44,7 @@ public class WicketApplication extends WebApplication
 	{
 		super.init();
 		ResourceReference resourceReference = new ResourceReference("rssProducer"){
-			RSSReaderResource deviceMetaResource = new RSSReaderResource();
+			RSSProducerResource deviceMetaResource = new RSSProducerResource();
 			@Override
 			public IResource getResource() {
 				return deviceMetaResource;

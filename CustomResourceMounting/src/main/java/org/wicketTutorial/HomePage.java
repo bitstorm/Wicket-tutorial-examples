@@ -31,7 +31,7 @@ public class HomePage extends WebPage {
     public HomePage(final PageParameters parameters) {
 		super(parameters);
 	
-		add(new ResourceLink("rssLink", new RSSReaderResource()));
+		add(new ResourceLink("rssLink", new RSSProducerResource()));
 		add(new ResourceLink("globalRssLink", new SharedResourceReference("globalRSSProducer")));
     }
         
