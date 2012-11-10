@@ -16,30 +16,33 @@
  */
 package org.wicketTutorial;
 
-import org.apache.wicket.util.tester.WicketTester;
-import org.junit.Before;
-import org.junit.Test;
+import org.apache.wicket.core.util.file.WebApplicationPath;
+import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.protocol.http.WebApplication;
 
 /**
- * Simple test using the WicketTester
+ * Application object for your web application. If you want to run this application without deploying, run the Start class.
+ * 
+ * @see org.wicketTutorial.Start#main(String[])
  */
-public class TestHomePage
-{
-	private WicketTester tester;
-
-	@Before
-	public void setUp()
+public class WicketApplication extends WebApplication
+{    	
+	/**
+	 * @see org.apache.wicket.Application#getHomePage()
+	 */
+	@Override
+	public Class<? extends WebPage> getHomePage()
 	{
-		tester = new WicketTester(new WicketApplication());
+		return HomePage.class;
 	}
 
-	@Test
-	public void homepageRendersSuccessfully()
+	/**
+	 * @see org.apache.wicket.Application#init()
+	 */
+	@Override
+	public void init()
 	{
-		//start and render the test page
-		tester.startPage(HomePage.class);
-
-		//assert rendered page class
-		tester.assertRenderedPage(HomePage.class);
+		getResourceSettings().getResourceFinders().add(
+				new WebApplicationPath(getServletContext(), "markupFolder"));
 	}
 }
