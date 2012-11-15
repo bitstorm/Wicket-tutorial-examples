@@ -67,11 +67,12 @@
     		<module>SpringInjectionExample</module>
                 <module>PageDataViewExample</module>
     		<module>PageParametersEncoderExample</module>
-    <module>BasicAuthenticationExample</module>
-    <module>MetaDataRolesStrategyExample</module>
-    <module>AnnotationsRolesStrategyExample</module>
-    <module>CustomFolder4MarkupExample</module>
-    <module>HttpsProtocolExample</module>
+	    	<module>BasicAuthenticationExample</module>
+	    	<module>MetaDataRolesStrategyExample</module>
+	    	<module>AnnotationsRolesStrategyExample</module>
+	    	<module>CustomFolder4MarkupExample</module>
+	    	<module>HttpsProtocolExample</module>   
+	    	<module>CheckBoxAjaxTree</module>
   </modules>	
 	<!--url>http://wicket.apache.org/${project.artifactId}</url-->
 	<inceptionYear>2012</inceptionYear>	
