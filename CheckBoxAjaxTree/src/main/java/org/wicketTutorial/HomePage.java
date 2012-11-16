@@ -7,6 +7,7 @@ import org.apache.wicket.Component;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.extensions.markup.html.repeater.tree.NestedTree;
 import org.apache.wicket.extensions.markup.html.repeater.tree.content.CheckedFolder;
+import org.apache.wicket.extensions.markup.html.repeater.tree.theme.WindowsTheme;
 import org.apache.wicket.extensions.markup.html.repeater.util.TreeModelProvider;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.WebPage;
@@ -20,37 +21,52 @@ public class HomePage extends WebPage {
 		super(parameters);
 		DefaultMutableTreeNode root = new DefaultMutableTreeNode("Cities of Europe");
 		
-		addNodes(addNode(root, "Italy"), "Venice", "Milan", "Florence");
+		addNodes(addNode(root, "Italy"), "Rome", "Venice", "Milan", "Florence");
+		addNodes(addNode(root, "Germany"), "Stuttgart", "Munich", "Berlin", "Düsseldorf", "Dresden");
+		addNodes(addNode(root, "France"), "Paris ", "Toulouse", "Strasbourg", "Bordeaux", "Lyon");
 		
 		DefaultTreeModel treeModel = new DefaultTreeModel(root);
-		TreeModelProvider<String> modelProvider = new TreeModelProvider<String>(treeModel) {
+		TreeModelProvider<DefaultMutableTreeNode> modelProvider = new TreeModelProvider<DefaultMutableTreeNode>(treeModel) {
 			
 			@Override
-			public IModel<String> model(String object) {
+			public IModel<DefaultMutableTreeNode> model(DefaultMutableTreeNode object) {
 				return Model.of(object);
 			}
 		};
 		
-		NestedTree<String> tree = new NestedTree<String>("tree", modelProvider)
+		NestedTree<DefaultMutableTreeNode> tree = new NestedTree<DefaultMutableTreeNode>("tree", modelProvider)
 	    {
 	        private static final long serialVersionUID = 1L;
 	        
 	        @Override
-	        protected Component newContentComponent(String id, IModel<String> model)
+	        protected Component newContentComponent(String id, IModel<DefaultMutableTreeNode> model)
 	        {
-	            return new CheckedFolder<String>(id, this, model);
+	            return new CheckedFolder<DefaultMutableTreeNode>(id, this, model);
 	        }
 	    };
+	    //select Windows theme
+	    tree.add(new WindowsTheme());
 	    
 	    add(tree);
     }
     
+    /**
+     * Creates a child node for every string in input 
+     * @param parent
+     * @param childrenNode
+     */
     public static void addNodes(DefaultMutableTreeNode parent, String... childrenNode){
     	for (int i = 0; i < childrenNode.length; i++) {
 			addNode(parent, childrenNode[i]);
 		}
     }
     
+    /**
+     * Creates a child node for the string in input 
+     * @param parent
+     * @param childNode
+     * @return
+     */
     public static DefaultMutableTreeNode addNode(DefaultMutableTreeNode parent, String childNode){
     	DefaultMutableTreeNode newNode = new DefaultMutableTreeNode(childNode);    	
     	parent.add(newNode);
