@@ -22,7 +22,7 @@ public class HomePage extends WebPage {
 		DefaultMutableTreeNode root = new DefaultMutableTreeNode("Cities of Europe");
 		
 		addNodes(addNode(root, "Italy"), "Rome", "Venice", "Milan", "Florence");
-		addNodes(addNode(root, "Germany"), "Stuttgart", "Munich", "Berlin", "Düsseldorf", "Dresden");
+		addNodes(addNode(root, "Germany"), "Stuttgart", "Munich", "Berlin", "Dusseldorf", "Dresden");
 		addNodes(addNode(root, "France"), "Paris ", "Toulouse", "Strasbourg", "Bordeaux", "Lyon");
 		
 		DefaultTreeModel treeModel = new DefaultTreeModel(root);
