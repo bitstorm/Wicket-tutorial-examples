@@ -1,5 +1,7 @@
 package org.wicketTutorial;
 
+import java.util.HashSet;
+
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
@@ -10,6 +12,7 @@ import org.apache.wicket.extensions.markup.html.repeater.tree.theme.WindowsTheme
 import org.apache.wicket.extensions.markup.html.repeater.util.TreeModelProvider;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
+import org.apache.wicket.model.util.SetModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 public class AdvancedCheckedTreePage extends HomePage {
@@ -34,12 +37,13 @@ public class AdvancedCheckedTreePage extends HomePage {
 		
 		NestedTree<DefaultMutableTreeNode> tree = new NestedTree<DefaultMutableTreeNode>("tree", modelProvider)
 	    {
-	        private static final long serialVersionUID = 1L;
+	        SetModel<DefaultMutableTreeNode> checkedNodes = new SetModel<DefaultMutableTreeNode>(
+	        		new HashSet<DefaultMutableTreeNode>());
 	        
 	        @Override
 	        protected Component newContentComponent(String id, IModel<DefaultMutableTreeNode> model)
 	        {
-	            return new AutocheckedFolder<DefaultMutableTreeNode>(id, this, model);
+	            return new AutocheckedFolder<DefaultMutableTreeNode>(id, this, model, checkedNodes);
 	        }
 	    };
 	    //select Windows theme
