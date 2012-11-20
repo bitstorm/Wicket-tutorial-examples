@@ -24,8 +24,11 @@ import org.apache.wicket.extensions.markup.html.repeater.tree.ITreeProvider;
 import org.apache.wicket.extensions.markup.html.repeater.tree.content.CheckedFolder;
 import org.apache.wicket.extensions.markup.html.repeater.tree.content.Folder;
 import org.apache.wicket.extensions.markup.html.repeater.tree.nested.BranchItem;
+import org.apache.wicket.markup.head.IHeaderResponse;
+import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.PropertyModel;
+import org.apache.wicket.request.resource.PackageResourceReference;
 
 
 public class AutocheckedFolder<T> extends CheckedFolder<T> {
@@ -56,13 +59,21 @@ public class AutocheckedFolder<T> extends CheckedFolder<T> {
 		addRemoveSubNodes(node, nodeChecked);				
 		addRemoveAncestorNodes(node, nodeChecked);
 		
-		target.appendJavaScript(";$('#" + getMarkupId() + 
-				"').closest('.tree-node').siblings('.tree-subtree')" +
-				".find('input[type=checkbox]').prop('checked', " + nodeChecked + ");");
+		target.appendJavaScript(";CheckAncestorsAndChildren.checkChildren('" + getMarkupId() + "'," 
+				+ nodeChecked + ");");
+		
+		target.appendJavaScript(";CheckAncestorsAndChildren.checkAncestors('" + getMarkupId() + "'," 
+				+ nodeChecked + ");");
 		
 		for (T curnode : checkedNodes.getObject()) {
 			System.out.println(curnode);
 		}
+	}
+	
+	@Override
+	public void renderHead(IHeaderResponse response) {
+		PackageResourceReference scriptFile = new PackageResourceReference(this.getClass(), "autocheckedFolder.js");
+		response.render(JavaScriptHeaderItem.forReference(scriptFile));
 	}
 	
 	private void addRemoveSubNodes(T node, Boolean nodeStatus) {
