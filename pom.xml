@@ -73,7 +73,7 @@
 	    	<module>CustomFolder4MarkupExample</module>
 	    	<module>HttpsProtocolExample</module>   
 	    	<module>CheckBoxAjaxTree</module>
-    <module>MarkupInheritanceExample</module>
+    		<module>MarkupInheritanceExample</module>
   </modules>	
 	<!--url>http://wicket.apache.org/${project.artifactId}</url-->
 	<inceptionYear>2012</inceptionYear>	

@@ -1,4 +1,4 @@
-/*
+/**
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
  *  this work for additional information regarding copyright ownership.
@@ -14,25 +14,15 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-CheckAncestorsAndChildren = {
-	checkChildren : function(elementId, nodeChecked){
-		$('#' + elementId).closest('.tree-node').siblings('.tree-subtree')
-				.find('input[type=checkbox]').prop('checked', nodeChecked);
-	},
-	checkAncestors : function(elementId, nodeChecked){
-		$('#' + elementId).parents('.tree-branch').each( function(){
-			var curCheck = $(this).children('.tree-node').find('input[type=checkbox]');
-			
-			if(nodeChecked){
-				curCheck.prop('checked', nodeChecked)
-				return;
-			}
-			
-			var checkedChildren = 
-				$(this).children('.tree-subtree').find(':checked').size();
-			
-			if(checkedChildren == 0)
-				curCheck.prop('checked', nodeChecked)
-		});
+package helloWorld.layoutTenda;
+
+import org.apache.wicket.markup.html.basic.Label;
+
+public class ChildPage extends JugTemplate {
+	public ChildPage(){
+		super();
+		
+		addOrReplace(new Label("contentComponent", 
+				"L'ereditariatà delle pagine Wicket e sia a livello di codice che di html"));
 	}
-};
+}
