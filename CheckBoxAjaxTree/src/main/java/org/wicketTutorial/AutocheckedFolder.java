@@ -65,9 +65,7 @@ public class AutocheckedFolder<T> extends CheckedFolder<T> {
 		target.appendJavaScript(";CheckAncestorsAndChildren.checkAncestors('" + getMarkupId() + "'," 
 				+ nodeChecked + ");");
 		
-		for (T curnode : checkedNodes.getObject()) {
-			System.out.println(curnode);
-		}
+	
 	}
 	
 	@Override
