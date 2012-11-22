@@ -14,24 +14,15 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package helloWorld.layoutTenda;
+package org.wicketTutorial;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.apache.wicket.markup.html.basic.Label;
+import org.wicketTutorial.layoutTenda.JugTemplate ;
 
-import org.apache.wicket.markup.html.list.ListItem;
-import org.apache.wicket.markup.html.list.PageableListView;
-
-import helloWorld.Person;
-import helloWorld.PersonsManager;
-
-public class PersonsPage extends JugTemplate {
-	private List<Person> personsArray = new ArrayList<Person>();
-	
-	public PersonsPage() {
+public class LoginPage extends JugTemplate {
+	public LoginPage(){
 		super();
-		
-		addOrReplace(new PersonsManager("contentComponent", personsArray));				
+		setVersioned(false);
+		addOrReplace(new LoginPanel("contentComponent"));
 	}
-	
 }
