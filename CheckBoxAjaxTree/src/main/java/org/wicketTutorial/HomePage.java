@@ -38,9 +38,9 @@ public class HomePage extends WebPage {
 		super(parameters);
 		DefaultMutableTreeNode root = new DefaultMutableTreeNode("Cities of Europe");
 		
-		addNodes(addNode(root, "Italy"), "Rome", "Venice", "Milan", "Florence");
-		addNodes(addNode(root, "Germany"), "Stuttgart", "Munich", "Berlin", "Dusseldorf", "Dresden");
-		addNodes(addNode(root, "France"), "Paris ", "Toulouse", "Strasbourg", "Bordeaux", "Lyon");
+		addNodes(addNodes(root, "Italy"), "Rome", "Venice", "Milan", "Florence");
+		addNodes(addNodes(root, "Germany"), "Stuttgart", "Munich", "Berlin", "Dusseldorf", "Dresden");
+		addNodes(addNodes(root, "France"), "Paris ", "Toulouse", "Strasbourg", "Bordeaux", "Lyon");
 		
 		DefaultTreeModel treeModel = new DefaultTreeModel(root);
 		TreeModelProvider<DefaultMutableTreeNode> modelProvider = new TreeModelProvider<DefaultMutableTreeNode>(treeModel) {
@@ -75,23 +75,15 @@ public class HomePage extends WebPage {
      * Creates a child node for every string in input 
      * @param parent
      * @param childrenNode
+     * @return the last child node added to parent node
      */
-    public static void addNodes(DefaultMutableTreeNode parent, String... childrenNode){
-    	for (int i = 0; i < childrenNode.length; i++) {
-			addNode(parent, childrenNode[i]);
-		}
-    }
-    
-    /**
-     * Creates a child node for the string in input 
-     * @param parent
-     * @param childNode
-     * @return
-     */
-    public static DefaultMutableTreeNode addNode(DefaultMutableTreeNode parent, String childNode){
-    	DefaultMutableTreeNode newNode = new DefaultMutableTreeNode(childNode);    	
-    	parent.add(newNode);
+    public static DefaultMutableTreeNode addNodes(DefaultMutableTreeNode parent, String... childrenNode){
+    	DefaultMutableTreeNode newNode = null;
     	
+    	for (int i = 0; i < childrenNode.length; i++) {
+    		newNode = new DefaultMutableTreeNode(childrenNode[i]);    	
+        	parent.add(newNode);    	
+		}
     	return newNode;
-    }
+    }       
 }
