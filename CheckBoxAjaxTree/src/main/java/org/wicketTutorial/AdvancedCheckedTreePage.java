@@ -35,23 +35,9 @@ public class AdvancedCheckedTreePage extends HomePage {
 
 	public AdvancedCheckedTreePage(PageParameters parameters) {
 		super(parameters);		
+		NestedTree<DefaultMutableTreeNode> tree = getTree();
 		
-		DefaultMutableTreeNode root = new DefaultMutableTreeNode("Cities of Europe");
-		
-		addNodes(addNode(root, "Italy"), "Rome", "Venice", "Milan", "Florence");
-		addNodes(addNode(root, "Germany"), "Stuttgart", "Munich", "Berlin", "Dusseldorf", "Dresden");
-		addNodes(addNode(root, "France"), "Paris ", "Toulouse", "Strasbourg", "Bordeaux", "Lyon");
-		
-		DefaultTreeModel treeModel = new DefaultTreeModel(root);
-		TreeModelProvider<DefaultMutableTreeNode> modelProvider = new TreeModelProvider<DefaultMutableTreeNode>(treeModel) {
-			
-			@Override
-			public IModel<DefaultMutableTreeNode> model(DefaultMutableTreeNode object) {
-				return Model.of(object);
-			}
-		};
-		
-		NestedTree<DefaultMutableTreeNode> tree = new NestedTree<DefaultMutableTreeNode>("tree", modelProvider)
+		tree = new NestedTree<DefaultMutableTreeNode>("tree", tree.getProvider())
 	    {
 	        SetModel<DefaultMutableTreeNode> checkedNodes = new SetModel<DefaultMutableTreeNode>(
 	        		new HashSet<DefaultMutableTreeNode>());

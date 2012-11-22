@@ -32,8 +32,9 @@ import org.apache.wicket.model.Model;
 
 public class HomePage extends WebPage {
 	private static final long serialVersionUID = 1L;
+	private NestedTree<DefaultMutableTreeNode> tree;	
 
-    public HomePage(final PageParameters parameters) {
+	public HomePage(final PageParameters parameters) {
 		super(parameters);
 		DefaultMutableTreeNode root = new DefaultMutableTreeNode("Cities of Europe");
 		
@@ -50,7 +51,7 @@ public class HomePage extends WebPage {
 			}
 		};
 		
-		NestedTree<DefaultMutableTreeNode> tree = new NestedTree<DefaultMutableTreeNode>("tree", modelProvider)
+		tree = new NestedTree<DefaultMutableTreeNode>("tree", modelProvider)
 	    {
 	        private static final long serialVersionUID = 1L;
 	        
@@ -64,7 +65,11 @@ public class HomePage extends WebPage {
 	    tree.add(new WindowsTheme());
 	    
 	    add(tree);
-    }
+    }	
+
+    protected NestedTree<DefaultMutableTreeNode> getTree() {
+		return tree;
+	}
     
     /**
      * Creates a child node for every string in input 
