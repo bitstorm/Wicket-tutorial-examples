@@ -24,6 +24,7 @@ import org.apache.wicket.extensions.markup.html.repeater.tree.ITreeProvider;
 import org.apache.wicket.extensions.markup.html.repeater.tree.content.CheckedFolder;
 import org.apache.wicket.extensions.markup.html.repeater.tree.content.Folder;
 import org.apache.wicket.extensions.markup.html.repeater.tree.nested.BranchItem;
+import org.apache.wicket.extensions.model.AbstractCheckBoxModel;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.model.IModel;
@@ -34,8 +35,8 @@ import org.apache.wicket.request.resource.PackageResourceReference;
 public class AutocheckedFolder<T> extends CheckedFolder<T> {
 
 	private ITreeProvider<T> treeProvider;
-	private Boolean nodeChecked = false;
 	private IModel<Set<T>> checkedNodes;
+	private IModel<Boolean> checkboxModel;
 	
 	public AutocheckedFolder(String id, AbstractTree<T> tree, 
 							 IModel<T> model, IModel<Set<T>> checkedNodes) {
@@ -48,13 +49,15 @@ public class AutocheckedFolder<T> extends CheckedFolder<T> {
 	
 	@Override
 	protected IModel<Boolean> newCheckBoxModel(IModel<T> model) {
-		return new CheckModel(model.getObject());
+		checkboxModel =  new CheckModel();
+		return checkboxModel;
 	}
 	
 	@Override
 	protected void onUpdate(AjaxRequestTarget target) {
 		super.onUpdate(target);
 		T node = getModelObject();
+		boolean nodeChecked = checkboxModel.getObject();
 		
 		addRemoveSubNodes(node, nodeChecked);				
 		addRemoveAncestorNodes(node, nodeChecked);
@@ -124,26 +127,21 @@ public class AutocheckedFolder<T> extends CheckedFolder<T> {
 		return false;
 	}
 
-	class CheckModel implements IModel<Boolean>{		
-		private T node;
-
-		public CheckModel(T node){
-			this.node = node;
-		}
-		
+	class CheckModel extends AbstractCheckBoxModel{
 		@Override
-		public void detach() {			
+		public boolean isSelected() {
+			return checkedNodes.getObject()
+					.contains(getModelObject());
 		}
 
 		@Override
-		public Boolean getObject() {
-			return checkedNodes.getObject().contains(node);
+		public void select() {
+			checkedNodes.getObject().add(getModelObject());
 		}
 
 		@Override
-		public void setObject(Boolean value) {						
-			nodeChecked = value;
-		}
-		
+		public void unselect() {
+			checkedNodes.getObject().remove(getModelObject());
+		}				
 	}
 }
