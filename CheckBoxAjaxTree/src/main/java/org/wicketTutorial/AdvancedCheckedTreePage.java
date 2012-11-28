@@ -17,17 +17,19 @@
 package org.wicketTutorial;
 
 import java.util.HashSet;
+import java.util.Set;
 
 import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.DefaultTreeModel;
 
 import org.apache.wicket.Component;
+import org.apache.wicket.ajax.AjaxEventBehavior;
+import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.extensions.markup.html.repeater.tree.NestedTree;
-import org.apache.wicket.extensions.markup.html.repeater.tree.content.CheckedFolder;
 import org.apache.wicket.extensions.markup.html.repeater.tree.theme.WindowsTheme;
-import org.apache.wicket.extensions.markup.html.repeater.util.TreeModelProvider;
+import org.apache.wicket.markup.html.WebMarkupContainer;
+import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.repeater.RepeatingView;
 import org.apache.wicket.model.IModel;
-import org.apache.wicket.model.Model;
 import org.apache.wicket.model.util.SetModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
@@ -35,22 +37,43 @@ public class AdvancedCheckedTreePage extends HomePage {
 
 	public AdvancedCheckedTreePage(PageParameters parameters) {
 		super(parameters);		
+		
 		NestedTree<DefaultMutableTreeNode> tree = getTree();
+		RepeatingView selectedNodes = new RepeatingView("nodes");
+		final WebMarkupContainer markupContainer = new WebMarkupContainer("checkedNodes");
+		final Set<DefaultMutableTreeNode> checkedNodes = new HashSet<DefaultMutableTreeNode>();
 		
 		tree = new NestedTree<DefaultMutableTreeNode>("tree", tree.getProvider())
 	    {
-	        SetModel<DefaultMutableTreeNode> checkedNodes = new SetModel<DefaultMutableTreeNode>(
-	        		new HashSet<DefaultMutableTreeNode>());
+	        SetModel<DefaultMutableTreeNode> checkedNodesModel = new SetModel<DefaultMutableTreeNode>(
+	        		checkedNodes);
 	        
 	        @Override
 	        protected Component newContentComponent(String id, IModel<DefaultMutableTreeNode> model)
 	        {
-	            return new AutocheckedFolder<DefaultMutableTreeNode>(id, this, model, checkedNodes);
+	            return new AutocheckedFolder<DefaultMutableTreeNode>(id, this, model, checkedNodesModel);
 	        }
 	    };
+	    
+	    tree.add(new AjaxEventBehavior("click") {
+			
+			@Override
+			protected void onEvent(AjaxRequestTarget target) {
+				RepeatingView selectedNodes = new RepeatingView("nodes");
+				
+				for(DefaultMutableTreeNode node :checkedNodes){
+					selectedNodes.add(new Label(selectedNodes.newChildId(), node.toString()));
+				}
+				
+				markupContainer.replace(selectedNodes);
+				target.add(markupContainer);
+			}
+		});
 	    //select Windows theme
 	    tree.add(new WindowsTheme());
 	    
+	    markupContainer.add(selectedNodes);
+	    add(markupContainer.setOutputMarkupId(true));	    
 	    addOrReplace(tree);
 	}
 	
