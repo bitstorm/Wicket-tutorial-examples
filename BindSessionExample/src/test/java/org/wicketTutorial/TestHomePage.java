@@ -40,6 +40,6 @@ public class TestHomePage
 		tester.startPage(HomePage.class);
 
 		//assert rendered page class
-		tester.assertRenderedPage(HomePage.class);
+		tester.assertRenderedPage(DisplaySessionParameter.class);
 	}
 }

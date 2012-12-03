@@ -57,5 +57,7 @@ public class HomePage extends WebPage {
 		form.add(fileUploadField);
 		
 		add(form);
+		add(new Label("tempFolder", "Upload a file in your OS temp directory: " 
+					 + System.getProperty("java.io.tmpdir")));
     }
 }
