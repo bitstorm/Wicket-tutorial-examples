@@ -16,6 +16,10 @@
  */
 package org.wicketTutorial;
 
+import java.io.File;
+import java.io.InputStream;
+import java.net.URL;
+
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,16 +34,19 @@ public class TestHomePage
 	@Before
 	public void setUp()
 	{
-		tester = new WicketTester(new WicketApplication());
+		File curDirectory = new File(System.getProperty("user.dir"));
+		File webContextDir = new File(curDirectory, "src/main/webapp");
+		
+		tester = new WicketTester(new WicketApplication(), webContextDir.getAbsolutePath());
 	}
 
 	@Test
 	public void homepageRendersSuccessfully()
 	{
 		//start and render the test page
-		//tester.startPage(HomePage.class);
+		tester.startPage(HomePage.class);
 
 		//assert rendered page class
-		//tester.assertRenderedPage(HomePage.class);
+		tester.assertRenderedPage(HomePage.class);
 	}
 }
