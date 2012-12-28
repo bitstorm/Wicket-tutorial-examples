@@ -21,18 +21,44 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.PasswordTextField;
 import org.apache.wicket.markup.html.form.StatelessForm;
 import org.apache.wicket.markup.html.form.TextField;
+import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.model.Model;
 
 public class HomePage extends WebPage {
 	private static final long serialVersionUID = 1L;
-
+	private Label sessionType;
+	private String password;
+	private String username;
+	
     public HomePage(final PageParameters parameters) {
-		StatelessForm form = new StatelessForm("form");
+		StatelessForm form = new StatelessForm("form"){
+			@Override
+			protected void onSubmit() {
+				if("user".equals(username) && username.equals(password))
+					info("Username and password are correct!");
+				else
+					error("Wrong username or password");
+			}
+		};
 		
-		form.add(new PasswordTextField("password", Model.of("")));
-		form.add(new TextField("username", Model.of("")));		
+		form.add(new PasswordTextField("password"));
+		form.add(new TextField("username"));		
 		
-		add(form);
+		add(form.setDefaultModel(new CompoundPropertyModel(this)));
+		
+		add(sessionType = new Label("sessionType", Model.of("")));
+		add(new FeedbackPanel("feedbackPanel"));
+    }
+    
+    @Override
+    protected void onBeforeRender() {
+    	super.onBeforeRender();
+    	
+    	if(getSession().isTemporary())
+    		sessionType.setDefaultModelObject("temporary");
+    	else
+    		sessionType.setDefaultModelObject("permanent");
     }
 }
