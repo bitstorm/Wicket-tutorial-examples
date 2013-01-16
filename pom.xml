@@ -64,7 +64,7 @@
     		<module>CdiInjectionExample</module>
 		<module>BasicModalWindowExample</module>
     		<module>AjaxEventBehaviorExample</module>
-    		<module>CustomAjaxBehaviorExample</module>
+    		<module>CustomAjaxListenerExample</module>
     		<module>SpringInjectionExample</module>
                 <module>PageDataViewExample</module>
     		<module>PageParametersEncoderExample</module>
