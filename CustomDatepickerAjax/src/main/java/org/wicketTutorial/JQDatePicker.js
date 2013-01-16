@@ -1,4 +1,4 @@
-/**
+/*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
  *  this work for additional information regarding copyright ownership.
@@ -14,25 +14,18 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.wicketTutorial;
-
-import java.util.Date;
-import java.util.Locale;
-
-import org.apache.wicket.Session;
-import org.apache.wicket.request.mapper.parameter.PageParameters;
-import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.form.Form;
-import org.apache.wicket.markup.html.WebPage;
-import org.apache.wicket.model.Model;
-
-public class HomePage extends WebPage {
-	private static final long serialVersionUID = 1L;
-
-    public HomePage(final PageParameters parameters) {
-	super(parameters);
-	Form form = new Form("form");
-	form.add(new JQueryDateField("datepicker", new Model<Date>()));	
-	add(form);
-    }
-}
+function initCalendar(localizedArray){
+	 localizedArray['changeMonth']= true;
+	 localizedArray['changeYear']= true;
+	 localizedArray['showOn'] = 'button';
+	 localizedArray['buttonImageOnly'] = true;
+};
+	
+function initJQDatapicker(inputId, countryIsoCode, dateFormat,  calendarIcon) {
+	var localizedArray = $.datepicker.regional[countryIsoCode];
+	localizedArray['buttonImage'] = calendarIcon;
+	localizedArray['dateFormat'] = dateFormat;
+	
+	initCalendar(localizedArray);
+	$("#" + inputId).datepicker(localizedArray);	
+};
