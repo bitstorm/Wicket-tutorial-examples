@@ -65,6 +65,11 @@ public class AdvancedCheckedTreePage extends HomePage {
 					selectedNodes.add(new Label(selectedNodes.newChildId(), node.toString()));
 				}
 				
+				if(checkedNodes.size() == 0)
+					markupContainer.setVisible(false);
+				else
+					markupContainer.setVisible(true);
+				
 				markupContainer.replace(selectedNodes);
 				target.add(markupContainer);
 			}
@@ -73,7 +78,8 @@ public class AdvancedCheckedTreePage extends HomePage {
 	    tree.add(new WindowsTheme());
 	    
 	    markupContainer.add(selectedNodes);
-	    add(markupContainer.setOutputMarkupId(true));	    
+	    markupContainer.setVisible(false);
+	    add(markupContainer.setOutputMarkupPlaceholderTag(true));	    
 	    addOrReplace(tree);
 	}
 	
