@@ -62,12 +62,16 @@ public class AutocheckedFolder<T> extends CheckedFolder<T> {
 		addRemoveSubNodes(node, nodeChecked);				
 		addRemoveAncestorNodes(node, nodeChecked);
 		
+		updateNodeOnClientSide(target, nodeChecked);		
+	}
+
+	protected void updateNodeOnClientSide(AjaxRequestTarget target,
+			boolean nodeChecked) {
 		target.appendJavaScript(";CheckAncestorsAndChildren.checkChildren('" + getMarkupId() + "'," 
 				+ nodeChecked + ");");
 		
 		target.appendJavaScript(";CheckAncestorsAndChildren.checkAncestors('" + getMarkupId() + "'," 
 				+ nodeChecked + ");");
-		
 	}
 	
 	@Override
@@ -76,7 +80,7 @@ public class AutocheckedFolder<T> extends CheckedFolder<T> {
 		response.render(JavaScriptHeaderItem.forReference(scriptFile));
 	}
 	
-	private void addRemoveSubNodes(T node, Boolean nodeStatus) {
+	protected void addRemoveSubNodes(T node, Boolean nodeStatus) {
 		Iterator<? extends T> childrenNodes = treeProvider.getChildren(node);
 		
 		while (childrenNodes.hasNext()) {
@@ -90,7 +94,7 @@ public class AutocheckedFolder<T> extends CheckedFolder<T> {
 			checkedNodes.getObject().remove(node);
 	}
 	
-	private void addRemoveAncestorNodes(T node, Boolean nodeStatus) {
+	protected void addRemoveAncestorNodes(T node, Boolean nodeStatus) {
 		BranchItem currentConatiner = findParent(BranchItem.class);
 		
 		if(currentConatiner == null) return;
@@ -115,7 +119,7 @@ public class AutocheckedFolder<T> extends CheckedFolder<T> {
 		}
 	}
 
-	private boolean hasNodeCheckedChildren(T nodeObject) {
+	protected boolean hasNodeCheckedChildren(T nodeObject) {
 		Iterator<? extends T> children = treeProvider.getChildren(nodeObject);
 		
 		while (children.hasNext()) {
