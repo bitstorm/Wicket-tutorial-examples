@@ -17,8 +17,20 @@
   <classpathentry kind="var" path="M2_REPO/rome/rome/1.0/rome-1.0.jar" sourcepath="M2_REPO/rome/rome/1.0/rome-1.0-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.6.4/slf4j-api-1.6.4.jar" sourcepath="M2_REPO/org/slf4j/slf4j-api/1.6.4/slf4j-api-1.6.4-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.jar" sourcepath="M2_REPO/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/apache/wicket/wicket-core/6.0.0/wicket-core-6.0.0.jar" sourcepath="M2_REPO/org/apache/wicket/wicket-core/6.0.0/wicket-core-6.0.0-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/apache/wicket/wicket-request/6.0.0/wicket-request-6.0.0.jar" sourcepath="M2_REPO/org/apache/wicket/wicket-request/6.0.0/wicket-request-6.0.0-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/apache/wicket/wicket-util/6.0.0/wicket-util-6.0.0.jar" sourcepath="M2_REPO/org/apache/wicket/wicket-util/6.0.0/wicket-util-6.0.0-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/wicket/wicket-core/6.5.0/wicket-core-6.5.0.jar" sourcepath="M2_REPO/org/apache/wicket/wicket-core/6.5.0/wicket-core-6.5.0-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/home/andrea/.m2/repository/org/apache/wicket/wicket-core/6.5.0/wicket-core-6.5.0-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/org/apache/wicket/wicket-request/6.5.0/wicket-request-6.5.0.jar" sourcepath="M2_REPO/org/apache/wicket/wicket-request/6.5.0/wicket-request-6.5.0-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/home/andrea/.m2/repository/org/apache/wicket/wicket-request/6.5.0/wicket-request-6.5.0-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/org/apache/wicket/wicket-util/6.5.0/wicket-util-6.5.0.jar" sourcepath="M2_REPO/org/apache/wicket/wicket-util/6.5.0/wicket-util-6.5.0-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/home/andrea/.m2/repository/org/apache/wicket/wicket-util/6.5.0/wicket-util-6.5.0-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
   <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 </classpath>

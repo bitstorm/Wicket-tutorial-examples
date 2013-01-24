@@ -20,6 +20,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import org.apache.wicket.Session;
+import org.apache.wicket.ThreadContext;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
@@ -42,7 +43,7 @@ public class HomePage extends WebPage {
 			@Override
 			public void onClick(AjaxRequestTarget target) {
 				datepicker.setEnabled(!datepicker.isEnabled());
-				target.add(datepicker);
+				target.add(datepicker);				
 			}
 			
 		});

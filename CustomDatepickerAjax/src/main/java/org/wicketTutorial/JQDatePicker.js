@@ -29,3 +29,9 @@ function initJQDatapicker(inputId, countryIsoCode, dateFormat,  calendarIcon) {
 	initCalendar(localizedArray);
 	$("#" + inputId).datepicker(localizedArray);	
 };
+
+Wicket.Event.subscribe('/dom/node/removing', function(jqEvent, attributes, jqXHR, errorThrown, textStatus) {
+	var componentId = '#' + attributes['id'];
+	if($(componentId).datepicker !== undefined)
+	      $(componentId).datepicker('destroy');
+});

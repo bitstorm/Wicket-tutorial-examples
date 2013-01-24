@@ -90,13 +90,6 @@ public class JQueryDateFieldAjax extends DateTextField {
 	public void renderHead(IHeaderResponse response) {
 		super.renderHead(response);
 		
-		response.render(OnLoadHeaderItem.forScript(";Wicket.Event.subscribe('/dom/node/removing', " +
-							"function(jqEvent, attributes, jqXHR, errorThrown, textStatus) {\n" +
-								"	var componentId = '#' + attributes['id']; \n" +
-								"   if($(componentId).datepicker !== undefined)\n" +
-								"      $(componentId).datepicker('destroy');" +
-		"});"));
-		
 		//if component is disabled we don't have to load the JQueryUI datepicker
 		if(!isEnabledInHierarchy())
 			return;
