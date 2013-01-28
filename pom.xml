@@ -76,6 +76,7 @@
 	    	<module>CheckBoxAjaxTree</module>
     		<module>MarkupInheritanceExample</module>
     <module>CustomDatepickerAjax</module>
+    <module>HelloWorldExample</module>
   </modules>	
 	<!--url>http://wicket.apache.org/${project.artifactId}</url-->
 	<inceptionYear>2012</inceptionYear>	

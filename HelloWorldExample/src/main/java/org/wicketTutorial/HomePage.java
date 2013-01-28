@@ -16,30 +16,13 @@
  */
 package org.wicketTutorial;
 
-import org.apache.wicket.util.tester.WicketTester;
-import org.junit.Before;
-import org.junit.Test;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
+import org.apache.wicket.markup.ComponentTag;
+import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.WebPage;
 
-/**
- * Simple test using the WicketTester
- */
-public class TestHomePage
-{
-	private WicketTester tester;
-
-	@Before
-	public void setUp()
-	{
-		tester = new WicketTester(new WicketApplication());
-	}
-
-	@Test
-	public void homepageRendersSuccessfully()
-	{
-		//start and render the test page
-		tester.startPage(HomePage.class);
-
-		//assert rendered page class
-		tester.assertRenderedPage(HomePage.class);
-	}
+public class HomePage extends WebPage {
+	public HomePage() {		
+		add(new Label("helloMessage", "Hello WicketWorld!"));	
+    }
 }
