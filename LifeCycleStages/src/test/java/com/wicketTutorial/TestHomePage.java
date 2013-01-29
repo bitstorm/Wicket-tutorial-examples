@@ -36,12 +36,18 @@ public class TestHomePage
 	}
 
 	@Test
-	public void homepageRendersSuccessfully()
+	public void switchLabelTest()
 	{
 		//start and render the test page
 		tester.startPage(HomePage.class);
-
 		//assert rendered page class
 		tester.assertRenderedPage(HomePage.class);
+		//assert rendered label
+		tester.assertLabel("label", "Second label");
+		//simulate a click on reload button
+		tester.clickLink("reload");
+		//assert rendered label
+		tester.assertLabel("label", "First label");
+	
 	}
 }
