@@ -38,8 +38,12 @@ public class TestHomePage
 	{
 		//start and render the test page
 		tester.startPage(HomePage.class);
-
-		//assert rendered page class
-		tester.assertRenderedPage(HomePage.class);
+		//assert that datepicker is enabled
+		tester.assertEnabled("form:datepicker");
+		//click on update button to disable datepicker
+		tester.clickLink("update");
+		//assert that datepicker is disabled
+		tester.assertDisabled("form:datepicker");
+		
 	}
 }

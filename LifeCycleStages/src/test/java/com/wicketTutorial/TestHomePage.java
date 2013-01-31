@@ -44,7 +44,7 @@ public class TestHomePage
 		tester.assertRenderedPage(HomePage.class);
 		//assert rendered label
 		tester.assertLabel("label", "Second label");
-		//simulate a click on reload button
+		//simulate a click on "reload" button
 		tester.clickLink("reload");
 		//assert rendered label
 		tester.assertLabel("label", "First label");
