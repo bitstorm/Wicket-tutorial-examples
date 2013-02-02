@@ -34,7 +34,7 @@ public class TestHomePage
 	}
 
 	@Test
-	public void homepageRendersSuccessfully()
+	public void testDisableDatePickerWithButton()
 	{
 		//start and render the test page
 		tester.startPage(HomePage.class);
@@ -45,5 +45,5 @@ public class TestHomePage
 		//assert that datepicker is disabled
 		tester.assertDisabled("form:datepicker");
 		
-	}
+	}	
 }

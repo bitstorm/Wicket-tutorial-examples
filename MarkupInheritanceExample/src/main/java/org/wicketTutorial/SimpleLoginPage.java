@@ -19,8 +19,8 @@ package org.wicketTutorial;
 import org.apache.wicket.markup.html.basic.Label;
 import org.wicketTutorial.layoutTenda.JugTemplate ;
 
-public class LoginPage extends JugTemplate {
-	public LoginPage(){
+public class SimpleLoginPage extends JugTemplate {
+	public SimpleLoginPage(){
 		super();
 		setVersioned(false);
 		addOrReplace(new LoginPanel("contentComponent"));

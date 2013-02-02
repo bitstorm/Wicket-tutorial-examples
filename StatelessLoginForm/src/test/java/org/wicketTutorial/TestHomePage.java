@@ -16,6 +16,9 @@
  */
 package org.wicketTutorial;
 
+import junit.framework.Assert;
+
+import org.apache.wicket.util.tester.FormTester;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
 import org.junit.Test;
@@ -34,12 +37,28 @@ public class TestHomePage
 	}
 
 	@Test
-	public void homepageRendersSuccessfully()
+	public void testMessageForSuccessfulLogin()
+	{
+		inserUsernamePassword("user", "user");	
+		tester.assertInfoMessages("Username and password are correct!");
+	}	
+	
+	@Test
+	public void testMessageForFailedLogin ()
+	{
+		inserUsernamePassword("wrongCredential", "wrongCredential");		
+		tester.assertErrorMessages("Wrong username or password");
+	}
+	
+	protected void inserUsernamePassword(String username, String password) 
 	{
 		//start and render the test page
 		tester.startPage(HomePage.class);
-
-		//assert rendered page class
-		tester.assertRenderedPage(HomePage.class);
+		FormTester formTester = tester.newFormTester("form");
+		//set credentials
+		formTester.setValue("username", username);
+		formTester.setValue("password", password);		
+		//submit form
+		formTester.submit();
 	}
 }

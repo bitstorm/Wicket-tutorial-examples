@@ -46,8 +46,8 @@ public class TemperatureDegreeField extends FormComponentPanel<Double> {
 			@Override
 			public String getObject() {
 				if(getLocale().equals(Locale.US))
-					return "�F";
-				return "�C";
+					return "°F";
+				return "°C";
 			}
 		};
 		
@@ -60,6 +60,8 @@ public class TemperatureDegreeField extends FormComponentPanel<Double> {
 	protected void convertInput() {
 		Double userDegreeVal = userDegree.getConvertedInput();
 		Double kelvinDegree;
+		
+		if(userDegreeVal == null) return;
 		
 		if(getLocale().equals(Locale.US)){
 			kelvinDegree = userDegreeVal +  459.67;

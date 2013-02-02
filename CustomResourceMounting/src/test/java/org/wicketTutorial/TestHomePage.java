@@ -16,9 +16,21 @@
  */
 package org.wicketTutorial;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+
+import junit.framework.Assert;
+
+import org.apache.wicket.WicketRuntimeException;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.sun.syndication.io.FeedException;
+import com.sun.syndication.io.SyndFeedOutput;
 
 /**
  * Simple test using the WicketTester
@@ -34,12 +46,17 @@ public class TestHomePage
 	}
 
 	@Test
-	public void homepageRendersSuccessfully()
+	public void testMountedResourceResponse() throws IOException, FeedException
 	{
-		//start and render the test page
-		tester.startPage(HomePage.class);
-
-		//assert rendered page class
-		tester.assertRenderedPage(HomePage.class);
+		tester.startResource(new RSSProducerResource());
+		String responseTxt = tester.getLastResponse().getDocument();
+		//write the RSS feed used in the test into a ByteArrayOutputStream
+		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+		Writer writer = new OutputStreamWriter(outputStream);
+		SyndFeedOutput output = new SyndFeedOutput();
+       	
+		output.output(RSSProducerResource.getFeed(), writer);
+		//the response and the written RSS must be equal 
+		Assert.assertEquals(responseTxt, outputStream.toString());
 	}
 }

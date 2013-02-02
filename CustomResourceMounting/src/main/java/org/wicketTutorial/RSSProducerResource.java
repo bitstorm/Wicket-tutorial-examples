@@ -58,7 +58,7 @@ public class RSSProducerResource extends AbstractResource {
 		return resourceResponse;
 	}
 	
-	private SyndFeed getFeed() {
+	public static SyndFeed getFeed() {
 		SyndFeed feed = new SyndFeedImpl();
 		
 		feed.setFeedType("rss_2.0");

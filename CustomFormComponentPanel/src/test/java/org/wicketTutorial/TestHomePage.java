@@ -16,6 +16,12 @@
  */
 package org.wicketTutorial;
 
+import java.util.Locale;
+
+import junit.framework.Assert;
+import junit.framework.TestCase;
+
+import org.apache.wicket.model.Model;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
 import org.junit.Test;
@@ -34,12 +40,12 @@ public class TestHomePage
 	}
 
 	@Test
-	public void homepageRendersSuccessfully()
+	public void testCustomPanelContainsLabel()
 	{
-		//start and render the test page
-		tester.startPage(HomePage.class);
-
-		//assert rendered page class
-		tester.assertRenderedPage(HomePage.class);
-	}
+		TemperatureDegreeField field = new TemperatureDegreeField("field", Model.of(0.00));
+		
+		Assert.assertNull(field.get("mesuramentUnit"));		
+		tester.startComponent(field);		
+		Assert.assertNotNull(field.get("mesuramentUnit"));
+	}		
 }
