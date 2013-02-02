@@ -21,7 +21,7 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 
 public class JugTemplate extends WebPage {
-	public static final String CONTENT_ID = "content";
+	public static final String CONTENT_ID = "contentComponent";
 
 	private Component headerPanel;
 	private Component menuPanel;

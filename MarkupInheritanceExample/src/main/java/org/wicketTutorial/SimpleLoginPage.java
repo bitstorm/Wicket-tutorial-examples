@@ -22,7 +22,7 @@ import org.wicketTutorial.layoutTenda.JugTemplate ;
 public class SimpleLoginPage extends JugTemplate {
 	public SimpleLoginPage(){
 		super();
-		setVersioned(false);
-		addOrReplace(new LoginPanel("contentComponent"));
+		replace(new LoginPanel(CONTENT_ID));
+		getMenuPanel().setVisible(false);
 	}
 }
