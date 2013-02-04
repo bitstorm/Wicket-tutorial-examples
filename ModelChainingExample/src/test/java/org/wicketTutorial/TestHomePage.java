@@ -16,6 +16,8 @@
  */
 package org.wicketTutorial;
 
+import org.apache.wicket.Component;
+import org.apache.wicket.util.tester.FormTester;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
 import org.junit.Test;
@@ -34,12 +36,16 @@ public class TestHomePage
 	}
 
 	@Test
-	public void homepageRendersSuccessfully()
+	public void testFormSelectSameModelObject()
 	{
 		//start and render the test page
 		tester.startPage(PersonListDetails.class);
-
-		//assert rendered page class
-		tester.assertRenderedPage(PersonListDetails.class);
+		//select the second option of the drop-down menu
+		FormTester formTester = tester.newFormTester("formPersonsList"); 
+		formTester.select("persons", 2);
+		//retrieve form component
+		Component form = tester.getLastRenderedPage().get("form");
+		
+		tester.assertModelValue("formPersonsList:persons", form.getDefaultModelObject());
 	}
 }
