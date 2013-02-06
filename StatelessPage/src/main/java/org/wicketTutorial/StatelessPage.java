@@ -18,13 +18,26 @@ package org.wicketTutorial;
 
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.link.StatelessLink;
 import org.apache.wicket.markup.html.WebPage;
 
-public class HomePage extends WebPage {
-	private static final long serialVersionUID = 1L;
+public class StatelessPage extends WebPage {
+	private int index = 0;
 
-    public HomePage(final PageParameters parameters) {
-		add(new Label("version", getApplication().getFrameworkSettings().getVersion()));
-        // TODO Add your page's components here
-    }
+	public StatelessPage(PageParameters parameters) {
+		super(parameters);
+	}
+
+	@Override
+	protected void onInitialize() {
+		super.onInitialize();
+		setStatelessHint(true);
+		add(new StatelessLink("statelessLink") {
+			@Override
+			public void onClick() {				
+				System.out.println(index++);
+			}
+		});
+	}
+
 }
