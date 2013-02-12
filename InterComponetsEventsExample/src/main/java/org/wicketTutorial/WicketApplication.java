@@ -19,6 +19,9 @@ package org.wicketTutorial;
 import org.apache.wicket.Session;
 import org.apache.wicket.event.IEvent;
 import org.apache.wicket.protocol.http.WebApplication;
+import org.apache.wicket.protocol.http.WebSession;
+import org.apache.wicket.request.Request;
+import org.apache.wicket.request.Response;
 
 /**
  * Application object for your web application. If you want to run this application without deploying, run the Start class.
@@ -50,5 +53,15 @@ public class WicketApplication extends WebApplication
 	@Override
 	public void onEvent(IEvent<?> event) {
 		Session.get().info("I'm the application and I received an event.");
+	}
+	
+	@Override
+	public Session newSession(Request request, Response response) {
+		return new WebSession(request){
+			@Override
+			public void onEvent(IEvent<?> event) {
+				Session.get().info("I'm the session and I received an event.");
+			}
+		};
 	}
 }

@@ -35,7 +35,7 @@
 		"deployment". If no configuration is found, "development" is the default. -->
 
 	<filter>
-		<filter-name>wicket.PageParameterEncoderExample</filter-name>
+		<filter-name>wicket.PageParametersEncoderExample</filter-name>
 		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
 		<init-param>
 			<param-name>applicationClassName</param-name>
@@ -44,7 +44,7 @@
 	</filter>
 
 	<filter-mapping>
-		<filter-name>wicket.PageParameterEncoderExample</filter-name>
+		<filter-name>wicket.PageParametersEncoderExample</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 </web-app>

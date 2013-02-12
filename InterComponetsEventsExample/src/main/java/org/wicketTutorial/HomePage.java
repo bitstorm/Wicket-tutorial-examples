@@ -36,7 +36,7 @@ public class HomePage extends WebPage {
 		final WebMarkupContainer containerInTheMiddle = new WebMarkupContainer("containerInTheMiddle"){
 			@Override
 			public void onEvent(IEvent<?> event) {
-				//we use session's info method to keep messages sorted by insertion time
+				//we use session's info method to keep messages sorted by insertion order
 				Session.get().info("I'm the container in the middle and I received an event.");			
 			}
 		};
@@ -44,7 +44,7 @@ public class HomePage extends WebPage {
 		WebMarkupContainer innerContainer = new WebMarkupContainer("innerContainer"){
 			@Override
 			public void onEvent(IEvent<?> event) {
-				//we use session's info method to keep messages sorted by insertion time
+				//we use session's info method to keep messages sorted by insertion order
 				Session.get().info("I'm the inner component and I received an event.");		
 			}
 		};
@@ -90,7 +90,7 @@ public class HomePage extends WebPage {
     
     @Override
     public void onEvent(IEvent<?> event) {
-    	//we use session's info method to keep messages sorted by insertion time
+    	//we use session's info method to keep messages sorted by insertion order
     	Session.get().info("I'm the page and I received an event.");    	
     }
 }
