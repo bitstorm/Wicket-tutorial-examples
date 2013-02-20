@@ -30,7 +30,6 @@ import org.apache.wicket.model.Model;
 
 public class PersonListDetails extends WebPage {
 	private Form form;
-	private Form formPersonsList;
 	private DropDownChoice<Person> personsList;
 	
 	public PersonListDetails(){
@@ -48,11 +47,8 @@ public class PersonListDetails extends WebPage {
 				return true;
 			}
 		};
-		
-		formPersonsList = new Form("formPersonsList");
-		formPersonsList.add(personsList);
-		
-		add(formPersonsList);
+				
+		add(personsList);		
 		
 		form = new Form("form", new CompoundPropertyModel<Person>(listModel));		
 		form.add(new TextField("name"));
