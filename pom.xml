@@ -79,6 +79,7 @@
     		<module>HelloWorldExample</module>
     		<module>OnComponentTagExample</module>
     		<module>TestAjaxEventsExample</module>
+    <module>TagTesterExample</module>
   </modules>	
 	<!--url>http://wicket.apache.org/${project.artifactId}</url-->
 	<inceptionYear>2012</inceptionYear>	
