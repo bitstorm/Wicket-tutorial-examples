@@ -61,7 +61,7 @@
 		<module>UsernameCustomValidator</module>
 		<module>CustomDatepicker</module>
                 <module>InterComponetsEventsExample</module>
-    		<module>EjbInjectionExample</module>
+    		<module>CdiInjectionExample</module>
 		<module>BasicModalWindowExample</module>
     		<module>AjaxEventBehaviorExample</module>
     		<module>CustomAjaxListenerExample</module>
