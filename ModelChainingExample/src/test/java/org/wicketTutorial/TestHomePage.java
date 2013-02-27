@@ -16,7 +16,10 @@
  */
 package org.wicketTutorial;
 
+import java.util.List;
+
 import org.apache.wicket.Component;
+import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.util.tester.FormTester;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
@@ -38,14 +41,15 @@ public class TestHomePage
 	@Test
 	public void testFormSelectSameModelObject()
 	{
-		//start and render the test page
-		tester.startPage(PersonListDetails.class);
+		PersonListDetails personListDetails = new PersonListDetails();
+		DropDownChoice dropDownChoice = (DropDownChoice) personListDetails.get("persons");
+		List choices = dropDownChoice.getChoices();
 		//select the second option of the drop-down menu
-		//FormTester formTester = tester.newFormTester(""); 
-		//formTester.select("persons", 2);
-		//retrieve form component
-		//Component form = tester.getLastRenderedPage().get("form");
+		dropDownChoice.setModelObject(choices.get(1));
 		
-		//tester.assertModelValue("formPersonsList:persons", form.getDefaultModelObject());
+		//start and render the test page
+		tester.startPage(personListDetails);		
+		//assert that form has the same data object as drop-down menu
+		tester.assertModelValue("form", dropDownChoice.getModelObject());
 	}
 }
