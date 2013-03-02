@@ -27,7 +27,7 @@ public class HomePage extends WebPage {
 
 	public HomePage(final PageParameters parameters) {
 		super(parameters);
-
+		//onComponentTag example
 		add(new Label("onComponentTag", "Test value"){
 			@Override
 			protected void onComponentTag(ComponentTag tag) {
@@ -40,6 +40,7 @@ public class HomePage extends WebPage {
 			}
 		});
 		
+		//onComponentTagBody example
 		add(new Label("onComponentTagBody", ""){
 			@Override
 			public void onComponentTagBody(MarkupStream markupStream,
