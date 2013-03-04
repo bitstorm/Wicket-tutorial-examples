@@ -20,10 +20,16 @@
 <html xmlns:wicket="http://wicket.apache.org">
 	<head>
 		<meta charset="utf-8" />
-		<title></title>
+		<title>Apache Wicket Quickstart</title>
 	</head>
 	<body>
-		<span class="myClass"></span>
-		<div class="myClass"></div>
+		<div id="bd">
+			<form wicket:id="form">
+				Select a Locale: <select wicket:id="changeLocale"></select>
+				<br/>
+				Select a Color: <select wicket:id="selectColor"></select>
+				<div><input type="submit" value="submit"></div>				
+			</form>		
+		</div>
 	</body>
 </html>
