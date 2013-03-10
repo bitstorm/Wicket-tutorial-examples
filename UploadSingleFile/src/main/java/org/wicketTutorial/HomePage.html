@@ -23,11 +23,12 @@
 		<title></title>
 		</head>
 	<body>
-		<h2 wicket:id="tempFolder"></h2>
-		<br/>
+		<h1>Upload your file here!</h1>
 		<form wicket:id="form">
-			File: <input type="file" wicket:id="fileUploadField"/><br/>
-			<input type="submit" value="submit"/>
+			<input type="file" wicket:id="fileUploadField"/> 
+			<input type="submit" value="Upload"/>
 		</form>
+		<div wicket:id="feedbackPanel">
+		</div>
 	</body>
 </html>

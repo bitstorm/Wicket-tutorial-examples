@@ -25,6 +25,7 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.upload.FileUpload;
 import org.apache.wicket.markup.html.form.upload.FileUploadField;
+import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.markup.html.WebPage;
 
 public class HomePage extends WebPage {
@@ -32,32 +33,32 @@ public class HomePage extends WebPage {
 	private FileUploadField fileUploadField;
 
     public HomePage(final PageParameters parameters) {
+    	
     	fileUploadField = new FileUploadField("fileUploadField");
     	
     	Form form = new Form("form"){
     		@Override
     		protected void onSubmit() {
-    			super.onSubmit();
+    		  super.onSubmit();
+    			 
+    		  FileUpload fileUpload = fileUploadField.getFileUpload();
     			
-    			FileUpload fileUpload = fileUploadField.getFileUpload();
-    			
-    			try {
-    				File file = new File(System.getProperty("java.io.tmpdir") + 
+    		    try {
+    		    	File file = new File(System.getProperty("java.io.tmpdir") + "/" +
     						fileUpload.getClientFileName());
     				
-					fileUpload.writeTo(file);
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
+    		    	fileUpload.writeTo(file);
+		        } catch (IOException e) {
+			   e.printStackTrace();
+			 }
     		}
-    	};
-		
+    	};	
+	
 		form.setMultiPart(true);
+		//set a limit for uploaded file's size
 		form.setMaxSize(Bytes.kilobytes(100));
 		form.add(fileUploadField);
-		
+		add(new FeedbackPanel("feedbackPanel"));
 		add(form);
-		add(new Label("tempFolder", "Upload a file in your OS temp directory: " 
-					 + System.getProperty("java.io.tmpdir")));
     }
 }
