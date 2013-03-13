@@ -61,7 +61,7 @@ public class OnChangeSingleChoiceBehavior extends Behavior implements IBehaviorL
 		}
 		
 		if(!(hostComponent instanceof AbstractSingleSelectChoice)){
-			throw new IllegalStateException("This behaviormust be attached to AbstractSingleSelectChoice" 
+			throw new IllegalStateException("This behavior must be attached to AbstractSingleSelectChoice" 
 											 + " component, but component " + hostComponent + " is not one of those");
 		}
 
