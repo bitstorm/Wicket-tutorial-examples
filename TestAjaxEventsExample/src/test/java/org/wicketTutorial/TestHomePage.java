@@ -38,11 +38,11 @@ public class TestHomePage
 	{
 		//start and render the test page
 		tester.startPage(HomePage.class);
-		//test if label's data object has the initial expected value
-		tester.assertModelValue("label", HomePage.INIT_VALUE);		
+		//test if label has the initial expected value
+		tester.assertLabel("label", HomePage.INIT_VALUE);		
 		//simulate an AJAX "click" event
 		tester.executeAjaxEvent("label", "click");
-		//test if label's data object has changed as expected
-		tester.assertModelValue("label", HomePage.OTHER_VALUE);
+		//test if label has changed as expected
+		tester.assertLabel("label", HomePage.OTHER_VALUE);
 	}
 }
