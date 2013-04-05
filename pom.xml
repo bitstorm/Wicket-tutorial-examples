@@ -82,6 +82,7 @@
     <module>TagTesterExample</module>
     <module>LocalizedChoicesExample</module>
     <module>CallbackURLExample</module>
+    <module>JsrSocketExample</module>
   </modules>	
 	<!--url>http://wicket.apache.org/${project.artifactId}</url-->
 	<inceptionYear>2012</inceptionYear>	
