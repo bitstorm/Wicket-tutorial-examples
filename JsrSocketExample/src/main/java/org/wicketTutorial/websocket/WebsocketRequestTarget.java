@@ -29,8 +29,12 @@ import org.apache.wicket.request.IRequestCycle;
 import org.apache.wicket.request.Response;
 import org.apache.wicket.request.component.IRequestablePage;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
-import org.apache.wicket.response.StringResponse;
 
+/**
+ * 
+ * @author andrea
+ *
+ */
 public class WebsocketRequestTarget implements AjaxRequestTarget {
 	
 	private final Page page;

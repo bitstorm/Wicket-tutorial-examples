@@ -38,6 +38,15 @@ import org.apache.wicket.util.lang.Generics;
 import org.apache.wicket.util.template.PackageTextTemplate;
 
 
+/**
+ * 
+ * The main class to add a webscoket callback method to a component. This class adds itself to
+ * the application-scoped WebsocketBehaviorsManager and generates the JavaScript needed to open 
+ * a websocket from client side.
+ * 
+ * @see WsBehaviorAndWebRequest
+ * @see WebsocketBehaviorsManager
+ */
 public class WebsocketBehavior extends Behavior{
 	
 	private Component component;

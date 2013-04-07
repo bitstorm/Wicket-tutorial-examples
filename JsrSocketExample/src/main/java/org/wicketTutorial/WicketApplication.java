@@ -16,26 +16,13 @@
  */
 package org.wicketTutorial;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
-import javax.servlet.http.HttpServletRequest;
 import javax.websocket.DeploymentException;
-import javax.websocket.HandshakeResponse;
-import javax.websocket.server.HandshakeRequest;
 import javax.websocket.server.ServerContainer;
 import javax.websocket.server.ServerContainerProvider;
 import javax.websocket.server.ServerEndpointConfig;
-import javax.websocket.server.ServerEndpointConfig.Configurator;
 
-import org.apache.wicket.Application;
-import org.apache.wicket.Session;
-import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
-import org.apache.wicket.protocol.http.servlet.ServletWebRequest;
-import org.apache.wicket.protocol.ws.api.ServletRequestCopy;
-import org.apache.wicket.request.cycle.RequestCycle;
 import org.wicketTutorial.websocket.WebsocketBehavior;
 import org.wicketTutorial.websocket.WebsocketBehaviorEndpoint;
 import org.wicketTutorial.websocket.WebsocketBehaviorsManager;
@@ -57,7 +44,17 @@ public class WicketApplication extends WebApplication
 	}
 
 	/**
+	 * This method performs the following configuration steps: 
+	 * 
+	 * 1)add a webscoket endpoint mounting it to path WebsocketBehavior.WEBSOCKET_CREATOR_URL.
+	 * This endpoint is used by WebsocketBehavior to open its own websocket.
+	 * 2)put a WebsocketBehaviorsManager into application metadata. This class is used to pass a WebsocketBehavior
+	 * to the corresponding websocket listener.
+	 * 3)add the current application as user property for the endpoint.
+	 * 
 	 * @see org.apache.wicket.Application#init()
+	 * @see WebsocketBehavior
+	 * @see WebsocketBehaviorEndpoint
 	 */
 	@Override
 	public void init()
@@ -67,10 +64,12 @@ public class WicketApplication extends WebApplication
 		ServerEndpointConfig.Builder builder = ServerEndpointConfig.Builder.
 												create(WebsocketBehaviorEndpoint.class, WebsocketBehavior.WEBSOCKET_CREATOR_URL);
 		
-		
 		ServerEndpointConfig configs = builder.build();
 		ServerContainer container = ServerContainerProvider.getServerContainer();
+		
+		//add the current application as user property for the endpoint
 		configs.getUserProperties().put("currentApplication", this);
+		//define the WebsocketBehaviorsManager that will be used to pass the WebsocketBehaviorS to the endpoint
 		setMetaData(WebsocketBehavior.WEBSOCKET_BEHAVIOR_MAP_KEY, new WebsocketBehaviorsManager());
 		
 		try {

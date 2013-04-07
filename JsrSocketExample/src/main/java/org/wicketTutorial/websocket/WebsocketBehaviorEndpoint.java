@@ -37,7 +37,11 @@ import org.apache.wicket.request.cycle.RequestCycleContext;
 import org.apache.wicket.request.http.WebRequest;
 import org.apache.wicket.response.StringResponse;
 import org.apache.wicket.session.ISessionStore;
-
+/**
+ * 
+ * Endpoint class that opens websockets for WebsocketBehavior.
+ *
+ */
 public class WebsocketBehaviorEndpoint extends Endpoint{
 	
 	@Override

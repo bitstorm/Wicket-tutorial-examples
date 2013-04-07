@@ -19,9 +19,15 @@ package org.wicketTutorial.websocket;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
-import org.apache.wicket.behavior.Behavior;
-
+/**
+ * 
+ * The class that is used to pass behaviors to the websocket endpoint. Behaviors are stored in session relative maps which 
+ * in turn are stored in ConcurrentHashMap. Behaviors are wrapped in a WsBehaviorAndWebRequest along with their relative web request.
+ *
+ *@see WebsocketBehavior
+ *@see WsBehaviorAndWebRequest
+ *@see WebsocketBehaviorEndpoint
+ */
 public class WebsocketBehaviorsManager {
 	
 	private ConcurrentHashMap<String, Map<String, WsBehaviorAndWebRequest>> behaviorsMap =
