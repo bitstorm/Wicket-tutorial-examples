@@ -31,7 +31,10 @@ import org.apache.wicket.request.component.IRequestablePage;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 /**
- * 
+ * Implementation of interface AjaxRequestTarget that allows to perform the following action via websocket:
+ *  - update the component markup.
+ *  - append/prepend JavaScript to the current response. 
+ *  
  * @author andrea
  *
  */
@@ -122,19 +125,16 @@ public class WebsocketRequestTarget implements AjaxRequestTarget {
 	@Override
 	public void addListener(IListener listener) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void appendJavaScript(CharSequence javascript) {
-		// TODO Auto-generated method stub
-
+		ajaxResponse.appendJavaScript(javascript);
 	}
 
 	@Override
 	public void prependJavaScript(CharSequence javascript) {
-		// TODO Auto-generated method stub
-
+		ajaxResponse.prependJavaScript(javascript);
 	}
 
 	@Override

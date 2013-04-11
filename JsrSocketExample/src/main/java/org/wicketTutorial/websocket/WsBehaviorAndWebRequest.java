@@ -16,18 +16,20 @@
  */
 package org.wicketTutorial.websocket;
 
-import java.lang.reflect.Method;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.wicket.Application;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.protocol.http.WicketFilter;
-import org.apache.wicket.protocol.http.servlet.ServletWebRequest;
-import org.apache.wicket.protocol.ws.api.ServletRequestCopy;
 import org.apache.wicket.protocol.ws.api.WebSocketRequest;
 import org.apache.wicket.request.http.WebRequest;
 
+/**
+ * Utility class that wraps a WebsocketBehavior with its related WebRequest.
+ * 
+ * @author andrea
+ *
+ */
 public class WsBehaviorAndWebRequest {
 	private final WebRequest request;
 	private final WebsocketBehavior behavior;

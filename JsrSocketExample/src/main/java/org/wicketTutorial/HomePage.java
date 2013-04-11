@@ -59,6 +59,7 @@ public class HomePage extends WebPage
 			
 				firstLabel.setDefaultModelObject(new Date().toString());
 				target.add(firstLabel);
+				target.prependJavaScript(";alert('done');");
 			}
 		});				
 	}	

@@ -42,10 +42,9 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 /**
- * A copy of the http servlet request used to create the WebSocket.
- * Copy its details because they are discarded at the end of the request (even if we
- * use AsyncContext from Servlet 3 spec). This copy is used later for following requests
- * through the WebSocket connection to construct WebSocketRequest.
+ * This class is exactly the same as ServletRequestCopy from native websocket module.
+ * The only difference is that it keeps a reference to the current session object without coping it
+ * with HttpSessionCopy.
  *
  * @since 6.0
  */

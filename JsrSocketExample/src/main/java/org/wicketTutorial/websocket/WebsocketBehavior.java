@@ -40,7 +40,7 @@ import org.apache.wicket.util.template.PackageTextTemplate;
 
 /**
  * 
- * The main class to add a webscoket callback method to a component. This class adds itself to
+ * The main class to add a webscoket callback method (onMessage) to a component. This class adds itself to
  * the application-scoped WebsocketBehaviorsManager and generates the JavaScript needed to open 
  * a websocket from client side.
  * 

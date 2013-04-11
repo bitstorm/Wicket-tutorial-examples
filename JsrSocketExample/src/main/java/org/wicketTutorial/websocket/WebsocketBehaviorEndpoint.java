@@ -65,6 +65,12 @@ public class WebsocketBehaviorEndpoint extends Endpoint{
 	}	
 }
 
+/**
+ * Websocket listener class that invokes WebsocketBehavior callback method (onMessage) when the relative
+ * websocket receives a textual message from client.
+ * @author andrea
+ *
+ */
 class WebsocketBehaviorListener implements MessageHandler.Partial<String>{
 	
 	private final RemoteEndpoint.Basic remote;

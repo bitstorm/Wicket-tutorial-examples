@@ -18,10 +18,14 @@ package org.wicketTutorial.websocket;
 
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.head.IHeaderResponse;
-import org.apache.wicket.markup.head.JavaScriptContentHeaderItem;
-import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.markup.head.OnLoadHeaderItem;
 
+/**
+ * Websocket behavior that invokes its callback method (onMessage) when a JavaScript event is fired.
+ * 
+ * @author andrea
+ *
+ */
 public class WebsocketEventBehavior extends WebsocketBehavior {
 	private final String event;
 
