@@ -77,7 +77,7 @@ class WebsocketBehaviorListener implements MessageHandler.Partial<String>{
 	private final WebsocketBehavior behavior;
 	private final Application application;
 	private final int pageId;
-	private WebRequest servletWebRequest;
+	private final WebRequest servletWebRequest;
 	
 	public WebsocketBehaviorListener(Basic remote, Application application, 
 									  WebsocketBehavior behavior, WebRequest servletWebRequest) {
@@ -100,6 +100,12 @@ class WebsocketBehaviorListener implements MessageHandler.Partial<String>{
 		}
 	}
 	
+	/**
+	 * Method copied from class AbstractWebSocketProcessor
+	 * @param message
+	 * @param last
+	 * @return
+	 */
 	public final String broadcastMessage(final String message, boolean last)
 	{
 		
