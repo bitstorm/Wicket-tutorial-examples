@@ -14,11 +14,12 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.wicketTutorial.websocket;
+package org.apache.wicket.jee.websocket;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
 /**
  * 
  * The class that is used to pass behaviors to the websocket endpoint. Behaviors are stored in session relative maps which 

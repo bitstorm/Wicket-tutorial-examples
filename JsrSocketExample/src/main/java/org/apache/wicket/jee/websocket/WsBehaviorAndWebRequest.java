@@ -14,7 +14,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.wicketTutorial.websocket;
+package org.apache.wicket.jee.websocket;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -34,22 +34,21 @@ public class WsBehaviorAndWebRequest {
 	private final WebRequest request;
 	private final WebsocketBehavior behavior;
 	
-	
 	public WsBehaviorAndWebRequest(WebRequest request,
 			WebsocketBehavior behavior) {
 		super();
 		WicketFilter wicketFilter = ((WebApplication)Application.get()).getWicketFilter();
 		
-		this.request =  new WebSocketRequest(new MyServletRequestCopy((HttpServletRequest) request.getContainerRequest()), 
+		this.request =  new WebSocketRequest(new ServletRequestCopy((HttpServletRequest) request.getContainerRequest()), 
 				"");
 		this.behavior = behavior;
 	}		
 	
-	protected WebRequest getRequest() {
+	public WebRequest getRequest() {
 		return request;
 	}
 
-	protected WebsocketBehavior getBehavior() {
+	public WebsocketBehavior getBehavior() {
 		return behavior;
 	}	
 	

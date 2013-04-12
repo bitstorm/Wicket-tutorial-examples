@@ -1,4 +1,4 @@
-package org.wicketTutorial.websocket;
+package org.apache.wicket.jee.websocket;
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -48,7 +48,7 @@ import javax.servlet.http.Part;
  *
  * @since 6.0
  */
-public class MyServletRequestCopy implements HttpServletRequest
+public class ServletRequestCopy implements HttpServletRequest
 {
 	private final String contextPath;
 	private final String servletPath;
@@ -63,7 +63,7 @@ public class MyServletRequestCopy implements HttpServletRequest
 	private final String serverName;
 	private final int serverPort;
 
-	public MyServletRequestCopy(HttpServletRequest request) {
+	public ServletRequestCopy(HttpServletRequest request) {
 		this.servletPath = request.getServletPath();
 		this.contextPath = request.getContextPath();
 		this.pathInfo = request.getPathInfo();

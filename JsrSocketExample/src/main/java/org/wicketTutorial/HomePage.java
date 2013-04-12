@@ -18,12 +18,12 @@ package org.wicketTutorial;
 
 import java.util.Date;
 
+import org.apache.wicket.jee.websocket.WebsocketEventBehavior;
+import org.apache.wicket.jee.websocket.WebsocketRequestTarget;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.Link;
-import org.wicketTutorial.websocket.WebsocketEventBehavior;
-import org.wicketTutorial.websocket.WebsocketRequestTarget;
 
 public class HomePage extends WebPage
 {
