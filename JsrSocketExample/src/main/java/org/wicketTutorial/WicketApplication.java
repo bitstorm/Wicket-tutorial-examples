@@ -21,11 +21,11 @@ import javax.websocket.server.ServerContainer;
 import javax.websocket.server.ServerContainerProvider;
 import javax.websocket.server.ServerEndpointConfig;
 
-import org.apache.wicket.jee.websocket.WebsocketBehavior;
-import org.apache.wicket.jee.websocket.WebsocketBehaviorEndpoint;
-import org.apache.wicket.jee.websocket.WebsocketBehaviorsManager;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
+import org.apache.wicket.protocol.ws.jee.WebsocketBehavior;
+import org.apache.wicket.protocol.ws.jee.WebsocketBehaviorEndpoint;
+import org.apache.wicket.protocol.ws.jee.WebsocketBehaviorsManager;
 
 /**
  * Application object for your web application. If you want to run this application without deploying, run the Start class.
