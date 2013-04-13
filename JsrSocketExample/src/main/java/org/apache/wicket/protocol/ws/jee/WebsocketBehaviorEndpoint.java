@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-import javax.swing.JOptionPane;
+import javax.websocket.CloseReason;
 import javax.websocket.Endpoint;
 import javax.websocket.EndpointConfig;
 import javax.websocket.MessageHandler;
@@ -63,6 +63,12 @@ public class WebsocketBehaviorEndpoint extends Endpoint{
 											behaviorAndReq.getBehavior(), behaviorAndReq.getRequest());	
 		session.addMessageHandler(listener);		
 	}	
+	
+	@Override
+	public void onClose(Session session, CloseReason closeReason) {
+		// TODO Auto-generated method stub
+		super.onClose(session, closeReason);
+	}
 }
 
 /**
@@ -151,17 +157,14 @@ class WebsocketBehaviorListener implements MessageHandler.Partial<String>{
 			IPageManager pageManager = session.getPageManager();
 			Page page;
 			
-			page = (Page) pageManager.getPage(0);
-			
-			if(page == null)
-				JOptionPane.showMessageDialog(null, session.getId());
+			page = (Page) pageManager.getPage(0);			
 				
 			try
 			{
 								
 				page = (Page) pageManager.getPage(pageId);
 				
-				WebsocketRequestTarget target = new WebsocketRequestTarget(page, response);
+				WebsocketRequestTarget target = new WebsocketRequestTarget(page, response, remote);
 				
 				behavior.onMessage(target, message, last);
 				target.writeToResponse();

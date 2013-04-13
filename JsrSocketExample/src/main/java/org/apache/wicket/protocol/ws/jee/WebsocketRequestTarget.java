@@ -16,7 +16,11 @@
  */
 package org.apache.wicket.protocol.ws.jee;
 
+import java.io.IOException;
+import java.nio.ByteBuffer;
 import java.util.Collection;
+
+import javax.websocket.RemoteEndpoint.Basic;
 
 import org.apache.wicket.Component;
 import org.apache.wicket.MarkupContainer;
@@ -24,6 +28,7 @@ import org.apache.wicket.Page;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.XmlAjaxResponse;
 import org.apache.wicket.markup.head.IHeaderResponse;
+import org.apache.wicket.protocol.ws.api.IWebSocketRequestHandler;
 import org.apache.wicket.request.ILogData;
 import org.apache.wicket.request.IRequestCycle;
 import org.apache.wicket.request.Response;
@@ -38,16 +43,19 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
  * @author andrea
  *
  */
-public class WebsocketRequestTarget implements AjaxRequestTarget {
+public class WebsocketRequestTarget implements AjaxRequestTarget, IWebSocketRequestHandler {
 	
 	private final Page page;
 	private final XmlAjaxResponse ajaxResponse;
-	private final Response response;	
+	private final Response response;
+	private final Basic remote;	
 	
-	public WebsocketRequestTarget(Page page, Response response) {
+	public WebsocketRequestTarget(Page page, Response response, Basic remote) {
 		super();
 		this.page = page;
 		this.response = response;
+		this.remote = remote;
+		
 		this.ajaxResponse = new XmlAjaxResponse(page)
 		{
 			@Override
@@ -174,5 +182,26 @@ public class WebsocketRequestTarget implements AjaxRequestTarget {
 	
 	public void writeToResponse(){		
 		ajaxResponse.writeTo(response, "UTF-8");				
+	}
+
+	@Override
+	public void push(CharSequence message) {
+		try {
+			remote.sendText(message.toString());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void push(byte[] message, int offset, int length) {
+		ByteBuffer dataBuffer = ByteBuffer.allocate(length);
+		dataBuffer.put(message, offset, length);
+		
+		try {
+			remote.sendBinary(dataBuffer);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}		
 	}
 }
