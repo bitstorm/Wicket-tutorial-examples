@@ -22,9 +22,19 @@ function onOpen(evt) {
 function onMessage(event) {
 	var message = event.data;
 	
-	if (message && message.indexOf('<ajax-response>') > -1) {
-		var call = new Wicket.Ajax.Call();
-		call.process(message);
+	if(message){	
+		if (message.indexOf('<ajax-response>') > -1) {
+			var call = new Wicket.Ajax.Call();
+			call.process(message);
+		}
+		
+		if (message.indexOf('<execute-javascript>') > -1) {
+			var javaScriptCode;
+			javaScriptCode = message.replace('<execute-javascript>', '');
+			javaScriptCode = javaScriptCode.replace('</execute-javascript>', '');
+			
+			eval(javaScriptCode);
+		}
 	}
 }            
 function onError(evt) {

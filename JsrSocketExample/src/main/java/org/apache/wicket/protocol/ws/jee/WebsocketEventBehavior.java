@@ -26,7 +26,7 @@ import org.apache.wicket.markup.head.OnLoadHeaderItem;
  * @author andrea
  *
  */
-public class WebsocketEventBehavior extends WebsocketBehavior {
+public abstract class WebsocketEventBehavior extends WebsocketBehavior {
 	private final String event;
 
 	public WebsocketEventBehavior(String event) {

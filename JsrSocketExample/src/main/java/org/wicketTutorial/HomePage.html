@@ -23,6 +23,7 @@
 		<title>Apache Wicket Quickstart</title>
 		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold' rel='stylesheet' type='text/css' />
 		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="Stylesheet" />
+		<link rel="stylesheet" href="ui-progress-bar.css" type="text/css" media="screen" title="Stylesheet" />
 	</head>
 	<body>
 		<div id="hd">
@@ -34,7 +35,14 @@
 		<div id="bd">
 			<div wicket:id="label"></div>
 			<a wicket:id="reload" href="#">Click on me to update the timestamp</a>
+			<div></div>
+			<p>Progress bar updated via websocket. Click on it to start the progress.</p>
+			<div wicket:id="progressbar" class="ui-progress-bar transition">
+				<div style="width: 0%;" class="ui-progress">
+            </div>
 		</div>
+		</div>
+		
 		<div id="ft">
 		</div>
 	</body>

@@ -16,7 +16,6 @@
  */
 package org.apache.wicket.protocol.ws.jee;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -25,7 +24,6 @@ import javax.websocket.Endpoint;
 import javax.websocket.EndpointConfig;
 import javax.websocket.MessageHandler;
 import javax.websocket.RemoteEndpoint;
-import javax.websocket.RemoteEndpoint.Basic;
 import javax.websocket.Session;
 
 import org.apache.wicket.Application;
@@ -47,7 +45,7 @@ public class WebsocketBehaviorEndpoint extends Endpoint{
 	@Override
 	public void onOpen(Session session, EndpointConfig config) {
 		
-		RemoteEndpoint.Basic remote = session.getBasicRemote();
+		RemoteEndpoint.Async remote = session.getAsyncRemote();
 		Map<String, Object> userProperties = config.getUserProperties();
 		Application application = (Application) userProperties.get("currentApplication");
 		WebsocketBehaviorsManager behaviorsManager = application.getMetaData(WebsocketBehavior.WEBSOCKET_BEHAVIOR_MAP_KEY);
@@ -79,13 +77,13 @@ public class WebsocketBehaviorEndpoint extends Endpoint{
  */
 class WebsocketBehaviorListener implements MessageHandler.Partial<String>{
 	
-	private final RemoteEndpoint.Basic remote;
+	private final RemoteEndpoint.Async remote;
 	private final WebsocketBehavior behavior;
 	private final Application application;
 	private final int pageId;
 	private final WebRequest servletWebRequest;
 	
-	public WebsocketBehaviorListener(Basic remote, Application application, 
+	public WebsocketBehaviorListener(RemoteEndpoint.Async remote, Application application, 
 									  WebsocketBehavior behavior, WebRequest servletWebRequest) {
 		super();
 		this.remote = remote;		
@@ -98,12 +96,7 @@ class WebsocketBehaviorListener implements MessageHandler.Partial<String>{
 	@Override
 	public final void onMessage(String partialMessage, boolean last) {
 		String test = broadcastMessage(partialMessage, last);
-		
-		try {
-			remote.sendText(test);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		remote.sendText(test);		
 	}
 	
 	/**

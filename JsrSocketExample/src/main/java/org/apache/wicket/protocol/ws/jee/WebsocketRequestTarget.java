@@ -16,11 +16,10 @@
  */
 package org.apache.wicket.protocol.ws.jee;
 
-import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Collection;
 
-import javax.websocket.RemoteEndpoint.Basic;
+import javax.websocket.RemoteEndpoint.Async;
 
 import org.apache.wicket.Component;
 import org.apache.wicket.MarkupContainer;
@@ -48,9 +47,9 @@ public class WebsocketRequestTarget implements AjaxRequestTarget, IWebSocketRequ
 	private final Page page;
 	private final XmlAjaxResponse ajaxResponse;
 	private final Response response;
-	private final Basic remote;	
+	private final Async remote;	
 	
-	public WebsocketRequestTarget(Page page, Response response, Basic remote) {
+	public WebsocketRequestTarget(Page page, Response response, Async remote) {
 		super();
 		this.page = page;
 		this.response = response;
@@ -185,12 +184,8 @@ public class WebsocketRequestTarget implements AjaxRequestTarget, IWebSocketRequ
 	}
 
 	@Override
-	public void push(CharSequence message) {
-		try {
-			remote.sendText(message.toString());
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	public void push(CharSequence message) {		
+		remote.sendText(message.toString());		
 	}
 
 	@Override
@@ -198,10 +193,11 @@ public class WebsocketRequestTarget implements AjaxRequestTarget, IWebSocketRequ
 		ByteBuffer dataBuffer = ByteBuffer.allocate(length);
 		dataBuffer.put(message, offset, length);
 		
-		try {
-			remote.sendBinary(dataBuffer);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}		
+		remote.sendBinary(dataBuffer);			
+	}
+	
+	public void executeJavaScript(String javaScriptCode){
+		push("<execute-javascript>\n" + javaScriptCode 
+				+ "\n</execute-javascript>");
 	}
 }

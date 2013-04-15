@@ -14,7 +14,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-var websocket${componentId} = new WebSocket('${socketUrl}');
+websocket${componentId} = new WebSocket('${socketUrl}');
 
 websocket${componentId}.onopen = function(evt) { onOpen(evt) };
 websocket${componentId}.onmessage = function(evt) { onMessage(evt) };

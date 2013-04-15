@@ -19,6 +19,7 @@ package org.wicketTutorial;
 import java.util.Date;
 
 import org.apache.wicket.markup.ComponentTag;
+import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.Link;
@@ -58,9 +59,30 @@ public class HomePage extends WebPage
 					String message, boolean last) {
 			
 				firstLabel.setDefaultModelObject(new Date().toString());
-				target.add(firstLabel);
-				target.prependJavaScript(";alert('done');");
+				target.add(firstLabel);				
 			}
-		});				
+		});		
+		
+		WebMarkupContainer progressBar = new WebMarkupContainer("progressbar");
+		progressBar.setOutputMarkupId(true);
+		
+		progressBar.add(new WebsocketEventBehavior("click"){
+			@Override
+			protected void onMessage(WebsocketRequestTarget target,
+					String message, boolean last) {
+				for (int i = 0; i <= 100; i++) {
+					target.executeJavaScript("$('#" + getComponent().getMarkupId() +
+							"').find('div').css('width','" + i + "%');");
+					try {
+						Thread.sleep(100);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
+		});
+		
+		add(progressBar);
 	}	
 }

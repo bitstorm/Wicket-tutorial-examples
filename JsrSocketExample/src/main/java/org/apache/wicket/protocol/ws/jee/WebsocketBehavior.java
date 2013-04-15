@@ -47,7 +47,7 @@ import org.apache.wicket.util.template.PackageTextTemplate;
  * @see WsBehaviorAndWebRequest
  * @see WebsocketBehaviorsManager
  */
-public class WebsocketBehavior extends Behavior{
+public abstract class WebsocketBehavior extends Behavior{
 	
 	private Component component;
 	private String pageId;
@@ -82,9 +82,7 @@ public class WebsocketBehavior extends Behavior{
 		baseUrl = extractBaseUrl(request).toString();
 	}
 	
-	protected void onMessage(WebsocketRequestTarget target, 
-		String message, boolean last){						
-	}
+	protected abstract void onMessage(WebsocketRequestTarget target, String message, boolean last);
 	
 	@Override
 	public void renderHead(Component component, IHeaderResponse response){	
