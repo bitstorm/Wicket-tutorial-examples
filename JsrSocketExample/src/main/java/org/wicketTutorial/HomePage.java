@@ -59,6 +59,7 @@ public class HomePage extends WebPage
 					String message, boolean last) {
 			
 				firstLabel.setDefaultModelObject(new Date().toString());
+				
 				target.add(firstLabel);				
 			}
 		});		

@@ -35,7 +35,12 @@
             websocket.onopen = function(evt) { onOpen(evt) };
             websocket.onmessage = function(evt) { onMessage(evt) };
             websocket.onerror = function(evt) { onError(evt) };
-
+			
+            var websocket1 = new WebSocket(wsUri);
+            websocket1.onopen = function(evt) { onOpen(evt) };
+            websocket1.onmessage = function(evt) { onMessage(evt) };
+            websocket1.onerror = function(evt) { onError(evt) };
+            
             function init() {
                 output = document.getElementById("output");
             }

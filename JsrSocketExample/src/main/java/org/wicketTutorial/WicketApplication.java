@@ -62,7 +62,7 @@ public class WicketApplication extends WebApplication
 		super.init();
 		
 		ServerEndpointConfig.Builder builder = ServerEndpointConfig.Builder.
-												create(WebsocketBehaviorEndpoint.class, WebsocketBehavior.WEBSOCKET_CREATOR_URL);
+												create(WebsocketBehaviorEndpoint.class, WebsocketBehavior.WEBSOCKET_CREATOR_URL);		
 		
 		ServerEndpointConfig configs = builder.build();
 		ServerContainer container = ServerContainerProvider.getServerContainer();
@@ -77,5 +77,6 @@ public class WicketApplication extends WebApplication
 		} catch (DeploymentException e) {
 			e.printStackTrace();
 		}
+				
 	}
 }

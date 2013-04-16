@@ -79,7 +79,7 @@ public abstract class WebsocketBehavior extends Behavior{
 		
 		behaviorsManager.putBehavior(behavAndReq, sessionId, behaviorId);				
 		
-		baseUrl = extractBaseUrl(request).toString();
+		baseUrl = extractBaseUrl(request).toString();					
 	}
 	
 	protected abstract void onMessage(WebsocketRequestTarget target, String message, boolean last);

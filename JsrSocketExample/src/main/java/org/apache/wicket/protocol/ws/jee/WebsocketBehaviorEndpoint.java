@@ -29,7 +29,6 @@ import javax.websocket.Session;
 import org.apache.wicket.Application;
 import org.apache.wicket.Page;
 import org.apache.wicket.ThreadContext;
-import org.apache.wicket.page.IPageManager;
 import org.apache.wicket.request.cycle.RequestCycle;
 import org.apache.wicket.request.cycle.RequestCycleContext;
 import org.apache.wicket.request.http.WebRequest;
@@ -41,6 +40,7 @@ import org.apache.wicket.session.ISessionStore;
  *
  */
 public class WebsocketBehaviorEndpoint extends Endpoint{
+	public WebsocketBehaviorEndpoint(){}
 	
 	@Override
 	public void onOpen(Session session, EndpointConfig config) {
@@ -146,27 +146,13 @@ class WebsocketBehaviorListener implements MessageHandler.Partial<String>{
 			{
 				session = oldSession;
 			}
-			
-			IPageManager pageManager = session.getPageManager();
-			Page page;
-			
-			page = (Page) pageManager.getPage(0);			
+						
+			Page page = behavior.getComponent().getPage();
 				
-			try
-			{
-								
-				page = (Page) pageManager.getPage(pageId);
+			WebsocketRequestTarget target = new WebsocketRequestTarget(page, response, remote);
 				
-				WebsocketRequestTarget target = new WebsocketRequestTarget(page, response, remote);
-				
-				behavior.onMessage(target, message, last);
-				target.writeToResponse();
-				
-			}
-			finally
-			{
-				pageManager.commitRequest();
-			}
+			behavior.onMessage(target, message, last);
+			target.writeToResponse();				
 			
 			result = response.toString();
 			
