@@ -33,8 +33,8 @@ import org.apache.wicket.request.cycle.RequestCycle;
 import org.apache.wicket.request.http.WebRequest;
 import org.apache.wicket.request.resource.PackageResourceReference;
 import org.apache.wicket.request.resource.ResourceReference;
-import org.apache.wicket.util.crypt.Base64;
 import org.apache.wicket.util.lang.Generics;
+import org.apache.wicket.util.string.Strings;
 import org.apache.wicket.util.template.PackageTextTemplate;
 
 
@@ -56,7 +56,7 @@ public abstract class WebsocketBehavior extends Behavior{
 	
 	public static final MetaDataKey<WebsocketBehaviorsManager> WEBSOCKET_BEHAVIOR_MAP_KEY = 
 			new MetaDataKey<WebsocketBehaviorsManager>(){};
-	public static final String WEBSOCKET_CREATOR_URL = "/websocketCreator";
+	public static final String WEBSOCKET_CREATOR_URL = "/websocketCreator_";
 	private String baseUrl;
  	
 	@Override
@@ -71,8 +71,8 @@ public abstract class WebsocketBehavior extends Behavior{
 		this.sessionId = Session.get().getId();
 		WebsocketBehaviorsManager behaviorsManager = Application.get().getMetaData(WEBSOCKET_BEHAVIOR_MAP_KEY);
 		
-		CharSequence behaviorUrl = component.urlFor(this, IBehaviorListener.INTERFACE, null);
-		this.behaviorId = Base64.encodeBase64URLSafeString(behaviorUrl.toString().getBytes());
+		this.behaviorId = component.urlFor(this, IBehaviorListener.INTERFACE, null).toString();
+		//this.behaviorId = Base64.encodeBase64URLSafeString(behaviorUrl.toString().getBytes());
 		
 		Request request = RequestCycle.get().getRequest();
 		WsBehaviorAndWebRequest behavAndReq = new WsBehaviorAndWebRequest((WebRequest)request, this);
@@ -92,7 +92,7 @@ public abstract class WebsocketBehavior extends Behavior{
 		final ResourceReference ajaxReference = Application.get().getJavaScriptLibrarySettings().getWicketAjaxReference();
 		final PackageResourceReference openWebsocket = new PackageResourceReference(WebsocketBehavior.class, "res/openWebsocket.js");
 		
-		String socketUrl =  baseUrl + WEBSOCKET_CREATOR_URL + "?sessionId=" + sessionId +
+		String socketUrl =  baseUrl + WEBSOCKET_CREATOR_URL + getEscapedAppName() + "?sessionId=" + sessionId +
 				"&behaviorId=" + behaviorId;
 		Map<String, Object> variables = Generics.newHashMap();
 		
@@ -106,6 +106,10 @@ public abstract class WebsocketBehavior extends Behavior{
 		response.render(JavaScriptHeaderItem.forReference(openWebsocket));
 		
 		response.render(OnLoadHeaderItem.forScript(webSocketSetupTemplate.asString(variables)));
+	}
+
+	public static CharSequence getEscapedAppName() {
+		return Strings.escapeMarkup(Application.get().getApplicationKey());
 	}
 
 

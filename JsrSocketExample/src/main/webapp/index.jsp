@@ -76,7 +76,7 @@
 <%
 
 	
-      	ServerEndpointConfig configs = ServerEndpointConfig.Builder.create(EchoServer.class, "/foo").build();
+    ServerEndpointConfig configs = ServerEndpointConfig.Builder.create(EchoServer.class, "/foo").build();
 	ServerContainer container = ServerContainerProvider.getServerContainer();
 
 	out.println(container);

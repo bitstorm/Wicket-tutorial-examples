@@ -19,7 +19,6 @@ package org.apache.wicket.protocol.ws.jee;
 import java.util.List;
 import java.util.Map;
 
-import javax.websocket.CloseReason;
 import javax.websocket.Endpoint;
 import javax.websocket.EndpointConfig;
 import javax.websocket.MessageHandler;
@@ -60,13 +59,7 @@ public class WebsocketBehaviorEndpoint extends Endpoint{
 		WebsocketBehaviorListener listener = new WebsocketBehaviorListener(remote, application, 
 											behaviorAndReq.getBehavior(), behaviorAndReq.getRequest());	
 		session.addMessageHandler(listener);		
-	}	
-	
-	@Override
-	public void onClose(Session session, CloseReason closeReason) {
-		// TODO Auto-generated method stub
-		super.onClose(session, closeReason);
-	}
+	}		
 }
 
 /**
