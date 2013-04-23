@@ -53,12 +53,7 @@
 			<groupId>org.apache.wicket</groupId>
 			<artifactId>wicket-core</artifactId>
 			<version>${wicket.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.tyrus</groupId>
-			<artifactId>tyrus-container-servlet</artifactId>
-			<version>1.0-b13</version>
-		</dependency>
+		</dependency>		
 		<dependency>
 			<groupId>javax.net.websocket</groupId>
 			<artifactId>javax.net.websocket-api</artifactId>
@@ -67,10 +62,8 @@
     	<dependency>
 			<groupId>org.apache.wicket</groupId>
 			<artifactId>wicket-native-websocket-core</artifactId>
-			<version>0.8-SNAPSHOT</version>
+			<version>0.8</version>
 		</dependency>
-		
-    	 
 		
 		<dependency>
 			<groupId>org.apache.wicket</groupId>
