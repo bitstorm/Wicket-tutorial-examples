@@ -19,6 +19,7 @@ package org.apache.wicket.protocol.ws.jee;
 import java.nio.ByteBuffer;
 import java.util.Collection;
 
+import javax.websocket.RemoteEndpoint;
 import javax.websocket.RemoteEndpoint.Async;
 
 import org.apache.wicket.Component;
@@ -47,7 +48,7 @@ public class WebsocketRequestTarget implements AjaxRequestTarget, IWebSocketRequ
 	private final Page page;
 	private final XmlAjaxResponse ajaxResponse;
 	private final Response response;
-	private final Async remote;	
+	private final RemoteEndpoint.Async remote;	
 	
 	public WebsocketRequestTarget(Page page, Response response, Async remote) {
 		super();

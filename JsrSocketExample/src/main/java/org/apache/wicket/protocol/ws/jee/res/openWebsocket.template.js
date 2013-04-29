@@ -16,6 +16,6 @@
  */
 websocket${componentId} = new WebSocket('${socketUrl}');
 
-websocket${componentId}.onopen = function(evt) { onOpen(evt) };
-websocket${componentId}.onmessage = function(evt) { onMessage(evt) };
-websocket${componentId}.onerror = function(evt) { onError(evt) };
+websocket${componentId}.onopen = function(evt) {${onOpen}};
+websocket${componentId}.onmessage = function(evt) {${onMessage}};
+websocket${componentId}.onerror = function(evt) {${onError}};

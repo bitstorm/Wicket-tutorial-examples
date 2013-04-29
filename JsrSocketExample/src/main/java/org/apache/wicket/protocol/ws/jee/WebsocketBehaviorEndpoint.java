@@ -39,7 +39,6 @@ import org.apache.wicket.session.ISessionStore;
  *
  */
 public class WebsocketBehaviorEndpoint extends Endpoint{
-	public WebsocketBehaviorEndpoint(){}
 	
 	@Override
 	public void onOpen(Session session, EndpointConfig config) {
@@ -47,6 +46,7 @@ public class WebsocketBehaviorEndpoint extends Endpoint{
 		RemoteEndpoint.Async remote = session.getAsyncRemote();
 		Map<String, Object> userProperties = config.getUserProperties();
 		Application application = (Application) userProperties.get("currentApplication");
+		
 		WebsocketBehaviorsManager behaviorsManager = application.getMetaData(WebsocketBehavior.WEBSOCKET_BEHAVIOR_MAP_KEY);
 		
 		Map<String, List<String>> parameters = session.getRequestParameterMap();
@@ -73,7 +73,6 @@ class WebsocketBehaviorListener implements MessageHandler.Partial<String>{
 	private final RemoteEndpoint.Async remote;
 	private final WebsocketBehavior behavior;
 	private final Application application;
-	private final int pageId;
 	private final WebRequest servletWebRequest;
 	
 	public WebsocketBehaviorListener(RemoteEndpoint.Async remote, Application application, 
@@ -82,7 +81,6 @@ class WebsocketBehaviorListener implements MessageHandler.Partial<String>{
 		this.remote = remote;		
 		this.behavior = behavior;
 		this.application = application;
-		this.pageId = Integer.parseInt(behavior.getPageId(), 10);
 		this.servletWebRequest = servletWebRequest;
 	}
 

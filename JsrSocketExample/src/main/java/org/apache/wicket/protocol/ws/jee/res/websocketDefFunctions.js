@@ -15,9 +15,7 @@
  *  limitations under the License.
  */
           
-function onOpen(evt) {
-   
-}
+function onOpen(evt) {}
 
 function onMessage(event) {
 	var message = event.data;
@@ -37,6 +35,5 @@ function onMessage(event) {
 		}
 	}
 }            
-function onError(evt) {
-  
-}
+
+function onError(evt) {}

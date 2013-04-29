@@ -16,16 +16,21 @@
  */
 package org.apache.wicket.protocol.ws.jee;
 
-import javax.websocket.DeploymentException;
-import javax.websocket.server.ServerContainer;
-import javax.websocket.server.ServerContainerProvider;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.websocket.Endpoint;
+import javax.websocket.server.ServerApplicationConfig;
 import javax.websocket.server.ServerEndpointConfig;
 
 import org.apache.wicket.Application;
 import org.apache.wicket.IInitializer;
+import org.wicketTutorial.EchoServer;
 
-public class Initializer implements IInitializer {
-
+public class Initializer implements IInitializer, ServerApplicationConfig {	
+	private Application application;
+	
 	/**
 	 * This method performs the following configuration steps: 
 	 * 
@@ -40,31 +45,36 @@ public class Initializer implements IInitializer {
 	 * @see WebsocketBehaviorEndpoint
 	 */
 	@Override
-	public void init(Application application)
-	{		
-		ServerEndpointConfig.Builder builder = ServerEndpointConfig.Builder.create(WebsocketBehaviorEndpoint.class, 
-				WebsocketBehavior.WEBSOCKET_CREATOR_URL + WebsocketBehavior.getEscapedAppName());		
-		
-		ServerEndpointConfig configs = builder.build();
-		ServerContainer container = ServerContainerProvider.getServerContainer();
-		
-		//add the current application as user property for the endpoint
-		configs.getUserProperties().put("currentApplication", application);
+	public void init(Application application){				
+		this.application = application;
 		//define the WebsocketBehaviorsManager that will be used to pass the WebsocketBehaviorS to the endpoint
 		application.setMetaData(WebsocketBehavior.WEBSOCKET_BEHAVIOR_MAP_KEY, new WebsocketBehaviorsManager());
-		
-		try {
-			container.addEndpoint(configs);
-		} catch (DeploymentException e) {
-			e.printStackTrace();
-		}
-				
 	}
 
 	@Override
 	public void destroy(Application application) {
-		// TODO Auto-generated method stub
+	}
 
+	@Override
+	public Set<ServerEndpointConfig> getEndpointConfigs(Set<Class<? extends Endpoint>> endpointClasses) {		
+		HashSet<ServerEndpointConfig> serverConfigs = new HashSet<ServerEndpointConfig>();		
+		ServerEndpointConfig.Builder builder = ServerEndpointConfig.Builder.create(WebsocketBehaviorEndpoint.class, 
+				"/" + WebsocketBehavior.WEBSOCKET_CREATOR_URL);		
+		
+		ServerEndpointConfig configs = builder.build();
+		//add the current application as user property for the endpoint
+		configs.getUserProperties().put("currentApplication", application);
+		serverConfigs.add(configs);
+		
+		builder = ServerEndpointConfig.Builder.create(EchoServer.class, "/echoserver");	
+		
+		serverConfigs.add(builder.build());
+		return serverConfigs;
+	}
+
+	@Override
+	public Set<Class<?>> getAnnotatedEndpointClasses(Set<Class<?>> scanned) {		
+		return Collections.emptySet();
 	}
 
 }

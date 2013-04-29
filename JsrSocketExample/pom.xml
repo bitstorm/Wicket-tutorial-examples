@@ -55,11 +55,11 @@
 			<version>${wicket.version}</version>
 		</dependency>		
 		<dependency>
-			<groupId>javax.net.websocket</groupId>
-			<artifactId>javax.net.websocket-api</artifactId>
-			<version>1.0-b08</version>
-    	</dependency>	
-    	<dependency>
+			<groupId>javax.websocket</groupId>
+			<artifactId>javax.websocket-api</artifactId>
+			<version>1.0-rc3</version>
+    		</dependency>	
+    		<dependency>
 			<groupId>org.apache.wicket</groupId>
 			<artifactId>wicket-native-websocket-core</artifactId>
 			<version>0.8</version>

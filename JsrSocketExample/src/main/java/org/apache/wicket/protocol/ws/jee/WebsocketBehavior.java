@@ -16,26 +16,19 @@
  */
 package org.apache.wicket.protocol.ws.jee;
 
-import java.util.Map;
-
 import org.apache.wicket.Application;
 import org.apache.wicket.Component;
 import org.apache.wicket.MetaDataKey;
 import org.apache.wicket.Session;
-import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.behavior.IBehaviorListener;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
-import org.apache.wicket.markup.head.OnLoadHeaderItem;
 import org.apache.wicket.request.Request;
 import org.apache.wicket.request.Url;
 import org.apache.wicket.request.cycle.RequestCycle;
 import org.apache.wicket.request.http.WebRequest;
 import org.apache.wicket.request.resource.PackageResourceReference;
-import org.apache.wicket.request.resource.ResourceReference;
-import org.apache.wicket.util.lang.Generics;
-import org.apache.wicket.util.string.Strings;
-import org.apache.wicket.util.template.PackageTextTemplate;
+import org.apache.wicket.util.crypt.Base64;
 
 
 /**
@@ -47,8 +40,7 @@ import org.apache.wicket.util.template.PackageTextTemplate;
  * @see WsBehaviorAndWebRequest
  * @see WebsocketBehaviorsManager
  */
-public abstract class WebsocketBehavior extends Behavior{
-	
+public abstract class WebsocketBehavior extends AbstractWebsocketBehavior{
 	private Component component;
 	private String pageId;
 	private String sessionId;
@@ -56,9 +48,12 @@ public abstract class WebsocketBehavior extends Behavior{
 	
 	public static final MetaDataKey<WebsocketBehaviorsManager> WEBSOCKET_BEHAVIOR_MAP_KEY = 
 			new MetaDataKey<WebsocketBehaviorsManager>(){};
-	public static final String WEBSOCKET_CREATOR_URL = "/websocketCreator_";
-	private String baseUrl;
- 	
+	public static final String WEBSOCKET_CREATOR_URL = "websocketCreator";
+	
+	public WebsocketBehavior() {
+		super(false);		
+	}
+	
 	@Override
 	public void onConfigure(Component component) {
 		super.onConfigure(component);
@@ -72,54 +67,53 @@ public abstract class WebsocketBehavior extends Behavior{
 		WebsocketBehaviorsManager behaviorsManager = Application.get().getMetaData(WEBSOCKET_BEHAVIOR_MAP_KEY);
 		
 		this.behaviorId = component.urlFor(this, IBehaviorListener.INTERFACE, null).toString();
-		//this.behaviorId = Base64.encodeBase64URLSafeString(behaviorUrl.toString().getBytes());
+		this.behaviorId = Base64.encodeBase64URLSafeString(this.behaviorId.getBytes());
 		
 		Request request = RequestCycle.get().getRequest();
 		WsBehaviorAndWebRequest behavAndReq = new WsBehaviorAndWebRequest((WebRequest)request, this);
 		
-		behaviorsManager.putBehavior(behavAndReq, sessionId, behaviorId);				
-		
-		baseUrl = extractBaseUrl(request).toString();					
+		behaviorsManager.putBehavior(behavAndReq, sessionId, behaviorId);											
 	}
 	
 	protected abstract void onMessage(WebsocketRequestTarget target, String message, boolean last);
 	
 	@Override
-	public void renderHead(Component component, IHeaderResponse response){	
-		baseUrl = baseUrl.replaceAll("http", "ws");
-		baseUrl = baseUrl.replaceAll("https", "wss");
+	public void renderHead(Component component, IHeaderResponse response){			
+		super.renderHead(component, response);
 		
-		final ResourceReference ajaxReference = Application.get().getJavaScriptLibrarySettings().getWicketAjaxReference();
-		final PackageResourceReference openWebsocket = new PackageResourceReference(WebsocketBehavior.class, "res/openWebsocket.js");
+		final PackageResourceReference websocketDefFunctions = new 
+				PackageResourceReference(WebsocketBehavior.class, "res/websocketDefFunctions.js");		
+		response.render(JavaScriptHeaderItem.forReference(websocketDefFunctions));	
+	}
+	
+	@Override
+	protected Url getSocketCreationURL() {		
+		Url relative = getContextPathURL();
+		relative.getSegments().add(WEBSOCKET_CREATOR_URL);
 		
-		String socketUrl =  baseUrl + WEBSOCKET_CREATOR_URL + getEscapedAppName() + "?sessionId=" + sessionId +
-				"&behaviorId=" + behaviorId;
-		Map<String, Object> variables = Generics.newHashMap();
-		
-		variables.put("socketUrl", socketUrl);
-		variables.put("componentId", component.getMarkupId());
-		
-		PackageTextTemplate webSocketSetupTemplate =
-				new PackageTextTemplate(WebsocketBehavior.class, "res/openWebsocket.template.js");
+		String socketProtocol = isSecure() ? "wss" : "ws";
+		relative.setProtocol(socketProtocol);
 				
-		response.render(JavaScriptHeaderItem.forReference(ajaxReference));
-		response.render(JavaScriptHeaderItem.forReference(openWebsocket));
+		relative.addQueryParameter("sessionId", sessionId);
+		relative.addQueryParameter("behaviorId", behaviorId);
 		
-		response.render(OnLoadHeaderItem.forScript(webSocketSetupTemplate.asString(variables)));
+		return relative;
+	}
+	
+	@Override
+	protected CharSequence onMessageJsFunction() {		
+		return "onMessage(evt)";
 	}
 
-	public static CharSequence getEscapedAppName() {
-		return Strings.escapeMarkup(Application.get().getApplicationKey());
+	@Override
+	protected CharSequence onOpenJsFunction() {
+		return "onOpen(evt)";
 	}
 
-
-	protected CharSequence extractBaseUrl(Request request) {
-		RequestCycle requestCycle = RequestCycle.get();
-		Url relative = Url.parse(requestCycle.getRequest().getContextPath());
-		String full = requestCycle.getUrlRenderer().renderFullUrl(relative);
-		
-		return full;
-	}
+	@Override
+	protected CharSequence onErrorJsFunction() {
+		return "onError(evt)";
+	}	
 
 	@Override
 	public boolean getStatelessHint(Component component){
@@ -134,7 +128,6 @@ public abstract class WebsocketBehavior extends Behavior{
 	protected Component getComponent() {
 		return component;
 	}
-
 
 	protected String getPageId() {
 		return pageId;
