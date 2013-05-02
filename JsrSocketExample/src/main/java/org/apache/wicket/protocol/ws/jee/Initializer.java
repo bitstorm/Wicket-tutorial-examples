@@ -26,11 +26,15 @@ import javax.websocket.server.ServerEndpointConfig;
 
 import org.apache.wicket.Application;
 import org.apache.wicket.IInitializer;
-import org.wicketTutorial.EchoServer;
 
-public class Initializer implements IInitializer, ServerApplicationConfig {	
-	private Application application;
-	
+public class Initializer implements IInitializer, ServerApplicationConfig {		
+	private ServerEndpointConfig configs;
+
+	public Initializer() {
+		configs = ServerEndpointConfig.Builder.create(WebsocketBehaviorEndpoint.class, 
+				"/" + WebsocketBehavior.WEBSOCKET_CREATOR_URL).build();		
+	}
+
 	/**
 	 * This method performs the following configuration steps: 
 	 * 
@@ -45,8 +49,9 @@ public class Initializer implements IInitializer, ServerApplicationConfig {
 	 * @see WebsocketBehaviorEndpoint
 	 */
 	@Override
-	public void init(Application application){				
-		this.application = application;
+	public void init(Application application){						
+		//add the current application as user property for the endpoint
+		configs.getUserProperties().put("currentApplication", application);
 		//define the WebsocketBehaviorsManager that will be used to pass the WebsocketBehaviorS to the endpoint
 		application.setMetaData(WebsocketBehavior.WEBSOCKET_BEHAVIOR_MAP_KEY, new WebsocketBehaviorsManager());
 	}
@@ -57,18 +62,9 @@ public class Initializer implements IInitializer, ServerApplicationConfig {
 
 	@Override
 	public Set<ServerEndpointConfig> getEndpointConfigs(Set<Class<? extends Endpoint>> endpointClasses) {		
-		HashSet<ServerEndpointConfig> serverConfigs = new HashSet<ServerEndpointConfig>();		
-		ServerEndpointConfig.Builder builder = ServerEndpointConfig.Builder.create(WebsocketBehaviorEndpoint.class, 
-				"/" + WebsocketBehavior.WEBSOCKET_CREATOR_URL);		
-		
-		ServerEndpointConfig configs = builder.build();
-		//add the current application as user property for the endpoint
-		configs.getUserProperties().put("currentApplication", application);
-		serverConfigs.add(configs);
-		
-		builder = ServerEndpointConfig.Builder.create(EchoServer.class, "/echoserver");	
-		
-		serverConfigs.add(builder.build());
+		HashSet<ServerEndpointConfig> serverConfigs = new HashSet<ServerEndpointConfig>();						
+		serverConfigs.add(configs);		
+	
 		return serverConfigs;
 	}
 
