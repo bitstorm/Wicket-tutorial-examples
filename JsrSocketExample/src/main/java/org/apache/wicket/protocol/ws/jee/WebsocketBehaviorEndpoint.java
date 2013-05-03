@@ -44,12 +44,11 @@ public class WebsocketBehaviorEndpoint extends Endpoint{
 	public void onOpen(Session session, EndpointConfig config) {
 		
 		RemoteEndpoint.Async remote = session.getAsyncRemote();
-		Map<String, Object> userProperties = config.getUserProperties();
+		Map<String, Object> userProperties = session.getUserProperties();
 		Application application = (Application) userProperties.get("currentApplication");
 		
-		WebsocketBehaviorsManager behaviorsManager = application.getMetaData(WebsocketBehavior.WEBSOCKET_BEHAVIOR_MAP_KEY);
-		
 		Map<String, List<String>> parameters = session.getRequestParameterMap();
+		WebsocketBehaviorsManager behaviorsManager = application.getMetaData(WebsocketBehavior.WEBSOCKET_BEHAVIOR_MAP_KEY);
 		
 		String behaviorId = parameters.get("behaviorId").get(0);
 		String sessionId = parameters.get("sessionId").get(0);

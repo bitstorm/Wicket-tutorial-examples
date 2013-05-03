@@ -16,25 +16,16 @@
  */
 package org.apache.wicket.protocol.ws.jee;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.websocket.Endpoint;
-import javax.websocket.server.ServerApplicationConfig;
+import javax.websocket.DeploymentException;
+import javax.websocket.server.ServerContainer;
 import javax.websocket.server.ServerEndpointConfig;
 
 import org.apache.wicket.Application;
 import org.apache.wicket.IInitializer;
+import org.apache.wicket.protocol.http.WebApplication;
 
-public class Initializer implements IInitializer, ServerApplicationConfig {		
-	private ServerEndpointConfig configs;
-
-	public Initializer() {
-		configs = ServerEndpointConfig.Builder.create(WebsocketBehaviorEndpoint.class, 
-				"/" + WebsocketBehavior.WEBSOCKET_CREATOR_URL).build();		
-	}
-
+public class Initializer implements IInitializer{		
+	
 	/**
 	 * This method performs the following configuration steps: 
 	 * 
@@ -49,28 +40,28 @@ public class Initializer implements IInitializer, ServerApplicationConfig {
 	 * @see WebsocketBehaviorEndpoint
 	 */
 	@Override
-	public void init(Application application){						
+	public void init(Application application){				
+		WebApplication webApp = (WebApplication)application;
+		ServerContainer serverContainer =  (ServerContainer) webApp.getServletContext()
+											.getAttribute("javax.websocket.server.ServerContainer");
+		
+		ServerEndpointConfig configs = ServerEndpointConfig.Builder.create(WebsocketBehaviorEndpoint.class, 
+				"/" + WebsocketBehavior.WEBSOCKET_CREATOR_URL).build();
+		
 		//add the current application as user property for the endpoint
 		configs.getUserProperties().put("currentApplication", application);
 		//define the WebsocketBehaviorsManager that will be used to pass the WebsocketBehaviorS to the endpoint
 		application.setMetaData(WebsocketBehavior.WEBSOCKET_BEHAVIOR_MAP_KEY, new WebsocketBehaviorsManager());
+		
+		try {
+			serverContainer.addEndpoint(configs);
+		} catch (DeploymentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
 	public void destroy(Application application) {
 	}
-
-	@Override
-	public Set<ServerEndpointConfig> getEndpointConfigs(Set<Class<? extends Endpoint>> endpointClasses) {		
-		HashSet<ServerEndpointConfig> serverConfigs = new HashSet<ServerEndpointConfig>();						
-		serverConfigs.add(configs);		
-	
-		return serverConfigs;
-	}
-
-	@Override
-	public Set<Class<?>> getAnnotatedEndpointClasses(Set<Class<?>> scanned) {		
-		return Collections.emptySet();
-	}
-
 }
