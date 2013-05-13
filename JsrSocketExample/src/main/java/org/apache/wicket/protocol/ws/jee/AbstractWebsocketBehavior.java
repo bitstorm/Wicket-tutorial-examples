@@ -5,9 +5,9 @@ import java.util.Map;
 import org.apache.wicket.Application;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
+import org.apache.wicket.markup.head.HeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
-import org.apache.wicket.markup.head.OnLoadHeaderItem;
 import org.apache.wicket.request.Url;
 import org.apache.wicket.request.cycle.RequestCycle;
 import org.apache.wicket.request.resource.ResourceReference;
@@ -17,6 +17,8 @@ import org.apache.wicket.util.template.PackageTextTemplate;
 
 public abstract class AbstractWebsocketBehavior extends Behavior {
 	private final boolean isSecure;
+	private final PackageTextTemplate webSocketSetupTemplate = 
+			new PackageTextTemplate(WebsocketBehavior.class, "res/openWebsocket.template.js");
 	
 	public AbstractWebsocketBehavior(boolean isSecure) {		
 		this.isSecure = isSecure;
@@ -28,7 +30,11 @@ public abstract class AbstractWebsocketBehavior extends Behavior {
 	
 	protected Url getContextPathURL(){
 		RequestCycle requestCycle = RequestCycle.get();
-		return Url.parse(requestCycle.getRequest().getContextPath());
+		Url httpUrl = Url.parse(requestCycle.getRequest().getContextPath());
+		String socketProtocol = isSecure() ? "wss" : "ws";
+		
+		httpUrl.setProtocol(socketProtocol);
+		return httpUrl;
 	}
 
 	public static CharSequence getEscapedAppName() {
@@ -50,15 +56,13 @@ public abstract class AbstractWebsocketBehavior extends Behavior {
 		variables.put("onMessage", onMessageJsFunction());
 		variables.put("onError", onErrorJsFunction());
 		
-		PackageTextTemplate webSocketSetupTemplate =
-				new PackageTextTemplate(WebsocketBehavior.class, "res/openWebsocket.template.js");
-				
 		response.render(JavaScriptHeaderItem.forReference(ajaxReference));
-		response.render(OnLoadHeaderItem.forScript(webSocketSetupTemplate.asString(variables)));
+		response.render(wrapSocketCreationScript(webSocketSetupTemplate, variables));		
 	}
 	
 	protected abstract Url getSocketCreationURL();
-
+	protected abstract HeaderItem wrapSocketCreationScript(PackageTextTemplate creationTemplate, Map<String, Object> variables);
+	
 	protected boolean isSecure() {
 		return isSecure;
 	}

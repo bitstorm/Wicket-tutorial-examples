@@ -16,19 +16,24 @@
  */
 package org.apache.wicket.protocol.ws.jee;
 
+import java.util.Map;
+
 import org.apache.wicket.Application;
 import org.apache.wicket.Component;
 import org.apache.wicket.MetaDataKey;
 import org.apache.wicket.Session;
 import org.apache.wicket.behavior.IBehaviorListener;
+import org.apache.wicket.markup.head.HeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
+import org.apache.wicket.markup.head.OnLoadHeaderItem;
 import org.apache.wicket.request.Request;
 import org.apache.wicket.request.Url;
 import org.apache.wicket.request.cycle.RequestCycle;
 import org.apache.wicket.request.http.WebRequest;
 import org.apache.wicket.request.resource.PackageResourceReference;
 import org.apache.wicket.util.crypt.Base64;
+import org.apache.wicket.util.template.PackageTextTemplate;
 
 
 /**
@@ -87,13 +92,15 @@ public abstract class WebsocketBehavior extends AbstractWebsocketBehavior{
 	}
 	
 	@Override
+	protected HeaderItem wrapSocketCreationScript(PackageTextTemplate template, Map<String, Object> variables) {
+		return OnLoadHeaderItem.forScript(template.asString(variables));		
+	}
+	
+	@Override
 	protected Url getSocketCreationURL() {		
 		Url relative = getContextPathURL();
-		relative.getSegments().add(WEBSOCKET_CREATOR_URL);
 		
-		String socketProtocol = isSecure() ? "wss" : "ws";
-		relative.setProtocol(socketProtocol);
-				
+		relative.getSegments().add(WEBSOCKET_CREATOR_URL);						
 		relative.addQueryParameter("sessionId", sessionId);
 		relative.addQueryParameter("behaviorId", behaviorId);
 		

@@ -25,6 +25,7 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.protocol.ws.jee.WebsocketEventBehavior;
 import org.apache.wicket.protocol.ws.jee.WebsocketRequestTarget;
+import org.wicketTutorial.chatExample.ChatRoomPanel;
 
 public class HomePage extends WebPage
 {
@@ -85,5 +86,7 @@ public class HomePage extends WebPage
 		});
 		
 		add(progressBar);
+		
+		add(new ChatRoomPanel("chat"));
 	}	
 }
