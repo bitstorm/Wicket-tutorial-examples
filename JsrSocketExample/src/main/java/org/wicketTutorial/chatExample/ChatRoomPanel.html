@@ -8,18 +8,20 @@
 <wicket:panel> 
     <br/>
     Your username: <input type="text" id="usernameField"/><button value="Join" id="joinButton">Join</button>
-    <br/>
-    <div>
-		<textarea rows="15" cols="80" id="chatHistory" disabled style="font-weight:bold; color:blue">
-		</textarea>
+    <div style="display: table;">
+	    <div style="display: table-row;">
+			<textarea rows="15" cols="80" id="chatHistory" disabled 
+							style="font-weight:bold; color:blue;width:100%">
+			</textarea>
+		</div>
+		
+		<div style="display: table-row;">	
+			<textarea rows="15" cols="80" id="messageArea" style="width:100%">
+			</textarea>
+		</div>
 	</div>
 	<br/>
-	<div>	
-		<textarea rows="15" cols="80" id="messageArea">
-		</textarea>
-	</div>
-	<br/>
-	<button value="Send" id="sendButton">Send</button>	
+	<button value="Send" id="sendButton" disabled="disabled">Send</button>	
 </wicket:panel> 
 </body>
 </html>

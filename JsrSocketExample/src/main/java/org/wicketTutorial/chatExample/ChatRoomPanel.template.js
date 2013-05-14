@@ -16,6 +16,11 @@
  */
 function joinMessage(){
 	var username = $('#usernameField').val();
+	
+	$('#joinButton').attr("disabled", "disabled");
+	$('#usernameField').attr("disabled", "disabled");
+	$('#sendButton').removeAttr("disabled");
+	
 	websocket${componentId}.send(username + ": the user has joined the chat.");
 }
 
