@@ -32,7 +32,7 @@ public class HomePage extends WebPage {
 			public void onClick() {
 				PageParameters pageParameters = new PageParameters();
 				pageParameters.add("foo", "foo");
-				pageParameters.add("bor", "bar");
+				pageParameters.add("bar", "bar");
 				
 				setResponsePage(PageWithParameters.class, pageParameters);
 			}
