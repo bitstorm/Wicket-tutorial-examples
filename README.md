@@ -10,7 +10,7 @@ To run a single example enter in the related directory, run 'mvn jetty:run' or '
 
 ## Contributing to this guide
 
-If you want to contribute to the guide with corrections a new contents, you can find how to do it in the [appendix of the guide](http://wicket.apache.org/guide/guide/chapter26.html).
+If you want to contribute to the guide with corrections or new contents, you can find how to do it in the [appendix of the guide](http://wicket.apache.org/guide/guide/chapter26.html).
 
 ## The author
 My name is Andrea Del Bene and I'm a passionate enterprise web developer and an advocate of Apache Wicket. I started programming in Java since version 1.2 and I'm a strong supporter of open source technologies.
