@@ -84,6 +84,7 @@
     <module>CallbackURLExample</module>
     <module>JsrSocketExample</module>
     <module>ScriptInsideBody</module>
+    <module>ScriptInsideBody</module>
   </modules>	
 	<!--url>http://wicket.apache.org/${project.artifactId}</url-->
 	<inceptionYear>2012</inceptionYear>	
