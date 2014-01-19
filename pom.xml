@@ -83,7 +83,7 @@
     <module>LocalizedChoicesExample</module>
     <module>CallbackURLExample</module>
     <module>JsrSocketExample</module>
-    <module>JSR303validation</module>
+    
   </modules>	
 	<!--url>http://wicket.apache.org/${project.artifactId}</url-->
 	<inceptionYear>2012</inceptionYear>	
