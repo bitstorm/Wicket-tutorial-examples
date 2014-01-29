@@ -3,5 +3,6 @@ target
 .classpath
 .metadata
 .settings
-.xml~
 bin
+.xml~
+
