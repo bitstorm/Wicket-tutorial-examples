@@ -1,4 +1,4 @@
-/*
+/**
  *  Licensed to the Apache Software Foundation (ASF) under one or more
  *  contributor license agreements.  See the NOTICE file distributed with
  *  this work for additional information regarding copyright ownership.
@@ -14,6 +14,19 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-/**
- * Empty js file
- */
+package org.wicketTutorial.jsr303;
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
+public class Address {
+	
+	@NotNull
+	private String city;
+	
+	@NotNull
+	private String street;
+	
+	@Pattern(regexp = "\\d+", message = "{address.invalidZipCode}")
+	private String zipCode;
+}
