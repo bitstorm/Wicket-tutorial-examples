@@ -16,6 +16,7 @@
  */
 package org.wicketTutorial.jsr303;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.validation.constraints.NotNull;
@@ -24,7 +25,7 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Range;
 
-public class Person {
+public class Person implements Serializable{
 	@NotNull
 	private String name;
 	

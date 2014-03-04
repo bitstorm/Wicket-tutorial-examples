@@ -18,7 +18,11 @@ package org.wicketTutorial;
 
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.form.Form;
+import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.model.CompoundPropertyModel;
+import org.wicketTutorial.jsr303.Person;
 
 public class HomePage extends WebPage {
 	private static final long serialVersionUID = 1L;
@@ -26,9 +30,19 @@ public class HomePage extends WebPage {
 	public HomePage(final PageParameters parameters) {
 		super(parameters);
 
-		add(new Label("version", getApplication().getFrameworkSettings().getVersion()));
-
-		// TODO Add your page's components here
+		setDefaultModel(new CompoundPropertyModel<Person>(new Person()));
+		
+		Form<Void> form = new Form<Void>("form");
+		
+		form.add(new TextField("name"));
+		form.add(new TextField("email"));
+		form.add(new TextField("age"));
+		form.add(new TextField("birthDay"));
+		form.add(new TextField("address.city"));
+		form.add(new TextField("address.street"));
+		form.add(new TextField("address.zipCode"));
+		
+		add(form);
 
     }
 }

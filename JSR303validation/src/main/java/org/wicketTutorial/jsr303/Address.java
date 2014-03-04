@@ -16,10 +16,12 @@
  */
 package org.wicketTutorial.jsr303;
 
+import java.io.Serializable;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
-public class Address {
+public class Address implements Serializable {
 	
 	@NotNull
 	private String city;
