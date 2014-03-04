@@ -25,7 +25,7 @@
 		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="Stylesheet" />
 	</head>
 	<body>
-		
+	<h1>JSR303 validation form</h1>	
 	<form wicket:id="form">
 		<span style="width: 100px; float: left">Name</span><input type="text" wicket:id="name"/><br/>
 		<span style="width: 100px; float: left">Email</span><input type="text" wicket:id="email"/><br/>
@@ -36,6 +36,9 @@
 		<span style="width: 100px; float: left">City</span><input type="text" wicket:id="address.city"/><br/>
 		<br/>
 		<input type="submit" value="submit"/>
+		
+		<div wicket:id="feedback">
+		</div>
 	</form>
 		
 	</body>

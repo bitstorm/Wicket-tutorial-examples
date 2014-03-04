@@ -17,9 +17,11 @@
 package org.wicketTutorial;
 
 import org.apache.wicket.request.mapper.parameter.PageParameters;
+import org.apache.wicket.bean.validation.PropertyValidator;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
+import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.wicketTutorial.jsr303.Person;
@@ -34,13 +36,15 @@ public class HomePage extends WebPage {
 		
 		Form<Void> form = new Form<Void>("form");
 		
-		form.add(new TextField("name"));
-		form.add(new TextField("email"));
-		form.add(new TextField("age"));
-		form.add(new TextField("birthDay"));
-		form.add(new TextField("address.city"));
-		form.add(new TextField("address.street"));
-		form.add(new TextField("address.zipCode"));
+		form.add(new TextField("name").add(new PropertyValidator()));
+		form.add(new TextField("email").add(new PropertyValidator()));
+		form.add(new TextField("age").add(new PropertyValidator()));
+		form.add(new TextField("birthDay").add(new PropertyValidator()));
+		form.add(new TextField("address.city").add(new PropertyValidator()));
+		form.add(new TextField("address.street").add(new PropertyValidator()));
+		form.add(new TextField("address.zipCode").add(new PropertyValidator()));
+		
+		form.add(new FeedbackPanel("feedback"));
 		
 		add(form);
 
