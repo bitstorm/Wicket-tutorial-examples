@@ -16,9 +16,7 @@
  */
 package org.wicketTutorial;
 
-import org.apache.wicket.markup.head.IHeaderResponse;
-import org.apache.wicket.markup.head.filter.JavaScriptFilteredIntoFooterHeaderResponse;
-import org.apache.wicket.markup.html.IHeaderResponseDecorator;
+import org.apache.wicket.bean.validation.BeanValidationConfiguration;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
 
@@ -45,26 +43,8 @@ public class WicketApplication extends WebApplication
 	@Override
 	public void init()
 	{
-		setHeaderResponseDecorator(new JavaScriptToBucketResponseDecorator("footer-container"));
+		super.init();
+
+		new BeanValidationConfiguration().configure(this);
 	}
-	
-	/**
-     * Decorates an original {@link org.apache.wicket.markup.head.IHeaderResponse} and renders all javascript items
-     * (JavaScriptHeaderItem), to a specific container in the page.
-     */
-    static class JavaScriptToBucketResponseDecorator implements IHeaderResponseDecorator 
-    {
-
-        private String bucketName;
-
-        public JavaScriptToBucketResponseDecorator(String bucketName) {
-            this.bucketName = bucketName;
-        }
-
-        @Override
-        public IHeaderResponse decorate(IHeaderResponse response) {
-            return new JavaScriptFilteredIntoFooterHeaderResponse(response, bucketName);
-        }
-
-    }
 }
