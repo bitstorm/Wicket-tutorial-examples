@@ -118,6 +118,12 @@
 			<artifactId>spring-context</artifactId>
 			<version>4.1.2.RELEASE</version>
 		</dependency>
+		<dependency>
+			<groupId>javax.annotation</groupId>
+			<artifactId>javax.annotation-api</artifactId>
+			<version>1.2</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<resources>

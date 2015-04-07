@@ -86,7 +86,6 @@
     <module>TagTesterExample</module>
     <module>LocalizedChoicesExample</module>
     <module>CallbackURLExample</module>
-    <module>JsrSocketExample</module>
     <module>JSR303validation</module>
     <module>ScriptInsideBody</module>
   </modules>	
