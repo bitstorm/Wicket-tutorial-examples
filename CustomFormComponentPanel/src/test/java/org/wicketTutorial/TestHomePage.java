@@ -45,7 +45,7 @@ public class TestHomePage
 		TemperatureDegreeField field = new TemperatureDegreeField("field", Model.of(0.00));
 		
 		Assert.assertNull(field.get("mesuramentUnit"));		
-		tester.startComponent(field);		
+		tester.startComponentInPage(field);		
 		Assert.assertNotNull(field.get("mesuramentUnit"));
 	}		
 }

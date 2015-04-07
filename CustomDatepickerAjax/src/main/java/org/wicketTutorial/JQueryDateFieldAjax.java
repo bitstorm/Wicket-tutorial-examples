@@ -34,7 +34,7 @@ import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.ResourceModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.request.resource.PackageResourceReference;
-import org.apache.wicket.settings.IJavaScriptLibrarySettings;
+import org.apache.wicket.settings.JavaScriptLibrarySettings;
 import org.apache.wicket.util.convert.IConverter;
 import org.apache.wicket.util.template.PackageTextTemplate;
 
@@ -94,7 +94,7 @@ public class JQueryDateFieldAjax extends DateTextField {
 		if(!isEnabledInHierarchy())
 			return;
 		//add bundled JQuery
-		IJavaScriptLibrarySettings javaScriptSettings = getApplication().getJavaScriptLibrarySettings();
+		JavaScriptLibrarySettings javaScriptSettings = getApplication().getJavaScriptLibrarySettings();
 		response.render(JavaScriptHeaderItem.
 						forReference(javaScriptSettings.getJQueryReference()));
 		//add package resources

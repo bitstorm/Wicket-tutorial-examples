@@ -57,7 +57,7 @@ public class TemperatureDegreeField extends FormComponentPanel<Double> {
 	}
 	
 	@Override
-	protected void convertInput() {
+	public void convertInput() {
 		Double userDegreeVal = userDegree.getConvertedInput();
 		Double kelvinDegree;
 		

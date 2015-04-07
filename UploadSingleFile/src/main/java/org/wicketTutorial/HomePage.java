@@ -48,7 +48,7 @@ public class HomePage extends WebPage {
     						fileUpload.getClientFileName());
     				
     		    	fileUpload.writeTo(file);
-		        } catch (IOException e) {
+		        } catch (Exception e) {
 			   e.printStackTrace();
 			 }
     		}
