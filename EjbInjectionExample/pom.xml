@@ -97,7 +97,7 @@
 		<dependency>
 			<groupId>org.wicketstuff</groupId>
 			<artifactId>wicketstuff-javaee-inject</artifactId>
-			<version>6.0.0-beta3</version>
+			<version>${wicket.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.openejb</groupId>

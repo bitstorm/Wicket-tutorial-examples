@@ -28,7 +28,7 @@
 		<jetty.version>7.6.3.v20120416</jetty.version>		
 		<maven.javadoc.version>2.8.1</maven.javadoc.version>
 		<maven.surefire.version>2.12.2</maven.surefire.version>
-		<wicket.version>6.19.0</wicket.version>
+		<wicket.version>6.20.0</wicket.version>
 	</properties>
 	<modules>
 		<module>BindSessionExample</module>
