@@ -46,7 +46,7 @@ public class HomePage extends WebPage {
 				PageParameters pageParameters = new PageParameters();
 				pageParameters.add("foo", "foo");
 				
-				setResponsePage(MountedPageWithPlaceholder.class);
+				setResponsePage(MountedPageWithPlaceholder.class,pageParameters);
 			}
 			
 		});
