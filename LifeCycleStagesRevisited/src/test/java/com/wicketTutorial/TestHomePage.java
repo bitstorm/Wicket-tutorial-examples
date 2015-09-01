@@ -19,8 +19,8 @@ package com.wicketTutorial;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
 import org.junit.Test;
-import org.wicketTutorial.HomePage;
-import org.wicketTutorial.WicketApplication;
+import org.wicketTutorial.lifecyclerev.HomePage;
+import org.wicketTutorial.lifecyclerev.WicketApplication;
 
 /**
  * Simple test using the WicketTester
