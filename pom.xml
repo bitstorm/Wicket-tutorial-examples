@@ -83,11 +83,12 @@
     		<module>HelloWorldExample</module>
     		<module>OnComponentTagExample</module>
     		<module>TestAjaxEventsExample</module>
-    <module>TagTesterExample</module>
-    <module>LocalizedChoicesExample</module>
-    <module>CallbackURLExample</module>
-    <module>JSR303validation</module>
-    <module>ScriptInsideBody</module>
+	    <module>TagTesterExample</module>
+	    <module>LocalizedChoicesExample</module>
+	    <module>CallbackURLExample</module>
+	    <module>JSR303validation</module>
+	    <module>ScriptInsideBody</module>
+	    <module>StarterExamples</module>
   </modules>	
 	<!--url>http://wicket.apache.org/${project.artifactId}</url-->
 	<inceptionYear>2012</inceptionYear>	
@@ -131,7 +132,7 @@
 				</excludes>
 			</testResource>
 		</testResources>
-		<plugins>						
+		<plugins>
 			<plugin>
 			    <inherited>false</inherited>
 			    <groupId>com.mycila.maven-license-plugin</groupId>
