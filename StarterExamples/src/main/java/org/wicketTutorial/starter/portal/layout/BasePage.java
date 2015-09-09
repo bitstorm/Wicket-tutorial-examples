@@ -1,4 +1,4 @@
-package it.innoteam.giocatennis.portal.layout;
+package org.wicketTutorial.starter.portal.layout;
 
 import org.apache.wicket.Application;
 import org.apache.wicket.authroles.authentication.AuthenticatedWebSession;

@@ -1,4 +1,4 @@
-package it.innoteam.giocatennis.portal;
+package org.wicketTutorial.starter.portal;
 
 import org.apache.wicket.markup.html.WebPage;
 

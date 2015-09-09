@@ -1,8 +1,7 @@
-package it.innoteam.giocatennis.portal;
+package org.wicketTutorial.starter.portal;
 
 import org.apache.wicket.request.mapper.parameter.PageParameters;
-
-import it.innoteam.giocatennis.portal.layout.BasePage;
+import org.wicketTutorial.starter.portal.layout.BasePage;
 
 public class SignedInHome extends BasePage
 {	

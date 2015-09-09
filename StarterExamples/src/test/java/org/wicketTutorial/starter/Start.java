@@ -1,4 +1,4 @@
-package it.innoteam.giocatennis;
+package org.wicketTutorial.starter;
 
 import org.apache.wicket.util.time.Duration;
 import org.eclipse.jetty.server.Server;

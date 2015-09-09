@@ -1,4 +1,4 @@
-package it.innoteam.giocatennis.security.pages;
+package org.wicketTutorial.starter.security.pages;
 
 import org.apache.wicket.Session;
 import org.apache.wicket.authroles.authentication.AuthenticatedWebSession;
