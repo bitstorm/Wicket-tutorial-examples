@@ -14,6 +14,6 @@ If you want to contribute to the guide with corrections or new contents, you can
 
 ## The author
 My name is Andrea Del Bene and I'm a passionate enterprise web developer and an advocate of Apache Wicket. I started programming in Java since version 1.2 and I'm a strong supporter of open source technologies.
-If you like this project and want to support me, please buy me a beer :-) :
+If you like this project and want to support me, you can buy me a beer :-) :
 
-<p><br><br> <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=RGHPTV2QDK8VN" rel="nofollow"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"></a> <br><br> </p>
+<p> <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=RGHPTV2QDK8VN" rel="nofollow"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"></a>  </p>
