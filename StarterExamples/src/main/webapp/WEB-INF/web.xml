@@ -41,8 +41,17 @@
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.WicketApplication</param-value>
 		</init-param>
+		<init-param>
+            <param-name>configuration</param-name>
+            <param-value>deployment</param-value>
+	</init-param>
 	</filter>
 	
+	<context-param>
+    	<param-name>configuration</param-name>
+    	<param-value>deployment</param-value>
+	</context-param>
+
 	<filter>
 		<filter-name>wicket.SpringExample</filter-name>
 		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
