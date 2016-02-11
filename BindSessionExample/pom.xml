@@ -10,7 +10,7 @@
 
 	<groupId>org.wicketTutorial</groupId>
 	<artifactId>BindSessionExample</artifactId>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<!-- TODO project name -->
 	<name>BindSessionExample</name>

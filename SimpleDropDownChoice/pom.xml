@@ -9,7 +9,7 @@
 
 	<groupId>org.wicketTutorial</groupId>
 	<artifactId>SimpleDropDownChoice</artifactId>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<!-- TODO project name -->
 	<name>SimpleDropDownChoice</name>

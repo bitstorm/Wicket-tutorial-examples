@@ -10,7 +10,7 @@
 
 	<groupId>org.wicketTutorial</groupId>
 	<artifactId>UploadSingleFile</artifactId>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<!-- TODO project name -->
 	<name>UploadSingleFile</name>
