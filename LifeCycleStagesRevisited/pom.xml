@@ -8,7 +8,7 @@
 		<version>1.0</version>
 	</parent>
 
-	<groupId>com.wicketTutorial</groupId>
+	<groupId>org.wicketTutorial</groupId>
 	<artifactId>LifeCycleStagesRevisited</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>

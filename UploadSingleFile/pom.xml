@@ -8,7 +8,6 @@
 		<version>1.0</version>
 	</parent>
 
-	<groupId>org.wicketTutorial</groupId>
 	<artifactId>UploadSingleFile</artifactId>
 	<packaging>jar</packaging>
 
@@ -170,4 +169,6 @@
 		</repository>
 	</repositories>
 
+	<groupId>org.wicketTutorial</groupId>
+	<version>1.0-SNAPSHOT</version>
 </project>
