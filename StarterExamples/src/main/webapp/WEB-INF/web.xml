@@ -88,6 +88,24 @@
 		</init-param>
 	</filter>
 
+	<filter>
+		<filter-name>wicket.EventInfra</filter-name>
+		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
+		<init-param>
+			<param-name>applicationClassName</param-name>
+			<param-value>org.wicketTutorial.eventinfra.WicketApplication</param-value>
+		</init-param>
+	</filter>
+
+	<filter>
+		<filter-name>wicket.ResMounting</filter-name>
+		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
+		<init-param>
+			<param-name>applicationClassName</param-name>
+			<param-value>org.wicketTutorial.resmounting.WicketApplication</param-value>
+		</init-param>
+	</filter>
+
 	<filter-mapping>
 		<filter-name>wicket.RoleStrategy</filter-name>
 		<url-pattern>/rolestrategy/*</url-pattern>
@@ -107,7 +125,17 @@
         <filter-name>wicket.LocalizedGreetings</filter-name>
         <url-pattern>/localizedgreetings/*</url-pattern>
     </filter-mapping>
-	
+    
+	<filter-mapping>
+        <filter-name>wicket.EventInfra</filter-name>
+        <url-pattern>/eventinfra/*</url-pattern>
+    </filter-mapping>
+
+	<filter-mapping>
+        <filter-name>wicket.ResMounting</filter-name>
+        <url-pattern>/resmounting/*</url-pattern>
+    </filter-mapping>
+    
 	<filter-mapping>
 		<filter-name>wicket.StarterExamples</filter-name>
 		<url-pattern>/*</url-pattern>
