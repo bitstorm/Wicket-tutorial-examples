@@ -61,12 +61,30 @@
 		</init-param>
 	</filter>
 
+    <filter>
+        <filter-name>wicket.EjbExample</filter-name>
+        <filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
+        <init-param>
+            <param-name>applicationClassName</param-name>
+            <param-value>org.wicketTutorial.ejbinjection.WicketApplication</param-value>
+        </init-param>
+    </filter>
+
 	<filter>
 		<filter-name>wicket.RoleStrategy</filter-name>
 		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
 		<init-param>
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.rolestrategy.WicketApplication</param-value>
+		</init-param>
+	</filter>
+
+	<filter>
+		<filter-name>wicket.LocalizedGreetings</filter-name>
+		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
+		<init-param>
+			<param-name>applicationClassName</param-name>
+			<param-value>org.wicketTutorial.greetings.WicketApplication</param-value>
 		</init-param>
 	</filter>
 
@@ -79,6 +97,16 @@
 		<filter-name>wicket.SpringExample</filter-name>
 		<url-pattern>/spring/*</url-pattern>
 	</filter-mapping>
+	
+	<filter-mapping>
+        <filter-name>wicket.EjbExample</filter-name>
+        <url-pattern>/ejbinjection/*</url-pattern>
+    </filter-mapping>
+	
+	<filter-mapping>
+        <filter-name>wicket.LocalizedGreetings</filter-name>
+        <url-pattern>/localizedgreetings/*</url-pattern>
+    </filter-mapping>
 	
 	<filter-mapping>
 		<filter-name>wicket.StarterExamples</filter-name>
