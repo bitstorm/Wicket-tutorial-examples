@@ -65,7 +65,7 @@ public class AdvancedCheckedTreePage extends HomePage {
 					selectedNodes.add(new Label(selectedNodes.newChildId(), node.toString()));
 				}
 				
-				if(checkedNodes.size() == 0)
+				if(checkedNodes.isEmpty())
 					markupContainer.setVisible(false);
 				else
 					markupContainer.setVisible(true);
