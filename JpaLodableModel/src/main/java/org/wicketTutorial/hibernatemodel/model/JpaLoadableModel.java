@@ -17,7 +17,6 @@
 package org.wicketTutorial.hibernatemodel.model;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -30,7 +29,6 @@ public class JpaLoadableModel<T> extends LoadableDetachableModel<T> {
 	private EntityManagerFactory entityManagerFactory;
 	private Class<T> entityClass;
 	private Serializable identifier;
-	private List<Object> constructorParams;
 	
 	public JpaLoadableModel(EntityManagerFactory entityManagerFactory, T entity) {
 		super();
