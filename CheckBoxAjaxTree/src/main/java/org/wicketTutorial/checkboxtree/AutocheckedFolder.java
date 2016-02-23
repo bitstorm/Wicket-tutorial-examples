@@ -97,7 +97,9 @@ public class AutocheckedFolder<T> extends CheckedFolder<T> {
 	protected void addRemoveAncestorNodes(T node, Boolean nodeStatus) {
 		BranchItem currentConatiner = findParent(BranchItem.class);
 		
-		if(currentConatiner == null) return;
+		if(currentConatiner == null) {
+			return;
+		}
 		
 		BranchItem ancestor = currentConatiner.findParent(BranchItem.class);
 		

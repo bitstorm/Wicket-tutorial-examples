@@ -61,7 +61,9 @@ public class TemperatureDegreeField extends FormComponentPanel<Double> {
 		Double userDegreeVal = userDegree.getConvertedInput();
 		Double kelvinDegree;
 		
-		if(userDegreeVal == null) return;
+		if(userDegreeVal == null) {
+			return;
+		}
 		
 		if(getLocale().equals(Locale.US)){
 			kelvinDegree = userDegreeVal +  459.67;
@@ -83,7 +85,9 @@ public class TemperatureDegreeField extends FormComponentPanel<Double> {
 		Double kelvinDegree = (Double) getDefaultModelObject();		
 		Double userDegreeVal = null;
 		
-		if(kelvinDegree == null) return;
+		if(kelvinDegree == null) {
+			return;
+		}
 		
 		if(getLocale().equals(Locale.US)){
 			BigDecimal bdKelvin = new BigDecimal(kelvinDegree);
