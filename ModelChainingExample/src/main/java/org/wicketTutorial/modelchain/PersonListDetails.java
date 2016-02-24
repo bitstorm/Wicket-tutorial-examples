@@ -23,7 +23,6 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.ChoiceRenderer;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
-import org.apache.wicket.markup.html.form.IChoiceRenderer;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.model.Model;
@@ -59,7 +58,7 @@ public class PersonListDetails extends WebPage {
 		add(form);
 	}
 	
-	private List<Person> personsPojo() {
+	private static List<Person> personsPojo() {
 		List<Person> persons = new ArrayList<Person>();
 		Person person = new Person("John", "Smith");
 		

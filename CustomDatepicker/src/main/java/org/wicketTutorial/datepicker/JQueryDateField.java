@@ -17,8 +17,6 @@
 package org.wicketTutorial.datepicker;
 
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.apache.wicket.AttributeModifier;
 
@@ -27,16 +25,13 @@ import org.apache.wicket.extensions.markup.html.form.DateTextField;
 import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
-import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
 import org.apache.wicket.markup.head.OnLoadHeaderItem;
-import org.apache.wicket.markup.head.StringHeaderItem;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.ResourceModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.request.resource.PackageResourceReference;
 import org.apache.wicket.settings.JavaScriptLibrarySettings;
 import org.apache.wicket.util.convert.IConverter;
-import org.apache.wicket.util.template.PackageTextTemplate;
 
 public class JQueryDateField extends DateTextField {
 
@@ -47,7 +42,6 @@ public class JQueryDateField extends DateTextField {
 	private PatternDateConverter dateConverter;
 	private String datePattern;
 	private String countryIsoCode;
-	private String jQueryCalendar;
 	private CharSequence urlForIcon;
 	private static final PackageResourceReference JQDatePickerRef = 
 						   new PackageResourceReference(JQueryDateField.class, "JQDatePicker.js");
