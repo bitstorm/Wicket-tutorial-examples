@@ -25,8 +25,8 @@ import org.apache.wicket.markup.html.WebPage;
 public class HomePage extends WebPage {
 	private static final long serialVersionUID = 1L;
 	
-	public static String INIT_VALUE = "Initial value";
-	public static String OTHER_VALUE = "Other value";
+	public static final String INIT_VALUE = "Initial value";
+	public static final String OTHER_VALUE = "Other value";
 	
 	public HomePage(final PageParameters parameters) {
 		super(parameters);

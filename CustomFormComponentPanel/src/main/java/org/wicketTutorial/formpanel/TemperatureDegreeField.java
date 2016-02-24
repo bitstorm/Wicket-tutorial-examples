@@ -83,7 +83,7 @@ public class TemperatureDegreeField extends FormComponentPanel<Double> {
 		super.onBeforeRender();
 		
 		Double kelvinDegree = (Double) getDefaultModelObject();		
-		Double userDegreeVal = null;
+		Double userDegreeVal;
 		
 		if(kelvinDegree == null) {
 			return;

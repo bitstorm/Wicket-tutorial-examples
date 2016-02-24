@@ -74,7 +74,7 @@ public class OnChangeSingleChoiceBehavior extends Behavior implements IBehaviorL
 		super.onComponentTag(component, tag);
 		
 		CharSequence callBackURL = getCallbackUrl();
-		String separatorChar = (callBackURL.toString().indexOf('?') > -1 ? "&" : "?");
+		String separatorChar = callBackURL.toString().indexOf('?') > -1 ? "&" : "?";
 		
 		String finalScript = "var isSelect = $(this).is('select');\n" +
 							 "var component;\n" +	
