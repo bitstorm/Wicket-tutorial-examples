@@ -62,7 +62,9 @@ public class JpaLoadableModel<T> extends LoadableDetachableModel<T> {
 		T entity = getObject();
 		PersistenceUnitUtil persistenceUtil = entityManagerFactory.getPersistenceUnitUtil();
 		
-		if(entity == null) return;
+		if(entity == null) {
+			return;
+		}
 		
 		identifier = (Serializable) persistenceUtil.getIdentifier(entity);		
 	}

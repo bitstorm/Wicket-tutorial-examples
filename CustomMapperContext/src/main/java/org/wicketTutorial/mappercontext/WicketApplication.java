@@ -38,7 +38,7 @@ public class WicketApplication extends WebApplication
 	
 	@Override
 	protected IMapperContext newMapperContext() {
-		DefaultMapperContext mapperContext = new DefaultMapperContext(){
+		return new DefaultMapperContext(){
 			@Override
 			public String getBookmarkableIdentifier() {
 				return "staticURL";
@@ -49,7 +49,6 @@ public class WicketApplication extends WebApplication
 				return "index";
 			}			
 		};
-		return mapperContext;
 	}
 	/**
 	 * @see org.apache.wicket.Application#init()
