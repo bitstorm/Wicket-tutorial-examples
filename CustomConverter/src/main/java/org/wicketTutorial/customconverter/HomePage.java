@@ -51,8 +51,10 @@ public class HomePage extends WebPage {
 		};
     	
 		form.setDefaultModel(new CompoundPropertyModel(this));
-		form.add(mail = new TextField("regExpPatter"));
-		form.add(stringToSplitTxt = new TextField("stringToSplit"));
+		mail = new TextField("regExpPatter");
+		form.add(mail);
+		stringToSplitTxt = new TextField("stringToSplit");
+		form.add(stringToSplitTxt);
 		add(new FeedbackPanel("feedbackMessage").setEscapeModelStrings(false));
 		
 		add(form);
