@@ -17,6 +17,7 @@
 package org.wicketTutorial.formpanel;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Locale;
 
 import org.apache.wicket.markup.html.basic.Label;
@@ -68,7 +69,7 @@ public class TemperatureDegreeField extends FormComponentPanel<Double> {
 		if(getLocale().equals(Locale.US)){
 			kelvinDegree = userDegreeVal +  459.67;
 			BigDecimal bdKelvin = new BigDecimal(kelvinDegree);
-			BigDecimal fraction = new BigDecimal(5).divide(new BigDecimal(9));
+			BigDecimal fraction = new BigDecimal(5).divide(new BigDecimal(9), 5, RoundingMode.HALF_UP);
 			
 			kelvinDegree = bdKelvin.multiply(fraction).doubleValue();
 		}else{
