@@ -107,6 +107,38 @@
 		</init-param>
 	</filter>
 
+	<filter>
+		<filter-name>wicket.BasicAuth</filter-name>
+		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
+		<init-param>
+			<param-name>applicationClassName</param-name>
+			<param-value>org.wicketTutorial.basicauth.WicketApplication</param-value>
+		</init-param>
+	</filter>
+
+	<filter>
+		<filter-name>wicket.HttpsProtocol</filter-name>
+		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
+		<init-param>
+			<param-name>applicationClassName</param-name>
+			<param-value>org.wicketTutorial.https.WicketApplication</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>wicket.HttpsProtocol</filter-name>
+		<url-pattern>/https/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>wicket.BasicAuth</filter-name>
+		<url-pattern>/basicauth/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+	</filter-mapping>
+
 	<filter-mapping>
 		<filter-name>wicket.RoleStrategy</filter-name>
 		<url-pattern>/rolestrategy/*</url-pattern>
