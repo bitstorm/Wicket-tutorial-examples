@@ -82,3 +82,7 @@ h3 {
 	font-size:24pt;
 	color:#092E67;
 }
+
+.hide-homelink {
+	display: none;
+}

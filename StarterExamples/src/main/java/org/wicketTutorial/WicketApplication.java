@@ -18,6 +18,10 @@ package org.wicketTutorial;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
+import org.apache.wicket.protocol.https.HttpsConfig;
+import org.apache.wicket.protocol.https.HttpsMapper;
+import org.apache.wicket.response.filter.IResponseFilter;
+import org.apache.wicket.util.string.AppendingStringBuffer;
 
 /**
  * Application object for your web application.
@@ -43,7 +47,17 @@ public class WicketApplication extends WebApplication
 	public void init()
 	{
 		super.init();
-
-		// add your configuration here
+		setRootRequestMapper(new HttpsMapper(getRootRequestMapper(), new HttpsConfig(8080, 8443)));
+		
+		getRequestCycleSettings().addResponseFilter(new IResponseFilter()
+		{
+			
+			@Override
+			public AppendingStringBuffer filter(AppendingStringBuffer responseBuffer)
+			{
+				responseBuffer.append("<br/><a class='hide-homelink' href='/'>Home</a>");
+				return responseBuffer;
+			}
+		});
 	}
 }

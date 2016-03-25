@@ -18,6 +18,7 @@ package org.wicketTutorial;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 public class HomePage extends WebPage {
@@ -27,6 +28,15 @@ public class HomePage extends WebPage {
 		super(parameters);
 
 		add(new Label("version", getApplication().getFrameworkSettings().getVersion()));
+
+		add(new Link<Void>("linkToHttps")
+		{
+			@Override
+			public void onClick()
+			{
+				setResponsePage(org.wicketTutorial.https.HomePage.class);
+			}
+		});
 
     }
 }
