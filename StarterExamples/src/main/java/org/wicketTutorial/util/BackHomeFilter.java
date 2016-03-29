@@ -14,37 +14,34 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.wicketTutorial;
+package org.wicketTutorial.util;
 
-import org.apache.wicket.markup.html.WebPage;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+
 import org.apache.wicket.protocol.http.WebApplication;
-import org.apache.wicket.protocol.https.HttpsConfig;
-import org.apache.wicket.protocol.https.HttpsMapper;
+import org.apache.wicket.protocol.http.WicketFilter;
+import org.apache.wicket.response.filter.IResponseFilter;
+import org.apache.wicket.util.string.AppendingStringBuffer;
 
-/**
- * Application object for your web application.
- * If you want to run this application without deploying, run the Start class.
- * 
- * @see org.wicketTutorial.Start#main(String[])
- */
-public class WicketApplication extends WebApplication
+public class BackHomeFilter extends WicketFilter
 {
-	/**
-	 * @see org.apache.wicket.Application#getHomePage()
-	 */
 	@Override
-	public Class<? extends WebPage> getHomePage()
+	public void init(boolean isServlet, FilterConfig filterConfig) throws ServletException
 	{
-		return HomePage.class;
-	}
-
-	/**
-	 * @see org.apache.wicket.Application#init()
-	 */
-	@Override
-	public void init()
-	{
-		super.init();
-		setRootRequestMapper(new HttpsMapper(getRootRequestMapper(), new HttpsConfig(8080, 8443)));
+		super.init(isServlet, filterConfig);
+		
+		WebApplication application = getApplication();
+		
+		application.getRequestCycleSettings().addResponseFilter(new IResponseFilter()
+		{
+			
+			@Override
+			public AppendingStringBuffer filter(AppendingStringBuffer responseBuffer)
+			{
+				responseBuffer.append("<br/><br/><a class='hide-homelink' href='/'>Go back to the Examples</a>");
+				return responseBuffer;
+			}
+		});
 	}
 }

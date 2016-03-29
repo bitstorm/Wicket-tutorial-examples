@@ -26,6 +26,13 @@
 	rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="style.css" type="text/css" media="screen"
 	title="Stylesheet" />
+	
+<style type="text/css">
+
+.hide-homelink {
+    display: none;
+}
+</style>	
 </head>
 <body>
 	<div id="hd">
@@ -37,10 +44,10 @@
 	<div id="bd">
 
 		<p>
-			Please mention the correct Wicket version:
-			<wicket:container wicket:id="version">1.5-SNAPSHOT</wicket:container>
-			.
+		 Hosting site for the examples from the official <a href="https://wicket.apache.org/learn/#guide" target="_blank">Wicket user guide</a>. <br/>
+		 The code of the following examples id hosted <a href="https://github.com/bitstorm/Wicket-tutorial-examples" target="_blank">here on GitLab</a>. 
 		</p>
+		
 		<wicket:link>
 			<ul>
 			 <li>
@@ -97,6 +104,10 @@
              <li>   
                 <a href="ajaxlistener/HomePage.html">CustomAjaxListenerExample</a>
              </li>
+             <li>   
+                <a href="modelchain/PersonListDetails.html">ModelChainingExample</a>
+             </li>
+             
              
              <li>   
                 <a href="/resmounting">CustomResourceMounting</a>
