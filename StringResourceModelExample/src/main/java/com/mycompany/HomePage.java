@@ -25,10 +25,10 @@ import org.apache.wicket.model.Model;
 import org.apache.wicket.model.StringResourceModel;
 
 public class HomePage extends WebPage {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     public HomePage(final PageParameters parameters) {
-    	Order order = new Order(new Date(), ORDER_STATUS.IN_PROGRESS);
-		add(new Label("orderStatus", new StringResourceModel("orderStatus.${status.code}", Model.of(order))));    
+        Order order = new Order(new Date(), ORDER_STATUS.IN_PROGRESS);
+        add(new Label("orderStatus", new StringResourceModel("orderStatus.${status.code}", Model.of(order))));    
     }
 }
