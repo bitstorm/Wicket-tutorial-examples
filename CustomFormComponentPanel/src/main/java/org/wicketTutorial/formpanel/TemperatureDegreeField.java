@@ -53,7 +53,8 @@ public class TemperatureDegreeField extends FormComponentPanel<Double> {
 		};
 		
 		add(new Label("mesuramentUnit", labelModel));
-		add(userDegree = new TextField<Double>("registeredTemperature", new Model<Double>()));
+		userDegree = new TextField<Double>("registeredTemperature", new Model<Double>());
+		add(userDegree);
 		userDegree.setType(Double.class);
 	}
 	

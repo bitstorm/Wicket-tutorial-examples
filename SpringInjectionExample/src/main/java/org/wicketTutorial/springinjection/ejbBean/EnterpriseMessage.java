@@ -22,5 +22,5 @@ import org.springframework.stereotype.Service;
 
 @ManagedBean
 public class EnterpriseMessage {
-	public String message = "Welcome to the Spring world!";
+	public static final String message = "Welcome to the Spring world!";
 }

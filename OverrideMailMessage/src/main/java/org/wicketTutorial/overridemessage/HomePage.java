@@ -31,9 +31,9 @@ public class HomePage extends WebPage {
 
     public HomePage(final PageParameters parameters) {
 		Form form = new Form("form");
-		TextField mail;
+		TextField mail = new TextField("email", Model.of(""));
 		
-		form.add(mail = new TextField("email", Model.of("")));
+		form.add(mail);
 		mail.add(EmailAddressValidator.getInstance());
 		
 		add(new FeedbackPanel("feedbackMessage"));

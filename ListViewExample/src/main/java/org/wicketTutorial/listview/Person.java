@@ -28,14 +28,14 @@ public class Person implements Serializable {
 	
 	private Person spouse;
 	private List<Person> children;
-       
-	public String getFullName(){
-	   return name + " " + surname;
-	}
-	
+
 	public Person(String name, String surname) {
 		this.name = name;
 		this.surname = surname;
+	}
+
+	public String getFullName(){
+	   return name + " " + surname;
 	}
 
 	public String getName() {
