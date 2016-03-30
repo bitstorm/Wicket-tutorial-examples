@@ -45,17 +45,17 @@ public class JQueryDateField extends DateTextField {
 	private CharSequence urlForIcon;
 	private static final PackageResourceReference JQDatePickerRef = 
 						   new PackageResourceReference(JQueryDateField.class, "JQDatePicker.js");
-	 
-	public String getDatePattern() {
-		return datePattern;
+	
+	public JQueryDateField(String id){
+		super(id);
 	}
 	
 	public JQueryDateField(String id, IModel<Date> dateModel){
 		super(id, dateModel);	
 	}
 	
-	public JQueryDateField(String id){
-		super(id);
+	public String getDatePattern() {
+		return datePattern;
 	}
 	
 	@Override

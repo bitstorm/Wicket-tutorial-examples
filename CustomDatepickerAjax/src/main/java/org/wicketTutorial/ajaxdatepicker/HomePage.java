@@ -36,7 +36,8 @@ public class HomePage extends WebPage {
 		super(parameters);
 		Form form = new Form("form");
 		final JQueryDateFieldAjax datepicker;
-		form.add(datepicker = new JQueryDateFieldAjax("datepicker", new Model<Date>()));
+		datepicker = new JQueryDateFieldAjax("datepicker", new Model<Date>());
+		form.add(datepicker);
 		
 		add(new AjaxLink("update"){
 
