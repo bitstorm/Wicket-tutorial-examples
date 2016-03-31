@@ -21,6 +21,8 @@ import javax.servlet.ServletException;
 
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.protocol.http.WicketFilter;
+import org.apache.wicket.request.cycle.RequestCycle;
+import org.apache.wicket.request.http.WebRequest;
 import org.apache.wicket.response.filter.IResponseFilter;
 import org.apache.wicket.util.string.AppendingStringBuffer;
 
@@ -39,7 +41,12 @@ public class BackHomeFilter extends WicketFilter
 			@Override
 			public AppendingStringBuffer filter(AppendingStringBuffer responseBuffer)
 			{
-				responseBuffer.append("<br/><br/><a class='hide-homelink' href='http://examples-wickettutorial.rhcloud.com'>Go back to the Examples</a>");
+				WebRequest request = (WebRequest)RequestCycle.get().getRequest();
+				
+				if (!request.isAjax())
+				{					
+					responseBuffer.append("<br/><br/><a class='hide-homelink' href='http://examples-wickettutorial.rhcloud.com'>Go back to the Examples</a>");
+				}
 				return responseBuffer;
 			}
 		});
