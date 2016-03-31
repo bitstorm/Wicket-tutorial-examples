@@ -19,22 +19,24 @@
 <!DOCTYPE html>
 <html xmlns:wicket="http://wicket.apache.org">
 <head>
-	<meta charset="utf-8" />
-	<title>Apache Wicket User Guide Examples</title>
-	<link
-		href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold'
-		rel='stylesheet' type='text/css' />
-	<link rel="stylesheet" href="style.css" type="text/css" media="screen"
-		title="Stylesheet" />
-	<meta name="description" content="Live Examples For The Apache Wicket User Guide">
-	<meta name="keywords" content="Apache Wicket, Wicket, Wicket User Guide, Wicket Examples">
-	<meta name="author" content="Andrea Del Bene">
-	<link rel="canonical" href="http://examples-wickettutorial.rhcloud.com">
-	<style type="text/css">
-	.hide-homelink {
-		display: none;
-	}
-	</style>
+<meta charset="utf-8" />
+<title>Apache Wicket User Guide Examples</title>
+<link
+	href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold'
+	rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="style.css" type="text/css" media="screen"
+	title="Stylesheet" />
+<meta name="description"
+	content="Live Examples For The Apache Wicket User Guide">
+<meta name="keywords"
+	content="Apache Wicket, Wicket, Wicket User Guide, Wicket Examples">
+<meta name="author" content="Andrea Del Bene">
+<link rel="canonical" href="http://examples-wickettutorial.rhcloud.com">
+<style type="text/css">
+.hide-homelink {
+	display: none;
+}
+</style>
 </head>
 <body>
 	<div id="hd">
@@ -55,60 +57,62 @@
 
 		<wicket:link>
 			<ul>
-				<li><a href="linktopage/HomePage.html">Linktopage</a></li>
-				<li><a href="markupinherit/SimpleLoginPage.html">MarkupInheritance</a>
+				<li><a href="/rolestrategy">AnnotationsRolesStrategyExample</a></li>
+				<li><a href="/basicauth">BasicAuthenticationExample</a></li>
+				<li><a href="modalwindow/HomePage.html">BasicModalWindowExample</a></li>
+				<li><a href="bindsession/HomePage.html">BindSessionExample</a></li>
+				<li><a href="autolink/HomePage.html">BookmarkablePageAutoLink</a></li>
+				<li><a href="callbackurl/HomePage.html">CallbackURLExample</a>
 				</li>
-				<li><a href="statelesspage/StatelessPage.html">StatelessPage</a>
+				<li><a href="ajaxlistener/HomePage.html">CustomAjaxListenerExample</a>
 				</li>
-				<li><a href="bindsession/HomePage.html">BindSessionExample</a>
-				</li>
-				<li><a href="loginform/HomePage.html">LoginForm</a></li>
-				<li><a href="loginformrev/HomePage.html">LoginFormRevisited</a>
-				</li>
+				<li><a href="customconverter/HomePage.html">CustomConverter</a></li>
 				<li><a href="datepicker/HomePage.html">CustomDatepicker</a></li>
 				<li><a href="ajaxdatepicker/HomePage.html">CustomDatepickerAjax</a>
 				</li>
-				<li><a href="customconverter/HomePage.html">CustomConverter</a>
-				</li>
-				<li><a href="formpanel/HomePage.html">CustomFormComponentPanel</a>
-				</li>
-				<li><a href="singlecheckbox/HomePage.html">SingleCheckBox</a></li>
-				<li><a href="pageparameters/HomePage.html">PageParametersExample</a>
-				</li>
-				<li><a href="pageparamsencode/HomePage.html">PageParametersEncoderExample</a>
-				</li>
-				<li><a href="localizechoices/HomePage.html">LocalizedChoicesExample</a>
-				</li>
-				<li><a href="callbackurl/HomePage.html">CallbackURLExample</a>
+				<li><a href="/markupfolder">CustomFolder4MarkupExample</a></li>
+				<li><a href="formpanel/HomePage.html">CustomFormComponentPanel</a></li>
+				<li><a href="/mappercontext">CustomMapperContext</a></li>
+				<li><a href="/resmounting">CustomResourceMounting</a></li>
+				<li><a href="/ejbinjection">EjbInjectionExample</a></li>
+				<li><a href="helloworld/HomePage.html">HelloWorldExample</a></li>
+				<li><a wicket:id="linkToHttps">HttpsProtocolExample</a></li>
+				<li><a href="packageres/HomePage.html">ImageAsPackageRes</a></li>
+				<li><a href="/eventinfra">InterComponetsEventsExample</a></li>
+<!-- 				<li><a href="hibernatemodel/HomePage.html">JpaLodableModel</a></li> -->
+				<li><a href="jsr303validation/HomePage.html">JSR303validation</a>
 				</li>
 				<li><a href="lifecycle/HomePage.html">LifeCycleStages</a></li>
 				<li><a href="lifecyclerev/HomePage.html">LifeCycleStagesRevisited</a>
 				</li>
-				<li><a href="ajaxlistener/HomePage.html">CustomAjaxListenerExample</a>
+				<li><a href="linktopage/HomePage.html">Linktopage</a></li>
+				<li><a href="listview/HomePage.html">ListViewExample</a></li>
+				<li><a href="localizechoices/HomePage.html">LocalizedChoicesExample</a>
+				</li>
+				<li><a href="/localizedgreetings">LocalizedGreetings</a></li>
+				<li><a href="loginform/HomePage.html">LoginForm</a></li>
+				<li><a href="loginformrev/HomePage.html">LoginFormRevisited</a></li>
+				<li><a href="markupinherit/SimpleLoginPage.html">MarkupInheritance</a>
 				</li>
 				<li><a href="modelchain/PersonListDetails.html">ModelChainingExample</a>
 				</li>
+				<li><a href="/mountedpages">MountedPagesExample</a></li>
 				<li><a href="oncomponenttag/HomePage.html">OnComponentTagExample</a>
 				</li>
-				<li><a href="jsr303validation/HomePage.html">JSR303validation</a>
-				</li>
-				<li><a href="pagedata/HomePage.html">PageDataViewExample</a></li>
-
-
-				<li><a href="/resmounting">CustomResourceMounting</a></li>
-				<li><a href="/eventinfra">InterComponetsEventsExample</a></li>
-				<li><a href="/localizedgreetings">LocalizedGreetings</a></li>
-				<li><a href="/spring">SpringInjectionExample</a></li>
-				<li><a href="/ejbinjection">EjbInjectionExample</a></li>
-				<li><a href="/rolestrategy">AnnotationsRolesStrategyExample</a>
-				</li>
-				<li><a href="/markupfolder">CustomFolder4MarkupExample</a></li>
-				<li><a href="/basicauth">BasicAuthenticationExample</a></li>
 				<li><a href="/overridemessage">OverrideMailMessage</a></li>
+				<li><a href="pagedata/HomePage.html">PageDataViewExample</a></li>
+				<li><a href="pageparamsencode/HomePage.html">PageParametersEncoderExample</a>
+				</li>
+				<li><a href="pageparameters/HomePage.html">PageParametersExample</a>
+				</li>
+				<li><a href="/scriptposition">ScriptInsideBody</a></li>
+				<li><a href="singlecheckbox/HomePage.html">SingleCheckBox</a></li>
+				<li><a href="/spring">SpringInjectionExample</a></li>
+				<li><a href="statelesslogin/HomePage.html">StatelessLoginForm</a></li>
+				<li><a href="statelesspage/StatelessPage.html">StatelessPage</a>
+				</li>
+				<li><a href="singleupdate/HomePage.html">UploadSingleFile</a></li>
 				<li><a href="/customvalidator">UsernameCustomValidator</a></li>
-				<li><a href="/mappercontext">CustomMapperContext</a></li>
-				<li><a href="/mountedpages">MountedPagesExample</a></li>
-				<li><a wicket:id="linkToHttps">HttpsProtocolExample</a></li>
 			</ul>
 		</wicket:link>
 
