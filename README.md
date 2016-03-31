@@ -8,6 +8,10 @@ This repository contains the example projects used in the [Wicket user guide](ht
 The project is a multi-module Maven project. To compile it run 'mvn compile' from the root directory. 
 To run a single example enter in the related directory, run 'mvn jetty:run' or 'mvn tomcat:run' and then point your browser to http://localhost:8080
 
+## See the examples on line
+
+The examples can be explored on line at http://examples-wickettutorial.rhcloud.com.
+
 ## Contributing to this guide
 
 If you want to contribute to the guide with corrections or new contents, you can find how to do it [here](http://wicket.apache.org/contribute/userguide.html).
