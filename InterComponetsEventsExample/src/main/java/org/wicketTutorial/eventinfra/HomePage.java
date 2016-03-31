@@ -51,8 +51,8 @@ public class HomePage extends WebPage {
 		
 		add(containerInTheMiddle);
 		containerInTheMiddle.add(innerContainer);
-		FeedbackPanel feedbackPanel;
-		add(feedbackPanel = new FeedbackPanel("feedbackPanel"));		
+		FeedbackPanel feedbackPanel = new FeedbackPanel("feedbackPanel");
+		add(feedbackPanel);
 		
 		StatelessLink breadthLink = new StatelessLink("breadthLink") {
 

@@ -20,5 +20,5 @@ import javax.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
 public class EnterpriseMessage {
-	public String message = "Welcome to the EJB world!";
+	public static final String message = "Welcome to the EJB world!";
 }

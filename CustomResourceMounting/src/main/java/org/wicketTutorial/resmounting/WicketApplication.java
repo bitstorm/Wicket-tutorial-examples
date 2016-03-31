@@ -48,7 +48,8 @@ public class WicketApplication extends WebApplication
 			@Override
 			public IResource getResource() {
 				return deviceMetaResource;
-			}};
+			}
+		};
 			
 		mountResource("/foo/bar", resourceReference);
 		mountResource("/bar/${baz}", resourceReference);
