@@ -39,7 +39,7 @@ public class BackHomeFilter extends WicketFilter
 			@Override
 			public AppendingStringBuffer filter(AppendingStringBuffer responseBuffer)
 			{
-				responseBuffer.append("<br/><br/><a class='hide-homelink' href='/'>Go back to the Examples</a>");
+				responseBuffer.append("<br/><br/><a class='hide-homelink' href='http://examples-wickettutorial.rhcloud.com'>Go back to the Examples</a>");
 				return responseBuffer;
 			}
 		});

@@ -19,137 +19,98 @@
 <!DOCTYPE html>
 <html xmlns:wicket="http://wicket.apache.org">
 <head>
-<meta charset="utf-8" />
-<title>Apache Wicket Quickstart</title>
-<link
-	href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold'
-	rel='stylesheet' type='text/css' />
-<link rel="stylesheet" href="style.css" type="text/css" media="screen"
-	title="Stylesheet" />
-	
-<style type="text/css">
-
-.hide-homelink {
-    display: none;
-}
-</style>	
+	<meta charset="utf-8" />
+	<title>Apache Wicket User Guide Examples</title>
+	<link
+		href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold'
+		rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen"
+		title="Stylesheet" />
+	<meta name="description" content="Live Examples For The Apache Wicket User Guide">
+	<meta name="keywords" content="Apache Wicket, Wicket, Wicket User Guide, Wicket Examples">
+	<meta name="author" content="Andrea Del Bene">
+	<link rel="canonical" href="http://examples-wickettutorial.rhcloud.com">
+	<style type="text/css">
+	.hide-homelink {
+		display: none;
+	}
+	</style>
 </head>
 <body>
 	<div id="hd">
 		<div id="logo">
 			<img src="logo.png" width="50px" height="50px" alt="Wicket Logo" />
-			<h1>Wicket Tutarial Examples</h1>
+			<h1>Apache Wicket User Guide Examples</h1>
 		</div>
 	</div>
 	<div id="bd">
 
 		<p>
-		 Hosting site for the examples from the official <a href="https://wicket.apache.org/learn/#guide" target="_blank">Wicket user guide</a>. <br/>
-		 The code of the following examples id hosted <a href="https://github.com/bitstorm/Wicket-tutorial-examples" target="_blank">here on GitLab</a>. 
+			Hosting site for the examples from the official <a
+				href="https://wicket.apache.org/learn/#guide" target="_blank">Wicket
+				user guide</a>. <br /> The code of the following examples id hosted <a
+				href="https://github.com/bitstorm/Wicket-tutorial-examples"
+				target="_blank">here on GitLab</a>.
 		</p>
-		
+
 		<wicket:link>
 			<ul>
-			 <li>
-				<a href="linktopage/HomePage.html">Linktopage</a>
-			 </li>
-			 <li>	
-				<a href="markupinherit/SimpleLoginPage.html">MarkupInheritance</a>
-             </li>		
-			 <li>	
-				<a href="statelesspage/StatelessPage.html">StatelessPage</a>
-             </li>		
-			 <li>	
-				<a href="bindsession/HomePage.html">BindSessionExample</a>
-             </li>
-             <li>   
-                <a href="loginform/HomePage.html">LoginForm</a>
-             </li>		
-             <li>   
-                <a href="loginformrev/HomePage.html">LoginFormRevisited</a>
-             </li>		
-             <li>   
-                <a href="datepicker/HomePage.html">CustomDatepicker</a>
-             </li>		
-             <li>   
-                <a href="ajaxdatepicker/HomePage.html">CustomDatepickerAjax</a>
-             </li>		
-             <li>   
-                <a href="customconverter/HomePage.html">CustomConverter</a>
-             </li>
-             <li>   
-                <a href="formpanel/HomePage.html">CustomFormComponentPanel</a>
-             </li>
-             <li>   
-                <a href="singlecheckbox/HomePage.html">SingleCheckBox</a>
-             </li>		
-             <li>   
-                <a href="pageparameters/HomePage.html">PageParametersExample</a>
-             </li>		
-             <li>   
-                <a href="pageparamsencode/HomePage.html">PageParametersEncoderExample</a>
-             </li>		 
-             <li>   
-                <a href="localizechoices/HomePage.html">LocalizedChoicesExample</a>
-             </li>
-             <li>   
-                <a href="callbackurl/HomePage.html">CallbackURLExample</a>
-             </li>
-             <li>   
-                <a href="lifecycle/HomePage.html">LifeCycleStages</a>
-             </li>
-             <li>   
-                <a href="lifecyclerev/HomePage.html">LifeCycleStagesRevisited</a>
-             </li>
-             <li>   
-                <a href="ajaxlistener/HomePage.html">CustomAjaxListenerExample</a>
-             </li>
-             <li>   
-                <a href="modelchain/PersonListDetails.html">ModelChainingExample</a>
-             </li>
-             <li>   
-                <a href="oncomponenttag/HomePage.html">OnComponentTagExample</a>
-             </li>
-             <li>   
-                <a href="jsr303validation/HomePage.html">JSR303validation</a>
-             </li>
-             
-             <li>   
-                <a href="/resmounting">CustomResourceMounting</a>
-             </li>
-             <li>   
-                <a href="/eventinfra">InterComponetsEventsExample</a>
-             </li>
-             <li>	
-				<a href="/localizedgreetings">LocalizedGreetings</a>
-             </li>
-             <li>	
-				<a href="/spring">SpringInjectionExample</a>
-             </li>
-             <li>   
-                <a href="/ejbinjection">EjbInjectionExample</a>
-             </li>
-             <li>	
-				<a href="/rolestrategy">AnnotationsRolesStrategyExample</a>
-             </li>
-             <li>	
-				<a href="/markupfolder">CustomFolder4MarkupExample</a>
-             </li>
-             <li>	
-				<a href="/basicauth">BasicAuthenticationExample</a>
-             </li>
-             <li>	
-				<a href="/overridemessage">OverrideMailMessage</a>
-             </li>
-             <li>	
-				<a href="/customvalidator">UsernameCustomValidator</a>
-             </li>
-             <li>	
-				<a wicket:id="linkToHttps">HttpsProtocolExample</a>
-             </li>
+				<li><a href="linktopage/HomePage.html">Linktopage</a></li>
+				<li><a href="markupinherit/SimpleLoginPage.html">MarkupInheritance</a>
+				</li>
+				<li><a href="statelesspage/StatelessPage.html">StatelessPage</a>
+				</li>
+				<li><a href="bindsession/HomePage.html">BindSessionExample</a>
+				</li>
+				<li><a href="loginform/HomePage.html">LoginForm</a></li>
+				<li><a href="loginformrev/HomePage.html">LoginFormRevisited</a>
+				</li>
+				<li><a href="datepicker/HomePage.html">CustomDatepicker</a></li>
+				<li><a href="ajaxdatepicker/HomePage.html">CustomDatepickerAjax</a>
+				</li>
+				<li><a href="customconverter/HomePage.html">CustomConverter</a>
+				</li>
+				<li><a href="formpanel/HomePage.html">CustomFormComponentPanel</a>
+				</li>
+				<li><a href="singlecheckbox/HomePage.html">SingleCheckBox</a></li>
+				<li><a href="pageparameters/HomePage.html">PageParametersExample</a>
+				</li>
+				<li><a href="pageparamsencode/HomePage.html">PageParametersEncoderExample</a>
+				</li>
+				<li><a href="localizechoices/HomePage.html">LocalizedChoicesExample</a>
+				</li>
+				<li><a href="callbackurl/HomePage.html">CallbackURLExample</a>
+				</li>
+				<li><a href="lifecycle/HomePage.html">LifeCycleStages</a></li>
+				<li><a href="lifecyclerev/HomePage.html">LifeCycleStagesRevisited</a>
+				</li>
+				<li><a href="ajaxlistener/HomePage.html">CustomAjaxListenerExample</a>
+				</li>
+				<li><a href="modelchain/PersonListDetails.html">ModelChainingExample</a>
+				</li>
+				<li><a href="oncomponenttag/HomePage.html">OnComponentTagExample</a>
+				</li>
+				<li><a href="jsr303validation/HomePage.html">JSR303validation</a>
+				</li>
+				<li><a href="pagedata/HomePage.html">PageDataViewExample</a></li>
+
+
+				<li><a href="/resmounting">CustomResourceMounting</a></li>
+				<li><a href="/eventinfra">InterComponetsEventsExample</a></li>
+				<li><a href="/localizedgreetings">LocalizedGreetings</a></li>
+				<li><a href="/spring">SpringInjectionExample</a></li>
+				<li><a href="/ejbinjection">EjbInjectionExample</a></li>
+				<li><a href="/rolestrategy">AnnotationsRolesStrategyExample</a>
+				</li>
+				<li><a href="/markupfolder">CustomFolder4MarkupExample</a></li>
+				<li><a href="/basicauth">BasicAuthenticationExample</a></li>
+				<li><a href="/overridemessage">OverrideMailMessage</a></li>
+				<li><a href="/customvalidator">UsernameCustomValidator</a></li>
+				<li><a href="/mappercontext">CustomMapperContext</a></li>
+				<li><a wicket:id="linkToHttps">HttpsProtocolExample</a></li>
 			</ul>
 		</wicket:link>
-		
+
 	</div>
 	<div id="ft"></div>
 </body>

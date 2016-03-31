@@ -141,13 +141,36 @@
 			<param-value>org.wicketTutorial.customvalidator.WicketApplication</param-value>
 		</init-param>
 	</filter>
+
+	<filter>
+		<filter-name>wicket.CustomMapper</filter-name>
+		<filter-class>org.wicketTutorial.util.BackHomeFilter</filter-class>
+		<init-param>
+			<param-name>applicationClassName</param-name>
+			<param-value>org.wicketTutorial.mappercontext.WicketApplication</param-value>
+		</init-param>
+	</filter>
 	
+	<filter-mapping>
+		<filter-name>wicket.CustomMapper</filter-name>
+		<url-pattern>/mappercontext/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+	</filter-mapping>
+
 	<filter-mapping>
 		<filter-name>wicket.CustomValidator</filter-name>
 		<url-pattern>/customvalidator/*</url-pattern>
 		<dispatcher>REQUEST</dispatcher>
         <dispatcher>INCLUDE</dispatcher>
 	</filter-mapping>
+	
+	<filter-mapping>
+        <filter-name>wicket.OverrideMessage</filter-name>
+        <url-pattern>/overridemessage/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+    </filter-mapping>
 
 	<filter-mapping>
 		<filter-name>wicket.HttpsProtocol</filter-name>
@@ -209,4 +232,8 @@
 		<filter-name>wicket.StarterExamples</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
+	<session-config>
+        <session-timeout>3</session-timeout>
+    </session-config>
 </web-app>

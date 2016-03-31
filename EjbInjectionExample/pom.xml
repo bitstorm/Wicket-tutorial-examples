@@ -74,6 +74,11 @@
 			<artifactId>log4j</artifactId>
 			<version>${log4j.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.jboss.spec.javax.ejb</groupId>
+			<artifactId>jboss-ejb-api_3.2_spec</artifactId>
+			<version>1.0.0.Final</version>
+		</dependency>
 
 		<!--  JUNIT DEPENDENCY FOR TESTING -->
 		<dependency>
