@@ -14,34 +14,35 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.tutorialWicket.mountedpages;
+package org.wicketTutorial.mountedpages;
 
-import org.apache.wicket.util.tester.WicketTester;
-import org.junit.Before;
-import org.junit.Test;
-import org.tutorialWicket.mountedpages.HomePage;
-import org.tutorialWicket.mountedpages.WicketApplication;
+import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.link.Link;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
 
-/**
- * Simple test using the WicketTester
- */
-public class TestHomePage
-{
-	private WicketTester tester;
-
-	@Before
-	public void setUp()
-	{
-		tester = new WicketTester(new WicketApplication());
+public class MountedPage extends WebPage {
+	public MountedPage() {
+		super();
+		
 	}
 
-	@Test
-	public void homepageRendersSuccessfully()
-	{
-		//start and render the test page
-		tester.startPage(HomePage.class);
-
-		//assert rendered page class
-		tester.assertRenderedPage(HomePage.class);
+	public MountedPage(PageParameters parameters) {
+		super(parameters);
 	}
+	
+	@Override
+	protected void onInitialize() {
+		super.onInitialize();
+		setStatelessHint(true);
+		
+		add(new Link("goHome") {
+
+			@Override
+			public void onClick() {
+				setResponsePage(getApplication().getHomePage());
+			}
+			
+		});
+	}
+	
 }

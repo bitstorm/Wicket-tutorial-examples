@@ -14,27 +14,26 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.tutorialWicket.mountedpages;
+package org.wicketTutorial.mountedpages.subPackage;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.link.Link;
+import org.apache.wicket.markup.html.link.StatelessLink;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
-public class MountedPage extends WebPage {
-	public MountedPage() {
-		super();
-		
+public class StatefulPackageMount extends WebPage {
+
+	public StatefulPackageMount(PageParameters parameters) {
+		super(parameters);		
 	}
 
-	public MountedPage(PageParameters parameters) {
-		super(parameters);
+	public StatefulPackageMount() {
+		super();		
 	}
 	
 	@Override
 	protected void onInitialize() {
 		super.onInitialize();
-		setStatelessHint(true);
-		
 		add(new Link("goHome") {
 
 			@Override
@@ -44,5 +43,5 @@ public class MountedPage extends WebPage {
 			
 		});
 	}
-	
+
 }

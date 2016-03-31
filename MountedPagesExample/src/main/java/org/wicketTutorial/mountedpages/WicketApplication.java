@@ -14,10 +14,10 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.tutorialWicket.mountedpages;
+package org.wicketTutorial.mountedpages;
 
 import org.apache.wicket.protocol.http.WebApplication;
-import org.tutorialWicket.mountedpages.subPackage.StatefulPackageMount;
+import org.wicketTutorial.mountedpages.subPackage.StatefulPackageMount;
 
 /**
  * Application object for your web application. If you want to run this application without deploying, run the Start class.

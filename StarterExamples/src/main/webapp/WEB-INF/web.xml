@@ -150,7 +150,23 @@
 			<param-value>org.wicketTutorial.mappercontext.WicketApplication</param-value>
 		</init-param>
 	</filter>
+
+	<filter>
+		<filter-name>wicket.MountedPages</filter-name>
+		<filter-class>org.wicketTutorial.util.BackHomeFilter</filter-class>
+		<init-param>
+			<param-name>applicationClassName</param-name>
+			<param-value>org.wicketTutorial.mountedpages.WicketApplication</param-value>
+		</init-param>
+	</filter>
 	
+	<filter-mapping>
+		<filter-name>wicket.MountedPages</filter-name>
+		<url-pattern>/mountedpages/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+	</filter-mapping>
+
 	<filter-mapping>
 		<filter-name>wicket.CustomMapper</filter-name>
 		<url-pattern>/mappercontext/*</url-pattern>

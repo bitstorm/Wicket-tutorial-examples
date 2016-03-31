@@ -14,11 +14,11 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.tutorialWicket.mountedpages;
+package org.wicketTutorial.mountedpages;
 
 import org.apache.wicket.request.mapper.parameter.PageParameters;
-import org.tutorialWicket.mountedpages.subPackage.StatefulPackageMount;
-import org.tutorialWicket.mountedpages.subPackage.StatelessPackageMount;
+import org.wicketTutorial.mountedpages.subPackage.StatefulPackageMount;
+import org.wicketTutorial.mountedpages.subPackage.StatelessPackageMount;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.markup.html.link.StatelessLink;
