@@ -14,7 +14,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-body, p, li, a { font-family: georgia, times, serif;font-size:13pt;}
+body, p, li, a { font-family: arial, georgia, times, serif;font-size:13pt;}
 h1, h2, h3 { font-family: 'Yanone Kaffeesatz', arial, serif; }
 body { margin:0;padding:0;}
 #hd {

@@ -42,7 +42,7 @@ public class WicketApplication extends WebApplication
 	public void init()
 	{
 		super.init();
-		mountPage("/pageMount/", MountedPage.class);
+		mountPage("/pageMount", MountedPage.class);
 		mountPage("/pageMount/#{foo}/otherSegm", MountedPageWithPlaceholder.class);
 		mountPackage("/mountPackage", StatefulPackageMount.class);
 	}

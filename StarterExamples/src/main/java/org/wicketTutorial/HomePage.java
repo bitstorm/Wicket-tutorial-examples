@@ -16,15 +16,23 @@
  */
 package org.wicketTutorial;
 
+import org.apache.wicket.Session;
 import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.StatelessLink;
+import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 public class HomePage extends WebPage {
 	private static final long serialVersionUID = 1L;
-
+	private String sessionType;
+	
 	public HomePage(final PageParameters parameters) {
 		super(parameters);
+		
+		setDefaultModel(new CompoundPropertyModel<HomePage>(this));
+		
+		add(new Label("sessionType"));
 		
 		add(new StatelessLink<Void>("linkToHttps")
 		{
@@ -34,6 +42,20 @@ public class HomePage extends WebPage {
 				setResponsePage(org.wicketTutorial.https.HomePage.class);
 			}
 		});
+		
+		add(new StatelessLink<Void>("logOut") {
+			@Override
+			public void onClick() {
+				Session.get().invalidateNow();
+			}
+		});
 
+    }
+	
+	@Override
+    protected void onBeforeRender() {
+    	super.onBeforeRender();
+    	
+    	sessionType = getSession().isTemporary() ? "temporary" : "permanent";
     }
 }
