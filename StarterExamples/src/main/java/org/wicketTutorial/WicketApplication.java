@@ -21,6 +21,7 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.protocol.https.HttpsConfig;
 import org.apache.wicket.protocol.https.HttpsMapper;
+import org.wicketTutorial.util.SourcesPage;
 
 /**
  * Application object for your web application.
@@ -49,5 +50,8 @@ public class WicketApplication extends WebApplication
 		setRootRequestMapper(new HttpsMapper(getRootRequestMapper(), new HttpsConfig(8080, 8443)));
 		
 		new BeanValidationConfiguration().configure(this);
+		
+		
+		mountPage("/seecode", SourcesPage.class);
 	}
 }

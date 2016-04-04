@@ -16,6 +16,8 @@
  */
 package org.wicketTutorial.util;
 
+import java.util.List;
+
 import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 
@@ -44,8 +46,22 @@ public class BackHomeFilter extends WicketFilter
 				WebRequest request = (WebRequest)RequestCycle.get().getRequest();
 				
 				if (!request.isAjax())
-				{					
-					responseBuffer.append("<br/><br/><a class='hide-homelink' href='http://examples-wickettutorial.rhcloud.com'>Go back to the Examples</a>");
+				{		
+					List<String> segments = request.getUrl().getSegments();
+					String sourceClass = "";
+					
+					if (segments.size() > 0)
+					{						
+						sourceClass = segments.get(segments.size() - 1);
+					}
+					else 
+					{
+						sourceClass = getApplication().getClass().getName();
+					}
+					
+					responseBuffer.append("<br/><br/><a class='hide-homelink' onclick=\"window.open('/seecode?SourcesPage_class=" + sourceClass +
+										  "', 'sources', 'scrollbars=no,location=no,menuBar=no,resizable=yes,status=no,toolbar=no,width=900,height=600')\">See Source</a>");
+					responseBuffer.append("<br/><a class='hide-homelink view-sourcelink' href='http://examples-wickettutorial.rhcloud.com'>Go back to the Examples</a>");
 				}
 				return responseBuffer;
 			}

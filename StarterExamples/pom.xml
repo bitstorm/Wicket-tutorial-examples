@@ -65,7 +65,19 @@
 			<artifactId>log4j-core</artifactId>
 			<version>${log4j.version}</version>
 		</dependency>
-
+        
+        <dependency>
+             <groupId>com.uwyn</groupId>
+             <artifactId>jhighlight</artifactId>
+             <version>1.0</version>
+             <exclusions>
+                 <exclusion>
+                     <groupId>javax.servlet</groupId>
+                     <artifactId>servlet-api</artifactId>
+                 </exclusion>
+             </exclusions>
+         </dependency>
+            
 		<!-- Example dependencies -->
 		<dependency>
 			<groupId>org.wicketTutorial</groupId>
@@ -382,9 +394,6 @@
 				<includes>
 					<include>**</include>
 				</includes>
-				<excludes>
-					<exclude>**/*.java</exclude>
-				</excludes>
 			</resource>
 		</resources>
 		<testResources>
