@@ -50,6 +50,7 @@ public class BackHomeFilter extends WicketFilter
 					List<String> segments = request.getUrl().getSegments();
 					String sourceClass = "";
 					
+					//read the target class from bookmarkable url or use the Application class
 					if (segments.size() > 0)
 					{						
 						sourceClass = segments.get(segments.size() - 1);
@@ -59,7 +60,7 @@ public class BackHomeFilter extends WicketFilter
 						sourceClass = getApplication().getClass().getName();
 					}
 					
-					responseBuffer.append("<br/><br/><a class='hide-homelink' onclick=\"window.open('/seecode?SourcesPage_class=" + sourceClass +
+					responseBuffer.append("<br/><br/><a class='hide-homelink' href='#' onclick=\"window.open('/seecode?SourcesPage_class=" + sourceClass +
 										  "', 'sources', 'scrollbars=no,location=no,menuBar=no,resizable=yes,status=no,toolbar=no,width=900,height=600')\">See Source</a>");
 					responseBuffer.append("<br/><a class='hide-homelink view-sourcelink' href='http://examples-wickettutorial.rhcloud.com'>Go back to the Examples</a>");
 				}

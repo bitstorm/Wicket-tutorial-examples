@@ -154,12 +154,7 @@ public class SourcesPage extends WebPage
 			File[] files = dir.listFiles();
 			for (File file : files)
 			{
-				if (file.isDirectory())
-				{
-					addResources(new AppendingStringBuffer(relativePath).append(file.getName())
-						.append('/'), file, resources);
-				}
-				else
+				if (!file.isDirectory())
 				{
 					String name = file.getName();
 					if (!name.endsWith("class"))
