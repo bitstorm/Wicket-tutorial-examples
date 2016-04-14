@@ -61,7 +61,7 @@ public class BackHomeFilter extends WicketFilter
 					}
 					
 					responseBuffer.append("<br/><br/><a class='hide-homelink' href='#' onclick=\"window.open('/seecode?SourcesPage_class=" + sourceClass +
-										  "', 'sources', 'scrollbars=no,location=no,menuBar=no,resizable=yes,status=no,toolbar=no,width=900,height=600')\">See Source</a>");
+										  "', 'sources', 'scrollbars=no,location=no,menuBar=no,resizable=yes,status=no,toolbar=no,width=900,height=600')\">View Source</a>");
 					responseBuffer.append("<br/><a class='hide-homelink view-sourcelink' href='http://examples-wickettutorial.rhcloud.com'>Go back to the Examples</a>");
 				}
 				return responseBuffer;

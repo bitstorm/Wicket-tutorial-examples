@@ -26,6 +26,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
@@ -50,6 +51,7 @@ import org.apache.wicket.model.AbstractReadOnlyModel;
 import org.apache.wicket.model.LoadableDetachableModel;
 import org.apache.wicket.request.http.handler.ErrorCodeRequestHandler;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
+import org.apache.wicket.util.file.Files;
 import org.apache.wicket.util.io.IOUtils;
 import org.apache.wicket.util.lang.PackageName;
 import org.apache.wicket.util.string.AppendingStringBuffer;
@@ -156,8 +158,12 @@ public class SourcesPage extends WebPage
 			{
 				if (!file.isDirectory())
 				{
+					List<String> filteredExtentions = Arrays.asList("class", "png", "gif", "jpg");
+					
 					String name = file.getName();
-					if (!name.endsWith("class"))
+					String extention = Files.extension(name);
+					
+					if (!filteredExtentions.contains(extention))
 					{
 						resources.add(relativePath + name);
 					}
@@ -249,14 +255,19 @@ public class SourcesPage extends WebPage
 		private void scanJarFile(String packageRef, JarFile jf, List<String> resources)
 		{
 			Enumeration<JarEntry> enumeration = jf.entries();
+			List<String> filteredExtentions = Arrays.asList("class", "png", "gif", "jpg");
+			
 			while (enumeration.hasMoreElements())
 			{
 				JarEntry je = enumeration.nextElement();
 				String name = je.getName();
 				if (name.startsWith(packageRef))
-				{
+				{							
 					name = name.substring(packageRef.length() + 1);
-					if (!name.endsWith("class"))
+					
+					String extention = Files.extension(name);
+					
+					if (!filteredExtentions.contains(extention))
 					{
 						resources.add(name);
 					}
