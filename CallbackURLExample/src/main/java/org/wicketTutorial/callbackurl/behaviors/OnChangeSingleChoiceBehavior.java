@@ -20,9 +20,9 @@ import java.util.List;
 
 import org.apache.wicket.Application;
 import org.apache.wicket.Component;
+import org.apache.wicket.IRequestListener;
 import org.apache.wicket.RequestListenerInterface;
 import org.apache.wicket.behavior.Behavior;
-import org.apache.wicket.behavior.IBehaviorListener;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
@@ -38,7 +38,7 @@ import org.apache.wicket.util.string.StringValue;
 
 import sun.reflect.ReflectionFactory.GetReflectionFactoryAction;
 
-public class OnChangeSingleChoiceBehavior extends Behavior implements IBehaviorListener{
+public class OnChangeSingleChoiceBehavior extends Behavior implements IRequestListener {
 	private AbstractSingleSelectChoice boundComponent;
 	
 	@Override
@@ -94,11 +94,7 @@ public class OnChangeSingleChoiceBehavior extends Behavior implements IBehaviorL
 				"Behavior must be bound to a component to create the URL");
 		}
 
-		final RequestListenerInterface rli;
-
-		rli = IBehaviorListener.INTERFACE;
-
-		return boundComponent.urlFor(this, rli, new PageParameters());
+		return  boundComponent.urlForListener(this, new PageParameters());
 	}
 	
 	protected Object convertChoiceIdToChoice(String id){

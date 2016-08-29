@@ -19,6 +19,8 @@ package org.wicketTutorial.statelesspage;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.StatelessLink;
+import org.apache.wicket.model.IModel;
+import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.WebPage;
 
 public class StatelessPage extends WebPage {
@@ -37,6 +39,7 @@ public class StatelessPage extends WebPage {
 			public void onClick() {				
 				System.out.println(index++);
 			}
+
 		});
 	}
 

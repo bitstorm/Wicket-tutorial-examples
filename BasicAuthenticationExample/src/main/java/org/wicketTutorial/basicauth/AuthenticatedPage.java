@@ -16,10 +16,12 @@
  */
 package org.wicketTutorial.basicauth;
 
+import org.apache.wicket.Component;
 import org.apache.wicket.authroles.authentication.AuthenticatedWebApplication;
 import org.apache.wicket.authroles.authentication.AuthenticatedWebSession;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.link.Link;
+import org.apache.wicket.model.IModel;
 
 public class AuthenticatedPage extends WebPage {
 	@Override
@@ -48,6 +50,7 @@ public class AuthenticatedPage extends WebPage {
 				AuthenticatedWebSession.get().invalidate();
 				setResponsePage(getApplication().getHomePage());
 			}
+
 		});
 	}
 }
