@@ -16,12 +16,9 @@
  */
 package org.wicketTutorial.statelesspage;
 
-import org.apache.wicket.request.mapper.parameter.PageParameters;
-import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.link.StatelessLink;
-import org.apache.wicket.model.IModel;
-import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.link.StatelessLink;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 public class StatelessPage extends WebPage {
 	private int index = 0;
@@ -34,7 +31,7 @@ public class StatelessPage extends WebPage {
 	protected void onInitialize() {
 		super.onInitialize();
 		setStatelessHint(true);
-		add(new StatelessLink("statelessLink") {
+		add(new StatelessLink<Void>("statelessLink") {
 			@Override
 			public void onClick() {				
 				System.out.println(index++);
