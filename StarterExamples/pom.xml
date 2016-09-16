@@ -45,7 +45,7 @@
 		<!-- WICKET DEPENDENCIES -->
 		<dependency>
 			<groupId>org.apache.wicket</groupId>
-			<artifactId>wicket-examples</artifactId>
+			<artifactId>wicket-extensions</artifactId>
 			<version>${wicket.version}</version>
 		</dependency>
         <dependency>

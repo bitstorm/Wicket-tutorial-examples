@@ -172,7 +172,7 @@
 	</build>	
 	<repositories>
 		<repository>
-			<id>Apache Nexus</id>
+			<id>Apache Nexus snapshot</id>
 			<url>https://repository.apache.org/content/repositories/snapshots/</url>
 			<releases>
 				<enabled>false</enabled>
@@ -181,16 +181,27 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
-                <repository>
-                        <id>staging</id>
-                        <url>https://repository.apache.org/content/repositories/orgapachewicket-1075/</url>
-                        <releases>
-                                <enabled>true</enabled>
-                        </releases>
-                        <snapshots>
-                                <enabled>true</enabled>
-                        </snapshots>
-                </repository>
+		<repository>
+            <id>Apache Nexus release</id>
+            <url>https://repository.apache.org/content/repositories/releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+		
+<!--                 <repository> -->
+<!--                         <id>staging</id> -->
+<!--                         <url>https://repository.apache.org/content/repositories/orgapachewicket-1075/</url> -->
+<!--                         <releases> -->
+<!--                                 <enabled>true</enabled> -->
+<!--                         </releases> -->
+<!--                         <snapshots> -->
+<!--                                 <enabled>true</enabled> -->
+<!--                         </snapshots> -->
+<!--                 </repository> -->
 
 	</repositories>
 </project>
