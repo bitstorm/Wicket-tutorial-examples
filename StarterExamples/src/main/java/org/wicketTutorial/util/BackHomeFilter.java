@@ -18,15 +18,15 @@ package org.wicketTutorial.util;
 
 import java.util.List;
 
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletException;
-
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.protocol.http.WicketFilter;
 import org.apache.wicket.request.cycle.RequestCycle;
 import org.apache.wicket.request.http.WebRequest;
 import org.apache.wicket.response.filter.IResponseFilter;
 import org.apache.wicket.util.string.AppendingStringBuffer;
+
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
 
 public class BackHomeFilter extends WicketFilter
 {
@@ -60,9 +60,9 @@ public class BackHomeFilter extends WicketFilter
 						sourceClass = getApplication().getClass().getName();
 					}
 					
-					responseBuffer.append("<br/><br/><a class='hide-homelink' href='#' onclick=\"window.open('/seecode?SourcesPage_class=" + sourceClass +
+					responseBuffer.append("<p><br/><br/><a class='hide-homelink' href='#' onclick=\"window.open('/seecode?SourcesPage_class=" + sourceClass +
 										  "', 'sources', 'scrollbars=no,location=no,menuBar=no,resizable=yes,status=no,toolbar=no,width=900,height=600')\">View Source</a>");
-					responseBuffer.append("<br/><a class='hide-homelink view-sourcelink' href='http://examples-wickettutorial.rhcloud.com'>Go back to the Examples</a>");
+					responseBuffer.append("<br/><a class='hide-homelink view-sourcelink' href='http://examples-wickettutorial.rhcloud.com'>Go back to the Examples</a></p>");
 				}
 				return responseBuffer;
 			}
