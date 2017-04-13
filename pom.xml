@@ -83,12 +83,13 @@
     		<module>HelloWorldExample</module>
     		<module>OnComponentTagExample</module>
     		<module>TestAjaxEventsExample</module>
-	    <module>TagTesterExample</module>
-	    <module>LocalizedChoicesExample</module>
-	    <module>CallbackURLExample</module>
-	    <module>JSR303validation</module>
-	    <module>ScriptInsideBody</module>
-    <module>StarterExamples</module>
+    		<module>TagTesterExample</module>
+    		<module>LocalizedChoicesExample</module>
+    		<module>CallbackURLExample</module>
+    		<module>JSR303validation</module>
+    		<module>ScriptInsideBody</module>
+    		<module>StarterExamples</module>
+    		<module>BootstrapCommon</module>
   </modules>	
 	<!--url>http://wicket.apache.org/${project.artifactId}</url-->
 	<inceptionYear>2012</inceptionYear>	

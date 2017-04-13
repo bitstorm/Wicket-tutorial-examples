@@ -48,12 +48,12 @@
 			<artifactId>wicket-core</artifactId>
 			<version>${wicket.version}</version>
 		</dependency>
-        <dependency>
-            <groupId>org.apache.wicket</groupId>
-            <artifactId>wicket-bean-validation</artifactId>
-            <version>${wicket.version}</version>
-        </dependency>
-        
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-bean-validation</artifactId>
+			<version>${wicket.version}</version>
+		</dependency>
+
 		<!-- LOGGING DEPENDENCIES - LOG4J -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
@@ -65,19 +65,21 @@
 			<artifactId>log4j-core</artifactId>
 			<version>${log4j.version}</version>
 		</dependency>
-        
-        <dependency>
-             <groupId>com.uwyn</groupId>
-             <artifactId>jhighlight</artifactId>
-             <version>1.0</version>
-             <exclusions>
-                 <exclusion>
-                     <groupId>javax.servlet</groupId>
-                     <artifactId>servlet-api</artifactId>
-                 </exclusion>
-             </exclusions>
-         </dependency>
-            
+
+		<dependency>
+			<groupId>com.uwyn</groupId>
+			<artifactId>jhighlight</artifactId>
+			<version>1.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.servlet</groupId>
+					<artifactId>servlet-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		
+
 		<!-- Example dependencies -->
 		<dependency>
 			<groupId>org.wicketTutorial</groupId>
@@ -361,13 +363,13 @@
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-            <groupId>org.wicketTutorial</groupId>
-            <artifactId>CustomFormComponentPanel</artifactId>
-            <version>${project.version}</version>
-        </dependency>
+			<groupId>org.wicketTutorial</groupId>
+			<artifactId>CustomFormComponentPanel</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 		<!-- End of Example dependencies -->
-		
-		
+
+
 		<!-- JUNIT DEPENDENCY FOR TESTING -->
 		<dependency>
 			<groupId>junit</groupId>
