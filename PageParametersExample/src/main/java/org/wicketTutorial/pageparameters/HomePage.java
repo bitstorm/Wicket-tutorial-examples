@@ -26,7 +26,7 @@ public class HomePage extends WebPage {
 	private static final long serialVersionUID = 1L;
 
     public HomePage() {
-    	add(new Link("pageWithIndexParam") {
+    	add(new Link<Void>("pageWithIndexParam") {
 
 			@Override
 			public void onClick() {
@@ -39,7 +39,7 @@ public class HomePage extends WebPage {
 			
 		});
     	
-    	add(new Link("pageWithNamedIndexParam") {
+    	add(new Link<Void>("pageWithNamedIndexParam") {
 
 			@Override
 			public void onClick() {

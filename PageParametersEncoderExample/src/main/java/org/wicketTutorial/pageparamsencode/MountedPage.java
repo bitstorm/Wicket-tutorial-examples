@@ -27,7 +27,7 @@ public class MountedPage extends WebPage {
 	protected void onInitialize() {
 		super.onInitialize();
 		
-		add(new Link("goHome"){
+		add(new Link<Void>("goHome"){
 
 			@Override
 			public void onClick() {

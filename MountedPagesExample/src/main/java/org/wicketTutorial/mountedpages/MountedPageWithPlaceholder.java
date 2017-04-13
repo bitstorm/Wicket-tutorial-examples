@@ -30,7 +30,7 @@ public class MountedPageWithPlaceholder extends WebPage {
 		super.onInitialize();
 		setStatelessHint(true);
 		
-		add(new StatelessLink("goHome") {
+		add(new StatelessLink<Void>("goHome") {
 
 			@Override
 			public void onClick() {

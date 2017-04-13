@@ -35,7 +35,7 @@ public class HomePage extends WebPage {
     	modalWindow.setTitle("Modal window");
     	
     	add(modalWindow);
-    	add(new AjaxLink("openWindow") {
+    	add(new AjaxLink<Void>("openWindow") {
 			@Override
 			public void onClick(AjaxRequestTarget target) {
 				modalWindow.show(target);				

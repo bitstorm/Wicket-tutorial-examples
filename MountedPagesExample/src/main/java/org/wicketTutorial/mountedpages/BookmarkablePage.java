@@ -30,7 +30,7 @@ public class BookmarkablePage extends WebPage {
 		super.onInitialize();
 		setStatelessHint(true);
 		
-		add(new Link("goHome") {
+		add(new Link<Void>("goHome") {
 
 			@Override
 			public void onClick() {

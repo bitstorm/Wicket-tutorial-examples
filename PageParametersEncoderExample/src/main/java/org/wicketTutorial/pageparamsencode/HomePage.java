@@ -26,7 +26,7 @@ public class HomePage extends WebPage {
 
     public HomePage(final PageParameters parameters) {
     	super(parameters);
-    	add(new Link("mountedPage") {
+    	add(new Link<Void>("mountedPage") {
 
 			@Override
 			public void onClick() {

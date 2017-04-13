@@ -39,7 +39,7 @@ public class HomePage extends WebPage {
 		datepicker = new JQueryDateFieldAjax("datepicker", new Model<Date>());
 		form.add(datepicker);
 		
-		add(new AjaxLink("update"){
+		add(new AjaxLink<Void>("update"){
 
 			@Override
 			public void onClick(AjaxRequestTarget target) {

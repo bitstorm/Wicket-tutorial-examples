@@ -22,7 +22,7 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 public class AnotherPage extends WebPage {
 	public AnotherPage(final PageParameters parameters){
-		add(new Link("homePage"){
+		add(new Link<Void>("homePage"){
 
 			@Override
 			public void onClick() {

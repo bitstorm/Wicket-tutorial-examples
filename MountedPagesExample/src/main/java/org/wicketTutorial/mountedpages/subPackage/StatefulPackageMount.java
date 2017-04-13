@@ -34,7 +34,7 @@ public class StatefulPackageMount extends WebPage {
 	@Override
 	protected void onInitialize() {
 		super.onInitialize();
-		add(new Link("goHome") {
+		add(new Link<Void>("goHome") {
 
 			@Override
 			public void onClick() {

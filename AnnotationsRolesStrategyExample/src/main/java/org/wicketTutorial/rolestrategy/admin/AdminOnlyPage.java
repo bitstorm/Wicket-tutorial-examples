@@ -25,7 +25,7 @@ public class AdminOnlyPage extends WebPage {
 	@Override
 	protected void onInitialize() {
 		super.onInitialize();
-		add(new Link("goToHomePage") {
+		add(new Link<Void>("goToHomePage") {
 
 			@Override
 			public void onClick() {

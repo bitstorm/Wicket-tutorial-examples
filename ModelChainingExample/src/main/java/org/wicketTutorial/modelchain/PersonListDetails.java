@@ -23,6 +23,7 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.ChoiceRenderer;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
+import org.apache.wicket.markup.html.form.FormComponentUpdatingBehavior;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.model.Model;
@@ -40,12 +41,8 @@ public class PersonListDetails extends WebPage {
 			}
 		};
 		
-		personsList = new DropDownChoice<Person>("persons", listModel, personsPojo(),personRender){
-			@Override
-			protected boolean wantOnSelectionChangedNotifications() {
-				return true;
-			}
-		};
+		personsList = new DropDownChoice<Person>("persons", listModel, personsPojo(),personRender);
+		personsList.add(new FormComponentUpdatingBehavior());
 				
 		add(personsList);		
 		

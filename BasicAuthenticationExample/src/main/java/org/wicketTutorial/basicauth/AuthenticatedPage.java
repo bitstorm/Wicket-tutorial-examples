@@ -35,7 +35,7 @@ public class AuthenticatedPage extends WebPage {
 	@Override
 	protected void onInitialize() {
 		super.onInitialize();
-		add(new Link("goToHomePage") {
+		add(new Link<Void>("goToHomePage") {
 
 			@Override
 			public void onClick() {
@@ -43,7 +43,7 @@ public class AuthenticatedPage extends WebPage {
 			}
 		});
 		
-		add(new Link("logOut") {
+		add(new Link<Void>("logOut") {
 
 			@Override
 			public void onClick() {
