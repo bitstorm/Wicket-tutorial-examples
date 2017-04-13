@@ -7,7 +7,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="732"
+   width="932"
    height="80"
    id="svg2"
    version="1.1"
@@ -42,12 +42,12 @@
      inkscape:snap-center="true"
      inkscape:snap-object-midpoints="true"
      inkscape:zoom="1.2076923"
-     inkscape:cx="339.49045"
+     inkscape:cx="475.59237"
      inkscape:cy="-98.343949"
      inkscape:window-x="65"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg2" />
+     inkscape:current-layer="g12" />
   <title
      id="title4">Apache Wicket</title>
   <desc
@@ -71,32 +71,31 @@
      id="g12">
     <title
        id="title14">Layer 1</title>
-    <g
-       id="svg_1">
-      <circle
-         cx="231"
-         cy="39"
-         r="32"
-         id="svg_2"
-         style="fill:#ffffff" />
-      <path
-         d="m 199,7 m 20,20 0,24 8,0 8,0 8,0 0,-24 -8,16 -4,-8 -4,8 -8,-16 z"
-         id="svg_3"
-         inkscape:connector-curvature="0"
-         style="fill:#e9601a" />
-      <text
-         x="6"
-         y="71"
-         font-size="86px"
-         id="svg_4"
-         transform="matrix(1.04,0,0,1,-0.24,0)"
-         style="font-size:86px;font-family:'League Gothic';fill:#ffffff">TUTORIAL</text>
-      <text
-         x="273"
-         y="71"
-         font-size="86px"
-         id="svg_5"
-         style="font-size:86px;font-family:'League Gothic';fill:#ffffff">EXAMPLES</text>
-    </g>
+    <ellipse
+       style="fill:#ffd5d5"
+       id="svg_2"
+       cy="41.757961"
+       cx="347.79617"
+       rx="38.21019"
+       ry="34.89809" />
+    <path
+       style="fill:#e9601a"
+       inkscape:connector-curvature="0"
+       id="svg_3"
+       d="m 289.24204,-14.184713 m 37.31326,34.302263 0,41.162701 14.92531,0 14.9253,0 14.9253,0 0,-41.162701 -14.9253,27.441801 L 348.94326,33.83845 341.48061,47.559351 326.5553,20.11755 Z" />
+    <text
+       style="font-size:88.67779541px;font-family:'League Gothic';fill:#ffffff"
+       transform="scale(1.0311372,0.96980308)"
+       id="svg_4"
+       font-size="86px"
+       y="73.210739"
+       x="5.8244934">TUTORIAL</text>
+    <text
+       style="font-size:85.75798035px;font-family:'League Gothic';fill:#ffffff"
+       id="svg_5"
+       font-size="86px"
+       y="71.625885"
+       x="454.97751"
+       transform="scale(0.99718579,1.0028221)">EXAMPLES</text>
   </g>
 </svg>
