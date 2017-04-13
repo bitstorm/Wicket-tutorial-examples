@@ -54,7 +54,7 @@ public class HomePage extends WebPage {
 		FeedbackPanel feedbackPanel = new FeedbackPanel("feedbackPanel");
 		add(feedbackPanel);
 		
-		StatelessLink breadthLink = new StatelessLink("breadthLink") {
+		StatelessLink breadthLink = new StatelessLink<Void>("breadthLink") {
 
 			@Override
 			public void onClick() {
@@ -62,7 +62,7 @@ public class HomePage extends WebPage {
 			}
 		};
 		add(breadthLink);
-		StatelessLink depthLink = new StatelessLink("depthLink") {
+		StatelessLink depthLink = new StatelessLink<Void>("depthLink") {
 
 			@Override
 			public void onClick() {
@@ -70,7 +70,7 @@ public class HomePage extends WebPage {
 			}
 		};
 		add(depthLink);
-		StatelessLink bubbleLink = new StatelessLink("bubbleLink") {
+		StatelessLink bubbleLink = new StatelessLink<Void>("bubbleLink") {
 
 			@Override
 			public void onClick() {
@@ -78,7 +78,7 @@ public class HomePage extends WebPage {
 			}
 		};
 		add(bubbleLink);
-		StatelessLink exactLink = new StatelessLink("exactLink") {
+		StatelessLink exactLink = new StatelessLink<Void>("exactLink") {
 
 			@Override
 			public void onClick() {

@@ -20,10 +20,7 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.wicketTutorial.ajaxlistener.behavior.DisableComponentListener;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.attributes.AjaxRequestAttributes;
-import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.ajax.markup.html.form.AjaxButton;
-import org.apache.wicket.ajax.markup.html.form.AjaxSubmitLink;
-import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.WebPage;
@@ -42,7 +39,7 @@ public class HomePage extends WebPage {
 		
 	    form.add(new AjaxButton("ajaxButton"){
 	    	@Override
-	    	protected void onSubmit(AjaxRequestTarget target, Form<?> form) {
+	    	protected void onSubmit(AjaxRequestTarget target) {
 	    		try {
 					Thread.sleep(3000);					
 				} catch (InterruptedException e) {

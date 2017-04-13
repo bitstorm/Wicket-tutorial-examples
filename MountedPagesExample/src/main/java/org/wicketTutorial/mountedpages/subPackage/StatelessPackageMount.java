@@ -24,7 +24,7 @@ public class StatelessPackageMount extends WebPage {
 
 	public StatelessPackageMount(PageParameters parameters) {
 		super(parameters);
-		add(new StatelessLink("goHome") {
+		add(new StatelessLink<Void>("goHome") {
 
 			@Override
 			public void onClick() {

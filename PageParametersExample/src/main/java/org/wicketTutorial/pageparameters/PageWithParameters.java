@@ -49,7 +49,7 @@ public class PageWithParameters extends WebPage {
 	protected void onInitialize() {		
 		super.onInitialize();
 		setDefaultModel(new Model());
-		add(new StatelessLink("goBack") {
+		add(new StatelessLink<Void>("goBack") {
 
 			@Override
 			public void onClick() {

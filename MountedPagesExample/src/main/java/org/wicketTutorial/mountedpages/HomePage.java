@@ -28,7 +28,7 @@ public class HomePage extends WebPage {
 	private static final long serialVersionUID = 1L;
 
     public HomePage(final PageParameters parameters) {
-		add(new Link("statefulPageMount") {
+		add(new Link<Void>("statefulPageMount") {
 
 			@Override
 			public void onClick() {
@@ -39,7 +39,7 @@ public class HomePage extends WebPage {
 			
 		});
 		
-		add(new Link("mountedPageWithPlaceholder") {
+		add(new Link<Void>("mountedPageWithPlaceholder") {
 
 			@Override
 			public void onClick() {
@@ -51,7 +51,7 @@ public class HomePage extends WebPage {
 			
 		});
 		
-    	add(new Link("statelessPackage") {
+    	add(new Link<Void>("statelessPackage") {
 
 			@Override
 			public void onClick() {
@@ -59,7 +59,7 @@ public class HomePage extends WebPage {
 			}
 		});
 		
-		add(new Link("statefulPackage") {
+		add(new Link<Void>("statefulPackage") {
 
 			@Override
 			public void onClick() {

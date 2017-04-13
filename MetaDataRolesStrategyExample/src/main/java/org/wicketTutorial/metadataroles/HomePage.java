@@ -31,7 +31,7 @@ public class HomePage extends WebPage {
     public HomePage(final PageParameters parameters) {
     	super(parameters);
     	
-    	add(new Link("logOut") {
+    	add(new Link<Void>("logOut") {
 
 			@Override
 			public void onClick() {

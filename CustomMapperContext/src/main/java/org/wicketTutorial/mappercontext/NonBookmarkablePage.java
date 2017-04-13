@@ -22,7 +22,7 @@ import org.apache.wicket.markup.html.link.Link;
 
 public class NonBookmarkablePage extends WebPage {
 	public NonBookmarkablePage(){
-		add(new Link("goBack"){
+		add(new Link<Void>("goBack"){
 
 			@Override
 			public void onClick() {

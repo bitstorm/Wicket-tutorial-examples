@@ -49,7 +49,8 @@ public class HomePage extends WebPage {
 				Session.get().invalidateNow();
 			}
 		});
-
+		
+		add(new Label("wicket-version",  getApplication().getFrameworkSettings().getVersion()));
     }
 	
 	@Override

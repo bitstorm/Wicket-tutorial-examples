@@ -26,14 +26,14 @@ public class HomePage extends WebPage {
 	private static final long serialVersionUID = 1L;
 
     public HomePage(final PageParameters parameters) {
-    	add(new Link("nonBookmarkablePage"){
+    	add(new Link<Void>("nonBookmarkablePage"){
 
 			@Override
 			public void onClick() {
 				setResponsePage(new NonBookmarkablePage());
 			}			
 		});
-    	add(new Link("bookmarkablePage"){
+    	add(new Link<Void>("bookmarkablePage"){
 
 			@Override
 			public void onClick() {
