@@ -367,6 +367,11 @@
 			<artifactId>CustomFormComponentPanel</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.wicketTutorial.commons.bootstrap</groupId>
+			<artifactId>BootstrapCommon</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 		<!-- End of Example dependencies -->
 
 

@@ -22,8 +22,11 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.StatelessLink;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 
-public class HomePage extends WebPage {
+import de.agilecoders.wicket.core.settings.BootstrapResourceAppender;
+
+public class HomePage extends BootstrapBasePage {
 	private static final long serialVersionUID = 1L;
 	private String sessionType;
 	

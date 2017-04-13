@@ -1,0 +1,169 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  background-color: #FFFFFF;
+  height: 100%;
+  font-size: 16px;
+}
+
+html {
+  height: 100%;
+}
+
+.footer {
+  height: 100%;	
+  background-color: #F3F3F3;
+  padding: 70px 0px;
+  margin-top: 70px;
+  border-top: 1px solid #E5E5E5;
+  color: #777;
+  text-align: 
+}
+
+.footer p {
+	text-align: center;
+}
+
+.footer ul {
+	text-align: center;
+	padding-top: 15px;
+}
+
+.footer li {
+	display: inline;
+	padding-right: 10px
+}
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.width-auto {
+	width: auto;
+}
+
+.btn-primary {
+    background-color: #FF9925;
+    border-color: #FF9925;
+}
+
+.btn-primary:hover {
+    background-color: #FFB158;
+    border-color: #FFB158;
+}
+
+.navbar-default {
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #dd5c14;
+    background-image: -moz-linear-gradient(top, #EB5A0A, #dd7a14);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#EB5A0A), to(#dd7a14));
+    background-image: -webkit-linear-gradient(top, #EB5A0A, #dd7a14);
+    background-image: -o-linear-gradient(top, #EB5A0A, #dd7a14);
+    background-image: linear-gradient(to bottom, #EB5A0A, #dd7a14);
+    background-repeat: repeat-x;
+}
+
+a {
+    color: #DD4814;
+}
+
+a:hover {
+    color: #97310E;
+}

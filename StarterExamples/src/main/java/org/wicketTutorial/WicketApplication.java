@@ -21,6 +21,7 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.protocol.https.HttpsConfig;
 import org.apache.wicket.protocol.https.HttpsMapper;
+import org.wicketTutorial.commons.bootstrap.BootstrapApp;
 import org.wicketTutorial.util.SourcesPage;
 
 /**
@@ -29,7 +30,7 @@ import org.wicketTutorial.util.SourcesPage;
  * 
  * @see org.wicketTutorial.Start#main(String[])
  */
-public class WicketApplication extends WebApplication
+public class WicketApplication extends BootstrapApp
 {
 	/**
 	 * @see org.apache.wicket.Application#getHomePage()

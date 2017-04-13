@@ -55,12 +55,12 @@
 				target="_blank">here on GitHub</a>.
 		</p>
 		
+        <wicket:extend>
 		<p>
 		  Your current session is <b wicket:id="sessionType"></b> <a wicket:id="logOut">Discard session</a>
 		  <br/>
           Wicket version: <label wicket:id="wicket-version"></label>
         </p>
-
 		<wicket:link>
 			<ul>
 				<li><a href="/rolestrategy">AnnotationsRolesStrategyExample</a></li>
@@ -123,6 +123,8 @@
 				<li><a href="/customvalidator">UsernameCustomValidator</a></li>
 			</ul>
 		</wicket:link>
+		
+		</wicket:extend>
 
 	</div>
 	<div id="ft"></div>
