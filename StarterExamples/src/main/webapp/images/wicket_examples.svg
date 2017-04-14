@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -7,56 +9,18 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="932"
-   height="80"
+   width="565"
+   height="125"
+   viewBox="0 0 565.00001 125"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="wicket_examples.svg">
-  <metadata
-     id="metadata23">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title>Apache Wicket</dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1855"
-     inkscape:window-height="1056"
-     id="namedview21"
-     showgrid="false"
-     inkscape:snap-text-baseline="false"
-     inkscape:snap-center="true"
-     inkscape:snap-object-midpoints="true"
-     inkscape:zoom="1.2076923"
-     inkscape:cx="475.59237"
-     inkscape:cy="-98.343949"
-     inkscape:window-x="65"
-     inkscape:window-y="24"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="g12" />
-  <title
-     id="title4">Apache Wicket</title>
-  <desc
-     id="desc6">Logo for Apache Wicket.</desc>
+   sodipodi:docname="drawing.svg">
   <defs
-     id="defs8">
+     id="defs4">
     <style
        type="text/css"
-       id="style10"><![CDATA[
+       id="style4138"><![CDATA[
             @font-face {
                 font-family: "League Gothic";
                 src: local("League Gothic"), /* IE */
@@ -67,35 +31,88 @@
             }
         ]]></style>
   </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.83242348"
+     inkscape:cx="454.95082"
+     inkscape:cy="107.96981"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     height="200px"
+     borderlayer="false"
+     inkscape:window-width="1855"
+     inkscape:window-height="1056"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
   <g
-     id="g12">
-    <title
-       id="title14">Layer 1</title>
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-927.36217)"
+     style="display:inline">
+    <rect
+       style="fill:#b00000;fill-opacity:0;stroke:none;stroke-opacity:1"
+       id="rect5646"
+       width="152.67305"
+       height="98.146965"
+       x="297.34549"
+       y="924.69958" />
     <ellipse
-       style="fill:#ffd5d5"
-       id="svg_2"
-       cy="41.757961"
-       cx="347.79617"
-       rx="38.21019"
-       ry="34.89809" />
+       style="fill:#ff9925;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path3364"
+       cx="237.11247"
+       cy="994.53375"
+       rx="36.482059"
+       ry="37.1814" />
+    <text
+       id="text18"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;line-height:125%;font-family:'League Gothic';-inkscape-font-specification:'League Gothic, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1"
+       y="1025.0585"
+       x="1.0197849"
+       sodipodi:linespacing="125%">
+      <tspan
+         sodipodi:role="line"
+         id="tspan4140"
+         x="1.0197849"
+         y="1025.0585"
+         style="fill:#ffffff;fill-opacity:1">WICKET</tspan>
+    </text>
+    <text
+       id="text18-4"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;line-height:125%;font-family:'League Gothic';-inkscape-font-specification:'League Gothic, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#ffffff;fill-opacity:1"
+       y="1022.7506"
+       x="294.36148"
+       sodipodi:linespacing="125%">
+      <tspan
+         sodipodi:role="line"
+         id="tspan4179"
+         x="294.36148"
+         y="1022.7506">TUTORIAL</tspan>
+    </text>
     <path
-       style="fill:#e9601a"
        inkscape:connector-curvature="0"
-       id="svg_3"
-       d="m 289.24204,-14.184713 m 37.31326,34.302263 0,41.162701 14.92531,0 14.9253,0 14.9253,0 0,-41.162701 -14.9253,27.441801 L 348.94326,33.83845 341.48061,47.559351 326.5553,20.11755 Z" />
-    <text
-       style="font-size:88.67779541px;font-family:'League Gothic';fill:#ffffff"
-       transform="scale(1.0311372,0.96980308)"
-       id="svg_4"
-       font-size="86px"
-       y="73.210739"
-       x="5.8244934">TUTORIAL</text>
-    <text
-       style="font-size:85.75798035px;font-family:'League Gothic';fill:#ffffff"
-       id="svg_5"
-       font-size="86px"
-       y="71.625885"
-       x="454.97751"
-       transform="scale(0.99718579,1.0028221)">EXAMPLES</text>
+       id="path16"
+       style="fill:#ffffff"
+       d="m 178.78954,941.8349 m 36.38153,33.10521 0,39.72619 14.5526,0 14.5526,0 14.55263,0 0,-39.72619 -14.55263,26.48419 -7.2763,-13.24209 -7.2763,13.24209 -14.5526,-26.48419 z" />
   </g>
 </svg>
