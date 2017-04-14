@@ -17,10 +17,10 @@
 package org.wicketTutorial.bindsession;
 
 import org.apache.wicket.Session;
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 
-public class DisplaySessionParameter extends WebPage {
+public class DisplaySessionParameter extends BootstrapBasePage {
 	
 	public DisplaySessionParameter() {
 		super();

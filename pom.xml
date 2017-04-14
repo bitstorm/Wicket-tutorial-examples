@@ -144,7 +144,9 @@
 				    <exclude>**/src/test/resources/**</exclude>
 				    <exclude>**/src/test/data/**</exclude>
 				    <exclude>**/jquery*</exclude>
-				    <exclude>**/*.csv</exclude>		
+				    <exclude>**/*.csv</exclude>
+				    <exclude>**/*.xml</exclude>
+				    <exclude>**/*.css</exclude>
 				</excludes>
 			    </configuration>
 			    <executions>

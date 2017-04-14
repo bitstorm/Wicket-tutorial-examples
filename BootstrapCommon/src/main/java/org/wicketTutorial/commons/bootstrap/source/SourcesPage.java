@@ -40,7 +40,6 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.attributes.AjaxCallListener;
 import org.apache.wicket.ajax.attributes.AjaxRequestAttributes;
 import org.apache.wicket.ajax.markup.html.AjaxFallbackLink;
-import org.apache.wicket.authorization.UnauthorizedInstantiationException;
 import org.apache.wicket.core.util.lang.WicketObjects;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.WebPage;
@@ -473,15 +472,7 @@ public class SourcesPage extends WebPage
 					new ErrorCodeRequestHandler(404,
 						"Could not find sources for the page you requested"));
 			}
-			else if (!pageParam.startsWith("org.apache.wicket.examples"))
-			{
-				if (log.isErrorEnabled())
-				{
-					log.error("user is trying to access class: " + pageParam
-						+ " which is not in the scope of org.apache.wicket.examples");
-				}
-				throw new UnauthorizedInstantiationException(getClass());
-			}
+			
 			page = WicketObjects.resolveClass(pageParam);
 
 			if (page == null)

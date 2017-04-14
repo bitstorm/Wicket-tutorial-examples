@@ -16,8 +16,8 @@
  */
 package org.wicketTutorial.autolink.anotherPackage;
 
-import org.apache.wicket.markup.html.WebPage;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 
-public class SubPackagePage extends WebPage {
+public class SubPackagePage extends BootstrapBasePage {
 
 }
