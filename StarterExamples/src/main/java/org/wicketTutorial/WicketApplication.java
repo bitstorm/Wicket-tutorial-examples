@@ -53,6 +53,6 @@ public class WicketApplication extends BootstrapApp
 		new BeanValidationConfiguration().configure(this);
 		
 		
-		mountPage("/seecode", SourcesPage.class);
+		//mountPage("/seecode", SourcesPage.class);
 	}
 }

@@ -20,7 +20,9 @@
 <html lang="en">
 <head>
 <wicket:header-items />
-<link href="/css/style.css" rel="stylesheet">
+<wicket:link>
+    <link href="style.css" rel="stylesheet">
+</wicket:link>
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -37,8 +39,12 @@
 			<div id="navbar" class="navbar-collapse collapse">
 
 				<form class="navbar-form navbar-right"></form>
-				<a href="/"><img style="max-height: 45px"
-					src="/images/wicket_examples.svg"></a>
+				<a href="/">
+				    <wicket:link>
+					    <img style="max-height: 45px"
+						   src="wicket_examples.svg">
+					</wicket:link>   
+		        </a>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown"><a wicket:id="sources"><i
 							class="glyphicon glyphicon-search"></i> Source</a></li>

@@ -22,7 +22,7 @@
 		"deployment". If no configuration is found, "development" is the default. -->
 	<filter>
 		<filter-name>CustomMarkupFolder</filter-name>
-		<filter-class>org.wicketTutorial.util.BackHomeFilter</filter-class>
+		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
 		<init-param>
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.markupfolder.WicketApplication</param-value>
@@ -36,7 +36,7 @@
 
 	<filter>
 		<filter-name>wicket.StarterExamples</filter-name>
-		<filter-class>org.wicketTutorial.util.BackHomeFilter</filter-class>
+		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
 		<init-param>
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.WicketApplication</param-value>
@@ -54,7 +54,7 @@
 
 	<filter>
 		<filter-name>wicket.SpringExample</filter-name>
-		<filter-class>org.wicketTutorial.util.BackHomeFilter</filter-class>
+		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
 		<init-param>
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.springinjection.WicketApplication</param-value>
@@ -63,7 +63,7 @@
 
 	<filter>
 		<filter-name>wicket.EjbExample</filter-name>
-		<filter-class>org.wicketTutorial.util.BackHomeFilter</filter-class>
+		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
 		<init-param>
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.ejbinjection.WicketApplication</param-value>
@@ -72,7 +72,7 @@
 
 	<filter>
 		<filter-name>wicket.RoleStrategy</filter-name>
-		<filter-class>org.wicketTutorial.util.BackHomeFilter</filter-class>
+		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
 		<init-param>
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.rolestrategy.WicketApplication</param-value>
@@ -81,7 +81,7 @@
 
 	<filter>
 		<filter-name>wicket.LocalizedGreetings</filter-name>
-		<filter-class>org.wicketTutorial.util.BackHomeFilter</filter-class>
+		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
 		<init-param>
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.greetings.WicketApplication</param-value>
@@ -90,7 +90,7 @@
 
 	<filter>
 		<filter-name>wicket.EventInfra</filter-name>
-		<filter-class>org.wicketTutorial.util.BackHomeFilter</filter-class>
+		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
 		<init-param>
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.eventinfra.WicketApplication</param-value>
@@ -99,7 +99,7 @@
 
 	<filter>
 		<filter-name>wicket.ResMounting</filter-name>
-		<filter-class>org.wicketTutorial.util.BackHomeFilter</filter-class>
+		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
 		<init-param>
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.resmounting.WicketApplication</param-value>
@@ -108,7 +108,7 @@
 
 	<filter>
 		<filter-name>wicket.BasicAuth</filter-name>
-		<filter-class>org.wicketTutorial.util.BackHomeFilter</filter-class>
+		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
 		<init-param>
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.basicauth.WicketApplication</param-value>
@@ -117,7 +117,7 @@
 
 	<filter>
 		<filter-name>wicket.HttpsProtocol</filter-name>
-		<filter-class>org.wicketTutorial.util.BackHomeFilter</filter-class>
+		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
 		<init-param>
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.https.WicketApplication</param-value>
@@ -126,7 +126,7 @@
 
 	<filter>
 		<filter-name>wicket.OverrideMessage</filter-name>
-		<filter-class>org.wicketTutorial.util.BackHomeFilter</filter-class>
+		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
 		<init-param>
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.overridemessage.WicketApplication</param-value>
@@ -135,7 +135,7 @@
 
 	<filter>
 		<filter-name>wicket.CustomValidator</filter-name>
-		<filter-class>org.wicketTutorial.util.BackHomeFilter</filter-class>
+		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
 		<init-param>
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.customvalidator.WicketApplication</param-value>
@@ -144,7 +144,7 @@
 
 	<filter>
 		<filter-name>wicket.CustomMapper</filter-name>
-		<filter-class>org.wicketTutorial.util.BackHomeFilter</filter-class>
+		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
 		<init-param>
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.mappercontext.WicketApplication</param-value>
@@ -153,7 +153,7 @@
 
 	<filter>
 		<filter-name>wicket.MountedPages</filter-name>
-		<filter-class>org.wicketTutorial.util.BackHomeFilter</filter-class>
+		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
 		<init-param>
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.mountedpages.WicketApplication</param-value>
@@ -162,7 +162,7 @@
 
 	<filter>
 		<filter-name>wicket.ScriptInsideBody</filter-name>
-		<filter-class>org.wicketTutorial.util.BackHomeFilter</filter-class>
+		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
 		<init-param>
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.scriptposition.WicketApplication</param-value>
