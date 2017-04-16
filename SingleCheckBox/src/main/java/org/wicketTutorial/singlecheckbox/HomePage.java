@@ -16,14 +16,14 @@
  */
 package org.wicketTutorial.singlecheckbox;
 
-import org.apache.wicket.markup.html.WebPage;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 import org.apache.wicket.markup.html.form.CheckBox;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
-public class HomePage extends WebPage {
+public class HomePage extends BootstrapBasePage {
 	private static final long serialVersionUID = 1L;
 
     public HomePage(final PageParameters parameters) {

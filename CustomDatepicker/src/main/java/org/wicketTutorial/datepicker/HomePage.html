@@ -24,8 +24,12 @@
 		
 	</head>
 	<body style="font-size: 14px">
-		<form wicket:id="form">
-			My custom JQuery datepicker: <input type="text" wicket:id="datepicker"/><br/>			
-		</form>
+		<wicket:extend>
+			<form wicket:id="form">
+				My custom JQuery datepicker:
+				<input type="text" wicket:id="datepicker" />
+				<br />
+			</form>
+		</wicket:extend>
 	</body>
 </html>

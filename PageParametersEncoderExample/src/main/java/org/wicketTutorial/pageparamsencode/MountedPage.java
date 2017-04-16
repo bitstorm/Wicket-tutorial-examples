@@ -16,12 +16,12 @@
  */
 package org.wicketTutorial.pageparamsencode;
 
-import org.apache.wicket.markup.html.WebPage;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
-public class MountedPage extends WebPage {
+public class MountedPage extends BootstrapBasePage {
 
 	@Override
 	protected void onInitialize() {

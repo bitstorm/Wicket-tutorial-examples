@@ -17,7 +17,7 @@
 package org.wicketTutorial.mappercontext;
 
 import org.apache.wicket.DefaultMapperContext;
-import org.apache.wicket.protocol.http.WebApplication;
+import org.wicketTutorial.commons.bootstrap.BootstrapApp;
 import org.apache.wicket.core.request.mapper.IMapperContext;
 
 /**
@@ -25,7 +25,7 @@ import org.apache.wicket.core.request.mapper.IMapperContext;
  * 
  * @see org.wicketTutorial.mappercontext.Start#main(String[])
  */
-public class WicketApplication extends WebApplication
+public class WicketApplication extends BootstrapApp
 {    	
 	/**
 	 * @see org.apache.wicket.Application#getHomePage()

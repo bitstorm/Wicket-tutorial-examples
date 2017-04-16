@@ -23,10 +23,18 @@
 		<title>Apache Wicket Quickstart</title>
 	</head>
 	<body>
-	   <h2> Custom mapper context</h2>
-		<ul>
-			<li><a wicket:id="nonBookmarkablePage">Non bookmarkable page</a></li>
-			<li><a wicket:id="bookmarkablePage">Bookmarkable page</a></li>
-		</ul>
+	   <wicket:extend>
+	   	<h2>Custom mapper context</h2>
+	   	<ul>
+	   		<li>
+	   			<a wicket:id="nonBookmarkablePage">
+	   				Non bookmarkable page
+	   			</a>
+	   		</li>
+	   		<li>
+	   			<a wicket:id="bookmarkablePage">Bookmarkable page</a>
+	   		</li>
+	   	</ul>
+	   </wicket:extend>
 	</body>
 </html>

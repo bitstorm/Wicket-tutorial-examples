@@ -21,9 +21,9 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.extensions.ajax.markup.html.modal.ModalWindow;
 import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.WebPage;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 
-public class HomePage extends WebPage {
+public class HomePage extends BootstrapBasePage {
 	private static final long serialVersionUID = 1L;
 
     public HomePage(final PageParameters parameters) {

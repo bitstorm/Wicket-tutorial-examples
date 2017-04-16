@@ -16,11 +16,11 @@
  */
 package org.wicketTutorial.mountedpages;
 
-import org.apache.wicket.markup.html.WebPage;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 import org.apache.wicket.markup.html.link.StatelessLink;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
-public class MountedPageWithPlaceholder extends WebPage {
+public class MountedPageWithPlaceholder extends BootstrapBasePage {
 	public MountedPageWithPlaceholder(PageParameters parameters) {
 		super(parameters);
 	}

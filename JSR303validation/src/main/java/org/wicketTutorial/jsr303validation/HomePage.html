@@ -24,21 +24,36 @@
 		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold' rel='stylesheet' type='text/css' />
 	</head>
 	<body>
-	<h1>JSR303 validation form</h1>	
-	<form wicket:id="form">
-		<span style="width: 100px; float: left">Name</span><input type="text" wicket:id="name"/><br/>
-		<span style="width: 100px; float: left">Email</span><input type="text" wicket:id="email"/><br/>
-		<span style="width: 100px; float: left">Age</span><input type="text" wicket:id="age"/><br/>
-		<span style="width: 100px; float: left">Birthday</span><input type="text" wicket:id="birthDay"/><br/>
-		<span style="width: 100px; float: left">Street</span><input type="text" wicket:id="address.street"/><br/>
-		<span style="width: 100px; float: left">Zip code</span><input type="text" wicket:id="address.zipCode"/><br/>
-		<span style="width: 100px; float: left">City</span><input type="text" wicket:id="address.city"/><br/>
-		<br/>
-		<input type="submit" value="submit"/>
-		
-		<div wicket:id="feedback">
-		</div>
-	</form>
-		
+	<wicket:extend>
+		<h1>JSR303 validation form</h1>
+		<form wicket:id="form">
+			<span style="width: 100px; float: left">Name</span>
+			<input type="text" wicket:id="name" />
+			<br />
+			<span style="width: 100px; float: left">Email</span>
+			<input type="text" wicket:id="email" />
+			<br />
+			<span style="width: 100px; float: left">Age</span>
+			<input type="text" wicket:id="age" />
+			<br />
+			<span style="width: 100px; float: left">Birthday</span>
+			<input type="text" wicket:id="birthDay" />
+			<br />
+			<span style="width: 100px; float: left">Street</span>
+			<input type="text" wicket:id="address.street" />
+			<br />
+			<span style="width: 100px; float: left">Zip code</span>
+			<input type="text" wicket:id="address.zipCode" />
+			<br />
+			<span style="width: 100px; float: left">City</span>
+			<input type="text" wicket:id="address.city" />
+			<br />
+			<br />
+			<input type="submit" value="submit" />
+
+			<div wicket:id="feedback"></div>
+		</form>
+	</wicket:extend>
+
 	</body>
 </html>

@@ -23,12 +23,13 @@
 		<title></title>
 		</head>
 	<body>
-		<h1>Upload your file here!</h1>
-		<form wicket:id="form">
-			<input type="file" wicket:id="fileUploadField"/> 
-			<input type="submit" value="Upload"/>
-		</form>
-		<div wicket:id="feedbackPanel">
-		</div>
+		<wicket:extend>
+			<h1>Upload your file here!</h1>
+			<form wicket:id="form">
+				<input type="file" wicket:id="fileUploadField" />
+				<input type="submit" value="Upload" />
+			</form>
+			<div wicket:id="feedbackPanel"></div>
+		</wicket:extend>
 	</body>
 </html>

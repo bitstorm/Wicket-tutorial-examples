@@ -18,15 +18,15 @@ package org.wicketTutorial.util;
 
 import java.util.List;
 
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.protocol.http.WicketFilter;
 import org.apache.wicket.request.cycle.RequestCycle;
 import org.apache.wicket.request.http.WebRequest;
 import org.apache.wicket.response.filter.IResponseFilter;
 import org.apache.wicket.util.string.AppendingStringBuffer;
-
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletException;
 
 public class BackHomeFilter extends WicketFilter
 {

@@ -23,13 +23,25 @@
 		<title></title>			
 	</head>
 	<body>
-	<div>
-		<h2>Press 'submit' to disable the form for (at least) <br/> three seconds.</h2>
-		<form wicket:id="form" style="border: 1px solid; max-width:40%;padding:5px">
-			Name:<input type="text" wicket:id="fakeField1"/><br/>
-			Surname:<input type="text" wicket:id="fakeField2"/><br/>
-			<input type="submit" value="submit" wicket:id="ajaxButton"/>
-		</form>		
-	</div>	
+	<wicket:extend>
+		<div>
+			<h2>
+				Press 'submit' to disable the form for (at least)
+				<br />
+				three seconds.
+			</h2>
+			<form wicket:id="form"
+				style="border: 1px solid; max-width:40%;padding:5px">
+				Name:
+				<input type="text" wicket:id="fakeField1" />
+				<br />
+				Surname:
+				<input type="text" wicket:id="fakeField2" />
+				<br />
+				<input type="submit" value="submit"
+					wicket:id="ajaxButton" />
+			</form>
+		</div>
+	</wicket:extend>
 	</body>
 </html>

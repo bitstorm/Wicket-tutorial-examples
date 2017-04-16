@@ -23,17 +23,24 @@
 		<title>Apache Wicket Quickstart</title>
 		</head>
 	<body>
-		<div>
-			Bookmarkable pages
-			<ul>				
-				<li>
-					<a wicket:id="pageWithIndexParam">Bookmarkable page with named parameters </a>
-				</li>
-				<li>
-					<a wicket:id="pageWithNamedIndexParam">Bookmarkable page with named and indexed parameters </a>
-				</li>
-			</ul>
-		</div>
-		
+		<wicket:extend>
+			<div>
+				Bookmarkable pages
+				<ul>
+					<li>
+						<a wicket:id="pageWithIndexParam">
+							Bookmarkable page with named parameters
+						</a>
+					</li>
+					<li>
+						<a wicket:id="pageWithNamedIndexParam">
+							Bookmarkable page with named and indexed
+							parameters
+						</a>
+					</li>
+				</ul>
+			</div>
+		</wicket:extend>
+
 	</body>
 </html>

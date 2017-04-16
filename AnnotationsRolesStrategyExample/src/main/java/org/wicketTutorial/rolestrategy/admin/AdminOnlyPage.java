@@ -18,10 +18,10 @@ package org.wicketTutorial.rolestrategy.admin;
 
 import org.apache.wicket.authroles.authentication.AuthenticatedWebSession;
 import org.apache.wicket.authroles.authorization.strategies.role.annotations.AuthorizeInstantiation;
-import org.apache.wicket.markup.html.WebPage;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 import org.apache.wicket.markup.html.link.Link;
 @AuthorizeInstantiation("ADMIN")
-public class AdminOnlyPage extends WebPage {
+public class AdminOnlyPage extends BootstrapBasePage {
 	@Override
 	protected void onInitialize() {
 		super.onInitialize();

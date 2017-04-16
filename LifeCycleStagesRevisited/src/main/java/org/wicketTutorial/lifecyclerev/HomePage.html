@@ -31,10 +31,12 @@
 				<h1>Apache Wicket</h1>
 			</div>
 		</div>
-		<div id="bd">
-			<div wicket:id="label"></div>
-			<button wicket:id="reload">Reload</button>
-		</div>
+		<wicket:extend>
+			<div id="bd">
+				<div wicket:id="label"></div>
+				<button wicket:id="reload">Reload</button>
+			</div>
+		</wicket:extend>
 		<div id="ft">
 		</div>
 	</body>

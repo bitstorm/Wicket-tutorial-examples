@@ -24,11 +24,14 @@
 	</head>
 	<body>
 		<div id="bd">
-		<form wicket:id="form">
-			<select wicket:id="changeLocale"></select>
-			<div><input type="submit" value="submit"></div>
-		</form>
-		<h2  wicket:id="greetingMessage"></h2>
+		<wicket:extend>
+			<form wicket:id="form">
+				<select wicket:id="changeLocale"></select>
+				<div>
+					<input type="submit" value="submit"></div>
+			</form>
+    		<h2  wicket:id="greetingMessage"></h2>
+		</wicket:extend>
 		</div>
 	</body>
 </html>

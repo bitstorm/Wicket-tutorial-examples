@@ -19,11 +19,11 @@ package org.wicketTutorial.basicauth;
 import org.apache.wicket.Component;
 import org.apache.wicket.authroles.authentication.AuthenticatedWebApplication;
 import org.apache.wicket.authroles.authentication.AuthenticatedWebSession;
-import org.apache.wicket.markup.html.WebPage;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.model.IModel;
 
-public class AuthenticatedPage extends WebPage {
+public class AuthenticatedPage extends BootstrapBasePage {
 	@Override
 	protected void onConfigure() {
 		AuthenticatedWebApplication app = (AuthenticatedWebApplication) AuthenticatedWebApplication.get();

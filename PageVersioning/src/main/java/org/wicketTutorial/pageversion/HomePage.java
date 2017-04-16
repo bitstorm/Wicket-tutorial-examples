@@ -17,14 +17,14 @@
 package org.wicketTutorial.pageversion;
 
 import org.apache.wicket.Component;
-import org.apache.wicket.markup.html.WebPage;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.markup.html.link.StatelessLink;
 import org.apache.wicket.util.visit.IVisitor;
 import org.apache.wicket.util.visit.IVisit;
 
-public class HomePage extends WebPage
+public class HomePage extends BootstrapBasePage
 {
 	private static final long serialVersionUID = 1L;
 	private Label firstLabel;

@@ -18,11 +18,11 @@ package org.wicketTutorial.mappercontext;
 
 import org.apache.wicket.Application;
 import org.apache.wicket.Component;
-import org.apache.wicket.markup.html.WebPage;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 import org.apache.wicket.markup.html.link.StatelessLink;
 import org.apache.wicket.model.IModel;
 
-public class BookmarkablePage extends WebPage {
+public class BookmarkablePage extends BootstrapBasePage {
 	public BookmarkablePage(){
 		setStatelessHint(true);
 		add(new StatelessLink<Void>("goBack"){

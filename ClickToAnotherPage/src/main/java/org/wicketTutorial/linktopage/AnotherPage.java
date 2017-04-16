@@ -16,11 +16,11 @@
  */
 package org.wicketTutorial.linktopage;
 
-import org.apache.wicket.markup.html.WebPage;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
-public class AnotherPage extends WebPage {
+public class AnotherPage extends BootstrapBasePage {
 	public AnotherPage(final PageParameters parameters){
 		add(new Link<Void>("homePage"){
 

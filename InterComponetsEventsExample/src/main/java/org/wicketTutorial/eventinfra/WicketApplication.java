@@ -18,7 +18,7 @@ package org.wicketTutorial.eventinfra;
 
 import org.apache.wicket.Session;
 import org.apache.wicket.event.IEvent;
-import org.apache.wicket.protocol.http.WebApplication;
+import org.wicketTutorial.commons.bootstrap.BootstrapApp;
 import org.apache.wicket.protocol.http.WebSession;
 import org.apache.wicket.request.Request;
 import org.apache.wicket.request.Response;
@@ -28,7 +28,7 @@ import org.apache.wicket.request.Response;
  * 
  * @see org.wicketTutorial.eventinfra.Start#main(String[])
  */
-public class WicketApplication extends WebApplication
+public class WicketApplication extends BootstrapApp
 {    	
 	/**
 	 * @see org.apache.wicket.Application#getHomePage()

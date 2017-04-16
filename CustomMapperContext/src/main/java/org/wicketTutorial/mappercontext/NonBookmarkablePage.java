@@ -17,10 +17,10 @@
 package org.wicketTutorial.mappercontext;
 
 import org.apache.wicket.Application;
-import org.apache.wicket.markup.html.WebPage;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 import org.apache.wicket.markup.html.link.Link;
 
-public class NonBookmarkablePage extends WebPage {
+public class NonBookmarkablePage extends BootstrapBasePage {
 	public NonBookmarkablePage(){
 		add(new Link<Void>("goBack"){
 

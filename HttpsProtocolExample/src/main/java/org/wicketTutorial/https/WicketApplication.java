@@ -16,8 +16,8 @@
  */
 package org.wicketTutorial.https;
 
-import org.apache.wicket.markup.html.WebPage;
-import org.apache.wicket.protocol.http.WebApplication;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
+import org.wicketTutorial.commons.bootstrap.BootstrapApp;
 import org.apache.wicket.protocol.https.HttpsConfig;
 import org.apache.wicket.protocol.https.HttpsMapper;
 
@@ -26,13 +26,13 @@ import org.apache.wicket.protocol.https.HttpsMapper;
  * 
  * @see org.wicketTutorial.https.Start#main(String[])
  */
-public class WicketApplication extends WebApplication
+public class WicketApplication extends BootstrapApp
 {    	
 	/**
 	 * @see org.apache.wicket.Application#getHomePage()
 	 */
 	@Override
-	public Class<? extends WebPage> getHomePage()
+	public Class<? extends BootstrapBasePage> getHomePage()
 	{
 		return HomePage.class;
 	}

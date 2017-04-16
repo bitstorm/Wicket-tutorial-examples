@@ -26,9 +26,9 @@ import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.upload.FileUpload;
 import org.apache.wicket.markup.html.form.upload.FileUploadField;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
-import org.apache.wicket.markup.html.WebPage;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 
-public class HomePage extends WebPage {
+public class HomePage extends BootstrapBasePage {
 	private static final long serialVersionUID = 1L;
 	private FileUploadField fileUploadField;
 

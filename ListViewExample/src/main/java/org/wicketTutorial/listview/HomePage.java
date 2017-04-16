@@ -19,14 +19,14 @@ package org.wicketTutorial.listview;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.wicket.markup.html.WebPage;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
-public class HomePage extends WebPage {
+public class HomePage extends BootstrapBasePage {
 	private static final long serialVersionUID = 1L;
 
     public HomePage(final PageParameters parameters) {

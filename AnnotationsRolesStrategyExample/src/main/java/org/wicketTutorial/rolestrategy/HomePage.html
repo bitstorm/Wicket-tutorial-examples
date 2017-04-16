@@ -23,16 +23,25 @@
 		<title></title>
 	</head>
 	<body>
-		<h2>Select one of the following links</h2>
-		<wicket:enclosure>
-			<span>You are signed in as: </span><span wicket:id="username"></span><br/><br/>
-		</wicket:enclosure>
-		
-		<wicket:link>			
-			<a href="SignInPage.html">Link to sign in page</a><br/>
-			<a href="admin/AdminOnlyPage.html">Link to admin-only page</a><br/>
-		</wicket:link>
-		<br/>
-		<a wicket:id="logOut">Log out.</a>		
+		<wicket:extend>
+			<h2>Select one of the following links</h2>
+			<wicket:enclosure>
+				<span>You are signed in as:</span>
+				<span wicket:id="username"></span>
+				<br />
+				<br />
+			</wicket:enclosure>
+
+			<wicket:link>
+				<a href="SignInPage.html">Link to sign in page</a>
+				<br />
+				<a href="admin/AdminOnlyPage.html">
+					Link to admin-only page
+				</a>
+				<br />
+			</wicket:link>
+			<br />
+			<a wicket:id="logOut">Log out.</a>
+		</wicket:extend>
 	</body>
 </html>

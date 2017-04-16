@@ -23,9 +23,16 @@
 		<title></title>
 	</head>
 	<body>
-		Radio choices. Model value: <span wicket:id="radioModel"></span><br/>
-		<div wicket:id="choices"></div><br/>
-		Select choices. Model value: <span wicket:id="selectModel"></span><br/>
-		<select wicket:id="drpDwnChoices"></select>
+		<wicket:extend>
+			Radio choices. Model value:
+			<span wicket:id="radioModel"></span>
+			<br />
+			<div wicket:id="choices"></div>
+			<br />
+			Select choices. Model value:
+			<span wicket:id="selectModel"></span>
+			<br />
+			<select wicket:id="drpDwnChoices"></select>
+		</wicket:extend>
 	</body>
 </html>

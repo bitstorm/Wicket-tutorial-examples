@@ -19,8 +19,8 @@ package org.wicketTutorial.scriptposition;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.filter.JavaScriptFilteredIntoFooterHeaderResponse;
 import org.apache.wicket.markup.html.IHeaderResponseDecorator;
-import org.apache.wicket.markup.html.WebPage;
-import org.apache.wicket.protocol.http.WebApplication;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
+import org.wicketTutorial.commons.bootstrap.BootstrapApp;
 
 /**
  * Application object for your web application.
@@ -28,13 +28,13 @@ import org.apache.wicket.protocol.http.WebApplication;
  * 
  * @see org.wicketTutorial.scriptposition.Start#main(String[])
  */
-public class WicketApplication extends WebApplication
+public class WicketApplication extends BootstrapApp
 {
 	/**
 	 * @see org.apache.wicket.Application#getHomePage()
 	 */
 	@Override
-	public Class<? extends WebPage> getHomePage()
+	public Class<? extends BootstrapBasePage> getHomePage()
 	{
 		return HomePage.class;
 	}

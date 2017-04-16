@@ -16,7 +16,7 @@
  */
 package org.wicketTutorial.mountedpages;
 
-import org.apache.wicket.protocol.http.WebApplication;
+import org.wicketTutorial.commons.bootstrap.BootstrapApp;
 import org.wicketTutorial.mountedpages.subPackage.StatefulPackageMount;
 
 /**
@@ -24,7 +24,7 @@ import org.wicketTutorial.mountedpages.subPackage.StatefulPackageMount;
  * 
  * @see org.tutorialWicket.mountedpages.Start#main(String[])
  */
-public class WicketApplication extends WebApplication
+public class WicketApplication extends BootstrapApp
 {    	
 	/**
 	 * @see org.apache.wicket.Application#getHomePage()

@@ -24,15 +24,19 @@
 		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold' rel='stylesheet' type='text/css' />
 	</head>
 	<body>
-		<div wicket:id="tree">
-		</div>
-		<br/>
-		<div >
-			<wicket:link>
-				<a href="AdvancedCheckedTreePage.html">Go to the advanced tree</a>&nbsp;
-				<a href="HomePage.html">Go back to the  home page</a>   				
-			</wicket:link>
-		</div>
-		<wicket:child />
+		<wicket:extend>
+			<div wicket:id="tree"></div>
+			<br />
+			<div>
+				<wicket:link>
+					<a href="AdvancedCheckedTreePage.html">
+						Go to the advanced tree
+					</a>
+					&nbsp;
+					<a href="HomePage.html">Go back to the home page</a>
+				</wicket:link>
+			</div>
+			<wicket:child />
+		</wicket:extend>
 	</body>
 </html>

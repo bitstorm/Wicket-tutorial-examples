@@ -23,7 +23,11 @@
 		<title></title>
 	</head>
 	<body>
-	<div wicket:id="clickCounterLabel"></div>
-	User has clicked <span wicket:id="clickCounter"></span> time/s on the label above.
+	<wicket:extend>
+		<div wicket:id="clickCounterLabel"></div>
+		User has clicked
+		<span wicket:id="clickCounter"></span>
+		time/s on the label above.
+	</wicket:extend>
 	</body>
 </html>

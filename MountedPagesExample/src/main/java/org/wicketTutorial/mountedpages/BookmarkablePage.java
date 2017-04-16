@@ -16,11 +16,11 @@
  */
 package org.wicketTutorial.mountedpages;
 
-import org.apache.wicket.markup.html.WebPage;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
-public class BookmarkablePage extends WebPage {
+public class BookmarkablePage extends BootstrapBasePage {
 	public BookmarkablePage(PageParameters parameters) {
 		super(parameters);
 	}

@@ -23,12 +23,13 @@
 		<title></title>
 	</head>
 	<body>
-		<h2>
+	 <wicket:extend>
+		<p>
 			Click on the links below to send an event to the container in the middle 
 			using one of the supported broadcast methods. <br/>
 			A panel at the bottom of the page will display the order in which 
 			the event has been received by sinks (page, components, session and application).
-		</h2>
+		</p>
 		
 		<a wicket:id="breadthLink">Breadth mode</a><br/>
 		<a wicket:id="depthLink">Depth mode</a><br/>
@@ -48,5 +49,6 @@
 		
 		<div wicket:id="feedbackPanel">
 		</div>
+	   </wicket:extend>	
 	</body>
 </html>

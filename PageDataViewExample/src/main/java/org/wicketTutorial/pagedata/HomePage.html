@@ -21,28 +21,31 @@
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
-		<style type="text/css">
-			table,th,td
-			{
-				border:1px solid black;
-				padding: 3px;
-			}
-			table
-			{
-				border-collapse:collapse;
-			}		
-		</style>
+		
+		<wicket:head>
+			<style type="text/css">
+				table,th,td { border:1px solid black; padding: 3px; }
+				table { border-collapse:collapse; }
+			</style>
+		</wicket:head>
 	</head>
 	<body>
-		<h2>Countries of the world</h2>
-		<div wicket:id="pagingNavigator"></div><br/>
-		<table>
-			<tr>
-				<th>ISO 3166-1</th><th>Name</th><th>Long name</th><th>Capital</th><th>Population</th>
-			</tr>
-			<tr wicket:id="rows">
-				<td wicket:id="dataRow"></td>
-			</tr>
-		</table>
+		<wicket:extend>
+			<p>Countries of the world</p>
+			<div wicket:id="pagingNavigator"></div>
+			<br />
+			<table>
+				<tr>
+					<th>ISO 3166-1</th>
+					<th>Name</th>
+					<th>Long name</th>
+					<th>Capital</th>
+					<th>Population</th>
+				</tr>
+				<tr wicket:id="rows">
+					<td wicket:id="dataRow"></td>
+				</tr>
+			</table>
+		</wicket:extend>
 	</body>
 </html>

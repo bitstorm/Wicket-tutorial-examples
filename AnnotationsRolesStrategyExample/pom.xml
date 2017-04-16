@@ -49,6 +49,13 @@
 			<artifactId>wicket-extensions</artifactId> <version>${wicket.version}</version> 
 			</dependency> -->
 
+		<dependency>
+            <groupId>org.wicketTutorial.commons.bootstrap</groupId>
+            <artifactId>BootstrapCommon</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+		
+
 		<!-- LOGGING DEPENDENCIES - LOG4J -->
 		<dependency>
 			<groupId>org.slf4j</groupId>

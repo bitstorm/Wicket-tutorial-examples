@@ -23,6 +23,10 @@
 		<title></title>
 	</head>
 	<body>
-		<a wicket:id="goToAuthenticatedPage">Link to a restricted page for authenticated users only.</a>
+		<wicket:extend>
+			<a wicket:id="goToAuthenticatedPage">
+				Link to a restricted page for authenticated users only.
+			</a>
+		</wicket:extend>
 	</body>
 </html>

@@ -16,11 +16,11 @@
  */
 package org.wicketTutorial.statelesspage;
 
-import org.apache.wicket.markup.html.WebPage;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 import org.apache.wicket.markup.html.link.StatelessLink;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
-public class StatelessPage extends WebPage {
+public class StatelessPage extends BootstrapBasePage {
 	private int index = 0;
 
 	public StatelessPage(PageParameters parameters) {

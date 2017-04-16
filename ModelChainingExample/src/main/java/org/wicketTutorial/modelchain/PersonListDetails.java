@@ -19,7 +19,7 @@ package org.wicketTutorial.modelchain;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.wicket.markup.html.WebPage;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 import org.apache.wicket.markup.html.form.ChoiceRenderer;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
@@ -28,7 +28,7 @@ import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.model.Model;
 
-public class PersonListDetails extends WebPage {
+public class PersonListDetails extends BootstrapBasePage {
 	private Form form;
 	private DropDownChoice<Person> personsList;
 	

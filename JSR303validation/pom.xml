@@ -34,8 +34,6 @@
 		</license>
 	</licenses>
 	<properties>
-		<wicket.version>6.14.0</wicket.version>
-		<jetty.version>7.6.13.v20130916</jetty.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- allowed values: R7, 1.0, 1.5, 2.0 or none -->
 		<wtp.version>none</wtp.version>
@@ -61,6 +59,13 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>4.3.1.Final</version>
 		</dependency>
+		<dependency>
+            <groupId>org.wicketTutorial.commons.bootstrap</groupId>
+            <artifactId>BootstrapCommon</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+		
+
 		<!-- LOGGING DEPENDENCIES - LOG4J -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -150,7 +155,7 @@
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
-				<version>${jetty.version}</version>
+				<version>${jetty9.version}</version>
 				<configuration>
 					<connectors>
 						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">

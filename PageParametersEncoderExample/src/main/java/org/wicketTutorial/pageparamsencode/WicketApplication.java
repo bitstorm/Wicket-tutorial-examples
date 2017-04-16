@@ -17,7 +17,7 @@
 package org.wicketTutorial.pageparamsencode;
 
 import org.apache.wicket.core.request.mapper.MountedMapper;
-import org.apache.wicket.protocol.http.WebApplication;
+import org.wicketTutorial.commons.bootstrap.BootstrapApp;
 import org.apache.wicket.request.mapper.parameter.UrlPathPageParametersEncoder;
 
 /**
@@ -25,7 +25,7 @@ import org.apache.wicket.request.mapper.parameter.UrlPathPageParametersEncoder;
  * 
  * @see org.wicketTutorial.pageparamsencode.Start#main(String[])
  */
-public class WicketApplication extends WebApplication
+public class WicketApplication extends BootstrapApp
 {    	
 	/**
 	 * @see org.apache.wicket.Application#getHomePage()

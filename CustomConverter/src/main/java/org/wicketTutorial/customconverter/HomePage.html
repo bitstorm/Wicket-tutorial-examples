@@ -21,14 +21,17 @@
 	<head>
 	</head>
 	<body>
-		<form wicket:id="form">
-			RegExp Patter: <input type="text" wicket:id="regExpPatter"/>
-			<br/>
-			String to split: <input type="text" wicket:id="stringToSplit"/>
-			<br/>
-			<input type="submit"/>
-		</form>
-		<div wicket:id="feedbackMessage">
-		</div>
+		<wicket:extend>
+			<form wicket:id="form">
+				RegExp Patter:
+				<input type="text" wicket:id="regExpPatter" />
+				<br />
+				String to split:
+				<input type="text" wicket:id="stringToSplit" />
+				<br />
+				<input type="submit" />
+			</form>
+			<div wicket:id="feedbackMessage"></div>
+		</wicket:extend>
 	</body>
 </html>

@@ -22,8 +22,8 @@ import org.apache.wicket.authroles.authentication.AbstractAuthenticatedWebSessio
 import org.apache.wicket.authroles.authentication.AuthenticatedWebApplication;
 import org.apache.wicket.authroles.authorization.strategies.role.Roles;
 import org.apache.wicket.authroles.authorization.strategies.role.metadata.MetaDataRoleAuthorizationStrategy;
-import org.apache.wicket.markup.html.WebPage;
-import org.apache.wicket.protocol.http.WebApplication;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
+import org.wicketTutorial.commons.bootstrap.BootstrapApp;
 import org.apache.wicket.request.Request;
 import org.apache.wicket.request.Response;
 import org.wicketTutorial.metadataroles.admin.AdminOnlyPage;
@@ -35,7 +35,7 @@ import org.wicketTutorial.metadataroles.admin.AdminOnlyPage;
  */
 public class WicketApplication extends AuthenticatedWebApplication{    		
 	@Override
-	public Class<? extends WebPage> getHomePage(){
+	public Class<? extends BootstrapBasePage> getHomePage(){
 		return HomePage.class;
 	}
 	
@@ -45,7 +45,7 @@ public class WicketApplication extends AuthenticatedWebApplication{
 	}
 
 	@Override
-	protected Class<? extends WebPage> getSignInPageClass() {
+	protected Class<? extends BootstrapBasePage> getSignInPageClass() {
 		return SignInPage.class;
 	}
 	

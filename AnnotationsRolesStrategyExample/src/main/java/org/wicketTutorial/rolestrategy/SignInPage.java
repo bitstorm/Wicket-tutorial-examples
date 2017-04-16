@@ -20,7 +20,7 @@ package org.wicketTutorial.rolestrategy;
 
 import org.apache.wicket.Application;
 import org.apache.wicket.authroles.authentication.AuthenticatedWebSession;
-import org.apache.wicket.markup.html.WebPage;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 import org.apache.wicket.markup.html.form.PasswordTextField;
 import org.apache.wicket.markup.html.form.StatelessForm;
 import org.apache.wicket.markup.html.form.TextField;
@@ -28,7 +28,7 @@ import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.util.string.Strings;
 
-public class SignInPage extends WebPage {
+public class SignInPage extends BootstrapBasePage {
 	private String username;
 	private String password;
 	

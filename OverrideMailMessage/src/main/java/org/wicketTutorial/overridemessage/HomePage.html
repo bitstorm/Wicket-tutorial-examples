@@ -21,12 +21,14 @@
 	<head>
 	</head>
 	<body>
-		<form wicket:id="form">
-			Email: <input type="text" wicket:id="email"/>
-			<br/>
-			<input type="submit"/>
-		</form>
-		<div wicket:id="feedbackMessage">
-		</div>
+		<wicket:extend>
+			<form wicket:id="form">
+				Email:
+				<input type="text" wicket:id="email" />
+				<br />
+				<input type="submit" />
+			</form>
+			<div wicket:id="feedbackMessage"></div>
+		</wicket:extend>
 	</body>
 </html>

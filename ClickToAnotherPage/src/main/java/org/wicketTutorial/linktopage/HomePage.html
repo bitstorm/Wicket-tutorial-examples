@@ -23,7 +23,9 @@
 		<title>Apache Wicket Quickstart</title>
 	</head>
 	<body>
-		Click here to go to another page.
-	<button wicket:id="anotherPage">Another page</button>
+		<wicket:extend>
+			Click here to go to another page.
+			<button wicket:id="anotherPage">Another page</button>
+		</wicket:extend>
 	</body>
 </html>

@@ -16,7 +16,7 @@
  */
 package org.wicketTutorial.resmounting;
 
-import org.apache.wicket.protocol.http.WebApplication;
+import org.wicketTutorial.commons.bootstrap.BootstrapApp;
 import org.apache.wicket.request.resource.IResource;
 import org.apache.wicket.request.resource.ResourceReference;
 
@@ -25,7 +25,7 @@ import org.apache.wicket.request.resource.ResourceReference;
  * 
  * @see org.wicketTutorial.resmounting.Start#main(String[])
  */
-public class WicketApplication extends WebApplication
+public class WicketApplication extends BootstrapApp
 {    	
 	/**
 	 * @see org.apache.wicket.Application#getHomePage()

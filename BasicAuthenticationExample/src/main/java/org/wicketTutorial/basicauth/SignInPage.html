@@ -23,20 +23,26 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="" wicket:id="form">
-		<legend>Type 'wicketer' to authenticate</legend>
-		<br/>
-		<div style="display: table;border: solid 1px;padding:5px">
-			<div style="display: table-row;">
-				<div style="display: table-cell;">Username:</div>
-				<div style="display: table-cell;"><input type="text" wicket:id="username"/></div>
+	<wicket:extend>
+		<form action="" wicket:id="form">
+			<legend>Type 'wicketer' to authenticate</legend>
+			<br />
+			<div style="display: table;border: solid 1px;padding:5px">
+				<div style="display: table-row;">
+					<div style="display: table-cell;">Username:</div>
+					<div style="display: table-cell;">
+						<input type="text" wicket:id="username" />
+					</div>
+				</div>
+				<div style="display: table-row;">
+					<div style="display: table-cell;">Password:</div>
+					<div style="display: table-cell;">
+						<input type="password" wicket:id="password" />
+					</div>
+				</div>
 			</div>
-			<div style="display: table-row;">
-				<div style="display: table-cell;">Password:</div>
-				<div style="display: table-cell;" ><input type="password" wicket:id="password"/></div>
-			</div>
-		</div>
-		<input type="submit" value="Submit"/>
-	</form>
+			<input type="submit" value="Submit" />
+		</form>
+	</wicket:extend>
 </body>
 </html>

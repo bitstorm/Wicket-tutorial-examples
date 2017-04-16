@@ -22,11 +22,18 @@
 		<meta charset="utf-8" />
 	</head>
 	<body>
-		<div id="bd" style="display: table;">
-			<div wicket:id="persons" style="display: table-row;">
-				<div style="display: table-cell;padding-right: 4px"><b>Full name: </b></div>
-				<div wicket:id="fullName" style="display: table-cell;"></div>
+		<wicket:extend>
+			<div id="bd" style="display: table;">
+				<div wicket:id="persons" style="display: table-row;">
+					<div
+						style="display: table-cell;padding-right: 4px">
+						<b>Full name:</b>
+					</div>
+					<div wicket:id="fullName"
+						style="display: table-cell;">
+					</div>
+				</div>
 			</div>
-		</div>
+		</wicket:extend>
 	</body>
 </html>

@@ -23,7 +23,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>Hi! If you are reading this message it means that you are the admin.</h2>
-	<a wicket:id="goToHomePage">Go back to the home page</a>
+	<wicket:extend>
+		<h2>
+			Hi! If you are reading this message it means that you are
+			the admin.
+		</h2>
+	   <a wicket:id="goToHomePage">Go back to the home page</a>
+	</wicket:extend>
 </body>
 </html>

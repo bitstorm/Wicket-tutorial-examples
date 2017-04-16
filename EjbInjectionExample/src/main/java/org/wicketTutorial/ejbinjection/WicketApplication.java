@@ -16,7 +16,7 @@
  */
 package org.wicketTutorial.ejbinjection;
 
-import org.apache.wicket.protocol.http.WebApplication;
+import org.wicketTutorial.commons.bootstrap.BootstrapApp;
 import org.wicketstuff.javaee.injection.JavaEEComponentInjector;
 import org.wicketstuff.javaee.naming.IJndiNamingStrategy;
 
@@ -25,7 +25,7 @@ import org.wicketstuff.javaee.naming.IJndiNamingStrategy;
  * 
  * @see org.wicketTutorial.ejbinjection.Start#main(String[])
  */
-public class WicketApplication extends WebApplication
+public class WicketApplication extends BootstrapApp
 {    	
 	/**
 	 * @see org.apache.wicket.Application#getHomePage()

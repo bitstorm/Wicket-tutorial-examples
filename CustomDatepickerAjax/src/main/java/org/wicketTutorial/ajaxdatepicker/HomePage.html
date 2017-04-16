@@ -24,11 +24,16 @@
 		
 	</head>
 	<body style="font-size: 14px">
-		<form wicket:id="form">
-			My custom JQuery datepicker: <input type="text" wicket:id="datepicker"/><br/>
-			<input type="submit" value="Submit"/>
-		</form>
-		<br/>
-		Toggle the 'enabled' state of datepicker via AJAX: <a wicket:id="update">Toggle</a>
+		<wicket:extend>
+			<form wicket:id="form">
+				My custom JQuery datepicker:
+				<input type="text" wicket:id="datepicker" />
+				<br />
+				<input type="submit" value="Submit" />
+			</form>
+			<br />
+			Toggle the 'enabled' state of datepicker via AJAX:
+			<a wicket:id="update">Toggle</a>
+		</wicket:extend>
 	</body>
 </html>

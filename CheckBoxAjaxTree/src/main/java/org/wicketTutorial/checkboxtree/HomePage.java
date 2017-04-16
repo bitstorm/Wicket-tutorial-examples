@@ -26,11 +26,11 @@ import org.apache.wicket.extensions.markup.html.repeater.tree.content.CheckedFol
 import org.apache.wicket.extensions.markup.html.repeater.tree.theme.WindowsTheme;
 import org.apache.wicket.extensions.markup.html.repeater.util.TreeModelProvider;
 import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.WebPage;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 
-public class HomePage extends WebPage {
+public class HomePage extends BootstrapBasePage {
 	private static final long serialVersionUID = 1L;
 	private NestedTree<DefaultMutableTreeNode> tree;	
 
