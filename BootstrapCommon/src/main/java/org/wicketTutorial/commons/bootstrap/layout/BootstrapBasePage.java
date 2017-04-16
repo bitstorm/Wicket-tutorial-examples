@@ -28,20 +28,24 @@ import org.wicketTutorial.commons.bootstrap.source.SourcesPage;
 public class BootstrapBasePage extends WebPage
 {
 	
-	public BootstrapBasePage() {
+	public BootstrapBasePage() 
+	{
 		super();
 	}
 
-	public BootstrapBasePage(IModel<?> model) {
+	public BootstrapBasePage(IModel<?> model) 
+	{
 		super(model);
 	}
 
-	public BootstrapBasePage(PageParameters parameters) {
+	public BootstrapBasePage(PageParameters parameters) 
+	{
 		super(parameters);
 	}
 
 	@Override
-	protected void onInitialize() {
+	protected void onInitialize() 
+	{
 		super.onInitialize();
 		
 		BookmarkablePageLink<Void> link = new BookmarkablePageLink<Void>("sources",

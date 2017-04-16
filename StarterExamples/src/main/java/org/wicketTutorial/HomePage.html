@@ -19,43 +19,37 @@
 <!DOCTYPE html>
 <html xmlns:wicket="http://wicket.apache.org">
 <head>
-<meta charset="utf-8" />
-<title>Apache Wicket User Guide Examples</title>
-<link
-	href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold'
-	rel='stylesheet' type='text/css' />
-<link rel="stylesheet" href="style.css" type="text/css" media="screen"
-	title="Stylesheet" />
-<meta name="description"
-	content="Live Examples For The Apache Wicket User Guide">
-<meta name="keywords"
-	content="Apache Wicket, Wicket, Wicket User Guide, Wicket Examples">
-<meta name="author" content="Andrea Del Bene">
-<link rel="canonical" href="http://examples-wickettutorial.rhcloud.com">
-<style type="text/css">
-.hide-homelink {
-	display: none;
-}
-</style>
+  <wicket:head>
+	<meta charset="utf-8" />
+	<title>Apache Wicket User Guide Examples</title>
+	<meta name="description"
+		content="Live Examples For The Apache Wicket User Guide">
+	<meta name="keywords"
+		content="Apache Wicket, Wicket, Wicket User Guide, Wicket Examples">
+	<meta name="author" content="Andrea Del Bene">
+	<link rel="canonical" href="http://examples-wickettutorial.rhcloud.com">
+	<style type="text/css">
+	.breadcrumb {
+		display: none;
+	}
+	</style>
+  </wicket:head>	
 </head>
 <body>
-	<div id="hd">
-		<div id="logo">
-			<img src="logo.png" width="50px" height="50px" alt="Wicket Logo" />
-			<h1>Apache Wicket User Guide Examples</h1>
-		</div>
-	</div>
 	<div id="bd">
-
-		<p>
-			Hosting site for the examples from the official <a
-				href="https://wicket.apache.org/learn/#guide" target="_blank">Wicket
-				user guide</a>. <br /> The code of the following examples id hosted <a
-				href="https://github.com/bitstorm/Wicket-tutorial-examples"
-				target="_blank">here on GitHub</a>.
-		</p>
 		
         <wicket:extend>
+        <div class="jumbotron masthead">
+	        <h1>Apache Wicket User Guide Examples</h1>
+	        
+	        <p>
+	            Hosting site for the examples from the official <a
+	                href="https://wicket.apache.org/learn/#guide" target="_blank">Wicket
+	                user guide</a>. <br /> The code of the following examples id hosted <a
+	                href="https://github.com/bitstorm/Wicket-tutorial-examples"
+	                target="_blank">here on GitHub</a>.
+	        </p>
+		</div>
 		<p>
 		  Your current session is <b wicket:id="sessionType"></b> <a wicket:id="logOut">Discard session</a>
 		  <br/>
