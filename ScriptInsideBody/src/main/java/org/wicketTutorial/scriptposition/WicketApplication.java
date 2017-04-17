@@ -19,8 +19,8 @@ package org.wicketTutorial.scriptposition;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.filter.JavaScriptFilteredIntoFooterHeaderResponse;
 import org.apache.wicket.markup.html.IHeaderResponseDecorator;
-import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 import org.wicketTutorial.commons.bootstrap.BootstrapApp;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 
 /**
  * Application object for your web application.
@@ -45,6 +45,7 @@ public class WicketApplication extends BootstrapApp
 	@Override
 	public void init()
 	{
+		super.init();
 		setHeaderResponseDecorator(new JavaScriptToBucketResponseDecorator("footer-container"));
 	}
 	
