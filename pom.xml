@@ -194,7 +194,7 @@
 		
                  <repository> 
                          <id>staging</id> 
-                         <url>https://repository.apache.org/content/repositories/orgapachewicket-1085/</url> 
+                         <url>https://repository.apache.org/content/repositories/orgapachewicket-1087/</url> 
                          <releases> 
                                  <enabled>true</enabled> 
                          </releases> 
