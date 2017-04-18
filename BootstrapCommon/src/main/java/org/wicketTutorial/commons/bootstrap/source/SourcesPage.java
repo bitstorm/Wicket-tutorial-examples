@@ -47,6 +47,7 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.model.AbstractReadOnlyModel;
+import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.LoadableDetachableModel;
 import org.apache.wicket.request.http.handler.ErrorCodeRequestHandler;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
@@ -73,7 +74,7 @@ public class SourcesPage extends WebPage
 	/**
 	 * Model for retrieving the source code from the classpath of a packaged resource.
 	 */
-	private class SourceModel extends AbstractReadOnlyModel<String>
+	private class SourceModel implements IModel<String>
 	{
 		/**
 		 * Returns the contents of the file loaded from the classpath.

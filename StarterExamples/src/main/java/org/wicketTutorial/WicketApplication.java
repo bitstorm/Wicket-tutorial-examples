@@ -18,7 +18,6 @@ package org.wicketTutorial;
 
 import org.apache.wicket.bean.validation.BeanValidationConfiguration;
 import org.apache.wicket.markup.html.WebPage;
-import org.wicketTutorial.commons.bootstrap.BootstrapApp;
 import org.apache.wicket.protocol.https.HttpsConfig;
 import org.apache.wicket.protocol.https.HttpsMapper;
 import org.wicketTutorial.commons.bootstrap.BootstrapApp;
@@ -53,6 +52,6 @@ public class WicketApplication extends BootstrapApp
 		new BeanValidationConfiguration().configure(this);
 		
 		
-		//mountPage("/seecode", SourcesPage.class);
+		mountPage("/seecode", SourcesPage.class);
 	}
 }
