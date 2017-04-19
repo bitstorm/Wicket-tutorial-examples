@@ -21,7 +21,7 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.https.HttpsConfig;
 import org.apache.wicket.protocol.https.HttpsMapper;
 import org.wicketTutorial.commons.bootstrap.BootstrapApp;
-import org.wicketTutorial.util.SourcesPage;
+import org.wicketTutorial.commons.bootstrap.source.SourcesPage;
 
 /**
  * Application object for your web application.
