@@ -17,8 +17,8 @@
 package org.wicketTutorial.markupfolder;
 
 import org.apache.wicket.core.util.file.WebApplicationPath;
-import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 import org.wicketTutorial.commons.bootstrap.BootstrapApp;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 
 /**
  * Application object for your web application. If you want to run this application without deploying, run the Start class.
@@ -42,6 +42,7 @@ public class WicketApplication extends BootstrapApp
 	@Override
 	public void init()
 	{
+		super.init();
 		getResourceSettings().getResourceFinders().add(
 				new WebApplicationPath(getServletContext(), "markupFolder"));
 	}
