@@ -16,18 +16,11 @@
  */
 package org.wicketTutorial.rolestrategy;
 
-import org.apache.wicket.Page;
-import org.apache.wicket.Session;
 import org.apache.wicket.authroles.authentication.AbstractAuthenticatedWebSession;
 import org.apache.wicket.authroles.authentication.AuthenticatedWebApplication;
-import org.apache.wicket.authroles.authorization.strategies.role.Roles;
 import org.apache.wicket.authroles.authorization.strategies.role.annotations.AnnotationsRoleAuthorizationStrategy;
-import org.apache.wicket.authroles.authorization.strategies.role.metadata.MetaDataRoleAuthorizationStrategy;
+import org.wicketTutorial.commons.bootstrap.BootstrapInitializer;
 import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
-import org.wicketTutorial.commons.bootstrap.BootstrapApp;
-import org.apache.wicket.request.Request;
-import org.apache.wicket.request.Response;
-import org.wicketTutorial.rolestrategy.admin.AdminOnlyPage;
 
 /**
  * Application object for your web application. If you want to run this application without deploying, run the Start class.
@@ -36,22 +29,28 @@ import org.wicketTutorial.rolestrategy.admin.AdminOnlyPage;
  */
 public class WicketApplication extends AuthenticatedWebApplication{    		
 	@Override
-	public Class<? extends BootstrapBasePage> getHomePage(){
+	public Class<? extends BootstrapBasePage> getHomePage()
+	{
 		return HomePage.class;
 	}
-	
+
 	@Override
-	protected Class<? extends AbstractAuthenticatedWebSession> getWebSessionClass() {
+	protected Class<? extends AbstractAuthenticatedWebSession> getWebSessionClass()
+	{
 		return BasicAuthenticationSession.class;
 	}
 
 	@Override
-	protected Class<? extends BootstrapBasePage> getSignInPageClass() {
+	protected Class<? extends BootstrapBasePage> getSignInPageClass()
+	{
 		return SignInPage.class;
 	}
-	
+
 	@Override
-	public void init(){	
-		getSecuritySettings().setAuthorizationStrategy(new AnnotationsRoleAuthorizationStrategy(this));		
+	public void init()
+	{
+		BootstrapInitializer.init(this);
+		getSecuritySettings()
+			.setAuthorizationStrategy(new AnnotationsRoleAuthorizationStrategy(this));
 	}
 }

@@ -18,8 +18,8 @@ package org.wicketTutorial.basicauth;
 
 import org.apache.wicket.authroles.authentication.AbstractAuthenticatedWebSession;
 import org.apache.wicket.authroles.authentication.AuthenticatedWebApplication;
+import org.wicketTutorial.commons.bootstrap.BootstrapInitializer;
 import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
-import org.wicketTutorial.commons.bootstrap.BootstrapApp;
 
 /**
  * Application object for your web application. If you want to run this application without deploying, run the Start class.
@@ -38,12 +38,20 @@ public class WicketApplication extends AuthenticatedWebApplication
 	}
 
 	@Override
-	protected Class<? extends AbstractAuthenticatedWebSession> getWebSessionClass() {		
+	protected Class<? extends AbstractAuthenticatedWebSession> getWebSessionClass() 
+	{		
 		return BasicAuthenticationSession.class;
 	}
 
 	@Override
-	protected Class<? extends BootstrapBasePage> getSignInPageClass() {
+	protected Class<? extends BootstrapBasePage> getSignInPageClass() 
+	{
 		return SignInPage.class;
+	}
+	
+	@Override
+	protected void init()
+	{
+		BootstrapInitializer.init(this);
 	}
 }

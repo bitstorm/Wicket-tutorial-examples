@@ -18,25 +18,12 @@ package org.wicketTutorial.commons.bootstrap;
 
 import org.apache.wicket.protocol.http.WebApplication;
 
-import de.agilecoders.wicket.core.Bootstrap;
-import de.agilecoders.wicket.core.settings.BootstrapSettings;
-import de.agilecoders.wicket.core.settings.IBootstrapSettings;
-import de.agilecoders.wicket.core.settings.ThemeProvider;
-import de.agilecoders.wicket.themes.markup.html.bootswatch.BootswatchTheme;
-import de.agilecoders.wicket.themes.markup.html.bootswatch.BootswatchThemeProvider;
-
 public abstract class BootstrapApp extends WebApplication 
 {
 
 	@Override
 	protected void init() 
 	{
-		final IBootstrapSettings settings = new BootstrapSettings();
-        final ThemeProvider themeProvider = new BootswatchThemeProvider(BootswatchTheme.United);
-
-        settings.setThemeProvider(themeProvider);
-        settings.setDeferJavascript(true);
-        
-        Bootstrap.install(this, settings);
+		BootstrapInitializer.init(this);
 	}
 }
