@@ -26,6 +26,7 @@
 	<style type="text/css">
 		body {
 	       font-size: 16px;
+	       height:100%;
 	    }
 		
  		.header {
@@ -37,7 +38,17 @@
 		  background: #eee;
 		  height: 100%;
 		}
-		
+		.main-row {
+          margin-left:0;
+          margin-right:0;
+        }
+        .fill {
+          width:100%;
+          height:100%;
+          min-height:100%;
+          padding:0px;
+          overflow: auto;
+        }
 		ul {
 			list-style-type : none;
 			padding : 0px;
@@ -51,7 +62,7 @@
 		code {
 			color: rgb(0,0,0);
 			white-space: nowrap;
-			font-size : 11px;
+			font-size : 16px;
 			font-family : Lucida Console, Monospace, Courier New, Courier, Fixed;
 		}
 		.java_type {
@@ -122,13 +133,13 @@
 		<div class="col-sm-4">
              <div class="pull-left">Files</div>
 		</div>
-		<div class="col-sm-8">
+		<div class="col-sm-8 ">
 			<div class="pull-left">Code for <span wicket:id="filename"></span></div>
 			<div class="pull-right">[<a href="javascript:self.close()">Close</a>]</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-sm-4 file-list" wicket:id="filespanel">
+	<div class="row main-row fill">
+		<div class="col-sm-4 file-list sidebar" wicket:id="filespanel">
 			<ul>
 				<li wicket:id="file">
 					<a href="#" wicket:id="link"><span wicket:id="name"></span></a>
@@ -137,7 +148,7 @@
 		</div>
 		<div class="col-sm-8" wicket:id="codepanel">
 			<div class="code-container">
-				<code wicket:id="code"></code>
+				<div class="code" wicket:id="code"></div>
 			</div>
 		</div>
 	</div>
