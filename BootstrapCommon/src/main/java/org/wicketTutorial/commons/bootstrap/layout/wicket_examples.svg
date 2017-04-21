@@ -38,8 +38,8 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.1153254"
-     inkscape:cx="399.2538"
+     inkscape:zoom="1.4957609"
+     inkscape:cx="264.79223"
      inkscape:cy="129.29221"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -60,7 +60,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -76,40 +76,42 @@
        width="152.67305"
        height="98.146965"
        x="375.34549"
-       y="940.69958" />
+       y="944.69958" />
     <ellipse
        style="fill:#ff9925;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        id="path3364"
        cx="327.11249"
-       cy="1010.5338"
+       cy="1014.5338"
        rx="36.482059"
        ry="37.1814" />
     <text
        id="text18"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;line-height:125%;font-family:'League Gothic';-inkscape-font-specification:'League Gothic, Normal';text-align:start;writing-mode:lr;text-anchor:start;fill:#ffffff;fill-opacity:1;"
-       y="1041.0585"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;line-height:125%;font-family:'League Gothic';-inkscape-font-specification:'League Gothic, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1"
+       y="1045.0585"
        x="1.0197849"
        sodipodi:linespacing="125%">
       <tspan
          sodipodi:role="line"
-         id="tspan4155">USER  GUIDE</tspan>
+         id="tspan4155"
+         x="1.0197849"
+         y="1045.0585">USER GUIDE</tspan>
     </text>
     <text
        id="text18-4"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;line-height:125%;font-family:'League Gothic';-inkscape-font-specification:'League Gothic, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#ffffff;fill-opacity:1"
-       y="1040.7506"
+       y="1044.7506"
        x="370.36148"
        sodipodi:linespacing="125%">
       <tspan
          sodipodi:role="line"
          id="tspan4151"
          x="370.36148"
-         y="1040.7506">EXAMPLES</tspan>
+         y="1044.7506">EXAMPLES</tspan>
     </text>
     <path
        inkscape:connector-curvature="0"
        id="path16"
        style="fill:#ffffff"
-       d="m 268.78954,957.8349 m 36.38153,33.10521 0,39.72619 14.5526,0 14.5526,0 14.55263,0 0,-39.72619 -14.55263,26.48419 -7.2763,-13.2421 -7.2763,13.2421 -14.5526,-26.48419 z" />
+       d="m 268.78954,961.8349 m 36.38153,33.10521 0,39.72619 14.5526,0 14.5526,0 14.55263,0 0,-39.72619 -14.55263,26.48419 -7.2763,-13.2421 -7.2763,13.2421 -14.5526,-26.48419 z" />
   </g>
 </svg>
