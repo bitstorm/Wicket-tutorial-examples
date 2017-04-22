@@ -46,7 +46,6 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
-import org.apache.wicket.model.AbstractReadOnlyModel;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.LoadableDetachableModel;
 import org.apache.wicket.request.http.handler.ErrorCodeRequestHandler;
@@ -262,7 +261,7 @@ public class SourcesPage extends WebPage
 				if (name.startsWith(packageRef))
 				{
 					name = name.substring(packageRef.length() + 1);
-					if (!name.endsWith("class"))
+					if (!name.endsWith("class") && !name.endsWith("/"))
 					{
 						resources.add(name);
 					}
@@ -413,17 +412,11 @@ public class SourcesPage extends WebPage
 	{
 		super(params);
 
-		filename = new Label("filename", new AbstractReadOnlyModel<String>()
-		{
-
-			@Override
-			public String getObject()
-			{
-				return name != null ? name : getPage().getRequest().getRequestParameters()
-					.getParameterValue(SOURCE).toOptionalString();
+		filename = new Label("filename", () -> {
+			return name != null ? name : getPage().getRequest().getRequestParameters()
+				.getParameterValue(SOURCE).toOptionalString();
 			}
-
-		});
+		);
 		filename.setOutputMarkupId(true);
 		add(filename);
 		codePanel = new CodePanel("codepanel").setOutputMarkupId(true);
