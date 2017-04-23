@@ -21,25 +21,19 @@ import java.util.List;
 import java.util.Locale;
 
 import org.apache.wicket.Session;
-import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.DropDownChoice;
-import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.StatelessForm;
-import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
-import org.apache.wicket.model.AbstractReadOnlyModel;
+import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 
 public class HomePage extends BootstrapBasePage {
 	private static final long serialVersionUID = 1L;
 
     public HomePage(final PageParameters parameters) {
-		AbstractReadOnlyModel<String> model = new AbstractReadOnlyModel<String>() {			
-			@Override
-			public String getObject() {
-				return getString("greetingMessage")	;			
-			}
-		};
+		IModel<String> model = () -> getString("greetingMessage");			
     	
     	add(new Label("greetingMessage", model));
 		

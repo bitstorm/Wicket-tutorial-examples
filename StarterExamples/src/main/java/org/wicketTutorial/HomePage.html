@@ -22,16 +22,14 @@
   <wicket:head>
 	<meta charset="utf-8" />
 	<title>Apache Wicket User Guide Examples</title>
-	<meta name="description"
-		content="Live Examples For The Apache Wicket User Guide">
-	<meta name="keywords"
-		content="Apache Wicket, Wicket, Wicket User Guide, Wicket Examples">
-	<meta name="author" content="Andrea Del Bene">
-	<link rel="canonical" href="http://examples-wickettutorial.rhcloud.com">
 	<style type="text/css">
-	.breadcrumb {
-		display: none;
-	}
+		.breadcrumb {
+			display: none;
+		}
+		
+		.dropdown {
+			display: none !important;
+		}
 	</style>
   </wicket:head>	
 </head>
@@ -51,8 +49,6 @@
 	        </p>
 		</div>
 		<p>
-		  Your current session is <b wicket:id="sessionType"></b> <a wicket:id="logOut">Discard session</a>
-		  <br/>
           Wicket version: <label wicket:id="wicket-version"></label>
         </p>
 		<wicket:link>
