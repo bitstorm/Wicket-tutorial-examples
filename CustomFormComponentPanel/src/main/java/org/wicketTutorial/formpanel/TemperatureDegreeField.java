@@ -23,7 +23,6 @@ import java.util.Locale;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.FormComponentPanel;
 import org.apache.wicket.markup.html.form.TextField;
-import org.apache.wicket.model.AbstractReadOnlyModel;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 
@@ -43,14 +42,7 @@ public class TemperatureDegreeField extends FormComponentPanel<Double> {
 	protected void onInitialize() {
 		super.onInitialize();	
 		
-		AbstractReadOnlyModel<String> labelModel = new AbstractReadOnlyModel<String>() {
-			@Override
-			public String getObject() {
-				if(getLocale().equals(Locale.US))
-					return "°F";
-				return "°C";
-			}
-		};
+		IModel<String> labelModel = () -> getLocale().equals(Locale.US) ? "°F" : "°C";
 		
 		add(new Label("mesuramentUnit", labelModel));
 		userDegree = new TextField<Double>("registeredTemperature", new Model<Double>());

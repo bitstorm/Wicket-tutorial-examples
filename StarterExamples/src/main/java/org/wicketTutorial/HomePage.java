@@ -33,11 +33,9 @@ public class HomePage extends BootstrapBasePage {
 		
 		add(new Label("sessionType"));
 		
-		add(new StatelessLink<Void>("linkToHttps")
-		{
+		add(new StatelessLink<Void>("linkToHttps") {
 			@Override
-			public void onClick()
-			{
+			public void onClick() {
 				setResponsePage(org.wicketTutorial.https.HomePage.class);
 			}
 		});
