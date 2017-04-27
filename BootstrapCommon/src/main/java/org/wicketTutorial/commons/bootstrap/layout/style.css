@@ -6,21 +6,26 @@
 body {
   padding-top: 50px;
   background-color: #FFFFFF;
-  height: 100%;
   font-size: 16px;
+  margin-bottom: 150px;
 }
 
 html {
-  height: 100%;
+  min-height: 100%;
+  position: relative;
 }
 
 .footer {
   background-color: #F3F3F3;
-  padding: 70px 0px;
-  margin-top: 70px;
+  padding: 20px 0px;
+  margin-top: 20px;
   border-top: 1px solid #E5E5E5;
   color: #777;
-  text-align: 
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 150px; 
 }
 
 .footer p {
