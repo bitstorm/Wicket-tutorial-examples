@@ -31,8 +31,6 @@ public class HomePage extends BootstrapBasePage {
 		
 		setDefaultModel(new CompoundPropertyModel<HomePage>(this));
 		
-		add(new Label("sessionType"));
-		
 		add(new StatelessLink<Void>("linkToHttps") {
 			@Override
 			public void onClick() {
