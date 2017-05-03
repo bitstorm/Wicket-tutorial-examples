@@ -17,6 +17,9 @@
 package org.wicketTutorial;
 
 import org.apache.wicket.Session;
+import org.apache.wicket.markup.head.HeaderItem;
+import org.apache.wicket.markup.head.IHeaderResponse;
+import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.StatelessLink;
 import org.apache.wicket.model.CompoundPropertyModel;
@@ -46,4 +49,13 @@ public class HomePage extends BootstrapBasePage {
     	super.onBeforeRender();
     	Session.get().invalidateNow();
     }
+	
+	@Override
+	public void renderHead(IHeaderResponse response) {
+		super.renderHead(response);
+		
+		HeaderItem item = JavaScriptHeaderItem.forUrl("https://buttons.github.io/buttons.js", "github", true);
+		
+		response.render(item );
+	}
 }
