@@ -16,6 +16,7 @@
  */
 package org.wicketTutorial;
 
+import org.apache.wicket.RuntimeConfigurationType;
 import org.apache.wicket.bean.validation.BeanValidationConfiguration;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.https.HttpsConfig;
@@ -47,11 +48,24 @@ public class WicketApplication extends BootstrapApp
 	public void init()
 	{
 		super.init();
-		setRootRequestMapper(new HttpsMapper(getRootRequestMapper(), new HttpsConfig(8080, 8443)));
+		setRootRequestMapper(new HttpsMapper(getRootRequestMapper(), new CustomHttpsConfig(8080, 8443)));
 		
 		new BeanValidationConfiguration().configure(this);
 		
 		
 		mountPage("/seecode", SourcesPage.class);
+	}
+	
+	class CustomHttpsConfig extends HttpsConfig {
+
+		public CustomHttpsConfig(int httpPort, int httpsPort) {
+			super(httpPort, httpsPort);
+		}
+		
+		@Override
+		public int getHttpPort() {
+			return getConfigurationType() == RuntimeConfigurationType.DEPLOYMENT ? 80 : super.getHttpPort();
+		}
+		
 	}
 }

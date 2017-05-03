@@ -16,12 +16,10 @@
  */
 package org.wicketTutorial.commons.bootstrap.layout;
 
-import org.apache.wicket.Application;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.markup.html.link.PopupSettings;
-import org.apache.wicket.markup.html.link.StatelessLink;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.util.string.Strings;
@@ -54,34 +52,6 @@ public class BootstrapBasePage extends WebPage
 			SourcesPage.class, SourcesPage.generatePageParameters(this));
 		add(link);
 
-		add(new StatelessLink<Void>("toHomePage")
-		{
-			/**
-			 * 
-			 */
-			private static final long serialVersionUID = 6284984646435850104L;
-
-			@Override
-			public void onClick()
-			{
-				setResponsePage(Application.get().getHomePage());
-			}
-		});
-
-		add(new StatelessLink<Void>("bcToHomePage")
-		{
-			/**
-			 * 
-			 */
-			private static final long serialVersionUID = -4794466327996067393L;
-
-			@Override
-			public void onClick()
-			{
-				setResponsePage(Application.get().getHomePage());
-			}
-		});
-		
 		PopupSettings settings = new PopupSettings("sources", PopupSettings.RESIZABLE);
 		settings.setWidth(800);
 		settings.setHeight(600);
