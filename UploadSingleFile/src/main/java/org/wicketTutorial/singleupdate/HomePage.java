@@ -17,15 +17,13 @@
 package org.wicketTutorial.singleupdate;
 
 import java.io.File;
-import java.io.IOException;
 
-import org.apache.wicket.request.mapper.parameter.PageParameters;
-import org.apache.wicket.util.lang.Bytes;
-import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.upload.FileUpload;
 import org.apache.wicket.markup.html.form.upload.FileUploadField;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
+import org.apache.wicket.util.lang.Bytes;
 import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 
 public class HomePage extends BootstrapBasePage {
@@ -48,8 +46,10 @@ public class HomePage extends BootstrapBasePage {
     						fileUpload.getClientFileName());
     				
     		    	fileUpload.writeTo(file);
+    		    	info("Upload completed!");
 		        } catch (Exception e) {
-			   e.printStackTrace();
+		        	e.printStackTrace();
+		        	error("Upload failed!");
 			 }
     		}
     	};	
