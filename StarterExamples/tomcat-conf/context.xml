@@ -27,7 +27,9 @@
     <Valve className="org.apache.catalina.valves.RemoteIpValve"
        protocolHeader="x-forwarded-proto" />
 
-
+     <Parameter name="configuration" value="deployment"
+         override="true"/>
+    
     <!-- Uncomment this to disable session persistence across Tomcat restarts -->
     <!--
     <Manager pathname="" />
