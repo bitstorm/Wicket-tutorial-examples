@@ -5,7 +5,10 @@ This repository contains the example projects used in the [Wicket user guide](ht
 
 ## Building the project
 
-The project is a multi-module Maven project. To compile it run 'mvn compile' from the root directory. 
+The project is a multi-module Maven project. To compile it run 'mvn compile' from the root directory. To run the examples locally follows these steps:
+
+* run 'mvn install' from the root directory
+
 To run a single example enter in the related directory, run 'mvn jetty:run' or 'mvn tomcat:run' and then point your browser to http://localhost:8080
 
 ## See the examples on line
