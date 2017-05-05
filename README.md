@@ -8,8 +8,9 @@ This repository contains the example projects used in the [Wicket user guide](ht
 The project is a multi-module Maven project. To compile it run 'mvn compile' from the root directory. To run the examples locally follows these steps:
 
 * run 'mvn install' from the root directory
+* go into project StarterExamples and run 'mvn jetty:run' or 'mvn tomcat:run'
 
-To run a single example enter in the related directory, run 'mvn jetty:run' or 'mvn tomcat:run' and then point your browser to http://localhost:8080
+To run a single example project you have to install first project BootstrapCommon ('mvn install'). Then go into the folder of the project you want to run, type 'mvn jetty:run' or 'mvn tomcat:run' and then point your browser to http://localhost:8080
 
 ## See the examples on line
 
