@@ -10,7 +10,7 @@ To run a single example enter in the related directory, run 'mvn jetty:run' or '
 
 ## See the examples on line
 
-The examples can be explored on line at http://examples-wickettutorial.rhcloud.com.
+The examples can be explored on line at http://examples7-wickettutorial.rhcloud.com.
 
 ## Contributing to this guide
 
