@@ -172,3 +172,8 @@ a {
 a:hover {
     color: #97310E;
 }
+
+a[disabled] {
+    text-decoration: none;
+    color: #97310E;
+}
