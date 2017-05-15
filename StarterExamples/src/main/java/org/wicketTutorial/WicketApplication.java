@@ -16,6 +16,10 @@
  */
 package org.wicketTutorial;
 
+import java.util.regex.Pattern;
+
+import org.apache.wicket.ConverterLocator;
+import org.apache.wicket.IConverterLocator;
 import org.apache.wicket.RuntimeConfigurationType;
 import org.apache.wicket.bean.validation.BeanValidationConfiguration;
 import org.apache.wicket.markup.html.WebPage;
@@ -23,6 +27,7 @@ import org.apache.wicket.protocol.https.HttpsConfig;
 import org.apache.wicket.protocol.https.HttpsMapper;
 import org.wicketTutorial.commons.bootstrap.BootstrapApp;
 import org.wicketTutorial.commons.bootstrap.source.SourcesPage;
+import org.wicketTutorial.customconverter.RegExpPatternConverter;
 
 /**
  * Application object for your web application.
@@ -67,5 +72,14 @@ public class WicketApplication extends BootstrapApp
 			return getConfigurationType() == RuntimeConfigurationType.DEPLOYMENT ? 80 : super.getHttpPort();
 		}
 		
+	}
+	
+	@Override
+	protected IConverterLocator newConverterLocator() {
+		ConverterLocator defaultLocator = new ConverterLocator();
+		
+		defaultLocator.set(Pattern.class, new RegExpPatternConverter());
+		
+		return defaultLocator;
 	}
 }
