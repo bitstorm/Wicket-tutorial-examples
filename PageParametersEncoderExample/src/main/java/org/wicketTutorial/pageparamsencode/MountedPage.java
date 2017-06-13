@@ -16,10 +16,8 @@
  */
 package org.wicketTutorial.pageparamsencode;
 
-import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 import org.apache.wicket.markup.html.link.Link;
-import org.apache.wicket.model.IModel;
-import org.apache.wicket.request.mapper.parameter.PageParameters;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 
 public class MountedPage extends BootstrapBasePage {
 
@@ -31,7 +29,7 @@ public class MountedPage extends BootstrapBasePage {
 
 			@Override
 			public void onClick() {
-				setResponsePage(getApplication().getHomePage());
+				setResponsePage(HomePage.class);
 			}			
 		});
 	}
