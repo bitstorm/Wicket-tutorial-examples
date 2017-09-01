@@ -53,29 +53,20 @@ public class WicketApplication extends BootstrapApp
 	public void init()
 	{
 		super.init();
-		setRootRequestMapper(new HttpsMapper(getRootRequestMapper(), new CustomHttpsConfig(8080, 8443)));
+		
+		if (getConfigurationType() == RuntimeConfigurationType.DEVELOPMENT) 
+		{			
+			setRootRequestMapper(new HttpsMapper(getRootRequestMapper(), new HttpsConfig(8080, 8443)));
+		}
 		
 		new BeanValidationConfiguration().configure(this);
-		
 		
 		mountPage("/seecode", SourcesPage.class);
 	}
 	
-	class CustomHttpsConfig extends HttpsConfig {
-
-		public CustomHttpsConfig(int httpPort, int httpsPort) {
-			super(httpPort, httpsPort);
-		}
-		
-		@Override
-		public int getHttpPort() {
-			return getConfigurationType() == RuntimeConfigurationType.DEPLOYMENT ? 80 : super.getHttpPort();
-		}
-		
-	}
-	
 	@Override
-	protected IConverterLocator newConverterLocator() {
+	protected IConverterLocator newConverterLocator() 
+	{
 		ConverterLocator defaultLocator = new ConverterLocator();
 		
 		defaultLocator.set(Pattern.class, new RegExpPatternConverter());
