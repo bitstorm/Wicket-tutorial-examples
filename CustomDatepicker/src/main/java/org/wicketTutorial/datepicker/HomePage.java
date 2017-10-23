@@ -16,15 +16,11 @@
  */
 package org.wicketTutorial.datepicker;
 
-import java.util.Date;
-import java.util.Locale;
-
-import org.apache.wicket.Session;
-import org.apache.wicket.request.mapper.parameter.PageParameters;
-import org.apache.wicket.markup.html.basic.Label;
+import java.time.LocalDate;
 import org.apache.wicket.markup.html.form.Form;
-import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 import org.apache.wicket.model.Model;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 
 public class HomePage extends BootstrapBasePage {
 	private static final long serialVersionUID = 1L;
@@ -32,7 +28,7 @@ public class HomePage extends BootstrapBasePage {
     public HomePage(final PageParameters parameters) {
 	super(parameters);
 	Form form = new Form("form");
-	form.add(new JQueryDateField("datepicker", new Model<Date>()));	
+	form.add(new JQueryDateField("datepicker", new Model<LocalDate>(), "mm/dd/yy", "en-GB"));	
 	add(form);
     }
 }

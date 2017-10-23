@@ -16,47 +16,39 @@
  */
 package org.wicketTutorial.datepicker;
 
-import java.util.Date;
-
+import java.time.LocalDate;
 import org.apache.wicket.AttributeModifier;
-
-import org.apache.wicket.datetime.PatternDateConverter;
-import org.apache.wicket.extensions.markup.html.form.DateTextField;
+import org.apache.wicket.extensions.markup.html.form.datetime.LocalDateTextField;
 import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.markup.head.OnLoadHeaderItem;
 import org.apache.wicket.model.IModel;
-import org.apache.wicket.model.ResourceModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.request.resource.PackageResourceReference;
 import org.apache.wicket.settings.JavaScriptLibrarySettings;
-import org.apache.wicket.util.convert.IConverter;
 
-public class JQueryDateField extends DateTextField {
+public class JQueryDateField extends LocalDateTextField {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 5088998263851588184L;
-	private PatternDateConverter dateConverter;
-	private String datePattern;
-	private String countryIsoCode;
+	private final String datePattern;
+	private final String countryIsoCode;
 	private CharSequence urlForIcon;
 	private static final PackageResourceReference JQDatePickerRef = 
 						   new PackageResourceReference(JQueryDateField.class, "JQDatePicker.js");
 	
-	public JQueryDateField(String id){
-		super(id);
+	
+	
+	public JQueryDateField(String id, IModel<LocalDate> dateModel, 
+			String datePattern, String countryIsoCode){
+		super(id, dateModel, datePattern);
+		this.datePattern = datePattern;
+		this.countryIsoCode = countryIsoCode;
 	}
 	
-	public JQueryDateField(String id, IModel<Date> dateModel){
-		super(id, dateModel);	
-	}
-	
-	public String getDatePattern() {
-		return datePattern;
-	}
 	
 	@Override
 	protected void onInitialize() {
@@ -64,21 +56,13 @@ public class JQueryDateField extends DateTextField {
 		
 		setOutputMarkupId(true);
 		
-		datePattern =  new ResourceModel("jqueryDateField.shortDatePattern", "MM/dd/yyyy").getObject();		
-		countryIsoCode = new ResourceModel("jqueryDateField.countryIsoCode", "en-GB").getObject();
-		
 		PackageResourceReference resourceReference = new PackageResourceReference(getClass(), "calendar.jpg");
 		
 		urlForIcon = urlFor(resourceReference, new PageParameters());
-		dateConverter = new PatternDateConverter(datePattern, true);
 		
 		add(AttributeModifier.replace("size", "12"));
 	}	
 	
-	@Override
-	public <Date> IConverter<Date> getConverter(Class<Date> type) {
-		return (IConverter<Date>) dateConverter;
-	}	
 	
 	@Override
 	public void renderHead(IHeaderResponse response) {

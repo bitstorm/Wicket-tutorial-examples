@@ -16,18 +16,13 @@
  */
 package org.wicketTutorial.ajaxdatepicker;
 
-import java.util.Date;
-import java.util.Locale;
-
-import org.apache.wicket.Session;
-import org.apache.wicket.ThreadContext;
-import org.apache.wicket.request.mapper.parameter.PageParameters;
+import java.time.LocalDate;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
-import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Form;
-import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 import org.apache.wicket.model.Model;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
+import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 
 public class HomePage extends BootstrapBasePage {
 	private static final long serialVersionUID = 1L;
@@ -36,10 +31,10 @@ public class HomePage extends BootstrapBasePage {
 		super(parameters);
 		Form form = new Form("form");
 		final JQueryDateFieldAjax datepicker;
-		datepicker = new JQueryDateFieldAjax("datepicker", new Model<Date>());
+		datepicker = new JQueryDateFieldAjax("datepicker", new Model<LocalDate>(), "mm/dd/yy", "en-GB");
 		form.add(datepicker);
 		
-		add(new AjaxLink<Void>("update"){
+		add(new AjaxLink<Void>("update") {
 
 			@Override
 			public void onClick(AjaxRequestTarget target) {
