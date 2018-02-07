@@ -25,7 +25,7 @@
 	<description>The project is intended to provide code examples for the freely available Wicket tutorial</description>
 	<properties>
 		<wicket.version>8.0.0-SNAPSHOT</wicket.version>
-		<jetty9.version>9.2.0.v20140526</jetty9.version>
+		<jetty9.version>9.4.7.v20170914</jetty9.version>
 		<log4j.version>1.2.17</log4j.version>
 		<slf4j.version>1.7.7</slf4j.version>
 		<junit.version>4.11</junit.version>
