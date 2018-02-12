@@ -24,7 +24,7 @@
 	<name>Wicket tutorial projects</name>
 	<description>The project is intended to provide code examples for the freely available Wicket tutorial</description>
 	<properties>
-		<wicket.version>7.8.0</wicket.version>
+		<wicket.version>7.10.0</wicket.version>
 		<jetty9.version>9.2.0.v20140526</jetty9.version>
 		<log4j.version>1.2.17</log4j.version>
 		<slf4j.version>1.7.7</slf4j.version>
@@ -194,7 +194,7 @@
 		
                  <repository> 
                          <id>staging</id> 
-                         <url>https://repository.apache.org/content/repositories/orgapachewicket-1095/</url> 
+                         <url>https://repository.apache.org/content/repositories/orgapachewicket-1106/</url> 
                          <releases> 
                                  <enabled>true</enabled> 
                          </releases> 
