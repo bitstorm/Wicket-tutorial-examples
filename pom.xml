@@ -24,11 +24,11 @@
 	<name>Wicket tutorial projects</name>
 	<description>The project is intended to provide code examples for the freely available Wicket tutorial</description>
 	<properties>
-		<wicket.version>8.0.0-SNAPSHOT</wicket.version>
+		<wicket.version>8.3.0</wicket.version>
 		<jetty9.version>9.4.7.v20170914</jetty9.version>
 		<log4j.version>1.2.17</log4j.version>
 		<slf4j.version>1.7.7</slf4j.version>
-		<junit.version>4.11</junit.version>
+		<junit.version>4.12</junit.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	<!-- allowed values: R7, 1.0, 1.5, 2.0 or none -->
 		<wtp.version>none</wtp.version>
@@ -171,6 +171,25 @@
 				</execution>
 			      </executions>
 			    </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-toolchains-plugin</artifactId>
+				<version>1.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>toolchain</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<toolchains>
+						<jdk>
+							<version>1.8</version>
+						</jdk>
+					</toolchains>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>	
 	<repositories>
@@ -182,6 +201,16 @@
 			</releases>
 			<snapshots>
 				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>Apache stage</id>
+			<url>https://repository.apache.org/content/repositories/orgapachewicket-1118/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
 			</snapshots>
 		</repository>	
 	</repositories>
