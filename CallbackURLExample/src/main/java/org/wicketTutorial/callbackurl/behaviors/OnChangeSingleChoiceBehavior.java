@@ -21,7 +21,6 @@ import java.util.List;
 import org.apache.wicket.Application;
 import org.apache.wicket.Component;
 import org.apache.wicket.IRequestListener;
-import org.apache.wicket.RequestListenerInterface;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.head.IHeaderResponse;
@@ -36,9 +35,8 @@ import org.apache.wicket.request.resource.ResourceReference;
 import org.apache.wicket.util.lang.Args;
 import org.apache.wicket.util.string.StringValue;
 
-import sun.reflect.ReflectionFactory.GetReflectionFactoryAction;
-
 public class OnChangeSingleChoiceBehavior extends Behavior implements IRequestListener {
+	private static final long serialVersionUID = 3060400747044107967L;
 	private AbstractSingleSelectChoice boundComponent;
 	
 	@Override

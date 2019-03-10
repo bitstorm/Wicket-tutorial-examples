@@ -50,7 +50,11 @@
 			<artifactId>wicket-core</artifactId>
 			<version>${wicket.version}</version>
 		</dependency>
-		
+        <dependency>
+            <groupId>org.wicketstuff</groupId>
+            <artifactId>wicketstuff-datetime-yui</artifactId>
+            <version>${wicket.version}</version>
+        </dependency>        
 		<dependency>
 			<groupId>org.apache.wicket</groupId>
 			<artifactId>wicket-extensions</artifactId>
