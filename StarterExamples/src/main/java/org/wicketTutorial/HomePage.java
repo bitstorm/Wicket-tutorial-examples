@@ -21,7 +21,6 @@ import org.apache.wicket.markup.head.HeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.link.StatelessLink;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
@@ -34,12 +33,12 @@ public class HomePage extends BootstrapBasePage {
 		
 		setDefaultModel(new CompoundPropertyModel<HomePage>(this));
 		
-		add(new StatelessLink<Void>("linkToHttps") {
-			@Override
-			public void onClick() {
-				setResponsePage(org.wicketTutorial.https.HomePage.class);
-			}
-		});
+//		add(new StatelessLink<Void>("linkToHttps") {
+//			@Override
+//			public void onClick() {
+//				setResponsePage(org.wicketTutorial.https.HomePage.class);
+//			}
+//		});
 		
 		add(new Label("wicket-version",  getApplication().getFrameworkSettings().getVersion()));
     }
