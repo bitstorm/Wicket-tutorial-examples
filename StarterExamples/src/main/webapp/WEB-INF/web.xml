@@ -27,6 +27,10 @@
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.markupfolder.WicketApplication</param-value>
 		</init-param>
+		<init-param>
+		    <param-name>configuration</param-name>
+		    <param-value>deployment</param-value>
+		</init-param>
 	</filter>
 
 	<filter-mapping>
@@ -41,6 +45,10 @@
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.WicketApplication</param-value>
 		</init-param>
+                <init-param>
+		    <param-name>configuration</param-name>
+		    <param-value>deployment</param-value>
+		</init-param>
 	</filter>
 	<filter>
 		<filter-name>wicket.SpringExample</filter-name>
@@ -48,6 +56,10 @@
 		<init-param>
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.springinjection.WicketApplication</param-value>
+		</init-param>
+		<init-param>
+		    <param-name>configuration</param-name>
+		    <param-value>deployment</param-value>
 		</init-param>
 	</filter>
 
@@ -58,6 +70,10 @@
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.ejbinjection.WicketApplication</param-value>
 		</init-param>
+		<init-param>
+		    <param-name>configuration</param-name>
+		    <param-value>deployment</param-value>
+		</init-param>
 	</filter>
 
 	<filter>
@@ -66,6 +82,10 @@
 		<init-param>
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.rolestrategy.WicketApplication</param-value>
+		</init-param>
+		<init-param>
+		    <param-name>configuration</param-name>
+		    <param-value>deployment</param-value>
 		</init-param>
 	</filter>
 
@@ -76,6 +96,10 @@
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.greetings.WicketApplication</param-value>
 		</init-param>
+		<init-param>
+		    <param-name>configuration</param-name>
+		    <param-value>deployment</param-value>
+		</init-param>
 	</filter>
 
 	<filter>
@@ -84,6 +108,10 @@
 		<init-param>
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.eventinfra.WicketApplication</param-value>
+		</init-param>
+		<init-param>
+		    <param-name>configuration</param-name>
+		    <param-value>deployment</param-value>
 		</init-param>
 	</filter>
 
@@ -94,6 +122,10 @@
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.resmounting.WicketApplication</param-value>
 		</init-param>
+		<init-param>
+		    <param-name>configuration</param-name>
+		    <param-value>deployment</param-value>
+		</init-param>
 	</filter>
 
 	<filter>
@@ -102,6 +134,10 @@
 		<init-param>
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.basicauth.WicketApplication</param-value>
+		</init-param>
+		<init-param>
+		    <param-name>configuration</param-name>
+		    <param-value>deployment</param-value>
 		</init-param>
 	</filter>
 
@@ -112,6 +148,10 @@
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.https.WicketApplication</param-value>
 		</init-param>
+		<init-param>
+		    <param-name>configuration</param-name>
+		    <param-value>deployment</param-value>
+		</init-param>
 	</filter>
 
 	<filter>
@@ -120,6 +160,10 @@
 		<init-param>
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.overridemessage.WicketApplication</param-value>
+		</init-param>
+		<init-param>
+		    <param-name>configuration</param-name>
+		    <param-value>deployment</param-value>
 		</init-param>
 	</filter>
 
@@ -130,6 +174,10 @@
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.customvalidator.WicketApplication</param-value>
 		</init-param>
+		<init-param>
+		    <param-name>configuration</param-name>
+		    <param-value>deployment</param-value>
+		</init-param>
 	</filter>
 
 	<filter>
@@ -139,6 +187,11 @@
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.mappercontext.WicketApplication</param-value>
 		</init-param>
+		<init-param>
+		    <param-name>configuration</param-name>
+		    <param-value>deployment</param-value>
+		</init-param>
+
 	</filter>
 
 	<filter>
@@ -148,6 +201,11 @@
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.mountedpages.WicketApplication</param-value>
 		</init-param>
+		<init-param>
+		    <param-name>configuration</param-name>
+		    <param-value>deployment</param-value>
+		</init-param>
+
 	</filter>
 
 	<filter>
@@ -157,6 +215,11 @@
 			<param-name>applicationClassName</param-name>
 			<param-value>org.wicketTutorial.scriptposition.WicketApplication</param-value>
 		</init-param>
+		<init-param>
+		    <param-name>configuration</param-name>
+		    <param-value>deployment</param-value>
+		</init-param>
+
 	</filter>
 
     <filter>
@@ -166,6 +229,11 @@
             <param-name>applicationClassName</param-name>
             <param-value>org.wicketTutorial.markupinherit.WicketApplication</param-value>
         </init-param>
+		<init-param>
+		    <param-name>configuration</param-name>
+		    <param-value>deployment</param-value>
+		</init-param>
+
     </filter>
 	
 	<filter-mapping>
