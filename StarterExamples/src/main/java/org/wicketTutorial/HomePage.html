@@ -19,7 +19,7 @@
 <!DOCTYPE html>
 <html xmlns:wicket="http://wicket.apache.org">
 <head>
-  <wicket:head>
+<wicket:head>
 	<meta charset="utf-8" />
 	<title>Apache Wicket User Guide Examples</title>
 	<style type="text/css">
@@ -33,380 +33,441 @@
 		
 		h2 {
 			color: #3f4542 !important;
-		} 
+		}
 		
 		h3 {
 			color: #DD4814 !important;
+			margin: 5px !important;
 		}
 		
 		h3.disabled {
 			color: #3f4542 !important;
 		}
+		
+		a {
+			text-decoration: none !important;
+		}
+		
 	</style>
-  </wicket:head>	
+	
+</wicket:head>
 </head>
 <body>
 	<div id="bd">
-		
-        <wicket:extend>
-        <div class="jumbotron masthead">
-	        <h1>Apache Wicket User Guide Examples</h1>
-	        
-	        <p>
-	            Hosting site for the examples from the official <a
-	                href="https://wicket.apache.org/learn/#guide" target="_blank">Wicket
-	                user guide</a>. <br /> The code of the following examples is hosted <a
-	                href="https://github.com/bitstorm/Wicket-tutorial-examples"
-	                target="_blank">here on GitHub</a>.
-	        </p>
-	        <p><b>NEW:</b> Dont' miss to take a look at the the new <a href="#showcaseSection">bonus showcase examples</a>!</p>
-	        <p>
-             <a class="github-button" href="https://github.com/bitstorm/Wicket-tutorial-examples/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork bitstorm/Wicket-tutorial-examples on GitHub">Fork</a>
-             <a class="github-button" href="https://github.com/bitstorm/Wicket-tutorial-examples" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star bitstorm/Wicket-tutorial-examples on GitHub">Star</a>
-			 <a class="github-button" href="https://github.com/bitstorm" data-size="large" data-show-count="true" aria-label="Follow @bitstorm on GitHub">Follow @bitstorm</a>
-			</p>
-			<form action="https://www.paypal.com/cgi-bin/webscr" method="post"
-				target="_top">
-				<span style="font-size: 21px">Like this site? Buy me an ice-cream :-)</span>
-				<input type="hidden" name="cmd" value="_s-xclick"> <input
-					type="hidden" name="hosted_button_id" value="RGHPTV2QDK8VN">
-				<input type="image" style="vertical-align: bottom;"
-					src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_donate_92x26.png"
-					border="0" name="submit"
-					alt="Donate"> <img
-					alt="" border="0"
-					src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif"
-					width="1" height="1">
-			</form>
-			<p></p>
-			<div>
-	          Wicket version: <label wicket:id="wicket-version"></label>
+
+		<wicket:extend>
+			<div class="jumbotron masthead">
+				<h1>Apache Wicket User Guide Examples</h1>
+
+				<p>
+					Hosting site for the examples from the official <a
+						href="https://wicket.apache.org/learn/#guide" target="_blank">Wicket
+						user guide</a>. <br /> The code of the following examples is hosted <a
+						href="https://github.com/bitstorm/Wicket-tutorial-examples"
+						target="_blank">here on GitHub</a>.
+				</p>
+				<p>
+					<b>NEW:</b> Dont' miss to take a look at the the new <a
+						href="#showcaseSection">bonus showcase examples</a>!
+				</p>
+				<p>
+					<a class="github-button"
+						href="https://github.com/bitstorm/Wicket-tutorial-examples/fork"
+						data-icon="octicon-repo-forked" data-size="large"
+						data-show-count="true"
+						aria-label="Fork bitstorm/Wicket-tutorial-examples on GitHub">Fork</a>
+					<a class="github-button"
+						href="https://github.com/bitstorm/Wicket-tutorial-examples"
+						data-icon="octicon-star" data-size="large" data-show-count="true"
+						aria-label="Star bitstorm/Wicket-tutorial-examples on GitHub">Star</a>
+					<a class="github-button" href="https://github.com/bitstorm"
+						data-size="large" data-show-count="true"
+						aria-label="Follow @bitstorm on GitHub">Follow @bitstorm</a>
+				</p>
+				<form action="https://www.paypal.com/cgi-bin/webscr" method="post"
+					target="_top">
+					<span style="font-size: 21px">Like this site? Buy me an
+						ice-cream :-)</span> <input type="hidden" name="cmd" value="_s-xclick">
+					<input type="hidden" name="hosted_button_id" value="RGHPTV2QDK8VN">
+					<input type="image" style="vertical-align: bottom;"
+						src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_donate_92x26.png"
+						border="0" name="submit" alt="Donate"> <img alt=""
+						border="0"
+						src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif"
+						width="1" height="1">
+				</form>
+				<p></p>
+				<div>
+					Wicket version: <label wicket:id="wicket-version"></label>
+				</div>
 			</div>
-		</div>		
-<!-- 		<wicket:link> -->
-<!-- 			<ul> -->
-<!-- 				<li><a href="/rolestrategy">AnnotationsRolesStrategyExample</a></li> -->
-<!-- 				<li><a href="/basicauth">BasicAuthenticationExample</a></li> -->
-<!-- 				<li><a href="modalwindow/HomePage.html">BasicModalWindowExample</a></li> -->
-<!-- 				<li><a href="autolink/HomePage.html">BookmarkablePageAutoLink</a></li> -->
-<!-- 				<li><a href="callbackurl/HomePage.html">CallbackURLExample</a> -->
-<!-- 				</li> -->
-<!-- 				<li><a href="ajaxlistener/HomePage.html">CustomAjaxListenerExample</a> -->
-<!-- 				</li> -->
-<!-- 				<li><a href="checkboxtree/HomePage.html">CheckBoxTree</a></li> -->
-<!-- 				<li><a href="customconverter/HomePage.html">CustomConverter</a></li> -->
-<!-- 				<li><a href="datepicker/HomePage.html">CustomDatepicker</a></li> -->
-<!-- 				<li><a href="ajaxdatepicker/HomePage.html">CustomDatepickerAjax</a> -->
-<!-- 				</li> -->
-<!-- 				<li><a href="/markupfolder">CustomFolder4MarkupExample</a></li> -->
-<!-- 				<li><a href="formpanel/HomePage.html">CustomFormComponentPanel</a></li> -->
-<!-- 				<li><a href="/mappercontext">CustomMapperContext</a></li> -->
-<!-- 				<li><a href="/resmounting">CustomResourceMounting</a></li> -->
-<!-- 				<li><a href="/ejbinjection">EjbInjectionExample</a></li> -->
-<!-- 				 -->
-<!-- 				<li><a wicket:id="linkToHttps">HttpsProtocolExample</a></li> -->
-<!-- 				<li><a href="packageres/HomePage.html">ImageAsPackageRes</a></li> -->
-<!-- 				<li><a href="/eventinfra">InterComponetsEventsExample</a></li> -->
-<!-- 				<li><a href="hibernatemodel/HomePage.html">JpaLodableModel</a></li> --> 
-<!-- 				<li><a href="jsr303validation/HomePage.html">JSR303validation</a> -->
-<!-- 				</li> -->
-				
-<!-- 				</li> -->
-<!-- 				<li><a href="linktopage/HomePage.html">Linktopage</a></li> -->
-<!-- 				<li><a href="listview/HomePage.html">ListViewExample</a></li> -->
-<!-- 				<li><a href="localizechoices/HomePage.html">LocalizedChoicesExample</a> -->
-<!-- 				</li> -->
-<!-- 				<li><a href="/localizedgreetings">LocalizedGreetings</a></li> -->
-<!-- 				<li><a href="loginform/HomePage.html">LoginForm</a></li> -->
-<!-- 				<li><a href="loginformrev/HomePage.html">LoginFormRevisited</a></li> -->
-<!-- 				<li><a href="/markupinherit">MarkupInheritance</a> -->
-<!-- 				</li> -->
-<!-- 				<li><a href="modelchain/PersonListDetails.html">ModelChainingExample</a> -->
-<!-- 				</li> -->
-<!-- 				<li><a href="/mountedpages">MountedPagesExample</a></li> -->
-<!-- 				</li> -->
-<!-- 				<li><a href="/overridemessage">OverrideMailMessage</a></li> -->
-<!-- 				<li><a href="pagedata/HomePage.html">PageDataViewExample</a></li> -->
-<!-- 				<li><a href="pageparamsencode/HomePage.html">PageParametersEncoderExample</a> -->
-<!-- 				</li> -->
-<!-- 				<li><a href="pageparameters/HomePage.html">PageParametersExample</a> -->
-<!-- 				</li> -->
-<!-- 				<li><a href="/scriptposition">ScriptInsideBody</a></li> -->
-<!-- 				<li><a href="singlecheckbox/HomePage.html">SingleCheckBox</a></li> -->
-<!-- 				<li><a href="/spring">SpringInjectionExample</a></li> -->
-<!-- 				<li><a href="statelesslogin/HomePage.html">StatelessLoginForm</a></li> -->
-<!-- 				<li><a href="statelesspage/StatelessPage.html">StatelessPage</a> -->
-<!-- 				</li> -->
-<!-- 				<li><a href="singleupdate/HomePage.html">UploadSingleFile</a></li> -->
-<!-- 				<li><a href="/customvalidator">UsernameCustomValidator</a></li> -->
-<!-- 			</ul> -->
-<!-- 		</wicket:link> -->
-		  <h2 style="text-align: center">Explore examples by user guide chapter or just search them by name!</h2>
-		  <br/>
-		  <p class="pull-right"><a>Jump to example:</a> <input type="text"/></p>
-		  <br/>
-		  <br/>
-		  <div class="panel-group">
-		    <div class="panel panel-default">
-		      <div class="panel-heading">
-		        <h4 class="panel-title">
-		          <h3 class="disabled">Chapter 1: Introduction</h3>
-		        </h4>
-		      </div>
-		      <div class="panel-heading">
-		        <h4 class="panel-title">
-		          <h3 class="disabled">Chapter 2: How to use the example code</h3>
-		        </h4>
-		      </div>
-		      <div class="panel-heading">
-		        <h4 class="panel-title">
-		          <h3 class="disabled">Chapter 3: Why should I learn Wicket?</h3>
-		        </h4>
-		      </div>
-		      <div class="panel-heading">
-		        <h4 class="panel-title">
-		          <a data-toggle="collapse" href="#collapse1"><h3>Chapter 4: Wicket says “Hello world!”</h3></a>
-		        </h4>
-		      </div>
-		      <div id="collapse1" class="panel-collapse collapse">
-		        <ul class="list-group">
-		          <wicket:link>
-		          	<li class="list-group-item"><a href="helloworld/HomePage.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>HelloWorldExample</a></li>
-		          </wicket:link>
-		        </ul>        
-		      </div>
-		      <div class="panel-heading">
-		        <h4 class="panel-title">
-		          <a data-toggle="collapse" href="#collapse2"><h3>Chapter 5: Wicket as page layout manager</h3></a>
-		        </h4>
-		      </div>
-		      <div id="collapse2" class="panel-collapse collapse">
-		        <ul class="list-group">
-		          <wicket:link> 	
-		          <li class="list-group-item"><a href="/markupinherit"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>MarkupInheritance</a></li>
-		          </wicket:link>
-		        </ul>        
-		      </div>
-		      <div class="panel-heading">
-		        <h4 class="panel-title">
-		          <a data-toggle="collapse" href="#collapse3"><h3 class="disabled">Chapter 6: Keeping control over HTML</h3></a>
-		        </h4>
-		      </div>		      
-		      <div class="panel-heading">
-		        <h4 class="panel-title">
-		          <a data-toggle="collapse" href="#collapse4"><h3>Chapter 7: Components lifecycle</h3></a>
-		        </h4>
-		      </div>
-		      <div id="collapse4" class="panel-collapse collapse">
-		        <ul class="list-group">
-		         <wicket:link>
-		          <li class="list-group-item"><a href="lifecycle/HomePage.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>LifeCycleStages</a></li>
-				  <li class="list-group-item"><a href="oncomponenttag/HomePage.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>OnComponentTagExample</a></li>
-		         </wicket:link>
-		        </ul>        
-		      </div>
-		      <div class="panel-heading">
-		        <h4 class="panel-title">
-		          <a data-toggle="collapse" href="#collapse5"><h3>Chapter 8: Page versioning and caching</h3></a>
-		        </h4>
-		      </div>
-		      <div id="collapse5" class="panel-collapse collapse">
-		        <ul class="list-group">
-		          <wicket:link>
-				  	<li class="list-group-item"><a href="lifecyclerev/HomePage.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>LifeCycleStagesRevisited</a></li>
-				  </wicket:link>
-		        </ul>        
-		      </div>
-		      <div class="panel-heading">
-		        <h4 class="panel-title">
-		          <a data-toggle="collapse" href="#collapse6"><h3>Chapter 9: Under the hood of the request processing</h3></a>
-		        </h4>
-		      </div>
-		      <div id="collapse6" class="panel-collapse collapse">
-		        <ul class="list-group">
-		          <wicket:link>
-				  	<li class="list-group-item"><a href="bindsession/HomePage.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>BindSessionExample</a></li>
-				  </wicket:link>
-		        </ul>        
-		      </div>
-		      <div class="panel-heading">
-		        <h4 class="panel-title">
-		          <a data-toggle="collapse" href="#collapse7"><h3>Chapter 10: Wicket Links and URL generation</h3></a>
-		        </h4>
-		      </div>
-		      <div id="collapse7" class="panel-collapse collapse">
-		        <ul class="list-group">
-		          <li class="list-group-item">Chapter 5: Wicket as page layout manager</li>
-		          <li class="list-group-item">Chapter 6: Keeping control over HTML</li>
-		        </ul>        
-		      </div>
-		      <div class="panel-heading">
-		        <h4 class="panel-title">
-		          <a data-toggle="collapse" href="#collapse8"><h3>Chapter 11: Wicket models and forms</h3></a>
-		        </h4>
-		      </div>
-		      <div id="collapse8" class="panel-collapse collapse">
-		        <ul class="list-group">
-		          <li class="list-group-item">Chapter 5: Wicket as page layout manager</li>
-		          <li class="list-group-item">Chapter 6: Keeping control over HTML</li>
-		        </ul>        
-		      </div>
-		      <div class="panel-heading">
-		        <h4 class="panel-title">
-		          <a data-toggle="collapse" href="#collapse9"><h3>Chapter 12: Wicket forms in detail</h3></a>
-		        </h4>
-		      </div>
-		      <div id="collapse9" class="panel-collapse collapse">
-		        <ul class="list-group">
-		          <li class="list-group-item">Chapter 5: Wicket as page layout manager</li>
-		          <li class="list-group-item">Chapter 6: Keeping control over HTML</li>
-		        </ul>        
-		      </div>
-		      <div class="panel-heading">
-		        <h4 class="panel-title">
-		          <a data-toggle="collapse" href="#collapse10"><h3>Chapter 13: Displaying multiple items with repeaters</h3></a>
-		        </h4>
-		      </div>
-		      <div id="collapse10" class="panel-collapse collapse">
-		        <ul class="list-group">
-		          <li class="list-group-item">Chapter 5: Wicket as page layout manager</li>
-		          <li class="list-group-item">Chapter 6: Keeping control over HTML</li>
-		        </ul>        
-		      </div>
-		      <div class="panel-heading">
-		        <h4 class="panel-title">
-		          <a data-toggle="collapse" href="#collapse11"><h3>Chapter 14: Component queueing</h3></a>
-		        </h4>
-		      </div>
-		      <div id="collapse11" class="panel-collapse collapse">
-		        <ul class="list-group">
-		          <li class="list-group-item">Chapter 5: Wicket as page layout manager</li>
-		          <li class="list-group-item">Chapter 6: Keeping control over HTML</li>
-		        </ul>        
-		      </div>
-		      <div class="panel-heading">
-		        <h4 class="panel-title">
-		          <a data-toggle="collapse" href="#collapse15"><h3>Chapter 15: Internationalization with Wicket</h3></a>
-		        </h4>
-		      </div>
-		      <div id="collapse15" class="panel-collapse collapse">
-		        <ul class="list-group">
-		          <li class="list-group-item">Chapter 5: Wicket as page layout manager</li>
-		          <li class="list-group-item">Chapter 6: Keeping control over HTML</li>
-		        </ul>        
-		      </div>
-		      <div class="panel-heading">
-		        <h4 class="panel-title">
-		          <a data-toggle="collapse" href="#collapse16"><h3>Chapter 16: Resource management with Wicket</h3></a>
-		        </h4>
-		      </div>
-		      <div id="collapse16" class="panel-collapse collapse">
-		        <ul class="list-group">
-		          <li class="list-group-item">Chapter 5: Wicket as page layout manager</li>
-		          <li class="list-group-item">Chapter 6: Keeping control over HTML</li>
-		        </ul>        
-		      </div>
-		      <div class="panel-heading">
-		        <h4 class="panel-title">
-		          <a data-toggle="collapse" href="#collapse17"><h3>Chapter 17: An example of integration with JavaScript</h3></a>
-		        </h4>
-		      </div>
-		      <div id="collapse17" class="panel-collapse collapse">
-		        <ul class="list-group">
-		          <li class="list-group-item">Chapter 5: Wicket as page layout manager</li>
-		          <li class="list-group-item">Chapter 6: Keeping control over HTML</li>
-		        </ul>        
-		      </div>
-		      <div class="panel-heading">
-		        <h4 class="panel-title">
-		          <a data-toggle="collapse" href="#collapse18"><h3>Chapter 18: Wicket advanced topics</h3></a>
-		        </h4>
-		      </div>
-		      <div id="collapse18" class="panel-collapse collapse">
-		        <ul class="list-group">
-		          <li class="list-group-item">Chapter 5: Wicket as page layout manager</li>
-		          <li class="list-group-item">Chapter 6: Keeping control over HTML</li>
-		        </ul>        
-		      </div>
-		      <div class="panel-heading">
-		        <h4 class="panel-title">
-		          <a data-toggle="collapse" href="#collapse19"><h3>Chapter 19: Working with AJAX</h3></a>
-		        </h4>
-		      </div>
-		      <div id="collapse19" class="panel-collapse collapse">
-		        <ul class="list-group">
-		          <li class="list-group-item">Chapter 5: Wicket as page layout manager</li>
-		          <li class="list-group-item">Chapter 6: Keeping control over HTML</li>
-		        </ul>        
-		      </div>
-		      <div class="panel-heading">
-		        <h4 class="panel-title">
-		          <a data-toggle="collapse" href="#collapse20"><h3>Chapter 20: Integration with enterprise containers</h3></a>
-		        </h4>
-		      </div>
-		      <div id="collapse20" class="panel-collapse collapse">
-		        <ul class="list-group">
-		          <li class="list-group-item">Chapter 5: Wicket as page layout manager</li>
-		          <li class="list-group-item">Chapter 6: Keeping control over HTML</li>
-		        </ul>        
-		      </div>
-		      <div class="panel-heading">
-		        <h4 class="panel-title">
-		          <a data-toggle="collapse" href="#collapse21"><h3>Chapter 21: Native WebSockets</h3></a>
-		        </h4>
-		      </div>
-		      <div id="collapse21" class="panel-collapse collapse">
-		        <ul class="list-group">
-		          <li class="list-group-item">Chapter 5: Wicket as page layout manager</li>
-		          <li class="list-group-item">Chapter 6: Keeping control over HTML</li>
-		        </ul>        
-		      </div>
-		      <div class="panel-heading">
-		        <h4 class="panel-title">
-		          <a data-toggle="collapse" href="#collapse22"><h3>Chapter 22: Security with Wicket</h3></a>
-		        </h4>
-		      </div>
-		      <div id="collapse22" class="panel-collapse collapse">
-		        <ul class="list-group">
-		          <li class="list-group-item">Chapter 5: Wicket as page layout manager</li>
-		          <li class="list-group-item">Chapter 6: Keeping control over HTML</li>
-		        </ul>        
-		      </div>
-		      <div class="panel-heading">
-		        <h4 class="panel-title">
-		          <a data-toggle="collapse" href="#collapse23"><h3>Chapter 23: Test Driven Development with Wicket</h3></a>
-		        </h4>
-		      </div>
-		      <div id="collapse23" class="panel-collapse collapse">
-		        <ul class="list-group">
-		          <li class="list-group-item">Chapter 5: Wicket as page layout manager</li>
-		          <li class="list-group-item">Chapter 6: Keeping control over HTML</li>
-		        </ul>        
-		      </div>
-		      <div class="panel-heading">
-		        <h4 class="panel-title">
-		          <a data-toggle="collapse" href="#collapse24"><h3>Chapter 24: Test Driven Development with Wicket and Spring</h3></a>
-		        </h4>
-		      </div>
-		      <div id="collapse24" class="panel-collapse collapse">
-		        <ul class="list-group">
-		          <li class="list-group-item">Chapter 5: Wicket as page layout manager</li>
-		          <li class="list-group-item">Chapter 6: Keeping control over HTML</li>
-		        </ul>        
-		      </div>
-		      <div class="panel-heading">
-		        <h4 class="panel-title">
-		          <a data-toggle="collapse" id="showcaseSection" href="#collapse25"><h3>Bonus Examples</h3></a>
-		        </h4>
-		      </div>
-		      <div id="collapse25" class="panel-collapse collapse">
-		        <ul class="list-group">
-		          <li class="list-group-item">Chapter 5: Wicket as page layout manager</li>
-		          <li class="list-group-item">Chapter 6: Keeping control over HTML</li>
-		        </ul>        
-		      </div>
-		    </div>
-		  </div>
+			<!-- 		<wicket:link> -->
+			<!-- 			<ul> -->
+			<!-- 				<li><a href="/rolestrategy">AnnotationsRolesStrategyExample</a></li> -->
+			<!-- 				<li><a href="/basicauth">BasicAuthenticationExample</a></li> -->
+			<!-- 				<li><a href="modalwindow/HomePage.html">BasicModalWindowExample</a></li> -->
+			<!-- 				<li><a href="autolink/HomePage.html">BookmarkablePageAutoLink</a></li> -->
+			<!-- 				<li><a href="callbackurl/HomePage.html">CallbackURLExample</a> -->
+			<!-- 				</li> -->
+			<!-- 				<li><a href="ajaxlistener/HomePage.html">CustomAjaxListenerExample</a> -->
+			<!-- 				</li> -->
+			<!-- 				<li><a href="checkboxtree/HomePage.html">CheckBoxTree</a></li> -->
+			<!-- 				<li><a href="datepicker/HomePage.html">CustomDatepicker</a></li> -->
+			<!-- 				<li><a href="ajaxdatepicker/HomePage.html">CustomDatepickerAjax</a> -->
+			<!-- 				</li> -->
+			<!-- 				<li><a href="/markupfolder">CustomFolder4MarkupExample</a></li> -->
+			<!-- 				<li><a href="/resmounting">CustomResourceMounting</a></li> -->
+			<!-- 				 -->
+			<!-- 				<li><a wicket:id="linkToHttps">HttpsProtocolExample</a></li> -->
+			<!-- 				<li><a href="packageres/HomePage.html">ImageAsPackageRes</a></li> -->
+			<!-- 				<li><a href="/eventinfra">InterComponetsEventsExample</a></li> -->
+			<!-- 				<li><a href="hibernatemodel/HomePage.html">JpaLodableModel</a></li> -->
+			<!-- 				<li><a href="/markupinherit">MarkupInheritance</a> -->
+			<!-- 				<li><a href="/scriptposition">ScriptInsideBody</a></li> -->
+			<!-- 				<li><a href="statelesspage/StatelessPage.html">StatelessPage</a> -->
+			<!-- 				</li> -->
+			<!-- 			</ul> -->
+			<!-- 		</wicket:link> -->
+			<h2 style="text-align: center">Explore examples by chapter or just search them by name!</h2>
+			<br />
+			<p class="pull-right">
+				<a>Jump to example:</a> <input id="exampleSearch" type="text" />
+			</p>
+			<br />
+			<br />
+			<div class="panel-group">
+				<div class="panel panel-default">
+				 <wicket:link>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<h3 class="disabled">Chapter 1: Introduction</h3>
+						</h4>
+					</div>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<h3 class="disabled">Chapter 2: How to use the example code</h3>
+						</h4>
+					</div>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<h3 class="disabled">Chapter 3: Why should I learn Wicket?</h3>
+						</h4>
+					</div>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse1"><h3>Chapter
+									4: Wicket says “Hello world!”</h3></a>
+						</h4>
+					</div>
+					<div id="collapse1" class="panel-collapse collapse">
+						<ul class="list-group">
+								<li class="list-group-item"><a
+									href="helloworld/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>HelloWorldExample</a></li>
+								<li class="list-group-item"><a
+									href="linktopage/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>Linktopage</a></li>
+						</ul>
+					</div>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse2"><h3>Chapter
+									5: Wicket as page layout manager</h3></a>
+						</h4>
+					</div>
+					<div id="collapse2" class="panel-collapse collapse">
+						<ul class="list-group">
+								<li class="list-group-item"><a href="/markupinherit"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>MarkupInheritance</a></li>
+						</ul>
+					</div>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse3"><h3
+									class="disabled">Chapter 6: Keeping control over HTML</h3></a>
+						</h4>
+					</div>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse4"><h3>Chapter
+									7: Components lifecycle</h3></a>
+						</h4>
+					</div>
+					<div id="collapse4" class="panel-collapse collapse">
+						<ul class="list-group">
+								<li class="list-group-item"><a
+									href="lifecycle/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>LifeCycleStages</a></li>
+								<li class="list-group-item"><a
+									href="oncomponenttag/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>OnComponentTagExample</a></li>
+						</ul>
+					</div>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse5"><h3>Chapter
+									8: Page versioning and caching</h3></a>
+						</h4>
+					</div>
+					<div id="collapse5" class="panel-collapse collapse">
+						<ul class="list-group">
+								<li class="list-group-item"><a
+									href="lifecyclerev/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>LifeCycleStagesRevisited</a></li>
+						</ul>
+					</div>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse6"><h3>Chapter
+									9: Under the hood of the request processing</h3></a>
+						</h4>
+					</div>
+					<div id="collapse6" class="panel-collapse collapse">
+						<ul class="list-group">
+								<li class="list-group-item"><a
+									href="bindsession/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>BindSessionExample</a></li>
+						</ul>
+					</div>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse7"><h3>Chapter
+									10: Wicket Links and URL generation</h3></a>
+						</h4>
+					</div>
+					<div id="collapse7" class="panel-collapse collapse">
+						<ul class="list-group">
+						    <li class="list-group-item"><a href="/mappercontext"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>CustomMapperContext</a></li>
+							<li class="list-group-item"><a href="/mountedpages"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>MountedPagesExample</a></li>																
+							<li class="list-group-item"><a href="pageparameters/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>PageParametersExample</a></li>		
+						    <li class="list-group-item"><a href="pageparamsencode/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>PageParametersEncoderExample</a></li>
+														
+						</ul>
+					</div>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse8"><h3>Chapter
+									11: Wicket models and forms</h3></a>
+						</h4>
+					</div>
+					<div id="collapse8" class="panel-collapse collapse">
+						<ul class="list-group">
+						    <li class="list-group-item"><a href="loginform/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>LoginForm</a></li>
+						    <li class="list-group-item"><a href="loginformrev/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>LoginFormRevisited</a></li>
+						    <li class="list-group-item"><a href="modelchain/PersonListDetails.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>ModelChainingExample</a></li>
+						</ul>
+					</div>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse9"><h3>Chapter
+									12: Wicket forms in detail</h3></a>
+						</h4>
+					</div>
+					<div id="collapse9" class="panel-collapse collapse">
+						<ul class="list-group">
+						    <li class="list-group-item"><a href="customconverter/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>CustomConverter</a></li>
+						    <li class="list-group-item"><a href="formpanel/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>CustomFormComponentPanel</a></li>
+						    <li class="list-group-item"><a href="/overridemessage"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>OverrideMailMessage</a></li>
+						    <li class="list-group-item"><a href="singlecheckbox/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>SingleCheckBox</a></li>
+						    <li class="list-group-item"><a href="statelesslogin/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>StatelessLoginForm</a></li>
+						    <li class="list-group-item"><a href="singleupdate/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>UploadSingleFile</a></li>
+						    <li class="list-group-item"><a href="/customvalidator"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>UsernameCustomValidator</a></li>
+						    <li class="list-group-item"><a href="jsr303validation/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>JSR303validation</a></li>
+							
+						</ul>
+					</div>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse10"><h3>Chapter
+									13: Displaying multiple items with repeaters</h3></a>
+						</h4>
+					</div>
+					<div id="collapse10" class="panel-collapse collapse">
+						<ul class="list-group">
+						    <li class="list-group-item"><a href="listview/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>ListViewExample</a></li>
+						    <li class="list-group-item"><a href="pagedata/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>PageDataViewExample</a></li>
+						</ul>
+					</div>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse11"><h3 class="disabled">Chapter
+									14: Component queueing</h3></a>
+						</h4>
+					</div>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse15"><h3>Chapter
+									15: Internationalization with Wicket</h3></a>
+						</h4>
+					</div>
+					<div id="collapse15" class="panel-collapse collapse">
+						<ul class="list-group">
+							<li class="list-group-item"><a href="localizechoices/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>LocalizedChoicesExample</a></li>
+							<li class="list-group-item"><a href="/localizedgreetings"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>LocalizedGreetings</a></li>
+						</ul>
+					</div>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse16"><h3>Chapter
+									16: Resource management with Wicket</h3></a>
+						</h4>
+					</div>
+					<div id="collapse16" class="panel-collapse collapse">
+						<ul class="list-group">
+							<li class="list-group-item">Chapter 5: Wicket as page layout
+								manager</li>
+							<li class="list-group-item">Chapter 6: Keeping control over
+								HTML</li>
+						</ul>
+					</div>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse17"><h3>Chapter
+									17: An example of integration with JavaScript</h3></a>
+						</h4>
+					</div>
+					<div id="collapse17" class="panel-collapse collapse">
+						<ul class="list-group">
+							<li class="list-group-item">Chapter 5: Wicket as page layout
+								manager</li>
+							<li class="list-group-item">Chapter 6: Keeping control over
+								HTML</li>
+						</ul>
+					</div>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse18"><h3>Chapter
+									18: Wicket advanced topics</h3></a>
+						</h4>
+					</div>
+					<div id="collapse18" class="panel-collapse collapse">
+						<ul class="list-group">
+							<li class="list-group-item">Chapter 5: Wicket as page layout
+								manager</li>
+							<li class="list-group-item">Chapter 6: Keeping control over
+								HTML</li>
+						</ul>
+					</div>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse19"><h3>Chapter
+									19: Working with AJAX</h3></a>
+						</h4>
+					</div>
+					<div id="collapse19" class="panel-collapse collapse">
+						<ul class="list-group">
+							<li class="list-group-item">Chapter 5: Wicket as page layout
+								manager</li>
+							<li class="list-group-item">Chapter 6: Keeping control over
+								HTML</li>
+						</ul>
+					</div>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse20"><h3>Chapter
+									20: Integration with enterprise containers</h3></a>
+						</h4>
+					</div>
+					<div id="collapse20" class="panel-collapse collapse">
+						<ul class="list-group">
+							<li class="list-group-item"><a href="/ejbinjection"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>EjbInjectionExample</a></li>
+							<li class="list-group-item"><a href="/spring"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>SpringInjectionExample</a></li>							
+						</ul>
+					</div>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse21"><h3>Chapter
+									21: Native WebSockets</h3></a>
+						</h4>
+					</div>
+					<div id="collapse21" class="panel-collapse collapse">
+						<ul class="list-group">
+							<li class="list-group-item">Chapter 5: Wicket as page layout
+								manager</li>
+							<li class="list-group-item">Chapter 6: Keeping control over
+								HTML</li>
+						</ul>
+					</div>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse22"><h3>Chapter
+									22: Security with Wicket</h3></a>
+						</h4>
+					</div>
+					<div id="collapse22" class="panel-collapse collapse">
+						<ul class="list-group">
+							<li class="list-group-item">Chapter 5: Wicket as page layout
+								manager</li>
+							<li class="list-group-item">Chapter 6: Keeping control over
+								HTML</li>
+						</ul>
+					</div>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse23"><h3>Chapter
+									23: Test Driven Development with Wicket</h3></a>
+						</h4>
+					</div>
+					<div id="collapse23" class="panel-collapse collapse">
+						<ul class="list-group">
+							<li class="list-group-item">Chapter 5: Wicket as page layout
+								manager</li>
+							<li class="list-group-item">Chapter 6: Keeping control over
+								HTML</li>
+						</ul>
+					</div>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse24"><h3>Chapter
+									24: Test Driven Development with Wicket and Spring</h3></a>
+						</h4>
+					</div>
+					<div id="collapse24" class="panel-collapse collapse">
+						<ul class="list-group">
+							<li class="list-group-item">Chapter 5: Wicket as page layout
+								manager</li>
+							<li class="list-group-item">Chapter 6: Keeping control over
+								HTML</li>
+						</ul>
+					</div>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" id="showcaseSection" href="#collapse25"><h3>Bonus
+									Examples</h3></a>
+						</h4>
+					</div>
+					<div id="collapse25" class="panel-collapse collapse">
+						<ul class="list-group">
+							<li class="list-group-item">Chapter 5: Wicket as page layout
+								manager</li>
+							<li class="list-group-item">Chapter 6: Keeping control over
+								HTML</li>
+						</ul>
+					</div>
+					</wicket:link>
+				</div>
+			</div>
 		</wicket:extend>
 	</div>
 	<div id="ft"></div>
