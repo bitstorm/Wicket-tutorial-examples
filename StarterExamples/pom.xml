@@ -60,7 +60,11 @@
 			<artifactId>BootstrapCommon</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>jquery-ui</artifactId>
+		    <version>1.12.1</version>
+		</dependency>
 
 		<!-- LOGGING DEPENDENCIES - LOG4J -->
 		<dependency>

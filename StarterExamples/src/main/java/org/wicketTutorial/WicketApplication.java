@@ -17,7 +17,6 @@
 package org.wicketTutorial;
 
 import java.util.regex.Pattern;
-
 import org.apache.wicket.ConverterLocator;
 import org.apache.wicket.IConverterLocator;
 import org.apache.wicket.RuntimeConfigurationType;
@@ -28,6 +27,7 @@ import org.apache.wicket.protocol.https.HttpsMapper;
 import org.wicketTutorial.commons.bootstrap.BootstrapApp;
 import org.wicketTutorial.commons.bootstrap.source.SourcesPage;
 import org.wicketTutorial.customconverter.RegExpPatternConverter;
+import de.agilecoders.wicket.webjars.WicketWebjars;
 
 /**
  * Application object for your web application.
@@ -62,6 +62,7 @@ public class WicketApplication extends BootstrapApp
 		new BeanValidationConfiguration().configure(this);
 		
 		mountPage("/seecode", SourcesPage.class);
+		WicketWebjars.install(this);
 	}
 	
 	@Override

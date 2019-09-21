@@ -22,6 +22,33 @@
 <wicket:head>
 	<meta charset="utf-8" />
 	<title>Apache Wicket User Guide Examples</title>
+  <script type="text/javascript">
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+  
+  </script>
 	<style type="text/css">
 		.breadcrumb {
 			display: none;
@@ -161,10 +188,10 @@
 					</div>
 					<div id="collapse1" class="panel-collapse collapse">
 						<ul class="list-group">
-								<li class="list-group-item"><a
+								<li class="list-group-item"><a class="exampleLink"
 									href="helloworld/HomePage.html"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>HelloWorldExample</a></li>
-								<li class="list-group-item"><a
+								<li class="list-group-item"><a class="exampleLink"
 									href="linktopage/HomePage.html"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>Linktopage</a></li>
 						</ul>
@@ -177,7 +204,7 @@
 					</div>
 					<div id="collapse2" class="panel-collapse collapse">
 						<ul class="list-group">
-								<li class="list-group-item"><a href="/markupinherit"><span
+								<li class="list-group-item"><a class="exampleLink" href="/markupinherit"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>MarkupInheritance</a></li>
 						</ul>
 					</div>
@@ -195,10 +222,10 @@
 					</div>
 					<div id="collapse4" class="panel-collapse collapse">
 						<ul class="list-group">
-								<li class="list-group-item"><a
+								<li class="list-group-item"><a class="exampleLink"
 									href="lifecycle/HomePage.html"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>LifeCycleStages</a></li>
-								<li class="list-group-item"><a
+								<li class="list-group-item"><a class="exampleLink"
 									href="oncomponenttag/HomePage.html"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>OnComponentTagExample</a></li>
 						</ul>
@@ -211,7 +238,7 @@
 					</div>
 					<div id="collapse5" class="panel-collapse collapse">
 						<ul class="list-group">
-								<li class="list-group-item"><a
+								<li class="list-group-item"><a class="exampleLink"
 									href="lifecyclerev/HomePage.html"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>LifeCycleStagesRevisited</a></li>
 						</ul>
@@ -224,7 +251,7 @@
 					</div>
 					<div id="collapse6" class="panel-collapse collapse">
 						<ul class="list-group">
-								<li class="list-group-item"><a
+								<li class="list-group-item"><a class="exampleLink"
 									href="bindsession/HomePage.html"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>BindSessionExample</a></li>
 						</ul>
@@ -237,13 +264,13 @@
 					</div>
 					<div id="collapse7" class="panel-collapse collapse">
 						<ul class="list-group">
-						    <li class="list-group-item"><a href="/mappercontext"><span
+						    <li class="list-group-item"><a class="exampleLink" href="/mappercontext"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>CustomMapperContext</a></li>
-							<li class="list-group-item"><a href="/mountedpages"><span
+							<li class="list-group-item"><a class="exampleLink" href="/mountedpages"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>MountedPagesExample</a></li>																
-							<li class="list-group-item"><a href="pageparameters/HomePage.html"><span
+							<li class="list-group-item"><a class="exampleLink" href="pageparameters/HomePage.html"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>PageParametersExample</a></li>		
-						    <li class="list-group-item"><a href="pageparamsencode/HomePage.html"><span
+						    <li class="list-group-item"><a class="exampleLink" href="pageparamsencode/HomePage.html"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>PageParametersEncoderExample</a></li>
 														
 						</ul>
@@ -256,11 +283,11 @@
 					</div>
 					<div id="collapse8" class="panel-collapse collapse">
 						<ul class="list-group">
-						    <li class="list-group-item"><a href="loginform/HomePage.html"><span
+						    <li class="list-group-item"><a class="exampleLink" href="loginform/HomePage.html"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>LoginForm</a></li>
-						    <li class="list-group-item"><a href="loginformrev/HomePage.html"><span
+						    <li class="list-group-item"><a class="exampleLink" href="loginformrev/HomePage.html"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>LoginFormRevisited</a></li>
-						    <li class="list-group-item"><a href="modelchain/PersonListDetails.html"><span
+						    <li class="list-group-item"><a class="exampleLink" href="modelchain/PersonListDetails.html"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>ModelChainingExample</a></li>
 						</ul>
 					</div>
@@ -272,21 +299,21 @@
 					</div>
 					<div id="collapse9" class="panel-collapse collapse">
 						<ul class="list-group">
-						    <li class="list-group-item"><a href="customconverter/HomePage.html"><span
+						    <li class="list-group-item"><a class="exampleLink" href="customconverter/HomePage.html"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>CustomConverter</a></li>
-						    <li class="list-group-item"><a href="formpanel/HomePage.html"><span
+						    <li class="list-group-item"><a class="exampleLink" href="formpanel/HomePage.html"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>CustomFormComponentPanel</a></li>
-						    <li class="list-group-item"><a href="/overridemessage"><span
+						    <li class="list-group-item"><a class="exampleLink" href="/overridemessage"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>OverrideMailMessage</a></li>
-						    <li class="list-group-item"><a href="singlecheckbox/HomePage.html"><span
+						    <li class="list-group-item"><a class="exampleLink" href="singlecheckbox/HomePage.html"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>SingleCheckBox</a></li>
-						    <li class="list-group-item"><a href="statelesslogin/HomePage.html"><span
+						    <li class="list-group-item"><a class="exampleLink" href="statelesslogin/HomePage.html"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>StatelessLoginForm</a></li>
-						    <li class="list-group-item"><a href="singleupdate/HomePage.html"><span
+						    <li class="list-group-item"><a class="exampleLink" href="singleupdate/HomePage.html"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>UploadSingleFile</a></li>
-						    <li class="list-group-item"><a href="/customvalidator"><span
+						    <li class="list-group-item"><a class="exampleLink" href="/customvalidator"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>UsernameCustomValidator</a></li>
-						    <li class="list-group-item"><a href="jsr303validation/HomePage.html"><span
+						    <li class="list-group-item"><a class="exampleLink" href="jsr303validation/HomePage.html"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>JSR303validation</a></li>
 							
 						</ul>
@@ -299,9 +326,9 @@
 					</div>
 					<div id="collapse10" class="panel-collapse collapse">
 						<ul class="list-group">
-						    <li class="list-group-item"><a href="listview/HomePage.html"><span
+						    <li class="list-group-item"><a class="exampleLink" href="listview/HomePage.html"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>ListViewExample</a></li>
-						    <li class="list-group-item"><a href="pagedata/HomePage.html"><span
+						    <li class="list-group-item"><a class="exampleLink" href="pagedata/HomePage.html"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>PageDataViewExample</a></li>
 						</ul>
 					</div>
@@ -319,9 +346,9 @@
 					</div>
 					<div id="collapse15" class="panel-collapse collapse">
 						<ul class="list-group">
-							<li class="list-group-item"><a href="localizechoices/HomePage.html"><span
+							<li class="list-group-item"><a class="exampleLink" href="localizechoices/HomePage.html"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>LocalizedChoicesExample</a></li>
-							<li class="list-group-item"><a href="/localizedgreetings"><span
+							<li class="list-group-item"><a class="exampleLink" href="/localizedgreetings"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>LocalizedGreetings</a></li>
 						</ul>
 					</div>
@@ -389,9 +416,9 @@
 					</div>
 					<div id="collapse20" class="panel-collapse collapse">
 						<ul class="list-group">
-							<li class="list-group-item"><a href="/ejbinjection"><span
+							<li class="list-group-item"><a class="exampleLink" href="/ejbinjection"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>EjbInjectionExample</a></li>
-							<li class="list-group-item"><a href="/spring"><span
+							<li class="list-group-item"><a class="exampleLink" href="/spring"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>SpringInjectionExample</a></li>							
 						</ul>
 					</div>
