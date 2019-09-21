@@ -22,33 +22,7 @@
 <wicket:head>
 	<meta charset="utf-8" />
 	<title>Apache Wicket User Guide Examples</title>
-  <script type="text/javascript">
-    var availableTags = [
-      "ActionScript",
-      "AppleScript",
-      "Asp",
-      "BASIC",
-      "C",
-      "C++",
-      "Clojure",
-      "COBOL",
-      "ColdFusion",
-      "Erlang",
-      "Fortran",
-      "Groovy",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Lisp",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme"
-    ];
-  
-  </script>
+ 
 	<style type="text/css">
 		.breadcrumb {
 			display: none;
@@ -93,10 +67,10 @@
 						href="https://github.com/bitstorm/Wicket-tutorial-examples"
 						target="_blank">here on GitHub</a>.
 				</p>
-				<p>
-					<b>NEW:</b> Dont' miss to take a look at the the new <a
-						href="#showcaseSection">bonus showcase examples</a>!
-				</p>
+<!-- 				<p> -->
+<!-- 					<b>NEW:</b> Dont' miss to take a look at the the new <a -->
+<!-- 						href="#showcaseSection">bonus showcase examples</a>! -->
+<!-- 				</p> -->
 				<p>
 					<a class="github-button"
 						href="https://github.com/bitstorm/Wicket-tutorial-examples/fork"
@@ -128,33 +102,10 @@
 					Wicket version: <label wicket:id="wicket-version"></label>
 				</div>
 			</div>
-			<!-- 		<wicket:link> -->
-			<!-- 			<ul> -->
 			<!-- 				<li><a href="/rolestrategy">AnnotationsRolesStrategyExample</a></li> -->
 			<!-- 				<li><a href="/basicauth">BasicAuthenticationExample</a></li> -->
-			<!-- 				<li><a href="modalwindow/HomePage.html">BasicModalWindowExample</a></li> -->
-			<!-- 				<li><a href="autolink/HomePage.html">BookmarkablePageAutoLink</a></li> -->
-			<!-- 				<li><a href="callbackurl/HomePage.html">CallbackURLExample</a> -->
-			<!-- 				</li> -->
-			<!-- 				<li><a href="ajaxlistener/HomePage.html">CustomAjaxListenerExample</a> -->
-			<!-- 				</li> -->
-			<!-- 				<li><a href="checkboxtree/HomePage.html">CheckBoxTree</a></li> -->
-			<!-- 				<li><a href="datepicker/HomePage.html">CustomDatepicker</a></li> -->
-			<!-- 				<li><a href="ajaxdatepicker/HomePage.html">CustomDatepickerAjax</a> -->
-			<!-- 				</li> -->
-			<!-- 				<li><a href="/markupfolder">CustomFolder4MarkupExample</a></li> -->
-			<!-- 				<li><a href="/resmounting">CustomResourceMounting</a></li> -->
-			<!-- 				 -->
 			<!-- 				<li><a wicket:id="linkToHttps">HttpsProtocolExample</a></li> -->
-			<!-- 				<li><a href="packageres/HomePage.html">ImageAsPackageRes</a></li> -->
-			<!-- 				<li><a href="/eventinfra">InterComponetsEventsExample</a></li> -->
 			<!-- 				<li><a href="hibernatemodel/HomePage.html">JpaLodableModel</a></li> -->
-			<!-- 				<li><a href="/markupinherit">MarkupInheritance</a> -->
-			<!-- 				<li><a href="/scriptposition">ScriptInsideBody</a></li> -->
-			<!-- 				<li><a href="statelesspage/StatelessPage.html">StatelessPage</a> -->
-			<!-- 				</li> -->
-			<!-- 			</ul> -->
-			<!-- 		</wicket:link> -->
 			<h2 style="text-align: center">Explore examples by chapter or just search them by name!</h2>
 			<br />
 			<p class="pull-right">
@@ -264,6 +215,8 @@
 					</div>
 					<div id="collapse7" class="panel-collapse collapse">
 						<ul class="list-group">
+						    <li class="list-group-item"><a class="exampleLink" href="BookmarkablePageAutoLink"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>BookmarkablePageAutoLink</a></li>
 						    <li class="list-group-item"><a class="exampleLink" href="/mappercontext"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>CustomMapperContext</a></li>
 							<li class="list-group-item"><a class="exampleLink" href="/mountedpages"><span
@@ -272,7 +225,8 @@
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>PageParametersExample</a></li>		
 						    <li class="list-group-item"><a class="exampleLink" href="pageparamsencode/HomePage.html"><span
 										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>PageParametersEncoderExample</a></li>
-														
+						    <li class="list-group-item"><a class="exampleLink" href="statelesspage/StatelessPage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>StatelessPage</a></li>
 						</ul>
 					</div>
 					<div class="panel-heading">
@@ -360,10 +314,14 @@
 					</div>
 					<div id="collapse16" class="panel-collapse collapse">
 						<ul class="list-group">
-							<li class="list-group-item">Chapter 5: Wicket as page layout
-								manager</li>
-							<li class="list-group-item">Chapter 6: Keeping control over
-								HTML</li>
+							<li class="list-group-item"><a class="exampleLink" href="/markupfolder"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>CustomFolder4MarkupExample</a></li>
+							<li class="list-group-item"><a class="exampleLink" href="/resmounting"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>CustomResourceMounting</a></li>
+							<li class="list-group-item"><a class="exampleLink" href="packageres/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>ImageAsPackageRes</a></li>
+							<li class="list-group-item"><a class="exampleLink" href="/scriptposition"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>ScriptInsideBody</a></li>
 						</ul>
 					</div>
 					<div class="panel-heading">
@@ -374,10 +332,8 @@
 					</div>
 					<div id="collapse17" class="panel-collapse collapse">
 						<ul class="list-group">
-							<li class="list-group-item">Chapter 5: Wicket as page layout
-								manager</li>
-							<li class="list-group-item">Chapter 6: Keeping control over
-								HTML</li>
+							<li class="list-group-item"><a class="exampleLink" href="datepicker/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>CustomDatepicker</a></li>
 						</ul>
 					</div>
 					<div class="panel-heading">
@@ -388,10 +344,11 @@
 					</div>
 					<div id="collapse18" class="panel-collapse collapse">
 						<ul class="list-group">
-							<li class="list-group-item">Chapter 5: Wicket as page layout
-								manager</li>
-							<li class="list-group-item">Chapter 6: Keeping control over
-								HTML</li>
+							<li class="list-group-item"><a class="exampleLink" href="callbackurl/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>CallbackURLExample</a></li>
+                 			<li class="list-group-item"><a class="exampleLink" href="/eventinfra"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>InterComponetsEventsExample</a></li>
+							
 						</ul>
 					</div>
 					<div class="panel-heading">
@@ -402,10 +359,14 @@
 					</div>
 					<div id="collapse19" class="panel-collapse collapse">
 						<ul class="list-group">
-							<li class="list-group-item">Chapter 5: Wicket as page layout
-								manager</li>
-							<li class="list-group-item">Chapter 6: Keeping control over
-								HTML</li>
+							<li class="list-group-item"><a class="exampleLink" href="modalwindow/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>BasicModalWindowExample</a></li>
+							<li class="list-group-item"><a class="exampleLink" href="ajaxdatepicker/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>CustomDatepickerAjax</a></li>
+							<li class="list-group-item"><a class="exampleLink" href="ajaxlistener/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>CustomAjaxListenerExample</a></li>
+							<li class="list-group-item"><a class="exampleLink" href="checkboxtree/HomePage.html"><span
+										class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>CheckBoxTree</a></li>
 						</ul>
 					</div>
 					<div class="panel-heading">

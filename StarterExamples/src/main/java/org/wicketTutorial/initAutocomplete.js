@@ -7,11 +7,14 @@ $( function() {
 		  };
     	  
     	  return pair;
-      })
-    }).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
-  	  return $( "<li>" )
-	  .attr( "data-value", item.value )
-	  .append( $( "<a>" ).attr( "href", item.value ).append(item.label) )
-	  .appendTo( ul );
-   };
+      }),
+      select: function (event, ui) {
+    	  $( "#exampleSearch" ).val(ui.item.label);
+    	  location.href = ui.item.value;
+    	  return false;
+      },
+      focus: function (event, ui) {
+    	  return false;
+      }
+    });
   } );
