@@ -1,4 +1,4 @@
-package org.wicketTutorial;
+package org.wicketTutorial.restexample;
 
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.markup.html.basic.Label;

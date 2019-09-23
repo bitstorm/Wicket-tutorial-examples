@@ -1,8 +1,10 @@
-package org.wicketTutorial;
+package org.wicketTutorial.restexample;
 
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
 import org.junit.Test;
+import org.wicketTutorial.restexample.HomePage;
+import org.wicketTutorial.restexample.WicketApplication;
 
 /**
  * Simple test using the WicketTester

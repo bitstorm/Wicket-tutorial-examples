@@ -1,4 +1,4 @@
-package org.wicketTutorial;
+package org.wicketTutorial.restexample;
 
 import java.lang.management.ManagementFactory;
 

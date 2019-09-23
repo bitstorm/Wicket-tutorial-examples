@@ -85,7 +85,7 @@
 		<module>ScriptInsideBody</module>
 		<module>StarterExamples</module>
 		<module>BootstrapCommon</module>
-    <module>RestExample</module>
+    		<module>RestExample</module>
   </modules>
 	<!--url>http://wicket.apache.org/${project.artifactId}</url -->
 	<inceptionYear>2012</inceptionYear>

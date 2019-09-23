@@ -22,10 +22,10 @@
 	</parent>
 
 	<artifactId>RestExample</artifactId>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<!-- TODO project name -->
-	<name>quickstart</name>
+	<name>RestExample</name>
 	<!-- <organization> <name>company name</name> <url>company url</url> </organization> -->
 	<licenses>
 		<license>
