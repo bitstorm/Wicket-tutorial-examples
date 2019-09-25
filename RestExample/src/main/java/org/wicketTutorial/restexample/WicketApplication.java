@@ -1,9 +1,9 @@
 package org.wicketTutorial.restexample;
 
 import org.apache.wicket.markup.html.WebPage;
-import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.request.resource.IResource;
 import org.apache.wicket.request.resource.ResourceReference;
+import org.wicketTutorial.commons.bootstrap.BootstrapApp;
 import org.wicketTutorial.resource.PersonsRestResource;
 
 /**
@@ -12,7 +12,7 @@ import org.wicketTutorial.resource.PersonsRestResource;
  * 
  * @see org.wicketTutorial.restexample.Start#main(String[])
  */
-public class WicketApplication extends WebApplication
+public class WicketApplication extends BootstrapApp
 {
 	/**
 	 * @see org.apache.wicket.Application#getHomePage()
