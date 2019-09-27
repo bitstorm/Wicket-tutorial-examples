@@ -21,59 +21,83 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-type" content="text/html" charset="UTF-8">
-<title>Persons archive</title>	
+<title>Persons archive</title>
 </head>
 <wicket:head>
 
-<script>
-function loadAllPersons(tableId) {
-	var xhr = new XMLHttpRequest();
+	<script>
+		function loadAllPersons(tableId) {
+			var xhr = new XMLHttpRequest();
 
-	xhr.onreadystatechange = function () {
-		if (xhr.readyState === 4){
-	        var persons = JSON.parse(xhr.responseText);
-	        
-	        for (var i = 0; i < persons.length; i++)
-				addTableRow(tableId, persons[i]);
-	    }
-	};
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === 4) {
+					var persons = JSON.parse(xhr.responseText);
 
-	xhr.open('GET', './personsmanager/persons');
-	xhr.send();	
-}
+					for (var i = 0; i < persons.length; i++)
+						addTableRow(tableId, persons[i]);
+				}
+			};
 
-function addTableRow(tableId, newRow) {
-	var table = document.getElementById(tableId);
-	
-	var row = table.insertRow(-1);
+			xhr.open('GET', './personsmanager/persons');
+			xhr.setRequestHeader("Content-Type", "application/json");
+			xhr.send();
+		}
 
-	var name = row.insertCell(-1);
-	var password = row.insertCell(-1);
-	var email = row.insertCell(-1);
-	var deleteLink = row.insertCell(-1);
+		function addTableRow(tableId, newRow) {
+			var table = document.getElementById(tableId);
 
-	var deleteAnchor = document.createElement("A"); 
-	
-	
-	name.innerHTML = newRow.name;
-	password.innerHTML = newRow.password; 
-	email.innerHTML = newRow.email;
-	
-	deleteAnchor.innerHTML = "delete";
-	deleteAnchor.setAttribute("onclick", "deleteTableRow(this.closest('tr'))");
-	
-	deleteLink.appendChild(deleteAnchor);
-}
+			var row = table.insertRow(-1);
 
-function deleteTableRow(row) {
-	var table = row.closest('table');
-	table.deleteRow(row.rowIndex);
-}
+			var name = row.insertCell(-1);
+			var password = row.insertCell(-1);
+			var email = row.insertCell(-1);
+			var deleteLink = row.insertCell(-1);
 
-window.onload = function(){ 
-	loadAllPersons('personsTable'); 
-};
-</script>
+			var deleteAnchor = document.createElement("A");
+
+			name.innerHTML = newRow.name;
+			password.innerHTML = newRow.password;
+			email.innerHTML = newRow.email;
+
+			deleteAnchor.innerHTML = "delete";
+			deleteAnchor.setAttribute("onclick",
+					"deleteTableRow(this.closest('tr'))");
+
+			deleteLink.appendChild(deleteAnchor);
+		}
+
+		function deleteTableRow(row) {
+			var table = row.closest('table');
+			table.deleteRow(row.rowIndex);
+		}
+
+		function saveNewPerson() {
+			var personPojo = new Object();
+
+			personPojo.name = document.getElementById('name').value;
+			personPojo.email = document.getElementById('email').value;
+			personPojo.password = document.getElementById('password').value;
+			var personJson = JSON.stringify(personPojo);
+			
+			var xhr = new XMLHttpRequest();
+			
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === 4) {
+					
+					addTableRow('personsTable', personPojo);
+					$('#myModal').modal('hide');
+				}
+			};
+
+			xhr.open('POST', './personsmanager/persons');
+			xhr.setRequestHeader("Content-Type", "application/json");
+			xhr.send(personJson);
+		}
+
+		window.onload = function() {
+			loadAllPersons('personsTable');
+		};
+	</script>
 </wicket:head>
 <body style="padding: 1.25em 1.45em 1.25em 1.55em">
 	<wicket:extend>
@@ -84,7 +108,8 @@ window.onload = function(){
 			Powered by <a href="http://jquery.com/">JQuery</a> and <a
 				href="http://knockoutjs.com/">Knockoutjs</a>
 		</p>
-		<button id="openNewUser">Add a person</button>
+		<button class="btn btn-primary" id="openNewUser" data-toggle="modal"
+			data-target="#dialog-form">Add a person</button>
 		<br />
 		<br />
 
@@ -99,48 +124,65 @@ window.onload = function(){
 			</thead>
 			<tbody>
 				<tr>
-					
+
 				</tr>
 			</tbody>
 		</table>
 
-	<div id="dialog-form" class="modal fade" title="Create new person">
-		<form>
-			<fieldset style="border: 0px">
-				<div style="display: table;">
-					<div style="display: table-row;">
-						<div style="display: table-cell;">
-							<label for="name">Name</label>
+		<div id="dialog-form" class="modal fade" tabindex="-1" role="dialog"
+			title="Create new person">
+			<div class="modal-dialog" role="document">
+				<form>
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title">Create new person</h4>
 						</div>
-						<div style="display: table-cell;">
-							<input type="text" name="name" id="name"
-								class="text ui-widget-content ui-corner-all" />
+						<div class="modal-body">
+							<div style="display: table;">
+								<div style="display: table-row;">
+									<div style="display: table-cell;">
+										<label for="name">Name</label>
+									</div>
+									<div style="display: table-cell;">
+										<input type="text" name="name" id="name"
+											class="text ui-widget-content ui-corner-all" />
+									</div>
+								</div>
+								<div style="display: table-row;">
+									<div style="display: table-cell;">
+										<label for="email">Email</label> <span style="color: red">*</span>
+									</div>
+									<div style="display: table-cell;">
+										<input type="text" name="email" id="email" value=""
+											class="text ui-widget-content ui-corner-all" />
+									</div>
+								</div>
+								<div style="display: table-row;">
+									<div style="display: table-cell; padding-right: 5px">
+										<label for="password">Password</label>
+									</div>
+									<div style="display: table-cell;">
+										<input type="password" name="password" id="password" value=""
+											class="text ui-widget-content ui-corner-all" />
+									</div>
+								</div>
+								<div style="color: red">*The email will be validated.</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-primary"
+								onclick="saveNewPerson()">Save</button>
 						</div>
 					</div>
-					<div style="display: table-row;">
-						<div style="display: table-cell;">
-							<label for="email">Email</label>
-							<span style="color: red">*</span>
-						</div>
-						<div style="display: table-cell;">
-							<input type="text" name="email" id="email" value=""
-								class="text ui-widget-content ui-corner-all" />
-						</div>
-					</div>
-					<div style="display: table-row;">
-						<div style="display: table-cell; padding-right: 5px">
-							<label for="password">Password</label>
-						</div>
-						<div style="display: table-cell;">
-							<input type="password" name="password" id="password" value=""
-								class="text ui-widget-content ui-corner-all" />
-						</div>
-					</div>
-				</div>
-			</fieldset>
-		</form>
-		<div style="color: red">*The email will be validated.</div>
-	</div>
+				</form>
+			</div>
+		</div>
 	</wicket:extend>
 </body>
 </html>
