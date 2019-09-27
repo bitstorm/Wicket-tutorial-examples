@@ -21,29 +21,60 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-type" content="text/html" charset="UTF-8">
-<title>Persons archive</title>
-	<wicket:head>
-		<script>
-			
-			var people = [];
-			function loadAllPersons(){
-				$.ajax({
-					 type: "GET",
-					 contentType: "application/json;charset=utf-8",
-					 url: "./personsmanager/persons",
-					 async: false,
-					 success: function(data){
-							people = [];
-							
-							for(var i = 0; i < data.length; i++)
-								people.push(data[i]);
-							
-						}
-				});
-			}
-		</script>
-	</wicket:head>
+<title>Persons archive</title>	
 </head>
+<wicket:head>
+
+<script>
+function loadAllPersons(tableId) {
+	var xhr = new XMLHttpRequest();
+
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4){
+	        var persons = JSON.parse(xhr.responseText);
+	        
+	        for (var i = 0; i < persons.length; i++)
+				addTableRow(tableId, persons[i]);
+	    }
+	};
+
+	xhr.open('GET', './personsmanager/persons');
+	xhr.send();	
+}
+
+function addTableRow(tableId, newRow) {
+	var table = document.getElementById(tableId);
+	
+	var row = table.insertRow(-1);
+
+	var name = row.insertCell(-1);
+	var password = row.insertCell(-1);
+	var email = row.insertCell(-1);
+	var deleteLink = row.insertCell(-1);
+
+	var deleteAnchor = document.createElement("A"); 
+	
+	
+	name.innerHTML = newRow.name;
+	password.innerHTML = newRow.password; 
+	email.innerHTML = newRow.email;
+	
+	deleteAnchor.innerHTML = "delete";
+	deleteAnchor.setAttribute("onclick", "deleteTableRow(this.closest('tr'))");
+	
+	deleteLink.appendChild(deleteAnchor);
+}
+
+function deleteTableRow(row) {
+	var table = row.closest('table');
+	table.deleteRow(row.rowIndex);
+}
+
+window.onload = function(){ 
+	loadAllPersons('personsTable'); 
+};
+</script>
+</wicket:head>
 <body style="padding: 1.25em 1.45em 1.25em 1.55em">
 	<wicket:extend>
 		<h1>Persons archive</h1>
@@ -57,7 +88,7 @@
 		<br />
 		<br />
 
-		<table class="liveExample">
+		<table class="table" id="personsTable">
 			<thead>
 				<tr>
 					<th>Name</th>
@@ -66,18 +97,14 @@
 					<th></th>
 				</tr>
 			</thead>
-			<tbody data-bind="foreach: people">
+			<tbody>
 				<tr>
-					<td data-bind="text: name"></td>
-					<td data-bind="text: email"></td>
-					<td data-bind="text: password"></td>
-					<td><a href='#' data-bind='click: $root.deletePerson'>Delete</a>
-					</td>
+					
 				</tr>
 			</tbody>
 		</table>
 
-	<div id="dialog-form" title="Create new person">
+	<div id="dialog-form" class="modal fade" title="Create new person">
 		<form>
 			<fieldset style="border: 0px">
 				<div style="display: table;">
