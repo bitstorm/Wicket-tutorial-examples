@@ -23,91 +23,12 @@
 <meta http-equiv="Content-type" content="text/html" charset="UTF-8">
 <title>Persons archive</title>
 </head>
-<wicket:head>
-
-	<script>
-		function loadAllPersons(tableId) {
-			var xhr = new XMLHttpRequest();
-
-			xhr.onreadystatechange = function() {
-				if (xhr.readyState === 4) {
-					var persons = JSON.parse(xhr.responseText);
-
-					for (var i = 0; i < persons.length; i++)
-						addTableRow(tableId, persons[i]);
-				}
-			};
-
-			xhr.open('GET', './personsmanager/persons');
-			xhr.setRequestHeader("Content-Type", "application/json");
-			xhr.send();
-		}
-
-		function addTableRow(tableId, newRow) {
-			var table = document.getElementById(tableId);
-
-			var row = table.insertRow(-1);
-
-			var name = row.insertCell(-1);
-			var password = row.insertCell(-1);
-			var email = row.insertCell(-1);
-			var deleteLink = row.insertCell(-1);
-
-			var deleteAnchor = document.createElement("A");
-
-			name.innerHTML = newRow.name;
-			password.innerHTML = newRow.password;
-			email.innerHTML = newRow.email;
-
-			deleteAnchor.innerHTML = "delete";
-			deleteAnchor.setAttribute("onclick",
-					"deleteTableRow(this.closest('tr'))");
-
-			deleteLink.appendChild(deleteAnchor);
-		}
-
-		function deleteTableRow(row) {
-			var table = row.closest('table');
-			table.deleteRow(row.rowIndex);
-		}
-
-		function saveNewPerson() {
-			var personPojo = new Object();
-
-			personPojo.name = document.getElementById('name').value;
-			personPojo.email = document.getElementById('email').value;
-			personPojo.password = document.getElementById('password').value;
-			var personJson = JSON.stringify(personPojo);
-			
-			var xhr = new XMLHttpRequest();
-			
-			xhr.onreadystatechange = function() {
-				if (xhr.readyState === 4) {
-					
-					addTableRow('personsTable', personPojo);
-					$('#myModal').modal('hide');
-				}
-			};
-
-			xhr.open('POST', './personsmanager/persons');
-			xhr.setRequestHeader("Content-Type", "application/json");
-			xhr.send(personJson);
-		}
-
-		window.onload = function() {
-			loadAllPersons('personsTable');
-		};
-	</script>
-</wicket:head>
 <body style="padding: 1.25em 1.45em 1.25em 1.55em">
 	<wicket:extend>
 		<h1>Persons archive</h1>
 		<p style="font-weight: bold;">Simple REST application to create,
 			delete and display instances of persons (see class PersonPojo).</p>
-		<p>
-			Powered by <a href="http://jquery.com/">JQuery</a> and <a
-				href="http://knockoutjs.com/">Knockoutjs</a>
-		</p>
+		
 		<button class="btn btn-primary" id="openNewUser" data-toggle="modal"
 			data-target="#dialog-form">Add a person</button>
 		<br />
