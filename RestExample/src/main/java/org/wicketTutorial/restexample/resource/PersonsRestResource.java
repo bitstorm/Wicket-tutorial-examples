@@ -14,12 +14,11 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.wicketTutorial.resource;
+package org.wicketTutorial.restexample.resource;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import org.wicketTutorial.domain.PersonPojo;
+import org.wicketTutorial.restexample.domain.PersonPojo;
 import org.wicketstuff.rest.annotations.MethodMapping;
 import org.wicketstuff.rest.annotations.parameters.RequestBody;
 import org.wicketstuff.rest.annotations.parameters.ValidatorKey;
@@ -48,13 +47,12 @@ public class PersonsRestResource extends AbstractRestResource<JsonWebSerialDeser
 
     @MethodMapping(value = "/persons/{personIndex}", httpMethod = HttpMethod.DELETE)
     public void deletePerson(int personIndex) {
-        persons.remove(personIndex);
+        
     }
 
     @MethodMapping(value = "/persons", httpMethod = HttpMethod.POST)
     public PersonPojo createPerson(
             @ValidatorKey("personValidator") @RequestBody PersonPojo personPojo) {
-        persons.add(personPojo);
         return personPojo;
     }
 

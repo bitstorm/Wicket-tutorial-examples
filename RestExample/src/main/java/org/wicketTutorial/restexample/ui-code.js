@@ -15,76 +15,79 @@
  *  limitations under the License.
  */
 function loadAllPersons(tableId) {
-			var xhr = new XMLHttpRequest();
-
-			xhr.onreadystatechange = function() {
-				if (xhr.readyState === 4) {
-					var persons = JSON.parse(xhr.responseText);
-
-					for (var i = 0; i < persons.length; i++)
-						addTableRow(tableId, persons[i]);
-				}
-			};
-
-			xhr.open('GET', './personsmanager/persons');
-			xhr.setRequestHeader("Content-Type", "application/json");
-			xhr.send();
+	$.ajax({
+		 type: "GET",
+		 contentType: "application/json;charset=utf-8",
+		 url: "./personsmanager/persons",
+		 async: false,
+		 success: function(data){
+			for(var i = 0; i < data.length; i++) {
+				addTableRow(tableId, data[i]);
+		    }
 		}
+	});
+}
 
-		function addTableRow(tableId, newRow) {
-			var table = document.getElementById(tableId);
+function addTableRow(tableId, newRow) {
+	var table = document.getElementById(tableId);
 
-			var row = table.insertRow(-1);
+	var row = table.insertRow(-1);
 
-			var name = row.insertCell(-1);
-			var email = row.insertCell(-1);
-			var password = row.insertCell(-1);
-			var deleteLink = row.insertCell(-1);
+	var name = row.insertCell(-1);
+	var email = row.insertCell(-1);
+	var password = row.insertCell(-1);
+	var deleteLink = row.insertCell(-1);
 
-			var deleteAnchor = document.createElement("A");
+	var deleteAnchor = document.createElement("A");
 
-			name.innerHTML = newRow.name;
-			password.innerHTML = newRow.password;
-			email.innerHTML = newRow.email;
+	name.innerHTML = newRow.name;
+	password.innerHTML = newRow.password;
+	email.innerHTML = newRow.email;
 
-			deleteAnchor.innerHTML = "delete";
-			deleteAnchor.setAttribute("onclick",
-					"deleteTableRow(this.closest('tr'))");
+	deleteAnchor.innerHTML = "delete";
+	deleteAnchor.setAttribute("onclick",
+			"deleteTableRow(this.closest('tr'))");
 
-			deleteLink.appendChild(deleteAnchor);
-		}
+	deleteLink.appendChild(deleteAnchor);
+}
 
-		function deleteTableRow(row) {
-			var table = row.closest('table');
-			table.deleteRow(row.rowIndex);
-		}
+function deleteTableRow(row) {
+	 $.ajax({
+		 type: "DELETE",
+		 contentType: "application/json; charset=utf-8",
+		 url: "./personsmanager/persons/" + row.rowIndex,
+		 async: false
+	 });
+	var table = row.closest('table');
+	table.deleteRow(row.rowIndex);
+}
 
-		function saveNewPerson() {
-			var personPojo = new Object();
-			
-			personPojo.name = $('#name').val();
-			personPojo.email = $('#email').val();
-			personPojo.password = $('#password').val();
-			 
-			 var modalWindow = $(this); 
-			 
-			 $.ajax({
-				 type: "POST",
-				 contentType: "application/json",
-				 url: "./personsmanager/persons",
-				 data: JSON.stringify(personPojo),
-				 async: false,
-				 error: function(data){
-					 var dataJson = $.parseJSON(data.responseText);
-					 alert(dataJson.message);
-				 },
-			 	 success: function(data){
-			 		$('#dialog-form').modal('hide');
-			 		addTableRow('personsTable', data);
-			 	 }
-			 });
-		}
+function saveNewPerson() {
+	var personPojo = new Object();
+	
+	personPojo.name = $('#name').val();
+	personPojo.email = $('#email').val();
+	personPojo.password = $('#password').val();
+	 
+	 var modalWindow = $(this); 
+	 
+	 $.ajax({
+		 type: "POST",
+		 contentType: "application/json",
+		 url: "./personsmanager/persons",
+		 data: JSON.stringify(personPojo),
+		 async: false,
+		 error: function(data){
+			 var dataJson = $.parseJSON(data.responseText);
+			 alert(dataJson.message);
+		 },
+	 	 success: function(data){
+	 		$('#dialog-form').modal('hide');
+	 		addTableRow('personsTable', data);
+	 	 }
+	 });
+}
 
-		$().ready(function() {
-			loadAllPersons('personsTable');
-		});
+$().ready(function() {
+	loadAllPersons('personsTable');
+});

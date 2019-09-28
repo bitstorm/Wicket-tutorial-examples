@@ -14,7 +14,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.wicketTutorial.resource;
+package org.wicketTutorial.restexample.resource;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
 import org.apache.wicket.validation.IValidatable;
 import org.apache.wicket.validation.IValidator;
 import org.apache.wicket.validation.validator.EmailAddressValidator;
-import org.wicketTutorial.domain.PersonPojo;
+import org.wicketTutorial.restexample.domain.PersonPojo;
 import org.wicketstuff.rest.utils.wicket.validator.RestValidationError;
 
 public class PersonPojoValidator implements IValidator<PersonPojo> {
