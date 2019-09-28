@@ -47,7 +47,7 @@ public class PersonsRestResource extends AbstractRestResource<JsonWebSerialDeser
 
     @MethodMapping(value = "/persons/{personIndex}", httpMethod = HttpMethod.DELETE)
     public void deletePerson(int personIndex) {
-        
+        //mock method: do nothing.
     }
 
     @MethodMapping(value = "/persons", httpMethod = HttpMethod.POST)
