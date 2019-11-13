@@ -26,6 +26,7 @@ import org.apache.wicket.model.IModel;
 public class AuthenticatedPage extends BootstrapBasePage {
 	@Override
 	protected void onConfigure() {
+		super.onConfigure();
 		AuthenticatedWebApplication app = (AuthenticatedWebApplication) AuthenticatedWebApplication.get();
 		
 		if(!AuthenticatedWebSession.get().isSignedIn())
