@@ -66,7 +66,7 @@ public class HomePage extends BootstrapBasePage {
         super.renderHead(response);
 
         HeaderItem item =
-                JavaScriptHeaderItem.forUrl("https://buttons.github.io/buttons.js", "github", true);
+                JavaScriptHeaderItem.forUrl("https://buttons.github.io/buttons.js", "github");
 
         response.render(item);
 

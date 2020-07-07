@@ -14,13 +14,13 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.wicketTutorial.modalwindow;
+package org.wicketTutorial.modaldialog;
 
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
 import org.junit.Test;
-import org.wicketTutorial.modalwindow.HomePage;
-import org.wicketTutorial.modalwindow.WicketApplication;
+import org.wicketTutorial.modaldialog.HomePage;
+import org.wicketTutorial.modaldialog.WicketApplication;
 
 /**
  * Simple test using the WicketTester
