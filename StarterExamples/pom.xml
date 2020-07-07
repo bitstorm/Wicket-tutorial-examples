@@ -280,7 +280,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.wicketTutorial</groupId>
-			<artifactId>BasicModalWindowExample</artifactId>
+			<artifactId>BasicModalDialogExample</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>

@@ -14,13 +14,14 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.wicketTutorial.modalwindow;
+package org.wicketTutorial.modaldialog;
 
-import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
-import org.apache.wicket.extensions.ajax.markup.html.modal.ModalWindow;
+import org.apache.wicket.extensions.ajax.markup.html.modal.ModalDialog;
+import org.apache.wicket.extensions.ajax.markup.html.modal.theme.DefaultTheme;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.wicketTutorial.commons.bootstrap.layout.BootstrapBasePage;
 
 public class HomePage extends BootstrapBasePage {
@@ -28,17 +29,19 @@ public class HomePage extends BootstrapBasePage {
 
     public HomePage(final PageParameters parameters) {
     	super(parameters);
-    	final ModalWindow modalWindow = new ModalWindow("modalWindow");
-    	Label label = new Label(modalWindow.getContentId(), "I'm a modal window!");
     	
-    	modalWindow.setContent(label);
-    	modalWindow.setTitle("Modal window");
+    	final ModalDialog modal = new ModalDialog("modal");
+    	modal.add(new DefaultTheme());
+    	modal.closeOnClick();
+    	Label label = new Label(ModalDialog.CONTENT_ID, "I'm a modal dialog!");
     	
-    	add(modalWindow);
-    	add(new AjaxLink<Void>("openWindow") {
+    	modal.setContent(label);
+    	
+    	add(modal);
+    	add(new AjaxLink<Void>("open") {
 			@Override
 			public void onClick(AjaxRequestTarget target) {
-				modalWindow.show(target);				
+				modal.open(target);				
 			}    		
 		});
     }

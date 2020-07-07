@@ -61,7 +61,7 @@
 		<module>CustomDatepicker</module>
 		<module>InterComponetsEventsExample</module>
 		<module>EjbInjectionExample</module>
-		<module>BasicModalWindowExample</module>
+		<module>BasicModalDialogExample</module>
 		<module>AjaxEventBehaviorExample</module>
 		<module>CustomAjaxListenerExample</module>
 		<module>SpringInjectionExample</module>
