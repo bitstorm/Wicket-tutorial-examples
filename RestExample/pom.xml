@@ -41,7 +41,7 @@
 		<dependency>
 			<groupId>org.wicketstuff</groupId>
 			<artifactId>wicketstuff-restannotations-json</artifactId>
-			<version>8.6.0</version>
+			<version>${wicketstuff.version}</version>
 		</dependency>
 
 
