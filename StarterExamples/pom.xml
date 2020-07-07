@@ -9,7 +9,8 @@
 	License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS 
 	OF ANY KIND, either express or implied. See the License for the specific 
 	language governing permissions and limitations under the License. -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
@@ -55,11 +56,15 @@
 		</dependency>
 
 		<dependency>
-            <groupId>org.wicketTutorial.commons.bootstrap</groupId>
-            <artifactId>BootstrapCommon</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-		
+			<groupId>org.wicketTutorial.commons.bootstrap</groupId>
+			<artifactId>BootstrapCommon</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>jquery-ui</artifactId>
+		    <version>1.12.1</version>
+		</dependency>
 
 		<!-- LOGGING DEPENDENCIES - LOG4J -->
 		<dependency>
@@ -85,7 +90,11 @@
 			</exclusions>
 		</dependency>
 
-		
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>3.3.7</version>
+		</dependency>
 
 		<!-- Example dependencies -->
 		<dependency>
@@ -375,6 +384,11 @@
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
+			<groupId>org.wicketTutorial</groupId>
+			<artifactId>RestExample</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>org.wicketTutorial.commons.bootstrap</groupId>
 			<artifactId>BootstrapCommon</artifactId>
 			<version>${project.version}</version>
@@ -391,7 +405,7 @@
 		</dependency>
 
 		<!-- JETTY DEPENDENCIES FOR TESTING -->
-		<!--  JETTY DEPENDENCIES FOR TESTING  -->
+		<!-- JETTY DEPENDENCIES FOR TESTING -->
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-server</artifactId>
