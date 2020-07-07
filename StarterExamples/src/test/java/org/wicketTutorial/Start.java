@@ -16,11 +16,6 @@
  */
 package org.wicketTutorial;
 
-import java.lang.management.ManagementFactory;
-
-import javax.management.MBeanServer;
-
-import org.eclipse.jetty.jmx.MBeanContainer;
 import org.eclipse.jetty.server.HttpConfiguration;
 import org.eclipse.jetty.server.HttpConnectionFactory;
 import org.eclipse.jetty.server.SecureRequestCustomizer;
@@ -104,11 +99,6 @@ public class Start
 		// bb.getSessionHandler().getSessionManager()).setUsingCookies(false);
 
 		server.setHandler(bb);
-
-		MBeanServer mBeanServer = ManagementFactory.getPlatformMBeanServer();
-		MBeanContainer mBeanContainer = new MBeanContainer(mBeanServer);
-		server.addEventListener(mBeanContainer);
-		server.addBean(mBeanContainer);
 
 		try
 		{
