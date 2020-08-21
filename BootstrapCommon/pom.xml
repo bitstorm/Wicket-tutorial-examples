@@ -72,7 +72,7 @@
    		<dependency>
 		    <groupId>de.agilecoders.wicket</groupId>
 		    <artifactId>wicket-bootstrap-themes</artifactId>
-		    <version>5.0.0-M2</version>
+		    <version>4.0.0</version>
 		</dependency>
 
 		
