@@ -53,5 +53,6 @@ public class WicketApplication extends AuthenticatedWebApplication
 	protected void init()
 	{
 		BootstrapInitializer.init(this);
+		getCspSettings().blocking().clear();
 	}
 }

@@ -52,5 +52,6 @@ public class WicketApplication extends AuthenticatedWebApplication{
 		BootstrapInitializer.init(this);
 		getSecuritySettings()
 			.setAuthorizationStrategy(new AnnotationsRoleAuthorizationStrategy(this));
+		getCspSettings().blocking().clear();
 	}
 }
