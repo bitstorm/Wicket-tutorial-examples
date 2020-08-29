@@ -474,7 +474,7 @@
 				<artifactId>heroku-maven-plugin</artifactId>
 				<version>3.0.3</version>
 				<configuration>
-				  <appName>wicket-guide-8x</appName>
+				  <appName>wicket-guide</appName>
 				  <jdkVersion>11</jdkVersion>
 				</configuration>
 
