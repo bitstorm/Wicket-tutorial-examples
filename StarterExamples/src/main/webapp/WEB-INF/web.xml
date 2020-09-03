@@ -249,7 +249,27 @@
 		</init-param>
 
     </filter>
-	
+    
+    	<filter>
+		<filter-name>wicket.ModalExample</filter-name>
+		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
+		<init-param>
+			<param-name>applicationClassName</param-name>
+			<param-value>org.wicketTutorial.modaldialog.WicketApplication</param-value>
+		</init-param>
+		<init-param>
+		    <param-name>configuration</param-name>
+		    <param-value>deployment</param-value>
+		</init-param>
+	</filter>
+ 
+     <filter-mapping>
+		<filter-name>wicket.ModalExample</filter-name>
+		<url-pattern>/modalexample/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+        	<dispatcher>INCLUDE</dispatcher>
+     </filter-mapping>
+   	
       <filter-mapping>
 		<filter-name>wicket.RestExample</filter-name>
 		<url-pattern>/restexample/*</url-pattern>
@@ -261,7 +281,7 @@
 		<filter-name>wicket.MarkupInheritance</filter-name>
 		<url-pattern>/markupinherit/*</url-pattern>
 		<dispatcher>REQUEST</dispatcher>
-        <dispatcher>INCLUDE</dispatcher>
+                <dispatcher>INCLUDE</dispatcher>
 	</filter-mapping>
 
 	<filter-mapping>
