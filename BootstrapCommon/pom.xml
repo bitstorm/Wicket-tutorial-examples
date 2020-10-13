@@ -44,7 +44,7 @@
 	</licenses>
 	<properties>
 		<jetty9.version>9.4.3.v20170317</jetty9.version>
-		<junit.version>4.12</junit.version>
+		<junit.version>4.13.1</junit.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- allowed values: R7, 1.0, 1.5, 2.0 or none -->
 		<wtp.version>none</wtp.version>
