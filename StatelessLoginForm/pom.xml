@@ -57,13 +57,19 @@
 
 		<!--  JUNIT DEPENDENCY FOR TESTING -->
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 
-
+		<dependency>
+			<groupId>org.junit.vintage</groupId>
+			<artifactId>junit-vintage-engine</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+			<optional>true</optional>
+		</dependency>
 		<!--  JETTY DEPENDENCIES FOR TESTING  -->
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>

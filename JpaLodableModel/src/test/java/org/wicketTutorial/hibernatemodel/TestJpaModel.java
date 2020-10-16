@@ -23,8 +23,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceUnitUtil;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.wicketTutorial.hibernatemodel.model.JpaLoadableModel;
 
 
@@ -50,8 +50,8 @@ public class TestJpaModel {
 		JpaLoadableModel<Person> model = new JpaLoadableModel(entityManagerFactory, person);
 		model.detach();
 		
-		Assert.assertNotNull(model.getObject());	
-		Assert.assertEquals(person.getId(), model.getObject().getId());		
+		Assertions.assertNotNull(model.getObject());	
+		Assertions.assertEquals(person.getId(), model.getObject().getId());		
 	}
 	
 	@Test
@@ -59,11 +59,11 @@ public class TestJpaModel {
 		Person person = new Person("Phill", "Griffin", "pgriffin@gmail.com");
 		JpaLoadableModel<Person> model = new JpaLoadableModel(entityManagerFactory, person);
 		
-		Assert.assertNotNull(model.getObject());
+		Assertions.assertNotNull(model.getObject());
 		
 		model.detach();
 		
-		Assert.assertNull(model.getObject());		
+		Assertions.assertNull(model.getObject());		
 	}
 	
 	@Test
@@ -77,7 +77,7 @@ public class TestJpaModel {
 		
 		model.detach();
 		
-		Assert.assertEquals(person.getId(), model.getObject().getId());	
+		Assertions.assertEquals(person.getId(), model.getObject().getId());	
 	}
 	
 	@Test
@@ -91,14 +91,14 @@ public class TestJpaModel {
 		JpaLoadableModel<Person> model = new JpaLoadableModel(entityManagerFactory, person);
 		
 		model.detach();
-		Assert.assertNotNull(model.getObject());
+		Assertions.assertNotNull(model.getObject());
 		
 		entityManager.getTransaction().begin();
 		entityManager.remove(person);
 		entityManager.getTransaction().commit();
 		
 		model.detach();
-		Assert.assertNull(model.getObject());
+		Assertions.assertNull(model.getObject());
 		
 	}
 	

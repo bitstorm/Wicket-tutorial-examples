@@ -21,8 +21,8 @@ import java.io.InputStream;
 import java.net.URL;
 
 import org.apache.wicket.util.tester.WicketTester;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.wicketTutorial.markupfolder.HomePage;
 import org.wicketTutorial.markupfolder.WicketApplication;
 
@@ -33,7 +33,7 @@ public class TestHomePage
 {
 	private WicketTester tester;
 
-	@Before
+	@BeforeEach
 	public void setUp()
 	{
 		File curDirectory = new File(System.getProperty("user.dir"));

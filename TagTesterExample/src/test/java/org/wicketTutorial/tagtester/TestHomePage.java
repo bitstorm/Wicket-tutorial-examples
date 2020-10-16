@@ -20,9 +20,9 @@ import java.util.List;
 
 import org.apache.wicket.util.tester.TagTester;
 import org.apache.wicket.util.tester.WicketTester;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.wicketTutorial.tagtester.HomePage;
 import org.wicketTutorial.tagtester.WicketApplication;
 
@@ -33,7 +33,7 @@ public class TestHomePage
 {
 	private WicketTester tester;
 
-	@Before
+	@BeforeEach
 	public void setUp()
 	{
 		tester = new WicketTester(new WicketApplication());
@@ -49,12 +49,12 @@ public class TestHomePage
 		
 		TagTester tagTester = TagTester.createTagByAttribute(responseTxt, "class", "myClass"); 
 		
-		Assert.assertNotNull(tagTester);
-		Assert.assertEquals("span", tagTester.getName());		
+		Assertions.assertNotNull(tagTester);
+		Assertions.assertEquals("span", tagTester.getName());		
 		
 		List<TagTester> tagTesterList = TagTester.createTagsByAttribute(responseTxt, "class", "myClass", 
 																	false);
 		
-		Assert.assertEquals(2, tagTesterList.size());
+		Assertions.assertEquals(2, tagTesterList.size());
 	}
 }

@@ -16,7 +16,7 @@
  */
 package org.wicketTutorial.commons.bootstrap;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * Simple test using the WicketTester

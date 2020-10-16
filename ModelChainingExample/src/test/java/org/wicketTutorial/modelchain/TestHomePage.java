@@ -18,14 +18,10 @@ package org.wicketTutorial.modelchain;
 
 import java.util.List;
 
-import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.form.DropDownChoice;
-import org.apache.wicket.util.tester.FormTester;
 import org.apache.wicket.util.tester.WicketTester;
-import org.junit.Before;
-import org.junit.Test;
-import org.wicketTutorial.modelchain.PersonListDetails;
-import org.wicketTutorial.modelchain.WicketApplication;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * Simple test using the WicketTester
@@ -34,7 +30,7 @@ public class TestHomePage
 {
 	private WicketTester tester;
 
-	@Before
+	@BeforeEach
 	public void setUp()
 	{
 		tester = new WicketTester(new WicketApplication());
@@ -43,14 +39,12 @@ public class TestHomePage
 	@Test
 	public void testFormSelectSameModelObject()
 	{
-		PersonListDetails personListDetails = new PersonListDetails();
-		DropDownChoice dropDownChoice = (DropDownChoice) personListDetails.get("persons");
+		tester.startPage(PersonListDetails.class);
+		DropDownChoice dropDownChoice = (DropDownChoice) tester.getLastRenderedPage().get("persons");
 		List choices = dropDownChoice.getChoices();
 		//select the second option of the drop-down menu
 		dropDownChoice.setModelObject(choices.get(1));
-		
-		//start and render the test page
-		tester.startPage(personListDetails);		
+			
 		//assert that form has the same data object as drop-down menu
 		tester.assertModelValue("form", dropDownChoice.getModelObject());
 	}

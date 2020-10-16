@@ -22,12 +22,13 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 
-import junit.framework.Assert;
+
 
 import org.apache.wicket.WicketRuntimeException;
 import org.apache.wicket.util.tester.WicketTester;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.wicketTutorial.resmounting.RSSProducerResource;
 import org.wicketTutorial.resmounting.WicketApplication;
 
@@ -41,7 +42,7 @@ public class TestHomePage
 {
 	private WicketTester tester;
 
-	@Before
+	@BeforeEach
 	public void setUp()
 	{
 		tester = new WicketTester(new WicketApplication());
@@ -59,6 +60,6 @@ public class TestHomePage
        	
 		output.output(RSSProducerResource.getFeed(), writer);
 		//the response and the written RSS must be equal 
-		Assert.assertEquals(responseTxt, outputStream.toString());
+		Assertions.assertEquals(responseTxt, outputStream.toString());
 	}
 }

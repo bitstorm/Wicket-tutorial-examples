@@ -18,13 +18,12 @@ package org.wicketTutorial.formpanel;
 
 import java.util.Locale;
 
-import junit.framework.Assert;
-import junit.framework.TestCase;
 
 import org.apache.wicket.model.Model;
 import org.apache.wicket.util.tester.WicketTester;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.wicketTutorial.formpanel.TemperatureDegreeField;
 import org.wicketTutorial.formpanel.WicketApplication;
 
@@ -35,7 +34,7 @@ public class TestHomePage
 {
 	private WicketTester tester;
 
-	@Before
+	@BeforeEach
 	public void setUp()
 	{
 		tester = new WicketTester(new WicketApplication());
@@ -45,9 +44,9 @@ public class TestHomePage
 	public void testCustomPanelContainsLabel()
 	{
 		TemperatureDegreeField field = new TemperatureDegreeField("field", Model.of(0.00));
+		Assertions.assertNull(field.get("mesuramentUnit"));		
 		
-		Assert.assertNull(field.get("mesuramentUnit"));		
 		tester.startComponentInPage(field);		
-		Assert.assertNotNull(field.get("mesuramentUnit"));
+		Assertions.assertNotNull(field.get("mesuramentUnit"));
 	}		
 }

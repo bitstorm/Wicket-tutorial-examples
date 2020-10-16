@@ -17,8 +17,8 @@
 package org.wicketTutorial.loginformrev;
 
 import org.apache.wicket.util.tester.WicketTester;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.wicketTutorial.loginformrev.HomePage;
 import org.wicketTutorial.loginformrev.WicketApplication;
 
@@ -29,7 +29,7 @@ public class TestHomePage
 {
 	private WicketTester tester;
 
-	@Before
+	@BeforeEach
 	public void setUp()
 	{
 		tester = new WicketTester(new WicketApplication());
