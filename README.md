@@ -14,7 +14,7 @@ To run a single example project you have to install first project BootstrapCommo
 
 ## See the examples on line
 
-The examples can be explored on line at https://wicket-guide.herokuapp.com/. 
+The examples can be explored on line at [http://wicket-tutorial-examples.it:8080/](http://wicket-tutorial-examples.it:8080/) (courtesy of [Host.it](https://host.it/)). 
 
 NOTE: examples are hosted on a free account, so you might need to wait few seconds before server responds.
 
