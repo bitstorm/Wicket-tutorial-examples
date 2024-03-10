@@ -37,7 +37,7 @@
 	</licenses>
 	<properties>
 
-		<jetty.version>7.6.3.v20120416</jetty.version>
+		
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
@@ -58,12 +58,6 @@
         </dependency>
 		
 
-		<!-- LOGGING DEPENDENCIES - LOG4J -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.6.4</version>
-		</dependency>
 
 		<!-- JUNIT DEPENDENCY FOR TESTING -->
 		<dependency>
@@ -72,31 +66,38 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-tester</artifactId>
+			<version>${wicket.version}</version>
+			<scope>test</scope>
+		</dependency>
 
-		<!--  JETTY DEPENDENCIES FOR TESTING  -->
+				<!--  JETTY DEPENDENCIES FOR TESTING  -->
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-server</artifactId>
-			<version>${jetty9.version}</version>
 			<scope>test</scope>
+			<version>${jetty.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-webapp</artifactId>
-			<version>${jetty9.version}</version>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>jetty-util</artifactId>
-			<version>${jetty9.version}</version>
-			<scope>test</scope>
+			<version>${jetty.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-jmx</artifactId>
-			<version>${jetty9.version}</version>
 			<scope>test</scope>
+			<version>${jetty.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty.websocket</groupId>
+			<artifactId>websocket-jakarta-server</artifactId>
+			<scope>test</scope>
+			<version>${jetty.version}</version>
 		</dependency>
 	</dependencies>
 	<build>

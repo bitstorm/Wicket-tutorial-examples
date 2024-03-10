@@ -47,7 +47,7 @@ public class WicketApplication extends BootstrapApp
 	public void init()
 	{
 		super.init();
-		setHeaderResponseDecorator(response -> {
+		getHeaderResponseDecorators().add(response -> {
             return new ResourceAggregator(new JavaScriptFilteredIntoFooterHeaderResponse(response, "footer-container"));
 		});
 	}

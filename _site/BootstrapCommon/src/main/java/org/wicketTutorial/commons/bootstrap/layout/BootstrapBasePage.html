@@ -1,0 +1,113 @@
+<!--
+
+     Licensed to the Apache Software Foundation (ASF) under one or more
+     contributor license agreements.  See the NOTICE file distributed with
+     this work for additional information regarding copyright ownership.
+     The ASF licenses this file to You under the Apache License, Version 2.0
+     (the "License"); you may not use this file except in compliance with
+     the License.  You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<wicket:header-items />
+	<wicket:link>
+	    <link href="style.css" rel="stylesheet">
+	</wicket:link>
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+        content="Live Examples For The Apache Wicket User Guide">
+    <meta name="keywords"
+        content="Apache Wicket, Wicket, Wicket User Guide, Wicket Examples">
+    <meta name="author" content="Andrea Del Bene">
+	<link rel="canonical" href="https://wicket-guide.herokuapp.com/">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143550223-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-143550223-1');
+	</script>
+
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+
+				<form class="navbar-form navbar-right"></form>
+				<a href="/">
+				    <wicket:link>
+					    <img style="max-height: 45px"
+						   src="wicket_examples.svg">
+					</wicket:link>   
+		        </a>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a wicket:id="sources"><i
+							class="glyphicon glyphicon-search"></i> Source</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<br />
+	<ul class="breadcrumb container">
+		<li><a href="/">Home</a></li>
+		<li class="active" wicket:id="mainNavigation">Data</li>
+	</ul>
+	<div class="container">
+		<div>
+			<wicket:child />
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="container">
+			
+			<p>
+				Designed and built on top of <a href="http://wb-mgrigorov.rhcloud.com/" target="_blank">
+				Wicket-Bootstrap project.</a>
+				Apache Wicket licensed under the <a
+					href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache
+					License v2.0</a>. Twitter Bootstrap licensed under the <a
+					href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache
+					License v2.0</a>. Icons from <a href="http://glyphicons.com">Glyphicons
+					Free</a>, licensed under <a
+					href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+			</p>
+			<ul class="footer-links">
+				<li>
+					<a target="_blank" href="http://wicket.apache.org">Wicket Site</a>
+				</li>
+				<li><a target="_blank"
+					href="https://github.com/bitstorm/Wicket-tutorial-examples/issues?state=open">Submit
+						issues
+						</a>
+				</li>
+				<li>
+					<a href="#">Back to top</a>
+				</li>
+			</ul>
+		</div>
+	</footer>
+</body>
+</html>

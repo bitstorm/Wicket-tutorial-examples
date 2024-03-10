@@ -43,7 +43,7 @@
 		</license>
 	</licenses>
 	<properties>
-		<jetty9.version>9.4.3.v20170317</jetty9.version>
+		<jetty.version>9.4.3.v20170317</jetty.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- allowed values: R7, 1.0, 1.5, 2.0 or none -->
 		<wtp.version>none</wtp.version>
@@ -75,11 +75,7 @@
 
 		<!-- LOGGING DEPENDENCIES - LOG4J -->
 		
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-			<version>${log4j.version}</version>
-		</dependency>
+		
 
 		<!--  JUNIT DEPENDENCY FOR TESTING -->
 		<dependency>
@@ -93,7 +89,7 @@
 		<dependency>
 			<groupId>org.eclipse.jetty.aggregate</groupId>
 			<artifactId>jetty-all</artifactId>
-			<version>${jetty9.version}</version>
+			<version>${jetty.version}</version>
 			<classifier>uber</classifier>
 			<scope>test</scope>
 		</dependency>
@@ -131,7 +127,7 @@
 			<plugin>
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
-				<version>${jetty9.version}</version>
+				<version>${jetty.version}</version>
 				<configuration>
 					<systemProperties>
 						<systemProperty>

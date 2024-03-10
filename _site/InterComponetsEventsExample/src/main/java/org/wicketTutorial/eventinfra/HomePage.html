@@ -1,0 +1,54 @@
+<!--
+
+     Licensed to the Apache Software Foundation (ASF) under one or more
+     contributor license agreements.  See the NOTICE file distributed with
+     this work for additional information regarding copyright ownership.
+     The ASF licenses this file to You under the Apache License, Version 2.0
+     (the "License"); you may not use this file except in compliance with
+     the License.  You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+
+-->
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+	 <wicket:extend>
+		<p>
+			Click on the links below to send an event to the container in the middle 
+			using one of the supported broadcast methods. <br/>
+			A panel at the bottom of the page will display the order in which 
+			the event has been received by sinks (page, components, session and application).
+		</p>
+		
+		<a wicket:id="breadthLink">Breadth mode</a><br/>
+		<a wicket:id="depthLink">Depth mode</a><br/>
+		<a wicket:id="bubbleLink">Bubble mode</a><br/>
+		<a wicket:id="exactLink">Exact mode</a><br/>
+		<br/>
+		<br/>
+		
+		<div style="border: 1px solid;padding: 8px; width:40%" wicket:id="containerInTheMiddle">
+			<p style="padding-bottom: 2px">I'm the container in the middle</p>
+			<div style="border: 1px solid;padding: 8px" wicket:id="innerContainer">
+				I'm the inner component.
+			</div>
+		</div>
+		<br/>
+		<br/>
+		
+		<div wicket:id="feedbackPanel">
+		</div>
+	   </wicket:extend>	
+	</body>
+</html>

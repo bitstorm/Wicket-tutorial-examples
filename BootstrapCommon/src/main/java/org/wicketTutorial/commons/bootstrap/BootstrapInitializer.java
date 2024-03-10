@@ -36,7 +36,7 @@ public class BootstrapInitializer {
         settings.setThemeProvider(themeProvider);
         settings.setDeferJavascript(true);
 
-        application.getJavaScriptLibrarySettings().setJQueryReference(JQueryResourceReference.INSTANCE_2);
+        application.getJavaScriptLibrarySettings().setJQueryReference(JQueryResourceReference.INSTANCE_3);
         Bootstrap.install(application, settings);
     }
 

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Licensed to the Apache Software Foundation (ASF) under one or more contributor 
+	license agreements. See the NOTICE file distributed with this work for additional 
+	information regarding copyright ownership. The ASF licenses this file to 
+	You under the Apache License, Version 2.0 (the "License"); you may not use 
+	this file except in compliance with the License. You may obtain a copy of 
+	the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required 
+	by applicable law or agreed to in writing, software distributed under the 
+	License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS 
+	OF ANY KIND, either express or implied. See the License for the specific 
+	language governing permissions and limitations under the License. --><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.wicketTutorial</groupId>
+	<artifactId>wicket-tutorial</artifactId>
+	<version>1.0</version>
+	<packaging>pom</packaging>
+	<name>Wicket tutorial projects</name>
+	<description>The project is intended to provide code examples for the freely available Wicket tutorial</description>
+	<properties>
+		<wicket.version>9.8.0</wicket.version>
+                <wicketstuff.version>9.8.0</wicketstuff.version>
+		<jetty.version>9.4.31.v20200723</jetty.version>
+		<log4j.version>2.17.2</log4j.version>
+		<slf4j.version>1.7.7</slf4j.version>
+		<junit.version>5.7.0</junit.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- allowed values: R7, 1.0, 1.5, 2.0 or none -->
+		<wtp.version>none</wtp.version>
+	</properties>
+	<modules>
+		<module>BindSessionExample</module>
+		<module>DetachableModel</module>
+		<module>LoginForm</module>
+		<module>SimpleDropDownChoice</module>
+		<module>BookmarkablePageAutoLink</module>
+		<module>ImageAsPackageRes</module>
+		<module>LoginFormRevisited</module>
+		<module>SingleCheckBox</module>
+		<module>ClickToAnotherPage</module>
+		<module>JpaLodableModel</module>
+		<module>ModelChainingExample</module>
+		<module>StatelessLoginForm</module>
+		<module>CustomConverter</module>
+		<module>LifeCycleStages</module>
+		<module>LifeCycleStagesRevisited</module>
+		<module>MountedPagesExample</module>
+		<module>StatelessPage</module>
+		<module>CustomFormComponentPanel</module>
+		<module>ListBeansForm</module>
+		<module>OverrideMailMessage</module>
+		<module>StringResourceModelExample</module>
+		<module>CustomMapperContext</module>
+		<module>ListViewExample</module>
+		<module>PageParametersExample</module>
+		<module>UploadSingleFile</module>
+		<module>CustomResourceMounting</module>
+		<module>LocalizedGreetings</module>
+		<module>PageVersioning</module>
+		<module>UsernameCustomValidator</module>
+		<module>CustomDatepicker</module>
+		<module>InterComponetsEventsExample</module>
+		<module>EjbInjectionExample</module>
+		<module>BasicModalDialogExample</module>
+		<module>AjaxEventBehaviorExample</module>
+		<module>CustomAjaxListenerExample</module>
+		<module>SpringInjectionExample</module>
+		<module>PageDataViewExample</module>
+		<module>PageParametersEncoderExample</module>
+		<module>BasicAuthenticationExample</module>
+		<module>MetaDataRolesStrategyExample</module>
+		<module>AnnotationsRolesStrategyExample</module>
+		<module>CustomFolder4MarkupExample</module>
+		<module>HttpsProtocolExample</module>
+		<module>CheckBoxAjaxTree</module>
+		<module>MarkupInheritanceExample</module>
+		<module>CustomDatepickerAjax</module>
+		<module>HelloWorldExample</module>
+		<module>OnComponentTagExample</module>
+		<module>TestAjaxEventsExample</module>
+		<module>TagTesterExample</module>
+		<module>LocalizedChoicesExample</module>
+		<module>CallbackURLExample</module>
+		<module>JSR303validation</module>
+		<module>ScriptInsideBody</module>
+		<module>StarterExamples</module>
+		<module>BootstrapCommon</module>
+    		<module>RestExample</module>
+  </modules>
+	<!--url>http://wicket.apache.org/${project.artifactId}</url -->
+	<inceptionYear>2012</inceptionYear>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<build>
+		<resources>
+			<resource>
+				<filtering>false</filtering>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<filtering>false</filtering>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+			</resource>
+		</resources>
+		<testResources>
+			<testResource>
+				<filtering>false</filtering>
+				<directory>src/test/resources</directory>
+			</testResource>
+			<testResource>
+				<filtering>false</filtering>
+				<directory>src/test/java</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</testResource>
+		</testResources>
+		<plugins>
+			<plugin>
+				<inherited>false</inherited>
+				<groupId>com.mycila.maven-license-plugin</groupId>
+				<artifactId>maven-license-plugin</artifactId>
+				<configuration>
+					<header>./header.txt</header>
+					<failIfMissing>true</failIfMissing>
+					<aggregate>true</aggregate>
+					<excludes>
+						<exclude>LICENSE.txt</exclude>
+						<exclude>**/src/test/resources/**</exclude>
+						<exclude>**/src/test/data/**</exclude>
+						<exclude>**/jquery*</exclude>
+						<exclude>**/*.csv</exclude>
+						<exclude>**/*.xml</exclude>
+						<exclude>**/*.css</exclude>
+					</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<id>check-headers</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<inherited>true</inherited>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>11</source>
+					<target>11</target>
+					<encoding>UTF-8</encoding>
+					<showWarnings>true</showWarnings>
+					<showDeprecation>true</showDeprecation>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	<repositories>
+		<repository>
+			<id>Apache Nexus</id>
+			<url>https://repository.apache.org/content/repositories/snapshots/</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+                <repository>
+                        <id>Stage</id>
+                        <url>https://repository.apache.org/content/repositories/orgapachewicket-1158</url>
+                        <releases>
+                                <enabled>true</enabled>
+                        </releases>
+                        <snapshots>
+                                <enabled>false</enabled>
+                        </snapshots>
+                </repository>
+	</repositories>
+</project>

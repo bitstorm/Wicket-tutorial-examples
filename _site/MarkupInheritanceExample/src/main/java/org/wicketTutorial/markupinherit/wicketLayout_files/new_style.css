@@ -1,0 +1,274 @@
+/**
+ *  Licensed to the Apache Software Foundation (ASF) under one or more
+ *  contributor license agreements.  See the NOTICE file distributed with
+ *  this work for additional information regarding copyright ownership.
+ *  The ASF licenses this file to You under the Apache License, Version 2.0
+ *  (the "License"); you may not use this file except in compliance with
+ *  the License.  You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+/* Foglio di stile */
+/* ideato e creato da */
+/* Giacomo Socci */
+/* info@giacomosocci.it */
+
+/* tabella colori */
+/* verde: #7CBE29 */
+/* arancio: #F90 */
+/* blu: #69F */
+/* nero: #000 */
+/* rosa pastello: #FFC0B4*/
+
+
+body {
+	color: #333;
+	background-color: #FFF;
+	margin: 0px;
+}
+
+body, td, th {
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+input, select {
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}
+
+a {
+	color: #36C;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a img {
+	border: none;
+}
+
+h1 {
+	color: #F90;
+	font-size: 24px;
+	margin: 0px;	
+}
+
+h2 {
+	color: #7CBE29;
+	font-size: 16px;
+}
+
+h2.sottotitolo {
+	color: #7CBE29;
+	color: #F90;
+}
+
+table, fieldset {
+	background: #F4F4F4;
+	border: 1px solid #F90;
+}
+
+
+th {
+	text-align: left;
+}
+
+#Content {
+	margin-left: 200px;
+	margin-top: 10px;
+}
+
+#intestazione {
+	border-bottom: 3px double #7CBE29;
+	
+}
+
+#pagina {
+	width: 100%;
+	clear: both;
+	float: left;
+	margin-bottom: 20px;
+}
+
+#piedipagina {
+	border-top: 2px solid #7CBE29;
+	width: 100%;
+	float: left;
+	background-color: #FFF;
+	text-indent: 10px;
+	padding-top: 4px;
+}
+
+#piedipagina img {
+	vertical-align: middle;
+}
+
+#Menu {
+	width: 170px;
+	height: 300px;
+	float: left;
+	background: url("../wicketLayout_files/sf_menu.png") repeat-x top #FFF;
+	border: 1px solid #7CBE29;
+    font-size: 12px;
+    margin: 10px;
+}
+
+.barra_pulsanti {
+	border-top: 1px solid #69F;
+	border-bottom: 1px solid #69F;
+	padding: 2px;
+	background-color: #FFE;
+}
+
+.barra_pulsanti a {
+	margin-right: 20px;
+}
+
+.bgTabSelected {
+	font-size: 14px;
+	font-weight: bold;
+	color: #F00;
+	background-color: #FFF;
+}
+
+.buttonVert {
+	background-color: #CCC;
+	color: #036;
+	text-decoration: none
+}
+
+.cellTable {
+	text-align: left;
+}
+.cellTable_alto {
+	font-size: 12px;
+	font-weight: bold;
+	background-color: #D6EBBE;
+	color: #C00;
+}
+
+.centrato {
+	text-align: center;
+}
+
+.dataTable th, .dataTable td {
+	padding: 1px 4px;
+}
+
+.even {
+	border: 1px solid #999;
+}
+
+.even:hover {
+	background-color: #E6FAE6;
+}
+
+.leftMenuStyler {
+	background-color: #CDCDCD;
+	text-align: left;
+	vertical-align: top;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.menuTitle {
+	font-weight: bold;
+	color: #FFF;
+	text-align: center;
+    margin-top: 10px;
+}
+
+ul.menuItems {
+	margin: 20px 0px;
+	padding-left: 20px;
+}
+
+.menuItems li {
+	height: 25px;
+	list-style: none;
+	list-style-image: url("../img/arrow.gif");
+}
+
+.noBorder{
+	border: 0px;
+}
+
+.odd {
+	background-color: #EEE;
+	border: 1px dashed #999;
+}
+
+.odd:hover {
+	background-color: #E6FAE6;
+
+}
+
+.Onmouse {
+	color: navy;
+	color: #000;
+	text-align: left;
+	margin-left: 0px;
+	margin-right: 0px;
+	text-decoration: underline;
+}
+
+.Offmouse {
+	color: navy;
+	color: #000;
+	text-align: left;
+	margin-left: 0px;
+	margin-right: 0px;
+	text-decoration: none;
+}
+
+.pagebanner, .pagelinks, .exportlinks {
+	font-size: 11px;
+	margin: 5px;
+}
+
+.piccolo {
+	font-size: 11px;
+}
+
+.simple {
+	border-top: 1px solid #999;
+}
+
+.sublist {
+	margin: 3px;
+	width: 300px;
+	background-color: #FFF;
+	font-size: 11px;
+}
+
+.titoloParagrafo {
+	font-size: 12px;
+	font-weight: bold;
+	background-color: #D6EBBE;
+	color: #000;
+}
+
+.visualizzaCliente {
+	color: #000;
+	font-weight: bold;
+}
+
+/*Riga evidenziata con rosa pastello.*/
+tr.endingAccoglienza{ 
+	font-weight: bold;
+	background-color: #FFC0B4;
+}
+tr.endingAccoglienza:hover{ 
+	font-weight: bold;
+	background-color: #FFC0B4;
+}
+

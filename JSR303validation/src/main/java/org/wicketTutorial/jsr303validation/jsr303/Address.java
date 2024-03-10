@@ -18,8 +18,9 @@ package org.wicketTutorial.jsr303validation.jsr303;
 
 import java.io.Serializable;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+
 
 public class Address implements Serializable {
 	
