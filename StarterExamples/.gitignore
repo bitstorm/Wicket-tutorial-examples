@@ -3,4 +3,5 @@ target
 .classpath
 .settings
 bin
-
+*.jar
+*.class
