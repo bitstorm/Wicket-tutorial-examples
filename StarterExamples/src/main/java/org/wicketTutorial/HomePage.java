@@ -89,6 +89,10 @@ public class HomePage extends BootstrapBasePage {
         
         response.render(jqueryuiReference);
         
+        CssReferenceHeaderItem fontawesomeCss = CssReferenceHeaderItem.forReference(
+                new WebjarsCssResourceReference("font-awesome/4.7.0/css/font-awesome.min.css"));
+        response.render(fontawesomeCss);
+        
         CssReferenceHeaderItem jqueryuiCss = CssReferenceHeaderItem.forReference(
                 new WebjarsCssResourceReference("jquery-ui/current/jquery-ui.min.css"));
 

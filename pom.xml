@@ -18,8 +18,8 @@
 	<name>Wicket tutorial projects</name>
 	<description>The project is intended to provide code examples for the freely available Wicket tutorial</description>
 	<properties>
-		<wicket.version>10.2.0</wicket.version>
-                <wicketstuff.version>10.1.0</wicketstuff.version>
+		<wicket.version>10.3.0</wicket.version>
+    <wicketstuff.version>10.2.0</wicketstuff.version>
 		<jetty.version>11.0.14</jetty.version>
 		<slf4j.version>2.0.9</slf4j.version>
 		<junit.version>5.7.0</junit.version>

@@ -79,6 +79,12 @@
 			<artifactId>bootstrap</artifactId>
 			<version>3.3.7</version>
 		</dependency>
+		
+		<dependency>
+		    <groupId>org.webjars.npm</groupId>
+		    <artifactId>font-awesome</artifactId>
+		    <version>4.7.0</version>
+		</dependency>
 
 		<!-- Example dependencies -->
 		<dependency>
