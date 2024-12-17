@@ -154,7 +154,7 @@
 		</repository>
                 <repository>
                         <id>Stage</id>
-                        <url>https://repository.apache.org/content/repositories/orgapachewicket-1207</url>
+                        <url>https://repository.apache.org/content/repositories/orgapachewicket-1209</url>
                         <releases>
                                 <enabled>true</enabled>
                         </releases>
