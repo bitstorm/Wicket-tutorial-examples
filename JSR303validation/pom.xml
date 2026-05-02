@@ -50,12 +50,35 @@
 			<artifactId>wicket-bean-validation</artifactId>
 			<version>${wicket.version}</version>
 		</dependency>
+		<!-- Source: https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
 		<dependency>
-			<groupId>org.hibernate.validator</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>7.0.5.Final</version>
+		    <groupId>org.hibernate.validator</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		    <version>9.0.1.Final</version>
+		    <scope>compile</scope>
 		</dependency>
-
+		<!-- Source: https://mvnrepository.com/artifact/org.osgi/org.osgi.framework -->
+		<dependency>
+		    <groupId>org.osgi</groupId>
+		    <artifactId>org.osgi.framework</artifactId>
+		    <version>1.10.0</version>
+		    <scope>compile</scope>
+		</dependency>
+		<!-- Source: https://mvnrepository.com/artifact/jakarta.el/jakarta.el-api -->
+		<dependency>
+		    <groupId>jakarta.el</groupId>
+		    <artifactId>jakarta.el-api</artifactId>
+		    <version>6.0.1</version>
+		    <scope>compile</scope>
+		</dependency>
+	
+		<!-- Source: https://mvnrepository.com/artifact/org.glassfish.expressly/expressly -->
+		<dependency>
+		    <groupId>org.glassfish.expressly</groupId>
+		    <artifactId>expressly</artifactId>
+		    <version>5.0.0</version>
+		    <scope>compile</scope>
+		</dependency>
 		<dependency>
             <groupId>org.wicketTutorial.commons.bootstrap</groupId>
             <artifactId>BootstrapCommon</artifactId>
@@ -69,6 +92,13 @@
 		    <groupId>jakarta.validation</groupId>
 		    <artifactId>jakarta.validation-api</artifactId>
 		    <version>3.0.2</version>
+		</dependency>
+		<!-- Source: https://mvnrepository.com/artifact/jakarta.el/jakarta.el-api -->
+		<dependency>
+		    <groupId>jakarta.el</groupId>
+		    <artifactId>jakarta.el-api</artifactId>
+		    <version>6.0.1</version>
+		    <scope>test</scope>
 		</dependency>
 
 		<!-- JUNIT DEPENDENCY FOR TESTING -->

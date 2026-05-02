@@ -16,8 +16,8 @@
  */
 package org.wicketTutorial.ejbinjection;
 
-import javax.ejb.EJB;
-import javax.inject.Inject;
+import jakarta.ejb.EJB;
+import jakarta.inject.Inject;
 
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.wicketTutorial.ejbinjection.ejbBean.EnterpriseMessage;
